@@ -1,0 +1,445 @@
+================================================================================
+NULLSPREAD RESEARCH · СУБТИТРЫ ВИДЕО ДЛЯ АУДИТА #30
+Модуль: День 3. Модуль 2: Деривативы, базис-трейдинг и почему ручной арбитраж мертв (02_arbitrage_and_derivatives)
+Поисковый запрос: perpetual futures liquidation cascade mechanics open interest squeeze
+================================================================================
+ID видео: pB0RCuT3ByA
+Название: Trump’s Tariff Chaos Triggered Bitcoin Dump — The Reason Tariff or Leverage
+Канал: War And Web Mystery
+Ссылка: https://www.youtube.com/watch?v=pB0RCuT3ByA
+Объем: 2624 слов (~18.7 мин)
+Язык: en
+Файл: audit_030_02_arbitrage_and_derivatives_pB0RCuT3ByA.txt
+Создан: 2026-10-23 19:56:41
+================================================================================
+
+[00:00] Here's the thing nobody is saying out
+[00:01] loud right now. Bitcoin did not dump
+[00:04] because of Trump. Bitcoin dumped because
+[00:06] of what was already sitting underneath
+[00:07] the market waiting to explode. And the
+[00:10] tariff headline was just the match. If
+[00:12] you don't understand that distinction,
+[00:13] you will make the wrong decision at
+[00:15] exactly the wrong moment. So, let's fix
+[00:17] that right now. I'm going to show you
+[00:18] the actual machinery, the derivative
+[00:20] structure that made this collapse
+[00:21] mechanical and not fundamental. The
+[00:23] capital flow model that tells you where
+[00:25] fair value actually sits right now. the
+[00:28] statistical framework that shows you
+[00:29] with real data where we are in the
+[00:31] distribution of this sell-off and the
+[00:33] institutional psychology layer that
+[00:35] explains exactly who is selling, why
+[00:36] they are selling, and critically why
+[00:38] they are almost done. This is not a
+[00:40] recap. This is the analysis you need to
+[00:42] make a rational decision in an
+[00:44] irrational market. Let's go. Bitcoin is
+[00:46] sitting at approximately $64,000 as I
+[00:49] record this. The all-time high was
+[00:51] $125,000 in October of last year. That
+[00:54] is a 47% draw down. And if you entered
+[00:56] anywhere between 80,000 and the peak,
+[00:59] you are sitting on a loss that does not
+[01:00] feel like a normal correction. It feels
+[01:02] like a catastrophe. I know that and I'm
+[01:04] not going to dismiss it. But I am going
+[01:06] to show you that what you are feeling
+[01:07] right now is one of the most precisely
+[01:09] engineered emotional experiences in
+[01:11] financial markets. It is not random. It
+[01:14] follows a pattern. And once you see the
+[01:15] pattern, the feeling loses its power
+[01:17] over your decisions. Here is what
+[01:19] happened in the past 72 hours fast. On
+[01:22] February 20th, the Supreme Court struck
+[01:24] down Trump's sweeping tariffs imposed
+[01:26] under the International Emergency
+[01:27] Economic Powers Act 6 to3 decision.
+[01:30] Bitcoin briefly popped above 68,000. And
+[01:34] then within hours, Trump signed a new
+[01:35] executive order reimposing tariffs at
+[01:37] 10% under section 122 of the Trade Act
+[01:40] of 1974. By Saturday the 21st, he raised
+[01:43] that rate to 15%. The statutory ceiling
+[01:46] under that law. Asian markets opened
+[01:48] ugly. Bitcoin slid to 64,300.
+[01:51] Ethereum dropped below 1870. Salana,
+[01:54] XRP, Avalanche, all down 6 to9%. Total
+[01:58] crypto market cap 2.23 trillion. Gold
+[02:02] climbed 2%. That is the headline
+[02:05] sequence. Now, forget the headline
+[02:06] sequence because it explains almost
+[02:08] nothing about what actually happened
+[02:09] mechanically. And the mechanical story
+[02:11] is where all the real information lives.
+[02:13] Let's start with the derivative
+[02:15] structure because this is the part of
+[02:16] the market that turns a 5% news move
+[02:18] into a 12% cascade and nobody explains
+[02:20] it properly. In the weeks leading into
+[02:22] this move, open interest in Bitcoin
+[02:24] perpetual futures was elevated relative
+[02:26] to spot volume. What that means in plain
+[02:29] language is this. A significant portion
+[02:31] of the market was not buying Bitcoin. It
+[02:33] was borrowing conviction. Traders were
+[02:35] using five to 10 times leverage on long
+[02:37] positions, betting on continuation of
+[02:40] the recovery from the 60,000 lows we saw
+[02:42] earlier this month. When the tariff
+[02:44] headline dropped and price moved even
+[02:45] slightly against those positions, the
+[02:47] exchange liquidation engines activated.
+[02:49] And liquidation engines do not have
+[02:51] opinions. They do not care about your
+[02:52] thesis. They are algorithmic. They are
+[02:54] mechanical and they are ruthless. Each
+[02:57] forced liquidation pushes price lower.
+[02:59] Lower price triggers the next
+[03:00] liquidation threshold. The next
+[03:02] liquidation pushes price lower again.
+[03:05] You get a cascade that looks on a chart
+[03:06] like total collapse, but is structurally
+[03:08] a derivatives flush and a clearing
+[03:10] event, not a repricing event. The fuel
+[03:12] for that move is leveraged longs. Once
+[03:14] they are liquidated, the selling
+[03:15] pressure from that specific mechanical
+[03:17] source is exhausted. It is not infinite.
+[03:19] It has a floor defined by the leverage
+[03:21] structure itself. Understanding that
+[03:23] boundary is the difference between panic
+[03:25] and positioning. And here is what makes
+[03:27] this moment even more structurally
+[03:28] interesting. During this sell-off, short
+[03:30] interest has built up aggressively on
+[03:32] the other side. As price fell, short
+[03:34] sellers piled in, borrowing Bitcoin to
+[03:37] sell it, betting on further decline.
+[03:39] What they have done without knowing it
+[03:40] is low to spring. Because when price
+[03:43] reverses and the reversal catalyst in a
+[03:45] market this oversold can be a single
+[03:46] headline, a single Fed signal, a single
+[03:48] institutional announcement. Those short
+[03:50] sellers are forced to buy Bitcoin back
+[03:52] to close their positions. That buying
+[03:54] drives price up. Higher price forces
+[03:56] more shorts to cover. More covering
+[03:58] drives price higher still. That is a
+[04:00] mechanical short squeeze. And the
+[04:02] conditions for one are more developed
+[04:03] right now than at almost any point in
+[04:05] the past year. Not a guarantee of
+[04:07] timing, a guarantee of structural
+[04:09] pressure building in one direction. Now,
+[04:11] cross asset context because I want you
+[04:13] to see this move in proportion. Gold up
+[04:15] 2%. Dollar index weakening. Emerging
+[04:19] market currencies under pressure. S&P
+[04:21] 500 absorbing the tariff news but not
+[04:23] breaking. What you're watching is a
+[04:25] textbook riskoff rotation. Capital
+[04:27] moving from high volatility assets
+[04:29] toward perceived safe havens during a
+[04:30] moment of acute macro uncertainty.
+[04:33] Bitcoin in this rotation is being
+[04:34] treated as a risk asset. High beta,
+[04:37] volatile. Sell first, ask questions
+[04:39] later. And here's the critical tension
+[04:41] that defines the entire medium-term
+[04:43] investment case. The classification is
+[04:45] increasingly inaccurate, but
+[04:46] institutional capital has not fully
+[04:48] repriced for the new reality yet. The
+[04:50] attention economy, where large
+[04:52] allocators mentally categorize Bitcoin,
+[04:54] is lagging the onchain and network
+[04:56] reality by roughly 12 to 18 months. That
+[04:59] gap between how Bitcoin is being priced
+[05:00] and what Bitcoin actually represents in
+[05:02] a portfolio context is the opportunity.
+[05:04] But it only pays if you are still in the
+[05:06] position when the repricing happens. Let
+[05:09] me show you the Capital Flow fair value
+[05:10] picture because the number 64,000 feels
+[05:13] meaningless without context. Spot
+[05:15] Bitcoin ETF assets under management
+[05:17] dropped from approximately 125 billion
+[05:20] to around $94 billion over the past
+[05:23] several weeks. Single day outflows hit
+[05:25] $133 million on February 19th. That is
+[05:28] real selling. That is real pressure. But
+[05:30] model forward institutional allocation
+[05:32] based on announced mandates, the
+[05:34] regulatory clarity that now exists, and
+[05:36] the historical lag between regulatory
+[05:38] frameworks becoming established and
+[05:39] actual capital deployment completing.
+[05:42] And you get a probability weighted fair
+[05:43] value range that sits materially above
+[05:45] current price on virtually every serious
+[05:47] institutional model. Not because
+[05:49] analysts are optimists, because the
+[05:51] capital that has been green lit to enter
+[05:52] this market has not yet entered. ETF
+[05:55] redemptions are one flow. Sovereign and
+[05:57] institutional allocations in pipeline
+[05:59] are a completely different flow. Larger
+[06:01] by orders of magnitude, slower to move,
+[06:03] and almost entirely insensitive to a
+[06:04] week of tariff headlines. Sovereign
+[06:06] wealth fund assets under management
+[06:08] globally exceed $40 trillion. A 1%
+[06:11] allocation from that pool is $400
+[06:12] billion of potential Bitcoin demand
+[06:14] against a current total market cap of
+[06:17] approximately 1.3 trillion. You do not
+[06:19] need a high probability of sovereign
+[06:21] allocation to have a dramatically high
+[06:23] expected value impact on price. You need
+[06:26] a non-trivial probability and in the
+[06:28] current regulatory environment with US
+[06:30] market structure legislation advancing
+[06:32] my CA and implementation across Europe
+[06:34] and multiple Asian jurisdictions
+[06:36] actively competing to attract
+[06:37] institutional crypto infrastructure.
+[06:39] That probability is not trivial. The
+[06:42] regulatory timeline that was the primary
+[06:43] gating factor on institutional
+[06:45] allocation two years ago has largely
+[06:47] resolved in the direction of clarity.
+[06:49] What remains is the capital mobilization
+[06:51] lag, the window between regulators
+[06:53] opening the door and the capital
+[06:55] actually walking through it. We are in
+[06:57] that window right now. It is
+[06:58] uncomfortable in the short term. It is
+[07:00] precisely where you want to be
+[07:01] positioned on a medium-term basis.
+[07:04] Now, let me give you the statistical
+[07:06] convergence data because feeling your
+[07:08] way through this market is how you lose.
+[07:10] You need numbers. At the peak of the
+[07:12] selling panic earlier this month,
+[07:13] realized losses, meaning the actual
+[07:15] dollar value of Bitcoin sold at a loss
+[07:17] each day, were running at approximately
+[07:19] 1.24 billion per day. As of the most
+[07:22] recent onchain data, that figure has
+[07:24] compressed to approximately $480 million
+[07:26] per day. That is a 60% reduction in
+[07:29] daily realized loss intensity over a
+[07:31] 3-week window. In statistical terms,
+[07:33] this is convergence toward a mean. The
+[07:36] market is in the process of establishing
+[07:37] what analysts call a distribution low.
+[07:40] The point at which the sellers who
+[07:41] needed to exit have largely done so and
+[07:43] the buyers who see value at these levels
+[07:45] begin absorbing supply faster than new
+[07:47] selling emerges. This pattern declining
+[07:49] realized loss intensity over a
+[07:51] multi-week window has preceded the base
+[07:53] to recovery transition in multiple prior
+[07:55] cycles. It is not a magical signal. It
+[07:58] is a statistical tendency with a
+[07:59] consistent historical track record and
+[08:01] right now it is pointing toward
+[08:02] exhaustion of the primary selling wave,
+[08:04] not acceleration of it. The long-term
+[08:06] holder cost basis data reinforces this.
+[08:09] Holders who have held Bitcoin for more
+[08:10] than 155 days, the cohort that has been
+[08:13] through at least one prior major
+[08:15] correction in this cycle, have a blended
+[08:17] cost basis in the $40 to $50,000 range.
+[08:20] Historically, Bitcoin price has not
+[08:21] sustained levels materially below the
+[08:23] long-term holder cost basis for extended
+[08:25] periods because those holders represent
+[08:27] such a dominant proportion of existing
+[08:29] supply that liquidity effectively
+[08:31] disappears below their cost basis floor.
+[08:33] The mechanism is supply inelasticity at
+[08:35] the downside. Does that mean it cannot
+[08:37] wick below 50,000 briefly? No. Wicks
+[08:40] happen in this market. They happen fast
+[08:42] and they recover fast. What it means is
+[08:44] that the probability of a sustained
+[08:45] multi-month price below the long-term
+[08:47] holder cost basis is structurally low.
+[08:49] Not zero, but low enough that the
+[08:51] riskreward calculation at current prices
+[08:53] looks fundamentally different from what
+[08:54] the sentiment data would suggest. Now,
+[08:56] institutional psychology, because
+[08:58] understanding who is selling is as
+[08:59] important as understanding how much.
+[09:01] When a Bitcoin ETF records $133 million
+[09:04] in outflows in a single day, who is
+[09:06] actually selling? Behavioral finance
+[09:08] research tells us that investors feel
+[09:09] the pain of losses approximately twice
+[09:11] as intensely as the pleasure of
+[09:13] equivalent gains. A 47% draw down from
+[09:16] the peak does not register as a normal
+[09:18] correction to someone who entered at the
+[09:19] peak. It registers as catastrophic even
+[09:22] though it is entirely within the
+[09:23] historical range of Bitcoin cycle
+[09:24] corrections. The sellers driving ETF
+[09:27] outflows right now are overwhelmingly
+[09:28] loss averse recent buyers. people who
+[09:31] entered somewhere in the 80 to 125,000
+[09:33] range during the momentum phase who have
+[09:35] now hit a psychological pain threshold
+[09:37] and are exiting to stop the emotional
+[09:39] bleeding that is a finite and
+[09:41] self-depreing supply of motivated
+[09:42] sellers. The onchain data from Glass
+[09:45] Node confirms this directly. Large
+[09:47] holder exchange inflows are dominated by
+[09:49] shorter duration addresses recent
+[09:51] buyers. The long-term conviction
+[09:52] holders, the people with cost bases in
+[09:55] the 30 to 50,000 range are showing
+[09:57] essentially zero net selling behavior.
+[09:59] The ownership structure of this market
+[10:01] is bifurcated between recent entrance
+[10:03] and pain and long-term holders and
+[10:04] patients. And recent entrance by
+[10:06] definition have a finite amount of
+[10:08] Bitcoin to sell. Let's map where we are
+[10:10] in the long cycle because without this
+[10:12] your time frame is wrong. We are 16
+[10:14] months into a Bitcoin having cycle that
+[10:16] began with the April 2024 event. The
+[10:18] having reduced daily new Bitcoin
+[10:20] issuance by 50%. In the short term, the
+[10:23] market anticipates and largely prices in
+[10:25] the having before it happens. The real
+[10:27] supply shock impact manifests with a lag
+[10:29] because reduced issuance compounds over
+[10:31] months and the demand catalysts of each
+[10:33] cycle. In this cycle, that means spot
+[10:36] ETF adoption, institutional allocation
+[10:38] frameworks, and potential sovereign
+[10:40] acquisition interest take time to fully
+[10:42] materialize and intersect with the
+[10:43] tighter supply trajectory. Historically,
+[10:45] the period between 12 and 24 months post
+[10:47] having has produced the most significant
+[10:49] price appreciation of each cycle. We are
+[10:52] currently inside that window. The long
+[10:53] cycle model does not tell you what
+[10:55] happens next week. It tells you what the
+[10:56] macro setup looks like over the next 6
+[10:58] to 12 months. And the setup is
+[11:00] structurally consistent with prior
+[11:02] cycles at this stage with the additional
+[11:04] layer of institutionalization that makes
+[11:05] the demand side of this cycle
+[11:07] qualitatively different from 2017 and
+[11:09] 2021. And now the macro tariff reality
+[11:12] cleanly. Section 122 of the trade act of
+[11:14] 1974 caps tariffs at 15% which is
+[11:18] exactly where Trump maxed out. It
+[11:20] requires congressional review after 150
+[11:22] days. It is more legally contestable
+[11:24] than IPA was. The tariff ceiling is
+[11:26] defined by the statute. The escalation
+[11:29] pathway is constrained by both law and
+[11:31] political economy. For Bitcoin
+[11:33] specifically, tariffs do not touch
+[11:35] crypto directly. There are no customs
+[11:37] duties on digital assets. The
+[11:39] transmission is indirect. Riskoff
+[11:41] sentiment, inflation expectations
+[11:43] affecting Fed policy and the fiscal
+[11:45] dynamic. That fiscal dynamic is the one
+[11:47] that matters most on a long horizon. If
+[11:50] tariff revenue disappoints relative to
+[11:51] projections which Goldman Sachs and
+[11:53] other institutional analysts are
+[11:55] modeling as a realistic outcome, the
+[11:57] government faces an even larger deficit
+[11:59] than the current trajectory implies.
+[12:01] Larger deficits historically require
+[12:03] accommodation. Accommodation
+[12:04] historically dilutes the purchasing
+[12:06] power of the currency and hard assets
+[12:08] with fixed supply schedules, Bitcoin
+[12:10] being the most precisely supply
+[12:12] constrained asset that exists,
+[12:14] historically benefit from currency
+[12:15] purchasing power dilution. Matthew
+[12:18] Siglet at Vanic made exactly this
+[12:19] argument when the court ruling came
+[12:21] down. The headline causing Bitcoin to
+[12:23] sell off today may contain the macro
+[12:25] argument most structurally supportive of
+[12:26] Bitcoin on a 2 to threeyear basis. The
+[12:29] market is pricing the sentiment. It is
+[12:31] not pricing the fiscal consequence. Let
+[12:34] me close with the only thing that
+[12:35] actually matters. What you're watching
+[12:36] right now $64,000 47% off the high. Fear
+[12:40] and greed index barely above 10. Google
+[12:42] searches for Bitcoin zero at record
+[12:44] highs in the United States. This is not
+[12:46] a new story. This is Bitcoin's story.
+[12:48] Every cycle, every time, the mechanism
+[12:51] is always slightly different. The
+[12:52] derivative structure, the macro overlay,
+[12:54] the regulatory moment, those change.
+[12:57] What does not change is the emotional
+[12:58] architecture of the bottom. Maximum
+[13:00] pain, maximum fear, maximum certainty
+[13:03] among the loudest voices that it is
+[13:05] over. And then, not immediately, not on
+[13:07] a schedule you can trade. Precisely, a
+[13:09] recovery that punishes everyone who let
+[13:11] the emotion make the decision. The
+[13:13] people who search Bitcoin zero at the
+[13:15] bottom are not the people who end up
+[13:16] profitable. The people who understand
+[13:18] the derivatives flush, who model the
+[13:20] capital flows, who read the realized
+[13:21] loss convergence data, who track the
+[13:23] long-term holder cost basis. Those are
+[13:26] the people who have the framework to act
+[13:27] when the emotional pressure is designed
+[13:29] to paralyze. Trump's tariffs created a
+[13:31] real short-term shock. The riskoff
+[13:33] rotation is real. The leverage long
+[13:35] liquidations were real. The ETF outflows
+[13:37] are real. Every bit of the pain is real.
+[13:39] And none of it has touched the supply
+[13:41] schedule. None of it has altered the
+[13:42] having cycle position. None of it has
+[13:44] reversed the institutional regulatory
+[13:46] clarity that took three years to build.
+[13:48] None of it has changed the long-term
+[13:49] holder behavior. The headline and the
+[13:51] market reality are two separate things
+[13:53] operating on two separate time frames.
+[13:55] Your job is to hold both simultaneously
+[13:57] and not let the shorter one destroy your
+[13:59] position in the longer one. That is the
+[14:01] framework. That is the analysis. I hope
+[14:03] it changes the decision you are about to
+[14:05] make. Share this with one person sitting
+[14:07] in loss right now who needs to see the
+[14:09] machinery instead of just the price.
+[14:11] Because information quality, not luck,
+[14:13] not timing, not some secret signal, is
+[14:15] what separates the people who survive
+[14:17] these cycles from the people who exit at
+[14:19] the bottom and never come back. See you
+[14:20] in the next one.

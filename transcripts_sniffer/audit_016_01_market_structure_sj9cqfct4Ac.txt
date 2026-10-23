@@ -1,0 +1,260 @@
+================================================================================
+NULLSPREAD RESEARCH · СУБТИТРЫ ВИДЕО ДЛЯ АУДИТА #16
+Модуль: День 2. Модуль 1: Архитектура рынка, биржи и маркет-мейкеры (01_market_structure)
+Поисковый запрос: why crypto prices differ across exchanges
+================================================================================
+ID видео: sj9cqfct4Ac
+Название: Get crypto prices from MORE than 100 different exchanges with Python & CCXT [Arbitrage Series]
+Канал: Algovibes
+Ссылка: https://www.youtube.com/watch?v=sj9cqfct4Ac
+Объем: 1385 слов (~9.9 мин)
+Язык: en
+Файл: audit_016_01_market_structure_sj9cqfct4Ac.txt
+Создан: 2026-10-23 06:02:58
+================================================================================
+
+[00:05] hello and welcome very very exciting
+[00:08] video today we are going to pull
+[00:09] cryptocurrency prices from more than 100
+[00:12] different cryptocurrency exchanges using
+[00:15] ccxt and a bit of panels so first of all
+[00:18] let's take a look at the exchanges we
+[00:20] are going to cover so these are simply
+[00:22] the exchanges covered by ccxc so as an
+[00:26] example we have binance here bitstamp
+[00:28] coinbase Pro and so on you see it here
+[00:31] right so overall we have
+[00:35] 117 exchanges
+[00:38] and now we are going to pull prices from
+[00:42] all those exchanges
+[00:44] and as a quick recap on how you are
+[00:48] pulling prices for one Exchange
+[00:51] let me quickly show you how you're doing
+[00:53] that and also explain what is the
+[00:56] problem with that
+[00:58] so in general you take ccxc
+[01:01] and then use binance so you are
+[01:04] instantiating and provide the name of
+[01:07] the exchange
+[01:08] and with that you have something like
+[01:09] this here
+[01:10] and this one you can use to
+[01:13] for instance fetch some open high low
+[01:17] close volume
+[01:18] data here for let's say Bitcoin UCT
+[01:23] just pull 10 rows here and with that you
+[01:26] would get open high low close volume
+[01:28] data for Bitcoin over the last 10
+[01:31] minutes
+[01:33] now what you would need to do
+[01:36] if we are taking a look at that again is
+[01:39] to create 117 variables here using this
+[01:44] approach I mean you can do that right
+[01:46] have fun with that I'm a lazy person and
+[01:50] I'm using an easier way to achieve that
+[01:53] so I want to instantiate providing a
+[01:56] string
+[01:57] so how can I do that python has a very
+[02:01] helpful and convenient inbuilt function
+[02:04] for that and that is get
+[02:06] at
+[02:09] so this
+[02:10] if I'm calling this on ccxt and provide
+[02:14] a string let's say a
+[02:16] an exchange like binance you will see
+[02:19] that I'm getting this if I'm
+[02:22] calling that now you see that I'm
+[02:24] getting exactly that here right so this
+[02:27] is the same
+[02:29] and we can leverage that to just provide
+[02:32] all those strings and just instantiate
+[02:35] like this right very useful definitely
+[02:39] take a look at that when you want to
+[02:41] instantiate
+[02:43] using string values
+[02:45] okay
+[02:46] now let's wrap that all in a function
+[02:50] which is providing us
+[02:53] open high low close volume data for the
+[02:55] last let's say 60 minutes
+[02:58] for a given Exchange
+[03:00] so let's create a function here get
+[03:03] price prices
+[03:08] take an exchange as an argument and a
+[03:10] symbol
+[03:11] and first of all
+[03:13] creating an instance here using get Edge
+[03:16] ccxt
+[03:19] and the provided Exchange
+[03:22] right so this is exactly what this one
+[03:25] is doing right it's just creating ccxt
+[03:27] and then the
+[03:29] provided Exchange
+[03:32] and then we are pulling the op Milo
+[03:35] close volume data
+[03:36] so we can just use instance and then
+[03:40] fetch of my low closed volume
+[03:45] high low close volume
+[03:48] provide the symbol and let's take the
+[03:51] last 60 minutes here so default time
+[03:53] frame is one minute in case you're
+[03:55] wondering
+[03:56] and then we are wrapping that into a
+[03:59] data frame so let me show you how this
+[04:01] would look like here outside this
+[04:03] function and it's easier to understand
+[04:06] so you see now you're getting this in
+[04:09] tabular form here right and this is the
+[04:12] time column so this is currently a Unix
+[04:15] timestamp so be a bit patient I will
+[04:17] convert that into a human readable
+[04:18] timestamp in some seconds this is the
+[04:20] Open high low close volume column okay
+[04:24] so all these data manipulations I just
+[04:27] mentioned we are doing within this
+[04:29] function so this is taken care of
+[04:32] data manipulations so I'm going to
+[04:35] create a data frame within this function
+[04:37] using this fetch of hydro close volume
+[04:40] and wrap that into a data frame
+[04:43] like so and then I'm going to rename
+[04:46] those columns here
+[04:48] as they are so first one is time
+[04:52] open
+[04:55] hi
+[04:58] no
+[04:59] close
+[05:01] and of course volume
+[05:07] okay so this is just renaming those
+[05:10] columns here
+[05:11] now as you see the time
+[05:14] column
+[05:15] I want to have that as the index of this
+[05:18] data frame so I don't want to have an
+[05:19] integer index but I want the index as
+[05:21] the time so I'm doing that by simply
+[05:24] setting the index
+[05:27] through the time column and replace the
+[05:30] current integer index all right
+[05:34] next as promised I want to transform
+[05:38] this
+[05:40] currently formatted Unix timestamp
+[05:44] into a human readable timestamp so I'm
+[05:46] taking the index
+[05:49] and set that to
+[05:51] Penance to daytime
+[05:52] provide the index and set the unit to Ms
+[05:57] rest of the columns are currently
+[06:00] string formatters right so you can take
+[06:02] a look at that by using
+[06:05] data types and you see I'm getting an
+[06:07] integer value
+[06:09] and I'm actually getting floating values
+[06:11] I thought they were
+[06:13] uh
+[06:15] I thought there were string values
+[06:17] but just in case I'm going to
+[06:20] just Typecast them as floating values
+[06:22] just to be sure
+[06:23] maybe this is only for True for binance
+[06:25] and then it's not true for
+[06:27] another exchange so this is just
+[06:30] transforming all columns so just as a
+[06:33] reminder this is the index now so this
+[06:36] is just transforming all values in the
+[06:38] the remaining columns so open high low
+[06:41] close volume into floating type values
+[06:44] all right so this is our get prices
+[06:46] function now let's test that get prices
+[06:49] for let's say binance
+[06:51] on
+[06:53] Bitcoin
+[06:54] UCT
+[07:02] got an error here
+[07:06] ah I forgot you
+[07:09] instantiate here so of course you have
+[07:11] to do that exactly as I did above here
+[07:14] right so I thought this mistake
+[07:17] so let's execute that again and as you
+[07:20] see now we're getting a data frame
+[07:21] containing price data for the last 60
+[07:25] minutes here
+[07:27] right 1747
+[07:30] 16 48 here all right
+[07:34] so works like a charm Let's test out
+[07:37] another one coinbase pro
+[07:41] also works right
+[07:43] what's also fancy one I think coin
+[07:48] okay so as you see works
+[07:52] so finally we are just going to iterate
+[07:54] over the exchanges and call our get
+[07:58] prices function for a particular symbol
+[08:01] so let's do that
+[08:03] and let's store
+[08:06] the prices in a list
+[08:08] and let's also create another list where
+[08:11] we are showing the fade price polls
+[08:15] right so some exchanges might not work
+[08:18] so we are
+[08:21] for
+[08:22] now reiterating for X in
+[08:27] ccxt exchanges
+[08:31] or maybe for Exchange in ccxg exchanges
+[08:35] and then you would just
+[08:37] uh
+[08:39] append the function call to the prices
+[08:41] list right and then append such a data
+[08:45] frame to the prices lists here
+[08:47] so you would just take get prices
+[08:51] for
+[08:52] the The Exchange and symbol so in this
+[08:55] case I'm going to do that for Bitcoin
+[08:59] and give some feedback here right so
+[09:01] prices successfully
+[09:06] poles for
+[09:09] The Exchange
+[09:11] and now I want to have a try and accept
+[09:13] statement so if I'm running into a an
+[09:17] exchange where I'm not getting prices
+[09:20] I can just append that to
+[09:24] my fails this year and then I can get
+[09:27] rid of those exchanges
+[09:29] you can also do that before running this
+[09:32] this uh this Loop and just try to pull a
+[09:36] most recent price for instance using the
+[09:38] fetch ticker
+[09:40] and then already filter for those but
+[09:42] I'm doing it in in this step here so
+[09:45] fails append
+[09:46] exchange and then print
+[09:49] uh price pull fail
+[09:52] for
+[09:55] a particular Exchange
+[09:58] now let's start this Loop
+[10:06] and we're getting a price pull fee for
+[10:08] ax but then prices successfully pulled
+[10:11] for Epica is send X B Quant
+[10:15] buy box and so on right so you see some
+[10:19] fails but most of
+[10:22] the polls are successfully pulled here
+[10:26] right so I won't wait with you together
+[10:29] until this Loop is finished
+[10:32] but yeah I'm already talking about what
+[10:35] we can do in the next video so we have a
+[10:38] list now
+[10:40] of prices over the last 60 minutes and
+[10:44] we can screen for
+[10:47] the lowest price
+[10:50] and then take a look at is this a
+[10:53] consistent
+[10:54] price deviation is this just in let's
+[10:58] say one or two rows and with that
+[11:00] potentially find Arbitrage possibilities
+[11:04] right so these are the next steps in
+[11:07] this video series if you are interested
+[11:09] in that please leave a like
+[11:11] and comment below and I thank you very
+[11:14] much for watching and I'm already
+[11:16] looking forward to see you in the
+[11:17] upcoming videos
+[11:19] bye bye

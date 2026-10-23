@@ -1,0 +1,31 @@
+channels:
+  - id: "UCn-3C8sKvd_zH8P8jF_3w7A"
+    name: "Wintermute Trading"
+    specialization: "Algorithmic Market Making & High Frequency Trading"
+    rationale: "Top-tier crypto algorithmic market maker providing primary institutional insights."
+    verified: true
+
+  - id: "UCx40sSsk640fS9r87J_x5rw"
+    name: "Blockworks / Bell Curve Podcast"
+    specialization: "Market Microstructure, Liquidity & DeFi Infrastructure"
+    rationale: "Deep-dive technical discussions with market makers, protocol founders, and quant desks."
+    verified: true
+
+  - id: "UCU_1-Ww_gZk0pA6yT2f4q3Q"
+    name: "Bankless Research"
+    specialization: "DeFi protocols, L2 rollups, and liquidity dynamics"
+    rationale: "Comprehensive analysis of on-chain liquidity mechanics and network economics."
+    verified: true
+
+  - id: "UC_Token2049_Conference_Official"
+    name: "TOKEN2049"
+    specialization: "Institutional Crypto Trading, Infrastructure & Regulation"
+    rationale: "Leading global crypto conference keynote presentations by quant traders."
+    verified: true
+
+  - id: "UC_EthCC_Conference_Official"
+    name: "EthCC (Ethereum Community Conference)"
+    specialization: "Smart Contract Execution, Finality, MEV & L2 Rollups"
+    rationale: "Academic and engineering talks on protocol-level mechanics."
+    verified: true
+

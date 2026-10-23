@@ -1,0 +1,183 @@
+topics:
+  - id: "00_crypto_fundamentals"
+    name: "День 1. Модуль 0: Фундамент крипты, блокчейн и токеномика"
+    priority: 0
+    min_duration_seconds: 360
+    max_duration_seconds: 2400
+    queries_en:
+      - "how blockchain works mempool block confirmations gas fees explained"
+      - "how stablecoins work USDT USDC peg mechanism explained"
+      - "native coin vs token smart contract standards ERC20 SPL"
+      - "crypto tokenomics market cap vs FDV token unlocks explained"
+    queries_ru:
+      - "как работает блокчейн простыми словами транзакции блоки мемпул"
+      - "что такое стейблкоины USDT USDC как обеспечивается курс"
+      - "чем отличается монета от токена смарт контракт сети ERC20 TRC20"
+      - "что такое токеномика капитализация FDV разлоки токенов"
+    key_terms:
+      - "blockchain"
+      - "mempool"
+      - "gas fee"
+      - "stablecoin"
+      - "USDT"
+      - "USDC"
+      - "ERC20"
+      - "TRC20"
+      - "tokenomics"
+      - "FDV"
+      - "market cap"
+      - "token unlock"
+
+  - id: "01_market_structure"
+    name: "День 2. Модуль 1: Архитектура рынка, биржи и маркет-мейкеры"
+    priority: 1
+    min_duration_seconds: 420
+    max_duration_seconds: 3000
+    queries_en:
+      - "crypto market structure liquidity explained"
+      - "how crypto market makers work wintermute jump trading"
+      - "CEX vs DEX orderbook vs AMM liquidity pools"
+      - "kimchi premium crypto arbitrage explained"
+      - "why crypto prices differ across exchanges"
+    queries_ru:
+      - "как работают криптобиржи изнутри ликвидность"
+      - "кто такие маркет мейкеры в крипте как работают"
+      - "разница CEX и DEX бирж пулы ликвидности стакан"
+      - "фрагментация ликвидности криптовалют биржи"
+    key_terms:
+      - "market microstructure"
+      - "liquidity"
+      - "CEX"
+      - "DEX"
+      - "AMM"
+      - "market maker"
+      - "order book"
+      - "fragmentation"
+      - "kimchi premium"
+
+  - id: "02_arbitrage_and_derivatives"
+    name: "День 3. Модуль 2: Деривативы, фьючерсы и виды криптоарбитража"
+    priority: 2
+    min_duration_seconds: 420
+    max_duration_seconds: 2700
+    queries_en:
+      - "spot vs perpetual futures crypto mechanics explained"
+      - "types of crypto arbitrage spatial triangular statistical"
+      - "funding rate arbitrage delta neutral strategy explained"
+      - "cross exchange spot arbitrage mechanics"
+      - "why HFT bots dominate intra-exchange arbitrage"
+      - "token unlock schedule trading impact"
+    queries_ru:
+      - "чем отличается спот от фьючерсов в крипте механика"
+      - "виды арбитража криптовалют межбиржевой внутрибиржевой"
+      - "арбитраж ставки финансирования фандинг как работает"
+      - "дельта нейтральные стратегии в крипте"
+      - "высокочастотный трейдинг HFT боты в крипте"
+    key_terms:
+      - "perpetual futures"
+      - "funding rate"
+      - "delta neutral"
+      - "basis"
+      - "spatial arbitrage"
+      - "triangular arbitrage"
+      - "HFT"
+      - "token unlocks"
+
+  - id: "03_orderbook_mechanics"
+    name: "День 4. Модуль 3: Микроструктура биржевого стакана"
+    priority: 3
+    min_duration_seconds: 420
+    max_duration_seconds: 3000
+    queries_en:
+      - "order book mechanics bid ask spread depth explained"
+      - "price slippage and orderbook depth in crypto"
+      - "limit order vs market order matching engine"
+      - "maker vs taker fees crypto exchange explained"
+      - "how to spot wash trading fake volume on crypto exchanges"
+    queries_ru:
+      - "как читать биржевой стакан ордеров в крипте"
+      - "глубина стакана и проскальзывание в трейдинге"
+      - "сведение ордеров на бирже лимитные и рыночные ордера"
+      - "разница комиссий мейкер и тейкер на бирже"
+      - "накрутка объемов на криптобиржах wash trading"
+    key_terms:
+      - "order book"
+      - "slippage"
+      - "bid ask spread"
+      - "matching engine"
+      - "maker taker"
+      - "limit order"
+      - "market order"
+      - "wash trading"
+
+  - id: "04_onchain_logistics"
+    name: "День 5. Модуль 4: Блокчейн-инфраструктура и ончейн-логистика"
+    priority: 4
+    min_duration_seconds: 420
+    max_duration_seconds: 2700
+    queries_en:
+      - "blockchain transaction finality and block confirmations explained"
+      - "L1 vs L2 networks transaction speed and gas fees"
+      - "how to verify token contract address on etherscan"
+      - "how crypto exchange hot and cold wallets work"
+    queries_ru:
+      - "сравнение блокчейн сетей комиссии и скорость транзакций"
+      - "что такое подтверждения сети блокчейн финальность"
+      - "как проверить смарт контракт токена в эксплорере etherscan"
+      - "как устроены горячие и холодные кошельки криптобирж"
+    key_terms:
+      - "finality"
+      - "block confirmations"
+      - "L1 vs L2"
+      - "gas fees"
+      - "smart contract"
+      - "etherscan"
+      - "hot cold wallets"
+
+  - id: "05_risk_and_hedging"
+    name: "День 6. Модуль 5: Управление рисками, хеджирование и безопасность"
+    priority: 5
+    min_duration_seconds: 420
+    max_duration_seconds: 2700
+    queries_en:
+      - "how to hedge spot crypto position with perpetual futures"
+      - "crypto arbitrage execution risks latency slippage"
+      - "AML KYT compliance on crypto exchanges how it works"
+      - "counterparty risk and honeypot exchanges in crypto"
+    queries_ru:
+      - "хеджирование спотовой позиции фьючерсами в крипте"
+      - "AML проверка криптовалют как не получить блокировку"
+      - "риски межбиржевого арбитража закрытый вывод проскальзывание"
+      - "как проверить криптобиржу на скам и ликвидность"
+    key_terms:
+      - "hedging"
+      - "perpetual futures"
+      - "execution risk"
+      - "latency"
+      - "AML KYT"
+      - "counterparty risk"
+      - "honeypot"
+      - "withdrawal freeze"
+
+  - id: "06_quant_stack_and_mindset"
+    name: "День 7. Модуль 6: Аналитический стек и психология квант-трейдинга"
+    priority: 6
+    min_duration_seconds: 420
+    max_duration_seconds: 2700
+    queries_en:
+      - "how to overlay two price charts in TradingView spread chart"
+      - "quantitative crypto trading vs discretionary trading"
+      - "how crypto arbitrage screeners work orderbook API"
+      - "why crypto signal groups fail math expectation"
+    queries_ru:
+      - "как наложить два графика в TradingView сравнение цен"
+      - "как работают скринеры арбитража криптовалют API"
+      - "почему торговые сигналы в крипте не работают математика"
+      - "алгоритмический и количественный трейдинг в крипте суть"
+    key_terms:
+      - "TradingView spread"
+      - "arbitrage screener"
+      - "orderbook API"
+      - "quantitative trading"
+      - "discretionary"
+      - "statistical edge"

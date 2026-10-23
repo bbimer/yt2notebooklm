@@ -1,0 +1,72 @@
+================================================================================
+NULLSPREAD RESEARCH · СУБТИТРЫ ВИДЕО ДЛЯ АУДИТА #27
+Модуль: День 3. Модуль 2: Деривативы, базис-трейдинг и почему ручной арбитраж мертв (02_arbitrage_and_derivatives)
+Поисковый запрос: why retail crypto arbitrage fails latency execution slippage HFT
+================================================================================
+ID видео: lV882nHtk38
+Название: Execution Speed Analysis
+Канал: CompareForexBrokers
+Ссылка: https://www.youtube.com/watch?v=lV882nHtk38
+Объем: 1014 слов (~7.2 мин)
+Язык: en
+Файл: audit_027_02_arbitrage_and_derivatives_lV882nHtk38.txt
+Создан: 2026-10-23 19:56:31
+================================================================================
+
+[00:00] early today I had a meeting with  Ross Collins our head of research
+[00:05] he looked at execution speeds of every broker  hi Ross and thanks for talking to us today
+[00:12] hi uh thanks for having me so let's first say  why do execution speeds matter if you're a Trader
+[00:21] so really it's all about slippage Justin um you  really want to have your trade executed as close
+[00:30] to the price that you see on your screen as  possible so obviously if the trades getting
+[00:37] executed seconds later that's not going  to be the case and that's what slippage is
+[00:43] so how did you test to see what this execution  speed is so we used a couple of tests we used one
+[00:51] for limit orders and one for Market orders just to  get those different feels and we use some standard
+[00:59] mt4 expert advisors to do that testing okay so  did you test on like one date or multiple dates
+[01:10] so we did we did a few tests over uh over a few  days uh just to get you know different market
+[01:16] conditions and to see if you know that really had  much good impact um we've we found really that it
+[01:24] it did not uh and that our testing was fairly  standard across the various days that we tested
+[01:32] okay before we just talk about the winners  and losers which most people want to hear
+[01:37] um talk to me about the variation so are they  all almost the same or in reality uh you know
+[01:45] is there some pretty slow Brokers out there and  some that are allow really fast trade execution
+[01:52] speeds yeah that's a really good question  so if we just look at Market orders alone
+[01:58] and the fastest Brokers we're seeing there are  in the 77 millisecond kind of range so that 70
+[02:06] to 80 millisecond kind of range and the slowest  nearly 250 milliseconds wow that's you know it's
+[02:15] smaller than times slower so that can really make  a difference okay let's get to it let's name the
+[02:24] top three winners you know the fastest execution  uh go for it uh number one Blackpool markets
+[02:36] um second was Fusion markets and third  was Capstone okay fantastic so you know
+[02:44] tell me do you have any ideas of why  you feel they were they were the fastest
+[02:51] um look one of the things that um we really  um well there's a couple of things one is
+[03:00] what kind of Brokers are they you know do they  have straight through processing for example
+[03:06] so the fastest Brokers or the fastest five  that we found are all straight through
+[03:14] processing and the market makers start to  come in you know around 50 milliseconds
+[03:22] slower on average so definitely that straight  through processing is is definitely part of it
+[03:30] and the other thing that um was probably not  something that we have real hard data on but it
+[03:38] just felt like perhaps you know perhaps these  um some of these Brokers are just trying more
+[03:47] Hardware at their servers than some of the  technology better technology absolutely we
+[03:54] tested we tested using mt4 across the  board so you may find some different
+[04:01] um results if you for example used mt5 which may  be quicker but we wanted to use a standard that we
+[04:09] could use across all of the all of the different  Brokers so that's what we chose mt4 right so
+[04:16] so we've got the winner you know so we've  got Fusion markets we've got pepperstone and
+[04:21] Blackpool were the winners do you want to just  name one or two of the biggest losers or slowest
+[04:26] brokers in your testing look we we definitely  can um the one that probably came in you know
+[04:36] um Stone motherless last if you like uh was think  markets and the other one that that surprised us
+[04:46] because it it was uh second slowest was IG wow  and CMC as well with that you know and CMC and
+[04:56] IG you know they're some of the big guys so you  know there again is is probably an example of
+[05:04] um you know those folks um maybe not having enough  Grunt in the in their in their service to uh to be
+[05:11] able to test with so Russ I know you're a Trader  yourself based on this data would you second
+[05:18] reconsider um choosing someone like CMC Markets  based on their speed look I'm just absolutely I
+[05:27] mean you'd have to you'd have to have a look at  that and say well do I really want to go with
+[05:34] um a broker that's going to have that kind of  lag and and really open myself up to that kind
+[05:41] of slippage and and you know um realize that that  slippage is going to happen in high volume High
+[05:51] volatility scenarios those are exactly the kind  of scenarios where you want to be able to trust
+[05:57] your broker to deliver you know something close to  the price that you that you that you think or that
+[06:05] your expert advisor you know is targeting yeah I  guess that's very last point types of training so
+[06:13] I would assume something like a copy Trader this  may not be that important for a you know like an
+[06:19] etoro style you're trying to copy someone not that  many trades what do you think is like the number
+[06:25] one type of trade that really if you're going  to trade this way this is going to really matter
+[06:32] yes uh look this is going to be most important  for scalpers you know those folks who are really
+[06:39] looking to just you know scalp a couple of  piffs off the top and a couple of Pips off
+[06:44] the bottom of their trades if those Pips  go away or disappear uh because of because
+[06:52] of this execution lag you know that's really  going to destroy their p l so yeah slippage
+[07:00] um scalpers those two things don't go  together well perfect okay thanks for
+[07:05] having us here Ross and we look forward  to Future testing okay thanks Justin

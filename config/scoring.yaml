@@ -1,0 +1,48 @@
+scoring:
+  # Pre-filtering thresholds (before LLM evaluation)
+  prefilter:
+    min_views: 1000
+    min_duration_seconds: 420    # 7 minutes
+    max_duration_seconds: 3000   # 50 minutes
+    min_like_ratio: 0.015        # 1.5% likes/views (if like_count is available)
+    suspicious_keywords:
+      - "связка дня"
+      - "бесплатная связка"
+      - "гарантированный доход"
+      - "без вложений"
+      - "100% прибыль"
+      - "сигналы в телеграм"
+      - "раскрутка счета"
+      - "пассивный доход на автомате"
+      - "free money"
+      - "guaranteed profit"
+      - "100x gem"
+      - "telegram signals"
+      - "памп и дамп"
+      - "1000x"
+      - "заработок для новичка с нуля"
+      - "100% гарантия"
+      - "best signals"
+      - "реферальная ссылка"
+      - "t.me/"
+
+  # Gatekeeper evaluation weights (1-10 scale)
+  weights:
+    relevance: 0.30
+    technical_depth: 0.30
+    practical_value: 0.20
+    source_quality: 0.10
+    commercial_noise_penalty: 0.10
+
+  # Decisions thresholds (composite score 1-10)
+  thresholds:
+    accept_score: 7.0       # >= 7.0 proceeds to Methodist deep analysis
+    review_score: 5.5       # 5.5 - 6.9 flagged for manual review
+    max_commercial_noise: 6 # If commercial_noise > 6, auto-reject or review
+
+  # Transcript length limits
+  transcript:
+    max_words: 15000        # Caps transcript processing to avoid excessive token burn
+    min_words: 250          # Discards empty or stub captions
+    max_segments: 1200
+

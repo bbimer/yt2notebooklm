@@ -1,0 +1,276 @@
+================================================================================
+NULLSPREAD RESEARCH · СУБТИТРЫ ВИДЕО ДЛЯ АУДИТА #13
+Модуль: День 2. Модуль 1: Архитектура рынка, биржи и маркет-мейкеры (01_market_structure)
+Поисковый запрос: crypto market structure liquidity explained
+================================================================================
+ID видео: uuWKiMNGHto
+Название: Liquidity Concepts SIMPLIFIED
+Канал: ETM FX
+Ссылка: https://www.youtube.com/watch?v=uuWKiMNGHto
+Объем: 1577 слов (~11.3 мин)
+Язык: en
+Файл: audit_013_01_market_structure_uuWKiMNGHto.txt
+Создан: 2026-10-23 06:02:48
+================================================================================
+
+[00:00] so what is liquidity in simple terms
+[00:03] liquidity is an area or a level where
+[00:05] business was conducted previously
+[00:07] institutions purchased a price at a
+[00:09] specific level and some retail Traders
+[00:10] end up taking advantage of the
+[00:12] institutional sponsorship and take the
+[00:14] trade and our main objective here is to
+[00:16] find out where these retail Traders stop
+[00:18] losses rest at
+[00:20] so in this example you can see price
+[00:22] being purchased at this demand level and
+[00:24] we're not focused on the entry or why
+[00:28] price was purchased there
+[00:30] we're looking at if some retail Traders
+[00:33] took advantage of this trade where would
+[00:35] their stop losses rest at
+[00:37] their stop losses would rest in the near
+[00:39] swings
+[00:43] and this is where the liquidity will be
+[00:45] rested so let's get into this
+[00:47] so the first type of liquidity we're
+[00:48] going to cover is your support and
+[00:50] resistance liquidity which is your equal
+[00:52] highs and equal lows
+[01:01] as you can see price found resistance at
+[01:03] this specific level what does that mean
+[01:05] that means institutions sold at this
+[01:06] level and Retail Traders might have
+[01:08] taken advantage of this so now this
+[01:10] level is incentivized to attract price
+[01:12] and it will act as a magnet for price to
+[01:15] later do what
+[01:16] run over this level
+[01:33] so as you can see here price is finding
+[01:35] resistance and this level be used as a
+[01:37] magnet for price to run through it
+[01:42] so next we're going to cover the
+[01:44] trendline liquidity
+[01:50] if you look here you don't see equal
+[01:52] lows You Don't See
+[01:54] you can pinpoint where the resistance is
+[01:56] coming from now we could be coming from
+[01:58] internal liquidity but a lot of times
+[02:00] retail Traders use what you call a trend
+[02:03] line
+[02:05] and now liquidity is resting underneath
+[02:07] the treadline so now that trend line
+[02:09] becomes a magnet
+[02:12] to attract price
+[02:17] so here we have an example of trendline
+[02:20] liquidity
+[02:29] price rejected from the trend line and
+[02:31] attracted price
+[02:33] so next up you have your FTB your failed
+[02:36] to break liquidity
+[02:43] you can see here you have a supply level
+[02:45] formed and price approaches this level
+[02:47] and rejects so now you have evidence
+[02:49] that that level was valid and Retail
+[02:52] Traders might be a part of that move so
+[02:54] anybody that purchased price at that
+[02:55] level their stop losses would go on the
+[02:57] swing above
+[02:59] and Above That Swing would be resting
+[03:01] the stop losses which would be your
+[03:02] liquidity and price would be
+[03:04] incentivized to attack that level one
+[03:07] more time
+[03:12] so here's an example of your failed to
+[03:14] break liquidity
+[03:16] price formed the supply level
+[03:25] an aggressive reaction from the supply
+[03:26] level
+[03:27] forming the liquidity to later be
+[03:30] absorbed
+[03:32] so let's take a look at this example
+[03:34] you always want to look to the left and
+[03:36] you want to look to what happened
+[03:37] previously what happened here
+[03:41] we know that there was a supply level
+[03:45] here price came to the supply level and
+[03:48] reacted and broke structure what can we
+[03:50] understand from this motion we can
+[03:53] understand is that there were cell
+[03:55] orders injected here that push price
+[03:58] down
+[03:59] but there were so many soldiers that
+[04:01] overpowered the buy orders here the push
+[04:04] price down so now we know if price comes
+[04:06] back to this level if price comes back
+[04:09] to this level there's not enough sell
+[04:11] orders anymore why because this whole
+[04:13] order has been used here so that means
+[04:15] there's not enough sell orders to reject
+[04:17] price one more time and price will more
+[04:19] than likely continue above so this would
+[04:22] be your FTB your failed to break
+[04:24] liquidity
+[04:30] so now you mark up your liquidity
+[04:48] so now this area would act as a magnet
+[04:51] and it would attract price
+[05:12] and the liquidity has been absorbed
+[05:16] next we have FTC failed to close
+[05:19] liquidity and the main characteristic of
+[05:21] this liquidity model is that the candle
+[05:24] never closes below the range it just
+[05:25] Wicks through
+[05:29] the candle wicks through and that level
+[05:30] becomes a magnet for price to attract
+[05:39] so what is the primary function of
+[05:41] liquidity
+[05:48] so we know that liquidity will attract
+[05:51] price in due time this level will be
+[05:54] absorbed
+[05:55] but what happens next price can always
+[05:58] continue above and completely continue
+[06:01] with the trend or price can reverse
+[06:05] and come back and set a range and what
+[06:07] does that reverse indicate that
+[06:09] indicates a trap a stop point
+[06:13] and what is the function of the stop
+[06:15] line the stop point is a trap in this
+[06:18] situation everybody that thought this
+[06:20] was a Breakout
+[06:21] that price is going to continue higher
+[06:23] got trapped
+[06:24] and at the same time the stop losses of
+[06:27] food sold and the previous resistance
+[06:29] Point their liquidity got absorbed so
+[06:32] let's take a look at this example so
+[06:33] here you have your demand Zone here you
+[06:36] have your order block
+[06:42] price reacts from this order block
+[06:46] price reacted from this order block and
+[06:48] shot up
+[06:50] and broke structure
+[06:52] so what do we know now we know that
+[06:54] there was the buy orders that were
+[06:56] injected here were graded in the cell
+[06:57] orders that could have been resting here
+[06:59] so now we know when price does come back
+[07:01] to this level it's more likely going to
+[07:03] break through this level instead of
+[07:05] rejecting again why because there might
+[07:07] not be enough buy orders in this demand
+[07:11] order block
+[07:30] so price
+[07:33] is breaking through this level
+[07:36] and price broke to this level but what
+[07:39] happened price came back into the range
+[07:41] forming the Trap the stoplight
+[07:49] so the stop button has been formed
+[07:51] everybody that tried to sell in this
+[07:53] area
+[08:01] so everybody that tried to sell in this
+[08:03] area thinking this is a breakout and
+[08:05] price is going to continue lower got
+[08:07] trapped right here and everybody that
+[08:10] purchase price right here their stop
+[08:12] losses got taken
+[08:14] and price will continue the opposite way
+[08:16] that's the effects of a star plan
+[08:22] let's talk about inducement what is
+[08:24] inducement
+[08:27] here you have your point of Interest
+[08:29] price approaches your level but doesn't
+[08:32] get all the way to your point of
+[08:34] Interest
+[08:35] and forms a reaction
+[08:37] what is price trying to do is trying to
+[08:39] entice you into taking good position
+[08:41] tries to force you into abandoning your
+[08:43] point of Interest as if price is not
+[08:45] going to reach that level
+[08:48] price comes back reacts from that same
+[08:50] level and rejects forming liquidity
+[08:53] engineering liquidity they're trying to
+[08:55] entice you into taking a short
+[08:57] before price actually takes the
+[08:59] liquidity goes to your point of interest
+[09:01] and reacts
+[09:09] so your point of interest is formed and
+[09:11] now you're waiting for price to revisit
+[09:13] that level
+[09:14] price attempts to induce You by reacting
+[09:16] from a level close to your point of
+[09:17] interest to later on actually visit your
+[09:19] point of interest and then react from it
+[09:25] so how would you trade liquidity and
+[09:28] inducement of course you can trade
+[09:29] liquidity in a continuation form but
+[09:31] let's focus on the inducement part so
+[09:35] first of all you want to locate
+[09:37] the liquidity
+[09:38] in this case
+[09:40] here's your liquidity
+[09:46] kind of liquidity is this this is
+[09:54] this is FTC failed to close why is it
+[09:58] your failed to close
+[10:05] because of this wig
+[10:12] so now you know liquidity is resting
+[10:16] under this level
+[10:20] so now you look for your point of
+[10:22] Interest
+[10:28] in this case I'm looking at this
+[10:30] discounted order block
+[10:37] so now what you're waiting for is for
+[10:39] price to run on liquidity go to your
+[10:41] point of interest and then react
+[10:55] so let's talk about the inducement
+[10:57] secrets and what makes a valid
+[10:59] inducement
+[11:00] so here you have your range
+[11:11] this would be your range so now we pull
+[11:13] out our FIP that's broken into four so
+[11:16] basically
+[11:19] the four parts are
+[11:25] the four parts are
+[11:28] 0 25 50 75 100 and this would be your
+[11:35] discounted level and this would be your
+[11:37] premium level and this would be your
+[11:39] fair price so what you would want
+[11:42] essentially is you would want your
+[11:44] inducement to happen in the 50 percent
+[11:48] if you want your inducement to be here
+[11:50] you wouldn't want your inducement to be
+[11:51] here and then for price to reach your
+[11:54] level or even close by to the premium
+[11:57] why because think of it as this
+[12:01] think of it as you have orders here in
+[12:03] the premium Zone
+[12:05] which
+[12:06] which your point of interest is located
+[12:08] in you don't want price to come here and
+[12:11] come back up why because if it hits this
+[12:14] level and then comes back up and then
+[12:15] comes again more than likely now you
+[12:17] have a FDB situation
+[12:19] now you have a FTB situation which means
+[12:23] the liquidity is rested right here and
+[12:25] price will more likely go against you
+[12:32] so again you would want your liquidity
+[12:35] in the 50 and the reaction of course
+[12:39] is in your point of interest that always
+[12:41] has to be located in your extremes if
+[12:44] you're buying you want to buy a discount
+[12:45] if you want to sell you want to sell in
+[12:46] premium
+[12:48] so let's see
+[12:53] okay here you have your inducement
+[12:56] price went to fifty percent and came
+[12:58] back up so now if price goes straight to
+[13:01] your discounted level you would expect
+[13:02] to get into a buy here and this is what
+[13:04] makes a successful inducement
+[13:14] and here you have it
+[13:17] this was your liquidity
+[13:23] and this was your stop hunt
+[13:27] that went straight to your point of
+[13:30] Interest

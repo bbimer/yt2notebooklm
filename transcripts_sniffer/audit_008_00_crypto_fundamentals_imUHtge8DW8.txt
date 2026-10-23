@@ -1,0 +1,480 @@
+================================================================================
+NULLSPREAD RESEARCH · СУБТИТРЫ ВИДЕО ДЛЯ АУДИТА #8
+Модуль: День 1. Модуль 0: Фундамент крипты, блокчейн и токеномика (00_crypto_fundamentals)
+Поисковый запрос: crypto tokenomics market cap vs FDV token unlocks explained
+================================================================================
+ID видео: imUHtge8DW8
+Название: Market Cap vs FDV Explained: Know the Difference | Day 23
+Канал: Crypto Delver
+Ссылка: https://www.youtube.com/watch?v=imUHtge8DW8
+Объем: 2856 слов (~20.4 мин)
+Язык: en
+Файл: audit_008_00_crypto_fundamentals_imUHtge8DW8.txt
+Создан: 2026-10-23 04:50:05
+================================================================================
+
+[00:00] Yeah, what's up guys? You are welcome
+[00:02] back to this wonderful episode with
+[00:04] Crypto Devo. So, in today's video
+[00:08] we're going to be talking about
+[00:10] market capitalization, the FDV, and
+[00:13] volume.
+[00:14] So, we're going to be talking about how
+[00:15] these things help you in understanding
+[00:17] crypto markets very much, okay? And I'm
+[00:20] going to be giving you everything you
+[00:21] need to understand for you to make the
+[00:22] right decision whenever you are using it
+[00:24] for your trade.
+[00:25] So, let's quickly go back to
+[00:28] our charts.
+[00:29] So, as you can see here, now this is
+[00:31] um what chart is this? This is This is
+[00:34] Kaito chart. So, I'm going to just
+[00:36] quickly zoom in.
+[00:37] So, when [snorts] you zoom in, you're
+[00:38] going to see um this is
+[00:41] what it looks like right now. The market
+[00:44] is actually blood.
+[00:45] All right? Now, there's something I want
+[00:47] to let you understand. You have to
+[00:48] understand that the concept of
+[00:50] market capitalization should always
+[00:52] guide your decision whenever you want to
+[00:54] buy or sell a cryptocurrency, okay?
+[00:57] First of all, you need to understand
+[00:58] that whenever you [snorts] see a high
+[01:00] market capitalization you have to be
+[01:02] careful so that you don't
+[01:04] buy when sellers are about to get out of
+[01:07] the market, okay? Now, whenever you see
+[01:09] a low market capitalization, too, it
+[01:12] signifies something that has a long-term
+[01:14] potential
+[01:15] in terms of price gain. So, I'm going to
+[01:17] show you how to
+[01:19] navigate and monitor this market
+[01:21] capitalization, volume, and everything.
+[01:23] And they also I'm going to also show you
+[01:25] how
+[01:26] to calculate it, okay? Because you don't
+[01:28] just buy a coin based on the how many
+[01:30] zeros that are in the coin. Instead, you
+[01:31] buy a coin based [music] on the
+[01:33] statistics that is the market
+[01:36] capitalization that you have.
+[01:38] Now,
+[01:39] first of all, when you have a chart like
+[01:40] this
+[01:41] always come back to info.
+[01:44] When you come to info, you're going to
+[01:45] see a lot of information about the coin.
+[01:47] So, under this info, we have this one
+[01:49] that says rank.
+[01:51] Okay, so this is the rank of the coin in
+[01:53] the overall crypto market.
+[01:55] Crypto market, so there are thousands of
+[01:57] them. So, currently this one is ranking
+[01:59] number 97.
+[02:00] Then the market capitalization of this
+[02:02] is 258.53
+[02:04] million dollars. Okay?
+[02:07] Then the
+[02:08] fully diluted market cap, that is the
+[02:10] FDV,
+[02:11] is 600 601 million. [music]
+[02:15] Then the market dominance, how many
+[02:16] percentage dominance
+[02:18] that is this. Then volume,
+[02:20] this is the 24 hours volume. And then
+[02:23] volume versus market cap, 10%.
+[02:26] >> [music]
+[02:26] >> You understand? Then [snorts]
+[02:27] circulating supply, 430 million and so
+[02:30] on and so forth. Maximum supply and then
+[02:33] total supply.
+[02:34] So,
+[02:35] our basic concentration here is to talk
+[02:38] about what market capitalization is.
+[02:42] So, there's a formula you can actually
+[02:43] use to calculate what market
+[02:45] capitalization is. But before we go to
+[02:46] that formula, market capitalization
+[02:48] tells you the amount of money that has
+[02:49] entered into a cryptocurrency.
+[02:51] Okay? So, as you can see here now, the
+[02:53] market capitalization is showing you
+[02:54] that okay, this is the amount of money
+[02:56] that has entered this cryptocurrency.
+[02:58] Then
+[02:59] FDV also shows you the amount of
+[03:02] the amount of the
+[03:05] amount of the money
+[03:08] or liquid
+[03:09] that has actually entered into the coin.
+[03:11] So, as you can see from the pop-up here,
+[03:13] it says the total market market
+[03:14] capitalization
+[03:15] is
+[03:17] if Okay, yeah, if all tokens are in
+[03:18] circulation, okay? So, that is what FDV
+[03:21] FDV is. So, for you to understand market
+[03:23] capitalization and for you to understand
+[03:25] the FDV very well, let's look at what we
+[03:27] call circulating supply and the maximum
+[03:30] maximum supply. So, circulating supply,
+[03:32] every coin has a quantity that is in
+[03:34] circulation.
+[03:35] Okay?
+[03:37] Yeah, we're going to look at different
+[03:38] coins actually. Now, the maximum supply
+[03:41] is the highest number of supply that can
+[03:44] ever be in circulation.
+[03:46] So now, market capitalization is related
+[03:48] to circulating supply and I'm going to
+[03:49] show you a formula now. Just ride with
+[03:51] me while we check out this formula here.
+[03:54] So, when you look at this formula that I
+[03:55] have here,
+[03:57] look at this formula that I have here,
+[03:59] I've got this formula. You can see that
+[04:02] for you to calculate the market
+[04:03] capitalization, the market
+[04:04] capitalization is equal to the crypto
+[04:06] price.
+[04:07] So, the current price of the crypto
+[04:09] multiplied by its circulating supply.
+[04:12] Okay? So, I'm going to do some math
+[04:14] here. So, let's say
+[04:16] let's assume that the current price is
+[04:19] So, let's call this MC, market cap. So,
+[04:21] let's call this thing MC.
+[04:23] Okay?
+[04:25] MC. So, let's assume that the current
+[04:27] market capitalization, the MC,
+[04:30] is equal to what? For crypto price that
+[04:32] is $1.
+[04:34] For price of $1.
+[04:36] So, let me just put it this way so that
+[04:37] you will understand them.
+[04:39] So, for price of $1
+[04:42] and another one for circulating supply.
+[04:46] Let me call the circulating supply CS,
+[04:48] okay?
+[04:49] So, CS.
+[04:52] CS. For circulating supply of let's say
+[04:56] 500 million.
+[04:57] All right?
+[04:59] So, you discover that the market
+[05:00] capitalization is actually going to be
+[05:03] is actually going to be
+[05:05] when you just do the simple mathematics,
+[05:07] you're going to see that the market
+[05:08] capitalization is going to be
+[05:12] MC will be equal to what? That will be
+[05:14] 500
+[05:17] 500 million.
+[05:20] So, which Sorry, the price first, $1.
+[05:24] $1 multiplied by
+[05:27] 500 million. And this is going to give
+[05:29] you
+[05:30] 500 million dollars, okay?
+[05:32] 500 million.
+[05:34] 500,000 dollars. This is not million,
+[05:36] actually.
+[05:39] This is Let's say this is
+[05:41] This is million, okay? So, this is what
+[05:44] it's going to give you. So, 500 million
+[05:46] dollars.
+[05:47] So, you see that now. So it's going to
+[05:49] be
+[05:50] So the market capitalization of this
+[05:51] coin is going to be this.
+[05:53] All right? Because it is comparing the
+[05:55] price with the circulating supply. Now,
+[05:57] let's also consider FDV. So let's say
+[05:59] the total supply of this same coin
+[06:01] the total supply of this same coin is 1
+[06:04] billion. Okay? Now, you're going to also
+[06:07] calculate that. So let's come and check
+[06:08] for FDV. So let's say total supply
+[06:12] let's say the
+[06:14] total supply
+[06:17] total supply is equal to
+[06:20] Let's say total supply is 1 billion. 1 2
+[06:22] 3 1 2 3 1 2 3. And then price
+[06:29] is equal to $1 per 1. Okay? Therefore
+[06:34] the FDV Now, when you use this normal
+[06:36] mathematics I I told you just now to
+[06:39] calculate the FDV of this coin, you're
+[06:40] going to discover that the FDV of this
+[06:42] coin is going to be FDV is going to be
+[06:45] of this same coin is going to be 1
+[06:47] billion. Okay? That is
+[06:50] $1 multiplied by 1 billion. All right?
+[06:54] So it's going to be $1 multiplied by
+[06:57] 1 billion. So So So here now you're
+[06:59] going to see that the FDV is going to be
+[07:01] something very much higher than the
+[07:04] market capitalization. Okay? So and I'm
+[07:06] going to show you how to use this thing
+[07:08] in your crypto decision. So now you can
+[07:10] see how this formula works. Just
+[07:11] memorize this formula cuz we're going to
+[07:12] be using it
+[07:14] to do some technical analysis. All
+[07:15] right? All right. [snorts] Now, let's go
+[07:17] back to our chart.
+[07:19] So here now that we have
+[07:22] we have this market capitalization to be
+[07:25] 200 and something. Okay? And then we
+[07:27] have we have um circulating supply to be
+[07:30] this. So if you do the mathematics, you
+[07:32] can easily get the price of this
+[07:33] cryptocurrency from the market supply.
+[07:36] So you can just look at it now. Okay,
+[07:37] since the market supply is equal to the
+[07:40] circulating multiplied by the price,
+[07:42] Therefore, the price is now market
+[07:44] market
+[07:45] cap divided [snorts] by the circulating
+[07:47] supply. So, this is very important
+[07:49] whenever you are buying crypto. Now,
+[07:50] what are you going to be using this
+[07:51] information for? Now, whenever there's a
+[07:54] big difference between the market
+[07:55] capitalization and the FDV, all right?
+[07:58] It tells you that there are so many
+[08:00] coins that are not that are locked up
+[08:02] that are not yet in circulation. So,
+[08:04] buying those coins can cause what they
+[08:06] call
+[08:07] um it can it can cause dilution. So,
+[08:12] unlocking the coin in future can cause
+[08:13] dilution because I once it's diluted,
+[08:15] you're going to see that the coin that
+[08:16] you bought can actually lose value
+[08:18] unnecessarily. Like what is happening to
+[08:20] Kaito right now. So, as you can see here
+[08:21] now, Kaito
+[08:23] FDV is 600 and the market capitalization
+[08:26] is currently
+[08:28] 558 million, okay? Now, around 2 weeks
+[08:32] ago, there was a kind of an unlock that
+[08:34] happened. So, every a very a very
+[08:36] massive amount of Kaito was unlocked and
+[08:39] you can see what happened on the charts.
+[08:40] From that point, Kaito actually dumped
+[08:42] very very massively and it affected the
+[08:44] crypto charts. It affected the price.
+[08:47] All right? So, you should also make sure
+[08:48] that you you pay attention to market
+[08:50] market capitalization whenever you want
+[08:52] to buy crypto. So, you can see what
+[08:53] happened here.
+[08:54] This coin actually dumped from this
+[08:56] point.
+[08:57] It dumped all the way from this point to
+[08:58] this point because there was an
+[09:00] unlocking. So, people that bought at
+[09:01] this point, when the tokens were
+[09:03] unlocked, it it's a kind of saturated
+[09:06] the token and there was dump. So, now,
+[09:08] the question is, how do you actually get
+[09:10] this? Now, the best crypto to buy
+[09:13] is that crypto that has almost equal
+[09:16] market cap and almost equal the equal
+[09:19] market cap and equal FDV. Now, when you
+[09:21] look at a coin like TUT, this is yet
+[09:23] another coin. You can see that
+[09:25] the market [snorts] cap is 57.6 million
+[09:28] and the FDV is 69. You discover that
+[09:30] difference between these two two coins
+[09:32] are not actually much, all right? And
+[09:34] then, when you look at the market cap
+[09:35] too, the market cap is also very low and
+[09:38] the the FDV is also very high. But I'm
+[09:41] not going to talk about
+[09:43] I'm not talking about the market cap
+[09:46] that you have to consider the value. I'm
+[09:48] talking about the difference now. We're
+[09:49] going to talk about the value first
+[09:50] later. So,
+[09:52] you see there's not much difference.
+[09:53] Now, when you also check another crypto,
+[09:55] there's this crypto called Dexa.
+[09:57] So, there's this crypto that pumped so
+[09:58] much recently, Dexa. So, now when you
+[10:01] look at Dexa, you're also going to see
+[10:03] that the information the same
+[10:05] information apply. So, you can see the
+[10:06] market capitalization is exactly the
+[10:08] same thing as the FDV. So, you can see
+[10:10] why the coin actually pumped. All right?
+[10:12] And this coin has moved from 0. around
+[10:14] 0.02 to 49.
+[10:16] Just very massively. Okay? So, that
+[10:19] brings me to the last thing I want to
+[10:20] show in this video, which is considering
+[10:22] the right market cap. Okay? Now,
+[10:25] whenever you're trading
+[10:26] whenever you're trading, just make sure
+[10:27] that the market cap of the coin you're
+[10:29] trading is not more than
+[10:31] Let me just say it's not it's not really
+[10:33] that much. But I'll I always prefer to
+[10:36] trade market caps that are less less
+[10:37] than 500 million.
+[10:39] Okay? Because
+[10:40] whenever they market cap they have the
+[10:42] market cap,
+[10:43] you discover that the the less
+[10:46] the coin can still move. Because they I
+[10:49] have noticed that it's very hard for you
+[10:50] to find out cryptocurrency that actually
+[10:52] does 1 billion market cap. There's very
+[10:55] few of them actually get to 1 billion
+[10:56] market cap. So, So, now whenever you see
+[10:58] a coin that has actually pumped so much
+[11:00] in the past and you're going to buy it,
+[11:02] whenever you see a coin that has has
+[11:03] actually pumped so much in the past,
+[11:06] you will discover that the FDV is going
+[11:07] to be very high.
+[11:09] Okay? The market cap is going to be very
+[11:10] high. So, always make sure you look out
+[11:12] for coins with low market cap. For
+[11:14] example now,
+[11:15] when you look at this coin,
+[11:17] this coin that is
+[11:18] Dexa, Dexa is currently at 184.
+[11:21] Okay? And then when when you also look
+[11:22] at this one that's called TUT.
+[11:25] TUT market cap is currently around
+[11:28] >> [snorts]
+[11:28] >> 63. 3
+[11:32] Yes. So, you can see that it has a low
+[11:33] market cap. So, for T U T to actually
+[11:35] get the same market cap as I do, it's
+[11:37] going to pump even higher.
+[11:40] Get so, these are the things you need to
+[11:41] consider so that you don't just go and
+[11:43] buy. Now, another thing you need to also
+[11:44] consider is what they call the concept
+[11:46] of volume.
+[11:47] All right?
+[11:48] Volume tells you it just tells you what
+[11:50] people are doing, you know, what
+[11:53] buying and selling is looking like back
+[11:55] end, what you are not seeing.
+[11:57] So, it tells you, okay, this is actually
+[11:58] basically the 24 hours volume. A lot of
+[12:00] A lot of people are actually into this
+[12:01] coin and
+[12:03] uh so, it's going to help you to when
+[12:04] you are uh buying and selling. A coin
+[12:07] with less volume also always signify um
+[12:11] less
+[12:12] usage.
+[12:14] And though sometimes it can be good to
+[12:15] buy coins when they don't have much
+[12:16] volume yet, but though sometimes it can
+[12:19] also be manipulative. All right?
+[12:21] >> [snorts]
+[12:21] >> So, these are the things I want you to
+[12:22] actually understand. So, market
+[12:24] capitalization, FDV, and volume, these
+[12:26] are very important things you can always
+[12:28] consider. So, whenever you're buying
+[12:30] coin, also look at this one that says
+[12:33] historic highs and historic low. So,
+[12:35] this is the highest point the coin has
+[12:36] gone. So, this coin has gone this low,
+[12:39] 0.000
+[12:41] to this point, and it has come as high
+[12:43] as So, it has done 1,000 X. So, if you
+[12:46] bought this coin at this 0.0000025,
+[12:49] you're going to discover that is
+[12:52] it's going to give you almost 1,000
+[12:54] times of the capital you used. Now,
+[12:56] there's something I want to consider
+[12:56] before we go. Now, let us assume um we
+[12:59] have a coin that is like one of those
+[13:01] kind that has so much zeros, so that you
+[13:03] see why you shouldn't look at its price
+[13:05] whenever you're buying crypto. So, let's
+[13:06] say we have something like Bonk.
+[13:09] Bonk as an example now. I know many of
+[13:12] you are looking at it and say, "Okay,
+[13:13] Bonk has so much zero. Let me go and buy
+[13:15] Bonk so that by the time it gets to $1,
+[13:18] I will uh have a lot of money." See? Do
+[13:20] not buy coin with price. Personally,
+[13:22] when you look at
+[13:23] Bonk, even though Bonk has 00000, see,
+[13:26] Bonk can never get to $1. Just just know
+[13:28] that. It can never. You know why I say
+[13:30] it can never? Because when you look at
+[13:32] Bonk, when you look at the information
+[13:33] about Bonk, you discover that the market
+[13:34] capitalization of Bonk, yeah, though it
+[13:36] satisfies the
+[13:37] the criteria of the difference between
+[13:41] market cap and FDV not being much. So,
+[13:42] in fact, as a matter of fact, in Bonk's
+[13:44] case, it's the same. Almost the same.
+[13:46] Now, there's something you need to note.
+[13:47] Yeah, Bonk is actually looking good at
+[13:49] this point. Yeah, 197 million is not
+[13:52] actually much market cap. But now we
+[13:54] look at it. Now, let's assume this Bonk
+[13:56] multiplies by 10. This particular market
+[13:58] cap multiplies that by 10. That will be
+[14:00] 1.9.
+[14:01] That will be 1.9 billion market cap. You
+[14:04] understand? And that will be give us 0.0
+[14:07] So, instead of five zeros, it's going to
+[14:09] be four zeros.
+[14:10] Now, for it to lose another one zero in
+[14:12] addition,
+[14:14] that will make it 119.something
+[14:16] billion, which is
+[14:17] very which is very hard
+[14:19] to happen. Now, to even talk of it
+[14:21] getting to $1, it's impossible to get to
+[14:23] $1. Because for it to even get to $1, it
+[14:25] means that market cap of Bonk would be
+[14:27] moving over
+[14:29] over 1 trillion.
+[14:31] Which is not possible because Bitcoin is
+[14:33] still the king of crypto. So, even the
+[14:35] market capitalization of Bitcoin itself,
+[14:36] you have to understand that Bitcoin is
+[14:38] always is always like the threshold of
+[14:39] all the cryptocurrencies.
+[14:41] >> [snorts]
+[14:41] >> Yeah, for now Bitcoin is the threshold,
+[14:43] is the highest. So, any coin that you're
+[14:45] calculating the price and the price is
+[14:47] going beyond the price of Bitcoin or the
+[14:49] market cap is going beyond the market
+[14:51] cap of Bitcoin, just stop dreaming cuz
+[14:53] that is actually a dream. So, Bitcoin is
+[14:55] currently sitting at 1.2 trillion market
+[14:57] capitalization. I see. So, whenever you
+[15:00] have a coin that has up to 1 billion,
+[15:02] it's enough. It has done over In fact,
+[15:04] it has overdone. You should just
+[15:06] consider coins with low caps. All right?
+[15:08] So, this is actually one of the things
+[15:10] you need to consider whenever you are
+[15:12] buying and selling cryptocurrency. It's
+[15:13] going to be helpful. Okay, so don't
+[15:15] forget if you learned anything from this
+[15:16] video, don't forget to
+[15:18] um give it a like and um also subscribe.
+[15:21] Then
+[15:22] then let me know in the comment section
+[15:24] if you have any question. All right. So,
+[15:26] thank you very much for watching and do
+[15:28] have a nice day.

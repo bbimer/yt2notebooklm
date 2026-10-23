@@ -1,0 +1,13 @@
+schedule:
+  enabled: false
+  interval_hours: 24
+  cron_expression: "0 3 * * *"   # Run at 03:00 AM every day
+  timezone: "UTC"
+  execution_window:
+    start_hour: 2
+    end_hour: 6
+  limits:
+    max_queries_per_run: 6       # Respects YouTube API quota (100 units/search)
+    max_videos_per_run: 15       # Maximum new videos to process per run
+    max_llm_cost_per_run_usd: 1.0 # Budget safety guard
+

@@ -1,0 +1,210 @@
+================================================================================
+NULLSPREAD RESEARCH · СУБТИТРЫ ВИДЕО ДЛЯ АУДИТА #29
+Модуль: День 3. Модуль 2: Деривативы, базис-трейдинг и почему ручной арбитраж мертв (02_arbitrage_and_derivatives)
+Поисковый запрос: cash and carry arbitrage perpetual futures spot basis mechanics
+================================================================================
+ID видео: 5vW7hX6k5ho
+Название: What Are Crypto Derivatives? (Perpetual, Futures Contract Explained)
+Канал: CoinGecko
+Ссылка: https://www.youtube.com/watch?v=5vW7hX6k5ho
+Объем: 1264 слов (~9.0 мин)
+Язык: en
+Файл: audit_029_02_arbitrage_and_derivatives_5vW7hX6k5ho.txt
+Создан: 2026-10-23 19:56:38
+================================================================================
+
+[00:00] Did you know that there are ways to
+[00:01] invest in Bitcoin without holding actual
+[00:04] Bitcoin? This is made possible through
+[00:06] financial instruments like derivatives.
+[00:08] So, what are crypto derivatives? Well,
+[00:11] that is what we're going to find out
+[00:12] shortly, including some of the types of
+[00:15] crypto derivatives like futures and
+[00:17] perpetual contracts. So, make sure to
+[00:19] stick around to find out how they work
+[00:21] and how they differ through simple
+[00:23] explanations and practical examples. All
+[00:25] right, let's get to it. So, what are
+[00:27] crypto derivatives? Okay, so the word
+[00:30] derivative implies that it is derived
+[00:32] from something, right? So, in financial
+[00:35] terms, derivatives are instruments that
+[00:37] derive their value from an underlying
+[00:39] asset. Crypto derivatives therefore
+[00:42] derive their value from
+[00:43] cryptocurrencies. They exist as
+[00:45] financial contracts that two parties
+[00:47] enter into to speculate on the
+[00:49] underlying cryptocurrency's price on a
+[00:52] future date. So, for example, a futures
+[00:55] contract, which is a type of crypto
+[00:57] derivative, will have the parties agree
+[01:00] on a selling and buying price of the
+[01:02] cryptocurrency in, say, 1 month,
+[01:05] regardless of what the actual price will
+[01:07] be. So, fast forward to 1 month later,
+[01:10] the buyer may profit if the price of the
+[01:13] underlying cryptocurrency went up and is
+[01:15] now higher than the agreed price in the
+[01:17] contract. And if the price of the
+[01:19] underlying cryptocurrency goes down and
+[01:22] lies below the agreed price, the seller
+[01:24] will make a profit because the buyer
+[01:26] will be purchasing the asset at a higher
+[01:28] price than the actual market price. Now,
+[01:31] don't worry, we'll look at actual
+[01:33] examples shortly when we take a closer
+[01:35] look at the types of crypto derivatives.
+[01:37] Now, some of these types include
+[01:39] options, swaps, futures, and perpetual
+[01:42] contracts. Though, for this video, we're
+[01:44] going to focus on the last two. These
+[01:47] derivatives generally differ depending
+[01:49] on the conditions in the contracts, as
+[01:51] you'll see shortly. Let's start with
+[01:53] futures. What is it? Well, as the name
+[01:55] suggests, it is a legal agreement
+[01:58] between two parties to buy or sell an
+[02:00] asset at a set price in the future. So,
+[02:03] before the parties get into the
+[02:05] contract, they generally agree on two
+[02:07] things. One is the price at which they
+[02:10] will exchange the asset in future, and
+[02:13] two is the expiration date of the
+[02:14] contract, which is simply the date the
+[02:16] contract will be closed and settled.
+[02:19] Okay, so let's find out how crypto
+[02:21] futures work through a practical
+[02:23] example. So, say we have two crypto
+[02:25] derivative traders, Mercy and Frank, who
+[02:28] enter into a futures contract when the
+[02:31] price of Bitcoin is $30,000.
+[02:34] Now, Mercy is bullish on Bitcoin, and
+[02:37] she is confident that it will surpass
+[02:39] $30,000 in a month, which is the
+[02:42] expiration date of the contract. This
+[02:44] means that she will have to pay $30,000
+[02:47] for one Bitcoin regardless of Bitcoin's
+[02:51] price in a month. Frank, on the other
+[02:53] hand, is bearish on Bitcoin and has his
+[02:56] reasons to believe that the price of
+[02:58] Bitcoin will drop below 30,000 in the
+[03:00] coming months. So, the contract from
+[03:03] Frank's perspective commits him to
+[03:05] selling Bitcoin at the agreed price,
+[03:07] regardless of the asset's price in a
+[03:10] month. Okay, so let's look at different
+[03:12] scenarios that'll determine which of the
+[03:14] two makes a profit. So, scenario one, it
+[03:17] could be that Mercy was right and the
+[03:19] price of Bitcoin does go up to say
+[03:22] $37,000.
+[03:24] So, now she'll actually be purchasing
+[03:26] Bitcoin from Frank at a discount. In
+[03:28] this case, she'll make a profit of
+[03:31] $7,000
+[03:32] without factoring fees. And then we have
+[03:35] scenario two. So, let's assume Mercy's
+[03:37] prediction was wrong and the price of
+[03:39] Bitcoin went down and is now trading at
+[03:41] $25,000. Well, she'll still have to buy
+[03:44] the Bitcoin from Frank at the agreed
+[03:46] 30,000, meaning she makes a $5,000 loss,
+[03:51] while Frank makes a $5,000 profit. Now,
+[03:54] there's still some nuances to futures,
+[03:56] but that's generally how it works. So
+[03:59] then next, what about perpetual
+[04:01] contracts? Well, perpetual contracts are
+[04:03] more or less similar to futures, but
+[04:05] with one distinct difference in that
+[04:07] they have no expiration date. So,
+[04:09] investors can hold their positions
+[04:11] however long they like. So, for this
+[04:13] reason, perpetual contracts have price
+[04:16] pegs to ensure that they are traded at
+[04:18] prices that are equal or almost equal to
+[04:22] the spot market prices. And this price
+[04:24] peg is maintained through a premium
+[04:27] called a funding premium that is paid
+[04:30] between the contract sellers and buyers
+[04:32] to help keep the price in line with the
+[04:35] spot market. So then, let's find out how
+[04:37] perpetual contracts work. So, say that
+[04:39] Mercy decides to invest in perpetual
+[04:42] contracts this time when the price of
+[04:44] Bitcoin is around $30,000. So, since she
+[04:48] predicts that the price of Bitcoin may
+[04:49] go up, she decides to purchase a
+[04:51] perpetual contract at $30,000.
+[04:55] Now, after 2 months, the price of
+[04:56] Bitcoin does indeed go up to $40,000.
+[04:59] So, Mercy was happy with the $10,000
+[05:03] profit decides to close her position.
+[05:06] Now, another thing about crypto
+[05:07] derivatives like futures and perpetual
+[05:09] contracts is that they offer leverage
+[05:12] opportunities. So, this simply means
+[05:14] that it allows you to open a trading
+[05:16] position that is bigger than your
+[05:18] trading capital. So, in Mercy's case, if
+[05:21] exchange offers two times leverage, it
+[05:24] means that her capital will now double
+[05:26] and so will her profit. However, it just
+[05:29] as leverage amplifies profits, it also
+[05:31] amplifies losses. So, there's a very
+[05:33] high risk of being liquidated. So, let's
+[05:36] quickly see how this may happen in
+[05:38] Mercy's case. But before that, let's try
+[05:41] to break down the following concepts
+[05:43] first. That is the initial margin and
+[05:45] the maintenance margin. Now, the former
+[05:48] describes the minimum value that needs
+[05:50] to be paid to open a leverage position.
+[05:53] So, for illustration purposes, let's set
+[05:55] this value at $30,000, meaning Mercy
+[05:58] pays an initial margin of $30,000, which
+[06:01] will act as her collateral to open a two
+[06:04] times leverage position. The maintenance
+[06:06] margin, on the other hand, is the
+[06:08] minimum amount of collateral Mercy must
+[06:11] hold to keep her trading positions open.
+[06:14] If Bitcoin's price is move against Mercy
+[06:16] and her margin balance drops below this
+[06:18] level, she may be asked to add more
+[06:21] funds to her account or be liquidated.
+[06:24] Now, that said, perpetuals are by far
+[06:26] the most traded financial instruments in
+[06:29] crypto. And at the time of making this
+[06:31] video, the 24-hour volume of perpetuals
+[06:34] was over 126
+[06:36] billion compared to futures' 5 billion.
+[06:40] Though you might still wonder, why not
+[06:42] just hold actual Bitcoin if the price is
+[06:45] pegged to it anyway? Well, these
+[06:47] derivatives have an important function
+[06:50] in crypto of managing risks. So, say
+[06:53] Mercy holds actual Bitcoin, but the
+[06:55] price is going down. Since she is also a
+[06:58] crypto derivative trader, she can decide
+[07:01] to purchase a derivative contract whose
+[07:03] value swings in the opposite direction
+[07:06] of the Bitcoin she holds. Ideally, now
+[07:09] she'll be able to offset the losses of
+[07:11] her actual Bitcoin with the gains from
+[07:14] the derivatives. Now, all in all, this
+[07:17] collaboration between crypto and
+[07:19] traditional financial instruments is a
+[07:21] major step forward for digital assets in
+[07:24] general. And it also gives investors an
+[07:27] option to be involved with digital
+[07:29] assets without necessarily holding them.
+[07:32] So, are you going to experiment with
+[07:35] crypto derivatives or are you going to
+[07:37] stick with the good old hoddling on for
+[07:40] dear life tactic? Well, we'd love to
+[07:42] hear your thoughts on this, so let us
+[07:44] know in the comments and as always
+[07:46] remember to like, subscribe, and follow
+[07:48] us on all our socials for future alpha.
+[07:50] See you.

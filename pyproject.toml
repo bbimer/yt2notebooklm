@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "yt2notebooklm"
+version = "0.1.0"
+description = "Next-Gen Knowledge Consumption Engine: Transforms unstructured YouTube video flow into verified multi-layer curriculum packs optimized for Google NotebookLM"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pydantic>=2.10.0",
+    "pyyaml>=6.0.0",
+    "python-dotenv>=1.0.0",
+    "requests>=2.31.0",
+    "google-api-python-client>=2.150.0",
+    "google-genai>=2.0.0",
+    "youtube-transcript-api>=0.6.2",
+    "yt-dlp>=2024.0.0",
+    "apscheduler>=3.10.0",
+    "rich>=13.0.0",
+    "click>=8.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+]
+
+[project.scripts]
+research = "research_academy.cli:cli"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+

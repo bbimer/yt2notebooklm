@@ -1,0 +1,280 @@
+================================================================================
+NULLSPREAD RESEARCH · СУБТИТРЫ ВИДЕО ДЛЯ АУДИТА #32
+Модуль: День 3. Модуль 2: Деривативы, базис-трейдинг и почему ручной арбитраж мертв (02_arbitrage_and_derivatives)
+Поисковый запрос: HFT colocation low latency crypto arbitrage infrastructure
+================================================================================
+ID видео: iwRaNYa8yTw
+Название: Inside a Real High-Frequency Trading System | HFT Architecture
+Канал: ByteMonk
+Ссылка: https://www.youtube.com/watch?v=iwRaNYa8yTw
+Объем: 1642 слов (~11.7 мин)
+Язык: en
+Файл: audit_032_02_arbitrage_and_derivatives_iwRaNYa8yTw.txt
+Создан: 2026-10-23 19:56:48
+================================================================================
+
+[00:00] Highfrequency trading systems are
+[00:02] engineered for speed, not milliseconds,
+[00:04] but microsconds and even nanconds. In
+[00:08] this video, we'll dive into the actual
+[00:10] architecture behind these lightning fast
+[00:12] systems. You'll see how market data is
+[00:14] ingested, how an in-memory order book
+[00:16] works, how decisions are made using
+[00:19] FPGAs and strategy engines, and how
+[00:21] orders are routed to exchanges like
+[00:23] NASDAQ, all in the blink of an eye.
+[00:26] We'll walk through a real world
+[00:27] architecture diagram used in the
+[00:28] industry, breaking down each component
+[00:31] from ultra low latency NIC's, kernel
+[00:33] bypass, event cues, and nancond clocks
+[00:36] to pre-trade risk engines and smart
+[00:38] order routers. Whether you are a
+[00:40] software engineer, quant, or just
+[00:42] someone who geeks out over high
+[00:43] performance systems, this video is for
+[00:47] [Music]
+[00:50] you. So, what exactly is a highfrequency
+[00:54] trading? At its core, HFD is the use of
+[00:57] algorithms and machines to trade
+[00:59] financial instruments like stocks or
+[01:01] options at extremely high speeds. We are
+[01:05] talking thousands to millions of trades
+[01:06] per second, all happening faster than a
+[01:09] human can blink. The goal to make tiny
+[01:12] profits, sometime just a fraction of a
+[01:15] cent on each trade, but to do it at such
+[01:18] high volume and speed that it adds up to
+[01:20] massive gains. These systems look for
+[01:23] tiny inefficiencies in the market like
+[01:25] price differences between exchanges,
+[01:27] temporary imbalances in the order book
+[01:29] or slow price updates and jump in before
+[01:32] anyone else can. But to do that, speed
+[01:35] is everything. A single millisecond
+[01:38] delay can mean the difference between
+[01:39] making money and losing money. And
+[01:42] that's why HFT systems are engineered
+[01:44] like race cars. Every component from the
+[01:46] network car to the code is optimized for
+[01:49] ultra low latency. You might wonder why
+[01:52] does this exist at all? Because in
+[01:54] financial markets being first matters.
+[01:57] The first system to react to market data
+[01:59] can take advantage of it. Everyone else
+[02:02] just follows. For example, let's say
+[02:05] you're running a marketmaking strategy.
+[02:07] You continuously place a buy order at
+[02:10] $9.99 and a sell order at
+[02:13] $101. Now, if someone accepts your sell
+[02:16] order at $101, you just earned a 2 cent
+[02:19] spread. Now, imagine doing this
+[02:22] thousands of times across hundreds of
+[02:23] stocks every second. The first step in
+[02:26] an HFT pipeline is receiving market
+[02:28] data. The real-time feed of prices,
+[02:31] volumes, and order book updates from
+[02:32] stock exchanges like NASDAQ and NYC. But
+[02:36] we are not talking about your everyday
+[02:38] API or websocket feed. HFT system use
+[02:41] multiccast feeds directly delivered over
+[02:44] ultra- low latency networks often inside
+[02:46] a collocation facility physically near
+[02:48] the exchange server to reduce travel
+[02:50] time. This data is received through
+[02:53] specialized hardware an ultra low
+[02:55] latency NIC or network interface card
+[02:58] and a custom TCP stack sometimes even
+[03:01] kernel bypass mechanism like DPDK or
+[03:03] solar onload. These allow the system to
+[03:06] handle market updates in microsconds,
+[03:09] skipping the overhead of regular network
+[03:11] stacks. Then comes the market data feed
+[03:13] handler, a critical component that
+[03:16] passes the raw stream, decodes the
+[03:18] protocol, and transforms it into a
+[03:20] format the system can understand. You
+[03:22] can think of it as the translator
+[03:23] between the exchanges language and your
+[03:25] internal logic. But it has to translate
+[03:28] millions of messages per second without
+[03:30] skipping a beat. Once the market data is
+[03:32] ingested and decoded, the next critical
+[03:35] step is updating the order book. That is
+[03:37] the live snapshot of all current buy and
+[03:40] sell orders. HFT systems maintain this
+[03:43] entire order book in memory to avoid any
+[03:46] dis IO or database latency. It's updated
+[03:49] in real time with every incoming message
+[03:51] triggering a precise update. In most
+[03:53] systems, you'll see replicated order
+[03:55] bugs like replica A and replica B kept
+[03:58] in sync using in-memory replication.
+[04:00] This ensures fall tolerance. So if one
+[04:03] replica crashes or lags, the system can
+[04:05] instantly fail over to the other. Now
+[04:08] the order book isn't just for
+[04:10] recordeping. It's what drives the rest
+[04:12] of the pipeline. Every trading decision,
+[04:14] every market making strategy starts with
+[04:17] the current state of the book. These
+[04:19] updates are then published into an event
+[04:21] stream ready for other components like
+[04:23] the trading logic, FPGA engine, or smart
+[04:26] router to consume in near zero latency.
+[04:29] And as soon as the autobook is updated,
+[04:31] the new market state is published into
+[04:33] an event-driven pipeline, the backbone
+[04:36] of realtime processing in HFT. This
+[04:39] pipeline is built around a lo optimized
+[04:42] for throughput and low contention. Why
+[04:44] lock free? Because even the slightest
+[04:46] delay caused by locking threads can
+[04:48] impact trade timing. Each event like a
+[04:51] pricing change or a new bid is stamped
+[04:53] using nancond precision clock. This
+[04:56] level of timing and accuracy allows the
+[04:58] system to maintain the exact sequence of
+[05:00] market updates, benchmark internal
+[05:03] component latencies, and most
+[05:05] importantly sync perfectly with external
+[05:07] systems like FPGA engines and exchanges.
+[05:11] The result is a precise timestamp stream
+[05:13] of market events that downstream systems
+[05:15] like trading strategies, risk engines,
+[05:17] or smart routers can consume in real
+[05:19] time. In HFD, precision is the power.
+[05:23] Knowing exactly when something happened
+[05:25] is just as important as knowing what
+[05:27] happened. Now we enter the most hardware
+[05:30] optimized part of the pipeline. FPGA
+[05:34] acceleration. FPGA stands for field
+[05:36] programmable gate array. A type of
+[05:38] reconfigurable chip that can run custom
+[05:41] logic at the speed of hardware without
+[05:44] the overhead of CPU or OS. In HFT FPGs
+[05:48] are used for ticktode execution. Meaning
+[05:50] the moment a tick or market event
+[05:52] arrives, it's evaluated by logic on the
+[05:55] FPGA and a trading decision can be made
+[05:57] in submicroscond latency. Why is this
+[06:00] important? Because again, every
+[06:02] microcond counts. By the time a CPU
+[06:04] thread spins up, the FPGA has already
+[06:07] evaluated the opportunity and fired off
+[06:09] an order. These FPGAs are often directly
+[06:12] connected to the event queue, receive
+[06:14] nancond timestamped events, and run
+[06:16] predefined trading strategies. Think
+[06:18] arbitrage, market making or code
+[06:20] stuffing, all wired into silicon. Some
+[06:23] firms even go a step further. They push
+[06:26] the entire decision-making logic into
+[06:27] the FPGA to bypass software completely.
+[06:31] Of course, this also comes with
+[06:32] complexity. FPGA code is written in very
+[06:35] log or VHSDL and every logic path must
+[06:38] be deterministic. But when done right,
+[06:40] it gives you the fastest edge in the
+[06:42] market. Now, while FPGS handle ultra low
+[06:45] latency scenarios, most trading logic
+[06:47] still runs on softwarebased strategy
+[06:49] engines, a marketmaking engine listens
+[06:52] to the event stream, evaluates the
+[06:54] current state of the order book, and
+[06:56] makes rapid decisions. For example,
+[06:58] should we go tighter? Should we widen
+[07:00] the spread? Or should we pull our
+[07:02] orders? Let's say the latest bid is at
+[07:06] $9.99 and the best ask is at $101. So,
+[07:10] your engine might place a buy at $9.99
+[07:13] and sell at $101 to capture the spread,
+[07:17] but it constantly recalculates based on
+[07:20] market movements, volatility, and
+[07:22] inventory risk. These engines can be
+[07:24] rule-based, statistical, or even use
+[07:27] lightweight machine learning models. But
+[07:29] whatever the strategy is, the focus is
+[07:32] on speed and predictability.
+[07:35] Once a decision is made, the order is
+[07:37] pushed to the smart auto router, which
+[07:39] takes care of where and how to execute,
+[07:42] possibly across multiple exchanges. The
+[07:45] strategy engine is the brain of the
+[07:47] system, but a brain that thinks in
+[07:49] microsconds. Once a trading strategy
+[07:52] decides to place an order, it's not
+[07:53] blindly fired off to an exchange. It's
+[07:56] first routed through a smart order
+[07:57] router, a component that decides where
+[08:00] and how to send the order for optimal
+[08:02] execution. Should it go to NASDAQ, NYC,
+[08:06] or should it be a market order or a
+[08:07] limit order? The router evaluates
+[08:09] multiple venues in real time based on
+[08:12] liquidity, latency, fill probability,
+[08:14] and even rebate structures. But before
+[08:17] the order goes out, it passes through
+[08:19] pre-trade risk checks. And these are
+[08:21] absolutely critical for preventing
+[08:23] financial disasters. The risk engine
+[08:25] ensures you're not overspending, the
+[08:28] order isn't too big, and the strategy
+[08:30] isn't misfiring due to a bug. These
+[08:32] checks are automated and happen in
+[08:34] microsconds. If anything looks off, the
+[08:37] order is blocked before it ever hits the
+[08:39] exchange. Once cleared, the smart router
+[08:42] sends the order to the selected exchange
+[08:44] and the execution log flows back into
+[08:46] the system for audit analysis and
+[08:48] learning. This final checkpoint ensures
+[08:51] that speed never overrides safety. After
+[08:53] a trade is executed, it's the order
+[08:56] management system that tracks and locks
+[08:58] everything. The MS keeps a complete
+[09:01] record of order sent, status updates
+[09:03] such as filled, partially filled,
+[09:04] rejected, the execution timestamps, and
+[09:07] the routes taken. It acts like the
+[09:09] central nervous system of the trading
+[09:11] platform, coordinating between
+[09:13] exchanges, strategy engines, and
+[09:14] reporting systems. Meanwhile, a
+[09:17] monitoring and metric stack runs in
+[09:19] parallel, capturing latency data, system
+[09:22] health, and performance metrics for
+[09:24] every component. You will typically see
+[09:26] a latency dashboard showing tick to
+[09:28] trade times, metrics collectors tracking
+[09:30] throughput, error rates, and Q depths,
+[09:33] and alerts if any component slows down
+[09:35] or behaves abnormally. All of this is
+[09:38] key for post trade analysis, compliance
+[09:41] reporting, and continuous optimization.
+[09:43] In HFT, even a few microsconds of
+[09:46] slowness can lead to missed
+[09:47] opportunities or major losses. So
+[09:50] realtime monitoring isn't optional. It's
+[09:52] part of the competitive edge. From
+[09:54] ingesting market data to making
+[09:56] split-second decisions and executing
+[09:58] trades in microsconds, it's a beautiful
+[10:00] mix of hardware acceleration,
+[10:02] event-driven software, nancond
+[10:04] precision, and ruthless optimization.
+[10:06] All built to shave off every possible
+[10:08] delay. If you're into system design, low
+[10:11] latency engineering, or just love
+[10:12] peeking under the hood of high
+[10:14] performance infrastructure, make sure to
+[10:16] like this video, subscribe to the
+[10:18] channel, and hit the bell icon so you
+[10:19] don't miss the next deep dive. And hey,
+[10:21] let me know in the comments which part
+[10:23] of the architecture blew your mind the
+[10:24] most. Would you want a deeper dive on
+[10:26] strategy logic, FPGS, or matching
+[10:28] engines? See you in the next one.
+[10:33] [Music]

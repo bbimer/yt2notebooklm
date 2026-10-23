@@ -1,0 +1,87 @@
+================================================================================
+NULLSPREAD RESEARCH · СУБТИТРЫ ВИДЕО ДЛЯ АУДИТА #7
+Модуль: День 1. Модуль 0: Фундамент крипты, блокчейн и токеномика (00_crypto_fundamentals)
+Поисковый запрос: native coin vs token smart contract standards ERC20 SPL
+================================================================================
+ID видео: aLh8jlYYvZA
+Название: Coins VS Tokens: What's the Difference? | 3-min crypto
+Канал: CoinGecko
+Ссылка: https://www.youtube.com/watch?v=aLh8jlYYvZA
+Объем: 411 слов (~2.9 мин)
+Язык: en
+Файл: audit_007_00_crypto_fundamentals_aLh8jlYYvZA.txt
+Создан: 2026-10-23 04:50:02
+================================================================================
+
+[00:00] coins versus tokens what's the
+[00:02] difference are they even different
+[00:05] on the surface they may seem similar
+[00:07] especially since the terms are commonly
+[00:09] used interchangeably but that's not the
+[00:11] case due to the fundamental differences
+[00:13] that distinguish them first off while
+[00:16] all coins may be considered tokens not
+[00:18] all tokens are considered coins
+[00:21] that said coins have their own
+[00:23] blockchains whereas tokens are built on
+[00:25] an existing
+[00:28] blockchain think of any blockchain say
+[00:31] ethereum its native asset is ether right
+[00:35] or algorand on the algorand blockchain
+[00:38] ada on cardano these are all coins on
+[00:41] the other hand tokens would exist on
+[00:44] pre-existing blockchains
+[00:46] let's take ethereum and uni-swap as
+[00:48] examples uniswap's native digital asset
+[00:52] is known as uni
+[00:53] since uni is built on a pre-existing
+[00:56] blockchain ethereum it qualifies as a
+[00:59] token from this it's clear that creating
+[01:02] a coin is more difficult than creating a
+[01:04] token you may find a blockchain having
+[01:06] only one coin but hundreds or thousands
+[01:09] of tokens built on top of it the
+[01:12] difference does not lie in their
+[01:13] fundamentals alone but use cases too
+[01:17] some coins such as bitcoin are mainly
+[01:19] perceived as a store of value by
+[01:22] offering an alternative to traditional
+[01:24] banking
+[01:25] other coins focus on digital
+[01:27] transactions these coins are typically
+[01:30] designed to be faster and cheaper
+[01:32] some coins are designed to solve
+[01:34] specific problems like xrp by ripple
+[01:37] which is used to address cross-border
+[01:39] payment problems
+[01:42] they aim to make processing real-time
+[01:44] international transactions easier by
+[01:47] leveraging the power of the blockchain
+[01:50] tokens on the other hand are popular in
+[01:52] decentralized apps they represent
+[01:55] something specific in these d apps
+[01:58] this could be economic value a stake or
+[02:01] even voting rights
+[02:03] thereby facilitating and encouraging
+[02:05] interactions with the protocols
+[02:08] they are typically tied to many
+[02:09] functions within their native ecosystem
+[02:12] for instance sushi sushi swap's native
+[02:15] token is used for staking governance and
+[02:18] even to reward users who deposit assets
+[02:21] into liquidity pools
+[02:23] another cool thing about tokens lies in
+[02:26] their power of representing assets
+[02:28] through a process known as tokenization
+[02:31] asset tokenization is not limited to
+[02:34] just digital assets it has also been
+[02:36] used to represent physical assets such
+[02:39] as real estate on the blockchain as you
+[02:41] can see tokens use cases are much more
+[02:44] flexible and their possibilities may be
+[02:47] endless we'd love to hear from you
+[02:49] comment on more differences below
+[02:51] remember to like subscribe and follow us
+[02:54] on all our socials for future alpha see
+[02:56] ya
+[02:59] [Music]

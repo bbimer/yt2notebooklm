@@ -1,0 +1,390 @@
+================================================================================
+NULLSPREAD RESEARCH · СУБТИТРЫ ВИДЕО ДЛЯ АУДИТА #5
+Модуль: День 1. Модуль 0: Фундамент крипты, блокчейн и токеномика (00_crypto_fundamentals)
+Поисковый запрос: how blockchain works mempool block confirmations gas fees explained
+================================================================================
+ID видео: DW4_zDSufhQ
+Название: Bitcoin Blockchain Basics Explained using mempool.space
+Канал: theBTCcourse
+Ссылка: https://www.youtube.com/watch?v=DW4_zDSufhQ
+Объем: 2727 слов (~19.5 мин)
+Язык: en
+Файл: audit_005_00_crypto_fundamentals_DW4_zDSufhQ.txt
+Создан: 2026-10-23 04:49:57
+================================================================================
+
+[00:00] hey what's up it's nathan here and in
+[00:01] this video i'm going to go over some of
+[00:03] the bitcoin blockchain basics while
+[00:05] using
+[00:06] mempool.space which is a very handy tool
+[00:08] for basically exploring the bitcoin
+[00:11] blockchain and learning different things
+[00:13] about it like what the current fees are
+[00:15] how many blocks are in the mempool and
+[00:18] so on so let's just go ahead and get
+[00:20] started so this right here is the
+[00:22] website mempool.space and link in the
+[00:24] description down below and right here
+[00:26] across the top of it we see the
+[00:28] blockchain right so here's each block a
+[00:31] chain of blocks equals a blockchain and
+[00:33] of course this is the bitcoin blockchain
+[00:36] and we can go ahead and start exploring
+[00:37] the blocks so here on the right hand
+[00:39] side the purple ones these are the
+[00:41] blocks that have been confirmed so
+[00:42] they've already been mined by the
+[00:44] bitcoin miners and they're
+[00:46] confirmed on the blockchain and they're
+[00:48] they're they're set in stone basically
+[00:50] right because blockchains are immutable
+[00:52] which means that they can't be changed
+[00:53] so these things are locked in place and
+[00:56] you can see the block height right here
+[00:57] so this if you hear that term block
+[00:59] height that's referring to these numbers
+[01:00] right here so 725 338 so that's how many
+[01:04] blocks there are in the blockchain uh
+[01:06] right there and then right here we have
+[01:08] the pending block so these are the
+[01:10] blocks that are coming up next and so
+[01:11] what actually is in one of these blocks
+[01:13] well we can go ahead and click into one
+[01:15] of them so we'll click into the one that
+[01:16] just was mined right here so block 725
+[01:20] 342 we get some information up here like
+[01:23] the blocks hash that the time it was
+[01:25] mined the size of the block the weight
+[01:27] of the block the median fee so these are
+[01:29] the fees you know on average that people
+[01:31] pay to be have their transaction be part
+[01:34] of the block and we'll talk about fees
+[01:35] in just a minute here but about three
+[01:37] sets per byte we have total fees so this
+[01:40] is the amount of fees that the miner
+[01:41] earned by processing those transactions
+[01:44] for the individual so about three
+[01:45] thousand dollars to mine this block and
+[01:47] then you've probably heard about the
+[01:49] block reward or subsidy and right now
+[01:51] it's 6.25 bitcoins per block and you've
+[01:55] probably heard of the happening as well
+[01:57] and during the happening that's when
+[01:59] that block reward gets halved so in i
+[02:02] think about two years from here
+[02:04] this will be blocked
+[02:05] drop down from 6.25 to
+[02:08] 3.125 right so 50
+[02:11] half of it but obviously the miners are
+[02:13] basically mining for that subsidy or
+[02:15] block reward because you know fees are
+[02:17] only 3 000
+[02:18] for that block whereas if you add in
+[02:21] that subsidy overboard you're up to you
+[02:23] know 261 thousand dollars per block and
+[02:26] then we can see who actually mined the
+[02:28] block so we have binance pool and if you
+[02:31] go into other
+[02:32] blocks you can see like ant pool here
+[02:35] and f2 pool here so you can see you know
+[02:38] who's mining the blocks and then what's
+[02:40] inside the blocks is all the
+[02:41] transactions right so the very first
+[02:43] transaction of every block will be from
+[02:46] the coin base now this is not coinbase
+[02:48] the company this confused me for a
+[02:50] little while here i thought coinbase the
+[02:52] company was you know giving out bitcoin
+[02:54] or something like i don't know but
+[02:56] coinbase is where the subsidy comes from
+[02:59] okay so that's what that means it's not
+[03:01] coin based companies something
+[03:02] completely different they just you know
+[03:03] coinbase company stole this and named
+[03:05] their company after it but basically
+[03:07] this is the block reward and the subsidy
+[03:09] right 6.324 6.32 right there see and
+[03:13] then it goes in order of who paid the
+[03:16] most in fees so this first transaction
+[03:19] right here we have the transaction id so
+[03:21] we could click into there and basically
+[03:23] hone in on this one particular
+[03:24] transaction and then we have the input
+[03:26] and this is the wallet or address that
+[03:28] the bitcoin is coming out of and then
+[03:30] over here we have the output so this is
+[03:32] where the bitcoin is going in this
+[03:34] particular case it's going to two
+[03:35] different addresses so it's going to
+[03:37] this address and this address here and
+[03:39] then the remainder is coming back to
+[03:41] this wallet here that sent it out and
+[03:43] the reason the remainder here is coming
+[03:45] back to the wallet is due to utxos and
+[03:47] how the bitcoin blockchain functions i'm
+[03:49] not going to cover that here but i'll
+[03:51] link to a great article on utxos and how
+[03:53] they work and everything and it's got
+[03:55] diagrams and it's very useful
+[03:57] information but main concept is this is
+[03:59] where the tokens are coming from and
+[04:01] this is where they're going and then we
+[04:02] can see the fee that was paid so they
+[04:04] paid 41.29
+[04:07] here to do this transaction and then
+[04:09] again it goes from highest to lowest so
+[04:11] if we came all the way down here
+[04:13] and
+[04:14] you can see you know when there's
+[04:15] multisig involved and so on just saw
+[04:18] that yellow there so i want to point
+[04:19] that out real quick but we could go to
+[04:20] like the last transaction and somebody
+[04:22] paid 13 cents to do a transaction here
+[04:25] and this one is a very simple
+[04:26] transaction right they just sent one
+[04:28] tenth of a bitcoin and you can see that
+[04:30] they basically received one tenth of a
+[04:32] bitcoin except for the 319 sets they
+[04:35] paid as their fee and so that is what is
+[04:37] inside of a block it's just a bunch of
+[04:39] transactions of course we could go ahead
+[04:41] and click into the transaction id and
+[04:43] get a little bit more information about
+[04:44] that particular transaction so here we
+[04:47] have the timestamp of that transaction
+[04:49] and then we have the feature so segwit
+[04:51] and rbf are rebalanced by fee we have
+[04:53] the fee that was paid the fee rate and
+[04:55] we see that it was optimal here the
+[04:57] inputs and outputs and then we have some
+[04:58] more information and details right here
+[05:00] and so that may or may not be useful
+[05:02] information but right here you see the
+[05:04] confirmations so you might have heard
+[05:06] this before
+[05:07] waiting for three confirmations or six
+[05:09] confirmations and that's what this is
+[05:12] referring to so the number of
+[05:13] confirmations is the number of blocks
+[05:15] that been mined so we see one two three
+[05:18] equals three confirmations and so that's
+[05:20] what a confirmation is basically every
+[05:22] time a block is mined that's another
+[05:24] confirmation on top of the confirmation
+[05:26] so if i went to this block here and we
+[05:28] went to this transaction here we would
+[05:31] see that there were five confirmations
+[05:32] right because one two three four five so
+[05:35] that's how you can kind of count the
+[05:36] confirmations and you might have heard
+[05:39] also that blocks are mined basically
+[05:41] every 10 minutes and we can kind of see
+[05:43] that here we have 41 minutes minus 34 is
+[05:46] like nine minutes and that just changed
+[05:48] to eight minutes basically and then we
+[05:50] have two minutes and then we have like
+[05:52] eight minutes here and then we have
+[05:54] eight minutes here and then we have like
+[05:56] nine minutes here so it's not always
+[05:58] going to be 10 minutes between blocks
+[05:59] sometimes it's much less sometimes it's
+[06:02] seconds or sometimes it's hours like
+[06:04] i've literally waited for a block to
+[06:05] process for over an hour before but on
+[06:08] average it's 10 minutes so that's where
+[06:09] you hear that and you can see in the
+[06:11] pending blocks we have in about 10
+[06:13] minutes in about 21 minutes in about 31
+[06:15] minutes etc so 10 minutes spaced apart
+[06:18] and you know it's in about those amount
+[06:19] of times and so that's how you can look
+[06:21] at the transaction now of course you can
+[06:22] also click on these addresses so if you
+[06:24] want to check out this wallet right here
+[06:26] and see what's going on with this
+[06:27] particular address we can see the amount
+[06:29] they've ever received the amount they've
+[06:31] ever sent their current balance and then
+[06:33] a list of all the transactions per for
+[06:35] that particular wallet and what all
+[06:37] they've done so that could be cool if
+[06:39] you want to you know see what you've
+[06:40] done with your wallets you can go ahead
+[06:42] and plug your wallet address right here
+[06:44] and see all the ins and outs of that
+[06:45] particular wallet so that can be a
+[06:47] pretty cool thing to you know see what
+[06:49] you've done in the past let me come back
+[06:51] out to the main page here and talk about
+[06:53] fees real quick so we can see right here
+[06:55] the pending block for this first block
+[06:57] here is about four sets per v byte so if
+[07:00] you're able to set your own fee with the
+[07:02] transaction you're performing you know
+[07:04] that if you set it like at four or maybe
+[07:06] five cents per v-byte you'll likely be
+[07:08] included in this first block here where
+[07:10] if you set it lower you're probably
+[07:11] going to be pushed back to one of these
+[07:12] other pending blocks which right now are
+[07:14] all about one set per v byte so really
+[07:17] if you do you know anything above one
+[07:19] you'll probably be in the next block and
+[07:20] i'll do a sample transaction here in
+[07:22] just a second so you can see what i'm
+[07:23] talking about and i just want to point
+[07:25] out that certain exchanges and apps like
+[07:27] for example voyager coinbase
+[07:28] coinbasecrypto.com
+[07:30] uh when you send your crypto out of
+[07:32] those particular exchanges they just
+[07:34] charge you a flat fee like 50 000 sets
+[07:37] no matter what's going on in the mempool
+[07:39] they just charge you whatever that fee
+[07:41] is and you can't adjust it but if you
+[07:43] have control over the fee you want to
+[07:45] spend well then you can come to
+[07:46] mempool.space and see you know what the
+[07:48] going fee is and basically to be
+[07:51] included in this first block you wanted
+[07:52] about five or more or you're going to be
+[07:55] included in another block and right here
+[07:57] we get a summary of the transaction fee
+[07:58] so low priority is three sets which
+[08:00] about 17 cents four sets per v by 23
+[08:04] cents or six s per v byte is 35 cents we
+[08:07] have the difficulty rating which you
+[08:09] might have heard of and it gives you an
+[08:10] estimate of where it's going to be going
+[08:12] and basically the higher the difficulty
+[08:14] adjustment means there's more people
+[08:16] mining which means the network is more
+[08:18] secure so that's just a little something
+[08:20] there's pretty graphs and everything
+[08:21] here and a little bit more details about
+[08:23] like latest blocks and latest
+[08:24] transactions and stuff like that
+[08:26] but let's go ahead and do an example
+[08:28] here and we'll be able to watch our
+[08:29] transaction through mempool.space and i
+[08:32] think it'll be a good overall experience
+[08:34] so what i'm going to do is i'm just
+[08:36] going to send some bitcoin to myself so
+[08:38] i have another wallet so i'm going to
+[08:40] grab that address here and i'm over here
+[08:42] on my node and i want to go ahead and
+[08:45] withdraw some bitcoin
+[08:47] and i'll just do 25 000
+[08:50] sats right there so about 10 and i'll
+[08:52] plug my address in there and now i can
+[08:55] go ahead and set my transaction fee here
+[08:57] and we see that it set it at three sets
+[08:59] per v byte which is about 60 minutes i
+[09:02] can go ahead and flip the custom here
+[09:03] and i could you know decrease it to one
+[09:06] or since we can look over here at
+[09:08] mempool that space we know that if i
+[09:10] want to be in the next block here i need
+[09:12] to be probably above two
+[09:14] so just for the safe example and so that
+[09:16] way i can finish recording this video in
+[09:18] a somewhat reasonable time i'm gonna set
+[09:20] it at five sets per v byte and then i'm
+[09:22] gonna go ahead and review the withdrawal
+[09:24] and i'm gonna go ahead and confirm the
+[09:26] withdrawal and it gives me this
+[09:27] transaction id id right here so i can go
+[09:30] ahead and copy that i can come over here
+[09:32] to mempool.space plug in the transaction
+[09:35] id and search
+[09:36] and transaction not found yet but there
+[09:39] it is okay so here's my fee so i'm going
+[09:41] to be paying about 32 cents we can see
+[09:43] this little arrow here pointing to this
+[09:45] first block so in about 10 minutes
+[09:47] hopefully this block will be mined and
+[09:49] my transaction will be confirmed and we
+[09:51] can be looking at the inputs and outputs
+[09:53] so here's my input right here we can see
+[09:55] the 25 000 sets that i'm sending and
+[09:57] then what's coming back to me because
+[09:59] that's how the utxos work and again a
+[10:01] link in the description down below on
+[10:03] utxos and i'll be back after this block
+[10:06] is confirmed alright so this is kind of
+[10:07] a good demonstration here so as you can
+[10:10] see it's been 29 minutes since the last
+[10:12] block was mined and then i had my
+[10:14] transaction in this first block here but
+[10:16] since it's taken you know 30 minutes now
+[10:19] as opposed to 10 minutes my transaction
+[10:21] has actually been bumped out of this
+[10:23] first block into the second block here
+[10:26] so basically these blocks the pending
+[10:28] blocks they're they're pending right so
+[10:30] the transactions inside of these blocks
+[10:32] will change depending on you know what
+[10:34] transactions are trying to be in that
+[10:36] block and how much fees they're willing
+[10:38] to pay so right now in order to get into
+[10:41] this first block here the average fee is
+[10:43] about 10 cents per v byte and remember i
+[10:45] spent five sets per vite so my
+[10:48] transaction got pushed out of that block
+[10:49] because i'm not willing to pay enough so
+[10:51] i just want to point that out real quick
+[10:52] that these pending blocks are constantly
+[10:54] changing and if you don't have a high
+[10:56] enough fee well you might get pushed
+[10:58] back especially if there's a long time
+[10:59] between blocks being mined now while
+[11:01] we're waiting for that block to confirm
+[11:02] i want to show you how you can set your
+[11:04] fees in blue wallet and i have a video
+[11:06] on blue wallet so if you're interested
+[11:07] in learning more about blue blue wallet
+[11:09] link in the description down below but
+[11:11] we'll go ahead and we'll go ahead and
+[11:13] send a payment so we'll click on send
+[11:15] here
+[11:16] and we can go ahead and enter the
+[11:17] address and the amount we want to send
+[11:20] but what i really wanted to point out
+[11:21] was the fee here so we could go ahead
+[11:23] and tap on fee
+[11:24] and we see that it brings up you know
+[11:26] some sample fees that we could uh go
+[11:29] ahead and select so we have fast medium
+[11:31] slow and they're all one set per v byte
+[11:33] so the the mempool is pretty low right
+[11:35] now which is nice for people doing
+[11:37] transactions so
+[11:39] there's no better time to do a bitcoin
+[11:42] transaction than right now but anyway if
+[11:44] you wanted to change it you could click
+[11:46] on custom down here and you could go
+[11:48] ahead and type in you know you want to
+[11:50] do a hundred sas per vibe if you wanted
+[11:52] to and of course that'd be pretty
+[11:54] expensive but i just wanted to show you
+[11:56] how you can change your fees in blue
+[11:58] wallet since we have a few minutes while
+[11:59] we wait for that block to confirm and
+[12:01] finally my block is confirmed we had to
+[12:03] wait like 46 minutes for that next block
+[12:06] to appear and then i got kicked out of
+[12:08] two blocks and finally i'm right here
+[12:10] and then we see another one processed or
+[12:12] was mined in the same exact minute as a
+[12:14] block that mine was mined in so there's
+[12:16] a perfect example of waiting 42 minutes
+[12:18] and also blocks being mined within
+[12:21] seconds of each other but on average the
+[12:23] blocks are 10 minutes apart and that
+[12:24] pretty much concludes this video
+[12:26] hopefully you found it helpful any sorts
+[12:27] of likes comments subscribes would be
+[12:29] greatly appreciated and i hope you have
+[12:30] a great rest of the day

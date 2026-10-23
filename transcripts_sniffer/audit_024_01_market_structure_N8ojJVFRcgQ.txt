@@ -1,0 +1,862 @@
+================================================================================
+NULLSPREAD RESEARCH · СУБТИТРЫ ВИДЕО ДЛЯ АУДИТА #24
+Модуль: День 2. Модуль 1: Анатомия маркет-мейкеров, охота за стопами и токсичный поток (01_market_structure)
+Поисковый запрос: crypto liquidity fragmentation cross exchange price inefficiency
+================================================================================
+ID видео: N8ojJVFRcgQ
+Название: Unlocking Liquidity Fragmentation in the Crypto Derivatives Market With Paradigm
+Канал: SCB 10X
+Ссылка: https://www.youtube.com/watch?v=N8ojJVFRcgQ
+Объем: 6091 слов (~43.5 мин)
+Язык: en
+Файл: audit_024_01_market_structure_N8ojJVFRcgQ.txt
+Создан: 2026-10-23 19:54:15
+================================================================================
+
+[00:00] [Music]
+[00:02] foreign
+[00:03] [Music]
+[00:37] beautiful uh very good afternoon ladies
+[00:40] and gentlemen thank you for tuning in by
+[00:42] way of introduction my name is CJ I run
+[00:45] sales for APAC anemia over at GSR one of
+[00:48] the largest market makers in the altcoin
+[00:49] space it's my pleasure today to moderate
+[00:51] this session that we're going to cover
+[00:53] the topic for unlocking liquidity
+[00:55] fragmentation within crypto derivative
+[00:57] markets and with me we have a special
+[00:59] guest today with Mr Anan Gomez who's the
+[01:02] CEO and co-founder of Paradigm welcome
+[01:04] on and hey welcome thank you again I
+[01:06] appreciate you guys having me no worries
+[01:09] well before we get right into it sir I
+[01:12] think just for the benefit of people in
+[01:13] the call as well why don't you do a
+[01:15] brief introduction about yourself and as
+[01:17] well as Paradigm we would also love to
+[01:20] know uh about what inspired you to begin
+[01:22] your journey on Parallel yeah sure
+[01:25] um so hi everyone my name is Anand I'm
+[01:28] uh the co-founder of Paradigm uh
+[01:30] Paradigm is an Institutional liquidity
+[01:32] Network for crypto derivatives Traders
+[01:35] um what that means is you can think of
+[01:37] us as a wholesale marketplace where
+[01:40] institutional buyers and sellers such as
+[01:42] CJ
+[01:43] um come to us there to source to make
+[01:45] and take liquidity
+[01:47] um you know on any given day our claim
+[01:49] to fame is options on any given day
+[01:51] we're about 30 to 40 percent of the
+[01:54] global options Market uh for mainly
+[01:56] Bitcoin and ether options
+[01:59] and we also have a fast growing spreads
+[02:01] business which is effectively we order
+[02:03] or we offer order books on
+[02:06] um on spreads such as the spread between
+[02:08] Sport and prep and so on so forth
+[02:11] um so yeah so that's the business
+[02:13] um you know volume wise we do you know
+[02:14] 400 500 million of ADV a day
+[02:18] um uh with respect to my journey
+[02:21] um it started um you know so I have uh
+[02:23] just like CJ I have a background in
+[02:26] um from the traditional market so I came
+[02:28] I was on a bank desk for many years
+[02:30] started out uh as an interest rate uh
+[02:33] derivatives uh uh Quant then moved to
+[02:36] the uh the trading side then just a
+[02:39] student in sales
+[02:41] um so sort of did all the roles uh that
+[02:43] a junior person could do on on a trading
+[02:45] desk and then eventually landed up in uh
+[02:48] Commodities and then
+[02:49] later on from Commodities and
+[02:51] specifically OTC
+[02:53] um and then from then on you know did uh
+[02:55] either a little bit of high yield as
+[02:56] well uh but all for the same bank
+[02:59] um and the or the original story for
+[03:02] Paradigm actually
+[03:03] um uh started off when I was on the desk
+[03:06] and uh as most of you know and or or not
+[03:09] know OTC trading is a very manual
+[03:12] business there's a lot of sort of like
+[03:13] you know workflow related stuff where
+[03:15] you're creating something
+[03:17] um you know a non-standard uh and and
+[03:20] therefore it means uh the the mode of
+[03:23] transactional transactions needs to be
+[03:25] bilateral or between you know or
+[03:27] peer-to-peer
+[03:28] um and because of that
+[03:29] non-standardization
+[03:31] um there are no sort of like standard
+[03:32] you know platforms or workflows that you
+[03:34] can use
+[03:35] um and I hated that uh you know I love
+[03:37] my job you know love love everything I
+[03:39] did about pricing and trading and
+[03:41] structuring uh but I hated the workflow
+[03:43] aspect of it right I was spending two
+[03:45] thirds of my day uh doing you know uh
+[03:48] you know a trade booking mark the market
+[03:50] statement reconciliation all the end of
+[03:52] day stuff that took more time than the
+[03:54] actual trading itself and so
+[03:56] um I I hated that and you know in my
+[03:59] mind I'm like wow you know we have an
+[04:00] error where we have all these like the
+[04:02] computers are so Advanced and why are we
+[04:04] still using chat to trade you know why
+[04:06] can't there be a platform
+[04:08] um and so that was kind of you know that
+[04:10] was the original you know how the
+[04:12] Genesis I guess of the idea and then
+[04:14] eventually you know I decided to do
+[04:16] something about it and you know it took
+[04:18] me a couple years from idea to actually
+[04:20] you know mustering up the courage to
+[04:22] start a company or start apply or build
+[04:25] a platform
+[04:26] um and eventually the idea initially the
+[04:28] idea was still to do it for commodity so
+[04:30] I had no Ambitions of crypto crypto was
+[04:32] this like thing that I was Loosely
+[04:34] interested in on the side you know I'm a
+[04:36] computer science graduate so I was very
+[04:38] interested in you know the Bitcoin white
+[04:40] paper when it came out but I know never
+[04:42] thought at anything to do with you know
+[04:44] work right because I was I was a Trader
+[04:46] on a trading desk
+[04:47] um and then
+[04:48] when I built this platform you know I
+[04:50] was lucky enough to meet a few uh you
+[04:53] know people in this space early on and
+[04:55] they all complained about not having a
+[04:57] solution to trade uh size you know uh
+[05:00] when they were trading smart and this so
+[05:02] I'm talking about 2017-18 when the
+[05:04] market was just sort of like you know
+[05:05] beginning beginning to sort of like grow
+[05:08] and uh and I'm you know a friend of mine
+[05:10] suggested this idea he's like hey you
+[05:12] know you've built this platform or your
+[05:13] Ambitions are to build this you know OTC
+[05:15] platform to trade Commodities why don't
+[05:17] you use it for crypto and I was like
+[05:20] yeah it's a you know never thought of it
+[05:22] that way but uh it was a great idea and
+[05:24] we exploded a little so on you know a
+[05:25] little bit more and then it was very
+[05:28] clear to me that you know you know this
+[05:31] has to be for crypto uh mainly because
+[05:33] uh it was the beginning of a NASA class
+[05:36] and I thought to myself as like you know
+[05:37] when is the NASA class being born uh it
+[05:40] so happens once in your lifetime if even
+[05:42] and you know it's an opportunity for us
+[05:44] to be a true first mover in this space
+[05:46] right either I spend my time building a
+[05:48] platform for or Commodities Traders and
+[05:50] fighting the inertia of that market
+[05:52] because people don't want to change
+[05:53] right usually when you have a workflow
+[05:55] it's very hard to get people to change
+[05:56] so either I fight you know people doing
+[05:58] that or people in this market are
+[06:01] literally begging for the solution right
+[06:03] so you know which which uh the
+[06:05] probability of success seems sort of
+[06:07] like you know asymmetrically higher you
+[06:09] know in crypto and so so yeah so that's
+[06:11] kind of how we started um initially
+[06:13] again you know with a small we instead
+[06:16] of starting with spot we decided to
+[06:18] start with options but it was a similar
+[06:20] line of thinking where we said hey you
+[06:22] know spot will be quickly commoditized
+[06:24] uh options is something that's kind of
+[06:26] unique and you know back then there was
+[06:28] absolutely nothing in options uh it was
+[06:30] only there a bit was around and they
+[06:31] were doing I think 20 to 30 million a
+[06:34] day and uh so you know Paradigm in that
+[06:36] sense was as much a bet on the platform
+[06:39] itself as it was on options and the
+[06:41] thesis was hey if spot is taking off
+[06:43] options are going to take off at some at
+[06:46] some point it just you know in the
+[06:47] evolution of sort of like how a market
+[06:48] involves it just comes a little bit
+[06:50] later
+[06:51] um so yeah so that's that's that that's
+[06:53] the story
+[06:54] oh I mean I love it I have a very uh
+[06:56] let's kick it off on the meat side of
+[06:58] the discussion then if you were to look
+[07:00] at where crypto markets are right now in
+[07:02] crypto derivatives uh my background
+[07:03] similar to yours is derivatives where
+[07:05] would you rank we are within that space
+[07:07] from both a scale as well as an
+[07:10] evolutionary standpoint with 10 being
+[07:12] very mature and one being oh my God it's
+[07:15] barely seeing the light of day right now
+[07:17] you know it's a it's it's not an easy
+[07:20] question to answer
+[07:22] um because in some in some ways crypto
+[07:24] is very mature and you know and I in
+[07:28] some cases probably more mature more
+[07:30] advanced in the adoption of Technology
+[07:32] than even traditional Finance but in
+[07:35] terms of you know uh the maturity of uh
+[07:39] particip participation in with regards
+[07:42] to client types or you know Risk Takers
+[07:46] I think in some sense in that sense it
+[07:48] is it is it is sort of lagging right uh
+[07:51] where we don't have you know the
+[07:53] structured product flow we don't have
+[07:54] you know all of these sort of like you
+[07:56] know derivatives that we're normally
+[07:58] used to there's sort of like common
+[07:59] commonplace in intro Phi we don't really
+[08:02] have them
+[08:03] um but I don't think that's that's a bad
+[08:05] thing I I think that's just you know
+[08:06] again it just takes time for you know
+[08:09] certain things to come about
+[08:11] um and the base layers sort of need to
+[08:12] be sort of in place before Innovation on
+[08:15] on the top can can be sort of like can
+[08:18] happen and so from a technology
+[08:20] perspective I think crypto is very
+[08:22] Advanced if not more advanced because I
+[08:24] mean literally we've created a world
+[08:26] that anybody can access from any place
+[08:28] in the world
+[08:30] um and you have access to spot you get
+[08:31] access to you know Futures options you
+[08:34] can do it from a custodial standpoint a
+[08:36] non-custodial standpoint in D5 I mean it
+[08:40] is it is truly a miracle in my mind that
+[08:42] in the last 10 years we've really built
+[08:44] this thing from the ground up and you
+[08:46] know you know I always say to myself
+[08:48] that like you know Paradigm is a
+[08:50] platform has gone through the same
+[08:52] amount of evolution a trade web which is
+[08:55] kind of our counterpart in the old world
+[08:57] you know the what they took 20 years to
+[08:59] do Paradigm had to was forced to go
+[09:01] through in like two and a half or three
+[09:02] years right so that kind of gives you
+[09:04] you know an idea but that's mainly from
+[09:06] a technology standpoint I still feel
+[09:07] like there's so much to do in terms of
+[09:10] you know uh innovation in terms of
+[09:12] product Innovation and also you know
+[09:14] opening up access so you know the
+[09:16] institutional Institution questions are
+[09:18] just like dipping their toes uh you know
+[09:19] right now I still think there's so much
+[09:22] more we need to do to to truly like you
+[09:24] know welcome the these folks so so from
+[09:26] that we're in that regard I think we're
+[09:27] a little bit behind but from a
+[09:28] technology standpoint I think where
+[09:30] where you know right there if not more
+[09:32] well fantastic well hold that thought
+[09:34] we're going to come back to the
+[09:35] institutional question a little bit
+[09:36] later the part that I want to cover very
+[09:38] briefly with you is this I think we can
+[09:40] establish the fact and with an
+[09:42] understanding that
+[09:44] liquidity within the crypto derivative
+[09:46] space right now is fragmented and I
+[09:49] think a large part of that if you think
+[09:51] about it is fundamentally because you
+[09:53] have that concept of C5 and D5 and the
+[09:55] nature of the different players in the
+[09:56] market do you ever see a world where
+[09:59] this merges or do you think it runs in
+[10:02] parallel and if so on either view what
+[10:04] do you think is the right I guess
+[10:06] Outlook in terms of structure to put in
+[10:09] place to have this sort of better
+[10:11] liquidity in space
+[10:13] I think you know unbundling and
+[10:17] rebundling is just kind of if this is
+[10:19] this Perpetual cycle that human beings
+[10:22] sort of go through with every technology
+[10:24] cycle right uh and uh but it's kind of
+[10:28] anchored in the fact that it is easier
+[10:30] to do things individually and move
+[10:32] faster from an Innovations perspective
+[10:34] but but from a from a utility
+[10:36] perspective it's always higher utility
+[10:39] for a customer to have everything in one
+[10:40] place so those are kind of like opposing
+[10:42] for forces that kind of like drive this
+[10:45] uh this
+[10:46] um you know this kind of Perpetual uh
+[10:49] cycle that that we're in uh and C find
+[10:51] D5 kind of in in the same boat in that
+[10:54] sense I mean this Evolution that you
+[10:55] just talked about is is governed by the
+[10:58] same forces and I think you know you
+[11:01] know Paradigm is a good example of that
+[11:03] uh not uh not to show Paradigm too much
+[11:05] but you know I think we're the only
+[11:07] platform in in crypto that has a
+[11:09] regulated venue such as the CME it has
+[11:12] the unregular venues such as Dera bread
+[11:14] and we also have D5 on the same platform
+[11:16] and if you want to trade an option on
+[11:18] CME you can do so if you want to train
+[11:20] an option there but you can do so if you
+[11:22] want to participate in ribbon auctions
+[11:23] you can do so there's no comp there's no
+[11:25] platform in the world that I know that
+[11:27] can do that right and so ultimately that
+[11:29] but that was driven by client need that
+[11:31] like hey we saw our clients saying Hey I
+[11:34] want to participate in ribbon auctions
+[11:35] but they're you know but it's like but
+[11:37] they're the process of doing so is very
+[11:39] inefficient and can you just you know
+[11:41] make it a part of the Paradigm you know
+[11:42] RFQ uh workflow and we said yes we can
+[11:45] absolutely do that and the platform was
+[11:46] built to be asset agnostic and and
+[11:49] network agnostic or settlement solution
+[11:51] agnostic and therefore we did that and
+[11:53] so I think to answer your questions I
+[11:55] think where we are today is all these
+[11:57] like different you know innovations that
+[11:58] are like sparking C5 D5 but they're
+[12:00] doing that because they want to move
+[12:02] fast ultimately you do need someone or
+[12:04] something to you know combine it
+[12:06] together I mean you see this even in
+[12:08] like Microsoft right and Microsoft as a
+[12:10] platform versus Google Google has this
+[12:12] like loose connection between their
+[12:14] products but Microsoft is very sort of
+[12:16] like tightly integrated with each other
+[12:17] right and so this this you know it's I
+[12:20] think they're both needed right it's
+[12:22] just like you know one happens earlier
+[12:24] than the other and then later on
+[12:25] somebody hopefully comes along and tries
+[12:28] to unify them or somebody builds it from
+[12:29] scratch and and unifies them but that's
+[12:31] kind of hard uh to do and that's what
+[12:33] we've sort of found but yeah hopefully
+[12:35] that answers your question no fantastic
+[12:36] uh show as much as you want my friend uh
+[12:39] the way I look at it is if you call it
+[12:41] flaunt it and it's obvious that Paradigm
+[12:43] is in a very unique proposition space
+[12:44] you actually mentioned something which I
+[12:46] liked and it sort of alludes to
+[12:47] something that at GSR we've used
+[12:50] paradigms since almost the beginning
+[12:51] right it's been one of those things that
+[12:53] we've sort of grown with you what would
+[12:55] you say has contributed in terms of the
+[12:57] evolution of product because you
+[12:59] mentioned one thing where you were
+[13:01] trying to fit the need a solution
+[13:02] because you ask your client what did
+[13:04] they want and you build upon that it's a
+[13:06] very different approach because
+[13:07] encrypted right now unfortunately a lot
+[13:08] of people come up with product come up
+[13:10] to solve a solution or a problem that's
+[13:13] technically in their head it's not
+[13:14] really something that we've asked for in
+[13:15] the street I mean what sets Paradigm
+[13:18] apart there then
+[13:19] I think you know there's one thing that
+[13:21] sets us apart it's truly that that we
+[13:24] you know we've always been driven by you
+[13:26] know what is your pain point right even
+[13:28] even when we first started it came from
+[13:31] something that I felt on the desk that
+[13:32] hey this is I'm spending 75 of my time
+[13:36] with booking workflow and and and doing
+[13:38] things that I should not be doing and or
+[13:41] not should not should be doing it should
+[13:42] be it's better automated let's put it
+[13:44] that way and and so it started that was
+[13:47] sort of like how the company started but
+[13:48] when we started in crypto and we moved
+[13:51] to options specifically there was a
+[13:52] telegram chat and this was started by a
+[13:54] friend of mine who now runs another
+[13:56] company but he he was like the largest
+[13:58] market maker on Android at that point at
+[14:00] that time and you know I met him and
+[14:02] he's like hey you know I'm trading I'm
+[14:04] the biggest Market under a bit and I'm
+[14:06] like okay well how do you Source
+[14:07] liquidity when you need to get out and
+[14:09] he's like oh I've just created this chat
+[14:10] and I go in and I post my ax and
+[14:12] hopefully somebody comes in and takes
+[14:14] the other side and I'm like that's
+[14:15] insane I'm like so okay even if you do
+[14:16] that how do you actually cross and he's
+[14:18] like oh we didn't then agree to put our
+[14:20] order at the top of the order book and
+[14:22] somebody aggresses it I'm like wow
+[14:23] that's you have leg wrists and somebody
+[14:25] confront run you because those
+[14:26] conversations are public right and so it
+[14:28] was very clear that this solution that
+[14:30] institutions wanted to be a part of this
+[14:31] Market they wanted to trade size they
+[14:34] wanted to trade multi-lag and they
+[14:35] wanted to keep their their orders away
+[14:37] from the order book and so and because
+[14:39] this is what institutions need like
+[14:41] that's just that's how they play and so
+[14:43] we knew that there was no solution out
+[14:45] there and so that was how we started and
+[14:47] then since then you know conversations
+[14:50] have you know the the evolution of the
+[14:52] product has been what are we missing
+[14:54] that you need today right and we you
+[14:57] know we have 500 chats open with all our
+[14:59] customers globally we have you know very
+[15:02] deep account management and product team
+[15:04] that is constantly talking to you every
+[15:06] day 24 hours a day we have a global desk
+[15:08] that never sleeps there's always talking
+[15:10] to you so I think there's one thing that
+[15:11] sets us apart is that we truly
+[15:13] understand
+[15:15] your workflow that we that because we've
+[15:17] sat in that seat we've clicked that
+[15:19] button and we understand what your pain
+[15:21] points are and you know we're not just
+[15:23] satisfied saying hey we came from
+[15:24] gratify so we understand your workflow
+[15:27] because crypto is unique right so crypto
+[15:28] the crypto angle makes the institutional
+[15:31] Traders angle sort of unique it's not
+[15:33] the same as Equity somewhere else but so
+[15:35] I think continually being in that seat
+[15:36] and talking to you and understanding
+[15:38] that like hey what really is like your
+[15:40] pain point and then distilling that back
+[15:42] and and then you know basically making
+[15:43] the product better I think that's that's
+[15:45] what we're known for if you ask anyone
+[15:47] in the market I think you know I'm most
+[15:48] proud of the fact that you know when you
+[15:50] meet people you know globally the first
+[15:52] thing they tell you is that hey your
+[15:54] customer service is amazing you're the
+[15:56] how fast you react to our needs is
+[15:58] amazing and I'm like that's that's all I
+[16:00] want to hear right it's like the word
+[16:01] listening to our Customer because that's
+[16:03] the only person that matters that's
+[16:05] fantastic and I fully agree with it uh
+[16:07] Paradigm is almost unrivaled customer
+[16:09] services it's fantastic to see and to
+[16:11] hear from yourself as well thank you
+[16:12] thank you
+[16:13] as we go as we progress right as crypto
+[16:15] derivative markets continue to mature
+[16:17] there is going to be a bifurcation
+[16:19] between C5 and D5 right uh D5 obviously
+[16:21] had the D5 summer came didn't really go
+[16:24] but it does feel like it's going to come
+[16:26] back in another form how do you think
+[16:28] this re-evolution is going to affect
+[16:31] that balance with regards to liquidity
+[16:33] for crypto derivatives
+[16:36] um you know that's uh you know I think
+[16:39] with all these cycles that we're having
+[16:41] you know D5 and nfts and so on so forth
+[16:44] um there's of course the bubble and the
+[16:46] hype that you know that comes around and
+[16:47] that's you know that's just part of uh
+[16:50] you know this the early stages of any
+[16:52] product any products life cycle or any
+[16:54] sort of asset product what uh whatever
+[16:56] you want to call it uh but when those
+[16:58] fads or hype sort of go away there's
+[17:00] temporary fights there are these like
+[17:02] quiet innovations that they bring about
+[17:04] that that remain right
+[17:08] um and over the last four years if you
+[17:10] keep adding up those innovations that
+[17:12] actually that happened and then okay
+[17:13] maybe the hype went away but the
+[17:15] Innovation remained and then the next
+[17:17] cycle happens and then something else
+[17:19] happens and and now over two cycles you
+[17:21] have two things that have permanently
+[17:24] made the market better right now the
+[17:26] tourists you know come in in this market
+[17:29] and then like they play the hype and
+[17:30] they're out but the Builder is like you
+[17:32] know we're we're out there we're looking
+[17:33] at these things you know for the last
+[17:35] four or five years and it's very clear
+[17:37] to us that like you know
+[17:39] B5 I mean there's a lot to D5 right
+[17:41] everything gets rolled up into D5 you
+[17:43] have product Innovation you have actual
+[17:45] blockchain Innovation the things that
+[17:46] powers for and we care mainly about the
+[17:49] from a builder's perspective and you
+[17:51] know we've seen really cool things like
+[17:52] dydx is a great example right like what
+[17:55] you know they were the first sort of
+[17:56] like crossover company where they said
+[17:58] hey you know what we don't want to uh
+[18:01] trade off performance and liquidity uh
+[18:04] for the promise of you know
+[18:05] decentralization or whatever right and
+[18:07] they said they took this sort of hybrid
+[18:08] approach
+[18:09] um and we look to you and those those
+[18:11] are like pivotal moments I think in in a
+[18:14] Market's progress where companies take a
+[18:16] view that hey we can use the best of
+[18:17] this world and the best of this world
+[18:19] and we can actually push the you know
+[18:21] the ball forward and so from an
+[18:22] infrastructure standpoint I think the
+[18:24] market is getting better and better and
+[18:26] better where all these Primitives that
+[18:28] exist in C5 can now firmly exist in D5
+[18:31] without the trade-offs the performance
+[18:34] and uh security trade-offs that you sort
+[18:36] of you know um are the D5 sort of has a
+[18:39] name for in some sense right uh but I
+[18:41] think that that is like firmly getting
+[18:43] better and now that you know you have
+[18:45] comfort doing that you'll see more and
+[18:46] more companies building these things
+[18:48] squarely on Jane including the
+[18:50] interconnectedness of things which
+[18:52] ultimately will make things less
+[18:53] fragmented and will make things more
+[18:55] liquid as a result of that fantastic and
+[18:58] I think we hopefully we see that within
+[19:00] the next one year uh it's been a very
+[19:02] quiet winter but I've heard homes have
+[19:04] picked up it's fantastic but you talked
+[19:06] about Cycles it's very interesting you
+[19:07] did that uh I still recall being in New
+[19:09] York when Nina went under uh and that
+[19:11] was pretty much what the seven year
+[19:13] right in banking we used to call it
+[19:14] every seven years for a real used
+[19:17] to hit the fan right uh FTX came and
+[19:19] went and that was probably one of the
+[19:21] biggest shocks especially to the
+[19:23] institutional trading because they
+[19:25] covered a large part of it be it the
+[19:27] most efficient type of cross margining
+[19:29] uh spreads as well came with them and I
+[19:32] would like to get your take on that I
+[19:33] mean has someone come in yet to fill the
+[19:36] void that they left and if so how but
+[19:38] more importantly what are the Lessons
+[19:40] Learned then have we actually gone ahead
+[19:42] of that to make sure this doesn't happen
+[19:44] again
+[19:45] yeah I mean that's I mean you know FDX
+[19:48] was definitely a Lehman moment um in
+[19:50] crypto
+[19:51] um it was it but it last year I think
+[19:54] there was like five Lehman moments and
+[19:56] so it was like yeah what is what is
+[19:58] really happening here right but but you
+[19:59] know in terms of our business being
+[20:00] affected
+[20:02] um it was FD we FTX was a we had a we
+[20:05] had a very big business on FDX 25 of our
+[20:08] volume was tied to FDX 15 of our Revenue
+[20:11] was typed to FDX so when FDX went away
+[20:13] it really hurt us right
+[20:15] um of course you know markets bounced
+[20:17] back and we're we're doing you know
+[20:18] all-time highs again so it's been it's
+[20:19] been we've been lucky in that regard but
+[20:22] yes it did affect us and fdx's clients
+[20:25] were our clients there's a lot of like
+[20:26] Synergy we're finding out now as we're
+[20:28] trying to rebuild that future spread
+[20:30] business on on on Bybit that we're
+[20:32] finding out that like wow we were just
+[20:33] super lucky that the same clients that
+[20:35] were in Paradigm were the basically the
+[20:37] same client we did the client when we
+[20:39] had to clients didn't have the extra
+[20:40] hurdle of onboarding on a new venue when
+[20:42] they were trading spreads on Paradigm
+[20:43] and that made things the things a lot
+[20:46] easier for us to sell
+[20:47] um and so therefore you know spreads as
+[20:49] a business on FDX took you just like
+[20:51] absolutely took off I think we went from
+[20:53] zero to 500 million a day in like less
+[20:55] than 70 days which is unheard of right
+[20:57] um and so yes it was favored by
+[21:00] institutions because the margin engine
+[21:02] was was supposedly Superior et cetera uh
+[21:05] and there was trust in Sam and the team
+[21:07] and all of that right and as a result of
+[21:10] that you know all these institutions
+[21:11] participated
+[21:12] it has definitely taken a hit because
+[21:15] when we've tried to re-on-board those
+[21:17] folks on other exchanges they were you
+[21:20] know their first concern is you know
+[21:22] like hey we we only trust one exchange
+[21:25] now we don't go to three exchanges that
+[21:27] we don't trust anymore and so trust
+[21:29] definitely took a hit right and Trust
+[21:31] just takes time to come back right
+[21:33] that's that that's just like a human
+[21:35] thing uh rather but it's it's helped by
+[21:38] you know Innovations in like product and
+[21:41] Technology right so I think as a part of
+[21:43] FTX
+[21:44] the non-custodial the FDA sort of
+[21:47] debacle The non-custodial narrative
+[21:49] started to sound you know basically
+[21:52] everybody started to like talk about
+[21:54] that again right and and I think that's
+[21:56] kind of where where you know that's the
+[21:58] lesson that this Market has learned is
+[22:00] that you can't really trust anybody
+[22:02] right especially with you with large
+[22:04] sums of money and and and I think the
+[22:07] market because it's learned and it's
+[22:09] hurt it's been hurt now will start it
+[22:11] has started to demand that so I think
+[22:12] for this next cycle
+[22:14] um you know having an fpx on chain is
+[22:17] like is is is probably where the market
+[22:19] is going to get and you've seen as a
+[22:21] result of that a bunch of projects come
+[22:23] in in fact you've even seen
+[22:25] um uh to fill in this trust void you've
+[22:27] seen folks like Gemini and coinbase uh
+[22:30] throw in their hats and say hey you know
+[22:31] what we're going to build an overseas
+[22:33] exchange a purpose exchange because of
+[22:35] this like you know trust void that that
+[22:37] FTX has left right and so I think trust
+[22:40] has to be refilled uh we sort of rebuilt
+[22:42] people know that uh and two but the
+[22:44] infrastructure I think is more critical
+[22:46] to be to build where people don't have
+[22:48] to trust you know don't have to trust
+[22:49] you with their money and I think that's
+[22:50] kind of the next next at least in in
+[22:52] from an exchange Innovation standpoint I
+[22:54] think that's the next uh uh that's the
+[22:57] next sort of like you know
+[22:58] um what's the word the bleeding edge I
+[23:00] guess of of innovation
+[23:02] no fantastic uh yeah I think I mean this
+[23:05] is what we're trying to look for right I
+[23:06] think you brought up uh that concept of
+[23:08] one chain can we look at some of this
+[23:10] stuff on chain and can it do the job
+[23:11] because that's what we initially thought
+[23:12] it was supposed to do right uh and
+[23:14] that's where you build this trust so I'm
+[23:16] going to go back to one of your earliest
+[23:18] answers and I'm probably going to
+[23:19] probably expand the remainder of this
+[23:20] fireside chat talking about it the
+[23:22] concept of the institution when it comes
+[23:23] to crypto derivatives because you and I
+[23:26] both know right uh when institutions
+[23:28] come in when I talk about institutions I
+[23:29] mean the tradify the big boys right when
+[23:31] they come into this space uh they bring
+[23:33] with them the type of size that
+[23:34] literally helps gloss over any liquidity
+[23:36] that there is present because of what
+[23:38] they do do you see a world where just
+[23:42] hypothesizing right now one of the major
+[23:44] banks in the world goes up to you at
+[23:46] Paradigm says look we're going to start
+[23:47] on boarding you're going to be our
+[23:48] platform of the future for this rather
+[23:50] than Reinventing the will
+[23:52] yeah I mean you know it's a funny
+[23:55] question because we always seem like
+[23:58] we're close but it always seemed it
+[24:01] always takes you know five x more time
+[24:03] than because the conversations are
+[24:04] happening they're not not happening and
+[24:06] they've been happening for the last like
+[24:07] year or or more it always feels like
+[24:11] we're right on the the cusp of you know
+[24:13] a really mainstream name coming in and
+[24:16] and and and and you know putting you
+[24:18] know just trading like forget putting on
+[24:19] size even just the initial Act of
+[24:21] trading
+[24:23] um but again I think because there were
+[24:25] so many setbacks last year if we didn't
+[24:27] have these like you know five black
+[24:29] swans you know you know back to back
+[24:31] that completely eroded trust in the
+[24:33] ecosystem I probably think we would be
+[24:35] there right now
+[24:37] um but but I think we we took a hit and
+[24:39] the the industry uh was set back by at
+[24:42] least a year if not more uh from a trust
+[24:44] standpoint right
+[24:45] um will it happen back in a year again I
+[24:47] I feel like the conversations are there
+[24:49] they're happening nobody's really gone
+[24:51] away there's a few names here there them
+[24:53] today we're completely on pause but
+[24:55] everyone else you know continues to
+[24:56] invest it albe a little bit more
+[24:58] cautiously right but they're but they're
+[24:59] still investing in this space at least
+[25:01] from our conversations oh fantastic I
+[25:03] think we see the same as well the type
+[25:05] of conversations we have are very
+[25:06] similar and I mean if you want to look
+[25:08] on the positive side right half glass
+[25:09] full argument is the fact that what if
+[25:12] they're not going to come in the next
+[25:12] one year that means we have one year to
+[25:14] continue to build to expound upon the
+[25:16] technology we have and put in place
+[25:19] infrastructure that they are comfortable
+[25:21] with that they are used to absolutely so
+[25:23] I mean you've got I'm not going to give
+[25:25] you open mic sessions I don't believe in
+[25:27] that concept but I will come close to it
+[25:28] what's next for Paradigm what is your
+[25:31] vision what is the next one year the
+[25:33] next five years out what are you looking
+[25:35] to do for this space yeah so you know I
+[25:38] think
+[25:39] Paradigm is an asset agnostic venue
+[25:43] agnostic dealer agnostic liquidity
+[25:46] Network that means uh we don't you know
+[25:49] we don't take custody we don't take a
+[25:51] view on which product is going to take
+[25:52] off we want to connect the entire
+[25:54] ecosystem right
+[25:56] um ecosystem we want to connect your C5
+[25:58] D5 or the exchanges and provide that
+[26:00] sort of central point where people can
+[26:02] just access liquidity across a host of
+[26:04] different exchanges protocols dealers
+[26:07] Etc and so so far we've rolled up folks
+[26:11] on the option side our next sort of
+[26:13] obvious one is Futures which is why we
+[26:15] really invested in Futures over the last
+[26:16] few years or and specifically spreads
+[26:19] um and roll up those and roll up those
+[26:21] kinds of products but the the sort of
+[26:24] higher level theme Here is right now
+[26:25] Paradigm is a network of exchanges where
+[26:29] you can come in and trade their bit
+[26:30] products and debit and you know buy with
+[26:32] products and Bybit bid.com products
+[26:33] and buy a bit of com Etc uh but we've
+[26:37] you know the one the Holy Grail I think
+[26:38] is to be able to allow people to trade
+[26:40] things atomically cross-exchange right
+[26:43] and that's something we're really
+[26:44] investing in
+[26:45] um you know this year for the balance of
+[26:47] this year uh we've actually we have a
+[26:49] proprietary sort of design that we we've
+[26:51] been working on to actually we propose
+[26:52] it to a few exchanges and we're working
+[26:54] with a couple to actually implement this
+[26:56] endpoint where we'll be able to sort of
+[26:58] guarantee atomicity if you want to trade
+[27:00] the Bybit per flag against the
+[27:02] durability per plug you'll be able to
+[27:04] sort of do that atomically through
+[27:05] Paradigm and and you know that's just
+[27:07] the part of the technology we're
+[27:08] building so that is something near near
+[27:11] medium term uh of course we say that but
+[27:14] it just ends up taking longer than that
+[27:16] um so I think for the next like year and
+[27:18] a half it will sort of occupy us
+[27:21] um and then again you know the continue
+[27:22] on this D5 is a little bit dead right
+[27:24] now but you know I think you know
+[27:26] getting like you said you know getting
+[27:28] to the point where we are ready to catch
+[27:30] the next
+[27:32] um you know the next time momentum
+[27:33] starts to accelerate again right
+[27:35] um and I think that's what we're focused
+[27:37] on for this soon uh for the and then
+[27:39] and we're also we also have Ambitions in
+[27:41] D5 uh you know it was very clear last
+[27:43] year that we couldn't just like roll up
+[27:45] protocols but we also wanted to build
+[27:47] our own uh protocol itself and so we're
+[27:50] working on some stuff but you know it's
+[27:51] it's not like an immediate thing but uh
+[27:54] it's a you know we've been experimenting
+[27:55] with building
+[27:57] um you know again going back to The
+[27:58] Narrative of you know can we build FDX
+[28:00] on chain for instance like for mclaring
+[28:01] and a derivative standpoint and I think
+[28:03] that's that's uh something we want to we
+[28:05] were experimenting with
+[28:07] fantastic well it's very exciting times
+[28:09] uh look we've got a couple of seconds
+[28:11] left mate uh any final Pearls of Wisdom
+[28:14] for the budding Trader out there and the
+[28:15] derivatives market right now
+[28:17] um you know I think less so for Traders
+[28:20] and more so for Builders because that's
+[28:22] my perspective and it has been for the
+[28:24] last three years it's just it seems dead
+[28:26] right now but I think truly I think this
+[28:28] bear markets are very exciting we were
+[28:30] born in the bear market and and it's
+[28:32] just every time we've you know kept our
+[28:34] head down and continued to build you
+[28:37] know each the next time around when
+[28:39] things come back up we're like we just
+[28:41] moved from strength to strength so the
+[28:43] the uh yeah my take would be to hang in
+[28:46] there uh this will pass and uh you know
+[28:49] we we you know there is light at the end
+[28:50] of the tunnel for sure fantastic well
+[28:53] thank you very much we have come to the
+[28:55] end of the session and it has been a
+[28:56] pleasure uh having you here today I hope
+[28:58] you've enjoyed as much as I have and
+[28:59] hopefully the audience tuning in has
+[29:01] enjoyed it as well but thank you very
+[29:02] much and have a great rest of the week
+[29:03] sir oh thank you CJ I appreciate it take
+[29:06] care guys thank you
+[29:07] foreign
+[29:09] [Music]

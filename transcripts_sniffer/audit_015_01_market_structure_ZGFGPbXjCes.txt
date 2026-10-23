@@ -1,0 +1,295 @@
+================================================================================
+NULLSPREAD RESEARCH · СУБТИТРЫ ВИДЕО ДЛЯ АУДИТА #15
+Модуль: День 2. Модуль 1: Архитектура рынка, биржи и маркет-мейкеры (01_market_structure)
+Поисковый запрос: CEX vs DEX orderbook vs AMM liquidity pools
+================================================================================
+ID видео: ZGFGPbXjCes
+Название: CEX vs DEX: The Ultimate Crypto Exchange Breakdown (Which Should You Use?) | Module 06 🌐
+Канал: Crypto Raviya
+Ссылка: https://www.youtube.com/watch?v=ZGFGPbXjCes
+Объем: 1611 слов (~11.5 мин)
+Язык: en
+Файл: audit_015_01_market_structure_ZGFGPbXjCes.txt
+Создан: 2026-10-23 06:02:54
+================================================================================
+
+[00:00] Welcome to this explainer. Look around.
+[00:02] We are in our very own dark obsidian
+[00:04] cyber laboratory today and we are going
+[00:07] on a high energy architectural tour
+[00:09] through the absolute core infrastructure
+[00:11] of web 3 trading. We're going to
+[00:13] completely dissect the two massive
+[00:15] contrasting paradigms that power crypto
+[00:17] today, centralized exchanges or C X's
+[00:20] and decentralized exchanges or DEX's.
+[00:23] We'll tear down the mechanics, the math,
+[00:25] and the monumental risks that separate
+[00:27] human trust from algorithmic certainty.
+[00:33] >> [music]
+[00:36] >> Okay, let's dive into this. $8.9
+[00:39] billion. Yeah, billion with a B. That is
+[00:42] the absolutely staggering, catastrophic
+[00:45] financial loss stemming from the 2022
+[00:47] collapse of FTX. You see, when you trade
+[00:50] on a centralized exchange, you aren't
+[00:52] just trading tokens, you're trading
+[00:53] trust. FTX proved beyond a shadow of a
+[00:56] doubt the ultimate vulnerability of
+[00:58] human-managed custody. When a single
+[01:00] corporate entity or just one rogue CEO
+[01:03] holds the keys to billions of dollars,
+[01:05] that single point of failure is
+[01:06] absolute. But hey, if you think that's
+[01:08] ancient history, think again. Look at
+[01:11] this next number, $1.5 billion. That is
+[01:14] the massive loss from the 2025 Bybit
+[01:17] operational security breach. It's like a
+[01:19] glitching red neon warning sign that
+[01:21] centralized points of failure are an
+[01:22] ongoing massive threat. As long as
+[01:25] centralized exchanges are storing users'
+[01:26] crypto assets and managing their private
+[01:28] signing keys, users are directly exposed
+[01:30] to hacks, operational failures, and
+[01:32] plain old mismanagement. So, to navigate
+[01:35] out of those risks, here is our road map
+[01:37] laid out like a glowing holographic hut.
+[01:39] We'll hit one, centralized exchanges and
+[01:42] custodial risks. Two, decentralized
+[01:45] exchanges and AMM math. Three,
+[01:47] impermanent loss and trading fees. Four,
+[01:50] MEV, slippage, and sandwich attacks. And
+[01:53] finally, five, building the web 3
+[01:55] trading blueprint. It's a highly
+[01:57] analytical journey straight from the
+[01:58] fatal flaws of human trust into the
+[02:00] mathematical purity of on-chain trading.
+[02:03] All right, kicking things off with
+[02:04] section one, centralized exchanges and
+[02:06] custodial risks. Let's really look at
+[02:08] the fatal flaw of handing over your
+[02:10] private keys to third-party corporate
+[02:11] treasuries.
+[02:12] And this brilliantly illustrates the
+[02:14] core architectural difference we're
+[02:15] talking about. Look at the custodial
+[02:17] setup on the left. You log in with an
+[02:19] email and a password, you know, exactly
+[02:21] like a traditional bank. But the
+[02:23] exchange server completely controls the
+[02:25] private key that actually signs
+[02:26] transactions on the blockchain.
+[02:28] Now contrast that with the non-custodial
+[02:30] wallet on the right. Here the user
+[02:32] actually holds the secret recovery
+[02:33] phrase. You control the private key
+[02:35] locally. Without that key, the assets
+[02:37] literally cannot move. It's a
+[02:39] fundamental trade-off, right? The
+[02:40] usability of having a company manage
+[02:42] your security versus the absolute
+[02:44] uncompromising autonomy of self-custody.
+[02:47] It's not just about custody, though. The
+[02:48] entire trading execution differs wildly.
+[02:51] Centralized exchanges use off-chain
+[02:53] order books driven by traditional
+[02:54] matching engines. They give you blazing
+[02:56] fast sub-millisecond execution and flat
+[02:59] fees. But, of course, they carry that
+[03:01] massive custodial risk. Decentralized
+[03:03] exchanges on the flip side execute
+[03:05] trades directly on chain using
+[03:07] non-custodial smart contracts. They are
+[03:09] totally trustless and permissionless, so
+[03:11] you trade right from your self-custody
+[03:12] wallet. The catch? Your execution is
+[03:15] bound by block time constraints, and
+[03:17] you've got to account for variable
+[03:18] network gas fees.
+[03:20] Moving into section two, decentralized
+[03:23] exchanges and AMM math. We're stepping
+[03:26] out of the shadows of human-managed
+[03:28] failures and into the radiant gold light
+[03:30] of elegant algorithmic certainty. So, in
+[03:33] the DEX world, there is no company
+[03:35] sitting there matching up buyers and
+[03:37] sellers. Instead, we have the constant
+[03:39] product market maker, or CPMM. It relies
+[03:42] on a beautifully simple formula, X * Y =
+[03:46] K.
+[03:47] I want you to picture a perfectly
+[03:48] balanced glowing holographic seesaw. The
+[03:51] liquidity pool holds reserves of two
+[03:52] tokens, X and Y, and K is the constant
+[03:55] product. If a trader wants to swap for
+[03:57] token Y, they literally have to push
+[03:59] token X into the pool. Because K has to
+[04:02] stay constant, adding X inevitably pulls
+[04:04] from Y. That natural shift in the ratio
+[04:07] automatically adjusts the price based
+[04:08] purely on supply and demand.
+[04:10] Let's see how this actually evolved
+[04:12] across the different generations of
+[04:14] Uniswap, the absolute pioneer of this
+[04:16] AMM model. Uniswap V2 distributed
+[04:19] liquidity evenly from zero to infinity
+[04:21] across the price curve. It was
+[04:23] beautifully simple, but incredibly
+[04:24] capital inefficient. Then V3 hit,
+[04:27] introducing concentrated liquidity. This
+[04:29] allowed providers to set custom price
+[04:31] ranges, offering massive capital
+[04:33] efficiency, but it required really
+[04:34] active, hands-on management. And now V4
+[04:37] has revolutionized the game yet again
+[04:39] with a singleton architecture. It places
+[04:41] all pools into a single contract for
+[04:43] huge gas efficiency.
+[04:45] While introducing customizable hooks
+[04:47] that let developers totally alter how
+[04:49] the pools behave.
+[04:51] Let's dim the golden lights just a bit
+[04:53] for section three, impermanent loss and
+[04:55] trading fees. Because with mathematical
+[04:57] purity comes some very real inherent
+[04:59] tradeoffs for liquidity providers.
+[05:02] The most famous of these risks is
+[05:03] impermanent loss. Let's cut through the
+[05:05] jargon for a second. This is simply a
+[05:07] mathematical consequence of that convex
+[05:10] seesaw rebalancing rule we just talked
+[05:11] about. When the relative price of the
+[05:13] two tokens in the pool swings wildly,
+[05:15] the automated rebalancing naturally
+[05:17] leaves the liquidity provider with a
+[05:18] portfolio composition that is actually
+[05:20] worth less than if they had just held
+[05:22] those exact same tokens safely in their
+[05:24] wallet. It's called impermanent because,
+[05:26] well, if the price reverts back, the
+[05:28] loss vanishes. But if it doesn't, that
+[05:30] loss can easily eat right through the
+[05:32] 0.3% trading fees the provider is
+[05:34] earning. Which leads to a fascinating
+[05:36] question at the very bleeding edge of
+[05:38] DeFi research. Can protocol designers
+[05:40] actually engineer path-independent fees
+[05:43] to route completely around this risk of
+[05:44] impermanent loss?
+[05:46] Recent studies show that by ensuring a
+[05:48] combined fee factor strictly depends on
+[05:50] the current pool invariant, designers
+[05:52] can actually construct parametric fee
+[05:54] functions that achieve zero impermanent
+[05:56] loss for a given reference state. It is
+[05:58] complex calculus, sure, but it proves
+[06:00] the DEX ecosystem is constantly
+[06:02] mathematically evolving to protect its
+[06:04] users.
+[06:05] Now, things get a bit sinister in
+[06:07] section four: MEV, slippage, and
+[06:10] sandwich attacks. Welcome to the deep,
+[06:13] dangerous, dark forest of DeFi. Because
+[06:16] AMM spot prices only reflect the very
+[06:18] last trade in an isolated pool, they can
+[06:21] be totally manipulated if you have
+[06:22] enough capital. Listen to this
+[06:24] fast-paced chronological sequence of a
+[06:26] real-world exploit. First, an attacker
+[06:29] used a flash loan to borrow 2.3 million
+[06:31] BNB with absolutely zero collateral.
+[06:34] Second, they dumped it into a pool
+[06:36] massively skewing the ratio. Third, a
+[06:39] vulnerable protocol read that
+[06:40] manipulated inflated price and minted
+[06:43] illegitimate tokens to the attacker.
+[06:45] Fourth, the attacker sold those tokens
+[06:47] for pure profit, and fifth, they repaid
+[06:49] the original flash loan in the exact
+[06:51] same block. The result? A staggering $45
+[06:54] million in pure profit extracted in
+[06:57] seconds.
+[06:58] Now, what's really interesting about
+[06:59] this slide is how it translates all that
+[07:02] dark forest theory into cold, hard,
+[07:05] on-chain reality. Because large trades
+[07:08] inherently move the price on an AMM,
+[07:11] traders experience slippage, basically
+[07:13] getting a worse price than when they
+[07:15] initiated the trade. And when users set
+[07:17] their slippage tolerance way too high,
+[07:19] predators swoop in with sandwich attacks
+[07:22] to deliberately force the price to the
+[07:24] absolute limit of that tolerance,
+[07:26] literally pocketing the difference from
+[07:27] the user. Historically, a lot of traders
+[07:30] just lazily accepted the default
+[07:31] slippage setting of 0.5%,
+[07:34] but when Uniswap updated its interface
+[07:36] to use a dynamic market-adjusted
+[07:38] slippage calculation based on network
+[07:39] fees and trade size, the results were
+[07:41] absolutely incredible. We saw a massive
+[07:44] 54.7% reduction in trader losses. Just
+[07:48] by tightening that default tolerance,
+[07:49] the protocol severely crippled the
+[07:51] profitability of sandwich attacks. It
+[07:53] proved that smart defaults can
+[07:54] drastically protect user welfare.
+[07:56] All right, let's brighten this cyber
+[07:58] laboratory back up with some matrix
+[08:00] violet and high contrast neon for
+[08:03] section five, building the web three
+[08:05] trading blueprint. Time to turn theory
+[08:07] into code.
+[08:09] If you want to programmatically interact
+[08:11] with a DEX and bypass the front end
+[08:13] entirely, here is your sleek glowing
+[08:15] terminal blueprint using ethers.js.
+[08:18] First, you install your standard
+[08:20] dependencies like ethers and .env. Next,
+[08:23] you initialize a JSON RPC provider to
+[08:25] talk to the blockchain. Then, you
+[08:27] connect your wallet securely using your
+[08:29] locally stored private key. Remember,
+[08:32] self-custody is everything. After that,
+[08:34] you instantiate the Uniswap router
+[08:36] contract by plugging in its on-chain
+[08:38] address and ABI. Finally, you call fetch
+[08:41] pair data to build a fully specified
+[08:43] route from your input token to your
+[08:45] desired output token.
+[08:47] Once your environment is set up, you
+[08:49] execute the trade using a router method
+[08:51] like swap exact ETH for tokens. So, the
+[08:53] crucial point is how you configure the
+[08:55] parameters here to actively defend
+[08:56] yourself. When you call this function,
+[08:58] you aren't just blindly sending money.
+[09:00] You specify amount out min, which is
+[09:02] your programmatic slippage tolerance,
+[09:04] and a deadline timestamp. These
+[09:06] parameters are your literal code level
+[09:07] shields. If a bot tries to sandwich you
+[09:10] and pushes your return even a fraction
+[09:11] below your amount out min, the smart
+[09:13] contract completely reverts the
+[09:14] transaction, totally protecting your
+[09:16] capital.
+[09:17] We've journeyed all the way from the
+[09:18] catastrophic multi-billion-dollar
+[09:20] failures of centralized custodial
+[09:22] exchanges down to the pure mathematics
+[09:25] of the constant product formula, and
+[09:26] successfully navigated the predatory
+[09:28] threats of MEV and slippage. You've now
+[09:31] seen the full architecture of web three
+[09:33] trading. So, here's my final question
+[09:34] for you. Now that you understand the
+[09:36] algorithmic purity of AMMs and the very
+[09:39] real risks hiding in the dark forest,
+[09:41] are you ready to step up, claim the true
+[09:43] empowerment of self-custody, and code
+[09:45] your own programmatic Web3 swap?
+[09:51] >> [music]

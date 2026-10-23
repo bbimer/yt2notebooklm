@@ -1,0 +1,242 @@
+================================================================================
+NULLSPREAD RESEARCH · СУБТИТРЫ ВИДЕО ДЛЯ АУДИТА #28
+Модуль: День 3. Модуль 2: Деривативы, базис-трейдинг и почему ручной арбитраж мертв (02_arbitrage_and_derivatives)
+Поисковый запрос: crypto funding rate arbitrage delta neutral basis trade risks
+================================================================================
+ID видео: eq8ZHA6Czt8
+Название: The Hidden Trap in Funding Rate Arbitrage Nobody Talks About
+Канал: Fueled By Chai
+Ссылка: https://www.youtube.com/watch?v=eq8ZHA6Czt8
+Объем: 1617 слов (~11.6 мин)
+Язык: en
+Файл: audit_028_02_arbitrage_and_derivatives_eq8ZHA6Czt8.txt
+Создан: 2026-10-23 19:56:34
+================================================================================
+
+[00:00] So, you've heard about how funding rate
+[00:02] arbitrage is potentially very easy
+[00:05] money. You see people posting on X about
+[00:07] it, how much money they made on their
+[00:09] funding rate arbitrage trade, and you
+[00:12] want to try your hand at it. Well, there
+[00:14] are some pitfalls that you got to be
+[00:16] super careful that you avoid when doing
+[00:19] these funding rate arbitrage trades. And
+[00:22] I want to cover one of those pitfalls
+[00:25] here today. Uh so you don't get stuck
+[00:29] losing money on a trade that seems like
+[00:32] it should be a guaranteed winner. So as
+[00:36] you may or may not have experienced
+[00:38] before, there are no guarantees in
+[00:41] trading. Even a trade such as funding
+[00:44] rate arbitrage might seem like a sure
+[00:46] winner, but there are a few gotchas that
+[00:49] you got to keep in mind when you're
+[00:52] putting these trades on. And people post
+[00:55] on X how much money they made on a
+[00:57] particular funding rate arbitrage trade,
+[00:59] but I see very few people ever posting
+[01:03] on X consistent
+[01:05] wins in their funding rate arbitrage
+[01:07] trade. So yeah, sure you might have made
+[01:09] a 500% annualized uh return on one
+[01:13] trade, but can you do that consistently
+[01:16] over time? So with some of these tips,
+[01:20] if you want to get into funding rate
+[01:21] arbitrage, hopefully this is going to
+[01:22] help you here and this is uh some
+[01:25] lessons that I have learned personally
+[01:27] trading myself and uh I'll share them
+[01:29] here with you. So first of all, what is
+[01:32] funding rate arbitrage? It's when you
+[01:33] take two contracts on two different
+[01:37] exchanges. You buy one on the exchange
+[01:40] where the funding rate is lower and you
+[01:43] sell the contract on the exchange where
+[01:45] the funding rate is higher. You're in
+[01:47] theory indifferent to the price because
+[01:51] uh you'll lose money on one contract as
+[01:53] the price goes up say and you'll make
+[01:54] money on the other contract and all you
+[01:56] care about is collecting the difference
+[01:58] between the funding rates on those two
+[02:01] exchanges. So on the one I want to cover
+[02:04] the the issue I want to cover today has
+[02:07] to do with actually just placing the
+[02:10] trade itself and getting your orders
+[02:12] executed.
+[02:14] And uh I've got a a grid here of uh
+[02:18] about nine different assets uh and these
+[02:21] are spreads between lighter and aster
+[02:25] exchanges.
+[02:26] And what I'm showing here is the bid and
+[02:29] ask spread and then the funding rate on
+[02:31] each exchange and then what the funding
+[02:33] rate difference is. So if we pick one
+[02:36] here and let me zoom in a bit on one of
+[02:38] these uh what has a a pretty high
+[02:43] funding rate difference here. Okay. So
+[02:45] Pippen
+[02:46] uh -125 on lighter -10 on aster. So
+[02:51] that's a difference of about 110 115%
+[02:55] annualized. Now, here is where you got
+[02:57] to be careful. You got to think about
+[03:00] these trades in terms of basis points,
+[03:02] right?
+[03:03] Because the spread is going to be the
+[03:06] spread between the bid and ask is priced
+[03:08] in basis points basically. And your
+[03:11] funding rate when it comes down to it is
+[03:13] priced in basis points per hour. If you
+[03:15] think of it in basis points per hour,
+[03:17] you're going to be way way more careful
+[03:19] about executing these trades. If you
+[03:21] just take a look at thisund this juicy
+[03:24] 115%
+[03:26] difference, you think, okay, I'll do 2x
+[03:28] leverage. That's a, you know, 230 B 230
+[03:32] annualized percent uh return. I'm going
+[03:35] to be just minting money and it's not
+[03:38] going to it's not going to be that easy.
+[03:40] So, first of all, if you look at the bid
+[03:42] ask spread here on lighter, it's 18
+[03:44] basis points. On Aster, it's six basis
+[03:48] points. Now, if you take the funding
+[03:51] rate and p and get it down in terms of
+[03:53] basis points per hour, how many basis
+[03:56] points per hour are you going to make?
+[03:58] It comes out to 1.3, which is pretty
+[04:01] good for a delta neutral strategy where
+[04:05] you're not concerned about the price
+[04:07] move. The basis points 1.3 per hour is a
+[04:11] pretty decent return. Now, here is where
+[04:13] you're going to get killed, though,
+[04:15] because of the way that the pricing is
+[04:18] between these two assets on these
+[04:20] exchanges. It's actually because
+[04:23] basically what you're going to want to
+[04:24] do is you're going to want to buy uh the
+[04:29] the the contract on lighter and you're
+[04:31] going to want to short it on um on
+[04:34] Aster. Now, the problem is that the
+[04:36] contract is actually more expensive on
+[04:38] lighter. So, you're actually going to
+[04:39] buy a contract that's more expensive and
+[04:41] sell the cheaper one. This is actually
+[04:42] the opposite of typically what you'd
+[04:44] want to do, right? You want to buy the
+[04:46] cheap one and sell the more expensive
+[04:48] one. Now, because of that, you can see
+[04:51] that your what you're going to be paying
+[04:54] on that spread between the more
+[04:56] expensive one, buying the expensive one,
+[04:57] and selling the cheap one is 30 basis
+[04:59] points. And if you happen to place your
+[05:01] order at the wrong time, you just saw it
+[05:03] flicker up to like 50 basis points
+[05:05] there. So immediately you're going to be
+[05:08] down 30 basis points as soon as you
+[05:10] execute that trade. Now because of that
+[05:14] you're earning 1.2% uh 1.2 basis points
+[05:17] per hour. So it's going to take you
+[05:22] roughly 30 hours just to break even from
+[05:26] the shitty execution that you're getting
+[05:29] because of the spread difference, the
+[05:31] price differences between these two
+[05:33] exchanges, right? So, people don't
+[05:37] realize it unless they're looking super
+[05:39] closely at not only the funding rate
+[05:42] difference, but also the prices between
+[05:44] those two exchanges. So,
+[05:48] you're not going to want to take this
+[05:50] trade. It's going to take you forever
+[05:52] just to make your money back on the
+[05:53] funding rate, if the funding rate even
+[05:55] holds up for that long. Like, sometimes
+[05:58] these funding rates revert very quickly.
+[06:01] So, you want to avoid this trade right
+[06:03] here. You don't want to get into this
+[06:05] trade because you're going to be down 30
+[06:07] basis points right as soon as you place
+[06:09] it and then you got to wait 30 hours
+[06:11] just to break even on it. Um, so really
+[06:15] what you want to do is you want to find
+[06:18] funding rates on pairs where you're not
+[06:22] paying a fee just to get into the trade.
+[06:27] Now, here's another one. This one's even
+[06:29] a juicier. This is four four basis
+[06:31] points per hour. Um, but you're paying
+[06:34] three basis points to get into this
+[06:36] trade. So, it's not as bad as the other
+[06:39] one. And then and here's the other
+[06:41] thing, too. If you're paying commissions
+[06:44] on top of this, right, that's that's
+[06:46] another headwind to this this whole
+[06:48] strategy. So, I know a lot of a lot of
+[06:51] um brokers now if if you're pl placing
+[06:54] trades through the UI, uh they don't
+[06:56] charge a commission. Some of them still
+[06:58] do. But let's say you're you're making
+[07:01] these trades through say the the API and
+[07:04] you're paying four basis points per
+[07:07] trade. That's like another eight basis
+[07:09] points round trip. So if if you're
+[07:11] collecting four basis points per hour,
+[07:14] you know, that's another two hours just
+[07:16] to break even on your your funding rate
+[07:19] trade. So in terms of funding rate here,
+[07:24] let's see. Okay, so XAG,
+[07:27] this is a decent one, right? So it's
+[07:29] about a 40, you got 49% annualized
+[07:32] difference between those funding rates.
+[07:35] So here, uh, that's about half a basis
+[07:39] point per hour. And you can see if the
+[07:42] spread goes positive, that means you're
+[07:43] getting paid to take that trade. You're
+[07:45] buying the the cheaper, selling the more
+[07:47] expensive ones. So actually this this is
+[07:49] a good one here because you're making
+[07:52] you know be up to two oh that it just
+[07:55] went up to five basis points there
+[07:58] making up to five basis points just on
+[07:59] the trade itself. So not only are you
+[08:01] making money on the funding rate but
+[08:03] you're also making money because the
+[08:05] spread is working in your favor um on
+[08:09] this particular trade. Now now the
+[08:11] tricky thing too is you can see the
+[08:13] spread is just flickers like crazy,
+[08:15] right? So, it it all comes down to, you
+[08:18] know, how you get your trade executed
+[08:20] and and just kind of luck. If you're
+[08:22] placing these trades manually, it's just
+[08:23] going to be luck whether or not you're
+[08:25] going to get filled at a favorable rate
+[08:28] or not. But anyway, that is something
+[08:31] that you got to kind of keep your eye on
+[08:32] or you really got to keep your eye on as
+[08:35] you're looking for funding rate
+[08:36] opportunities. Don't just look at the
+[08:40] difference between those funding rates,
+[08:42] but also look at the difference in the
+[08:44] prices between those two exchanges. And
+[08:47] you don't want to be, you know, paying
+[08:48] 30 basis points like you are down here
+[08:50] for this particular particular pair.
+[08:54] So, I hope that's helpful. I'll have
+[08:56] some more tips for funding rate
+[08:57] arbitrage. There's there's a number of
+[08:59] different things you got to consider. Uh
+[09:01] it's not just a free lunch trade. It's
+[09:03] it just like any other trading strategy.
+[09:06] there's there's risks involved with it.
+[09:08] They're just uh not the same types of
+[09:10] risks that you would see when you're
+[09:11] making a directional bet on the market.
+[09:15] So anyway, I'd love to hear about your
+[09:16] experiences with funding rate arbitrage
+[09:19] or if you have some other questions or
+[09:20] want me to cover anything else. Uh drop
+[09:23] a comment below and hope you guys are
+[09:27] having an awesome week. I will see you
+[09:29] soon. Bye.

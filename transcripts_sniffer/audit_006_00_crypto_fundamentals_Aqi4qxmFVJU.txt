@@ -1,0 +1,115 @@
+================================================================================
+NULLSPREAD RESEARCH · СУБТИТРЫ ВИДЕО ДЛЯ АУДИТА #6
+Модуль: День 1. Модуль 0: Фундамент крипты, блокчейн и токеномика (00_crypto_fundamentals)
+Поисковый запрос: how stablecoins work USDT USDC peg mechanism explained
+================================================================================
+ID видео: Aqi4qxmFVJU
+Название: What are stablecoins, and how do they work?
+Канал: CNBC International
+Ссылка: https://www.youtube.com/watch?v=Aqi4qxmFVJU
+Объем: 1337 слов (~9.6 мин)
+Язык: en
+Файл: audit_006_00_crypto_fundamentals_Aqi4qxmFVJU.txt
+Создан: 2026-10-23 04:50:00
+================================================================================
+
+[00:00] When you think of cryptocurrencies, “stable” probably isn’t the first thing that comes to mind.
+[00:05] In the volatile world of digital assets, prices can go up, or they can go down, often dramatically.
+[00:12] Stablecoins aim to achieve the opposite effect, maintaining a constant value to offer investors
+[00:17] a haven from the intense price fluctuations of bitcoin and other tokens.
+[00:22] Or at least, that's how it should work.
+[00:25] The collapse of one so-called stablecoin, known as terraUSD, has shaken investors' faith in crypto.
+[00:31] It's also set off alarm bells for global regulators, who worry the phenomenon
+[00:35] may hold much broader risks to the financial system.
+[00:38] So, what are stablecoins exactly, and why are they so controversial?
+[00:49] In essence, stablecoins are cryptocurrencies whose value are pegged to an existing asset
+[00:54] — most often the U.S. dollar, though there are others tied to the euro and gold, too.
+[01:00] They’re sort of like casino chips for the crypto world.
+[01:04] Traders buy tokens like Tether or USD Coin (USDC) with real dollars.
+[01:08] Those tokens can then be used to trade bitcoins and other cryptocurrencies.
+[01:13] And whenever someone wants to cash in, they can get the equivalent amount of dollars for
+[01:17] however many stablecoins they want to redeem.
+[01:19] Glen Goodman is a former financial journalist turned crypto investor.
+[01:23] He ran me through the importance of stablecoins to the crypto market.
+[01:27] For any financial market to be efficient, it needs to be liquid, there needs to be a
+[01:32] lot of trading going on, it needs to be functioning smoothly.
+[01:35] The problem is that transferring from fiat currencies like dollars into cryptos is actually a hassle.
+[01:41] It costs money. It takes time.
+[01:44] Stablecoins solve that problem by allowing you to transfer an amount of fiat currency
+[01:49] into an equivalent number of tokens.
+[01:51] And then those tokens can quickly and cheaply be traded in  and out on the exchanges. It makes a world of difference.
+[01:57] But, as it turns out, some stablecoins aren't quite as stable as they're made out to be.
+[02:02] Let’s just look at what’s happened to this stablecoin price, the terraUSD price,
+[02:07] look at that absolutely extraordinary, dropped to just 12 cents here, way off its $1 peg.
+[02:13] We saw UST, one of the most popular US dollar-pegged stablecoin projects, totally collapse.
+[02:18] Consumers have gotten hurt real bad this time, and that’s a problem for the whole industry.
+[02:24] It was very much marketed as a stablecoin.
+[02:27] But terraUSD, otherwise known as UST, didn’t hold up to its promise.
+[02:32] Instead of fiat currency reserves, UST relied on a complex set of rules.
+[02:37] If the price of UST sank below a dollar, an algorithm would kick in, creating new units
+[02:42] of a sister coin called luna while taking an equivalent amount of UST out of circulation.
+[02:48] The idea was that this would throttle the supply of the stablecoin and push its price
+[02:51] back up to $1.
+[02:54] Stablecoins are in two different types.
+[02:57] The most easy to understand of those are the ones that are simply backed by, say, dollars.
+[03:01] So you have an equivalent amount of dollars in a bank account somewhere, or things that
+[03:06] are almost the same as dollars like Treasury bills.
+[03:09] The other type are the algorithmic stablecoins.
+[03:12] What they tried to do, was get around the problem of needing tons of collateral, loads of dollars in a bank.
+[03:19] As pressure is put downwards on UST through the mechanisms that work to try and stabilize it,
+[03:25] actually the price of Luna is kind of forced slowly downwards.
+[03:30] And whilst most of the time that system actually kind of works okay and it stabilizes the currency,
+[03:36] in an extreme situation like this one, what happens is it becomes a vicious circle where
+[03:42] UST has got pressure on its peg, it's becoming worth less than $1, the price of Luna falls
+[03:47] further and in the efforts to try and shore up UST, the price of Luna falls even further,
+[03:52] which scares the hell out of people and makes them start selling like crazy.
+[03:57] After UST "broke the buck," Tether also temporarily fell below a dollar on numerous exchanges.
+[04:04] Tether, the world's biggest stablecoin by market value, has long faced doubts over whether
+[04:09] it holds enough assets to support its purported peg to the dollar.
+[04:13] Tether processed more than $10 billion in withdrawals  in May as investors got cold feet about the token.
+[04:19] The source of Tether's reserves has been under scrutiny after a series of disclosures showed
+[04:24] it wasn't always backed 1-to-1 by cash as initially claimed.
+[04:29] The big fear with Tether is, what happens if everyone were  to start trying to redeem their tokens at once?
+[04:36] Such a scenario would likely mean Tether having to sell off assets it holds, including
+[04:40] commercial paper, a form of unsecured, short-term debt issued by companies.
+[04:45] Tether is still a worry, because if there was a massive run on Tether I'm fairly certain
+[04:50] there wouldn't be enough dollars readily to hand as Tether have admitted some
+[04:56] of their assets are commercial paper, which varies in value over time, and may or may
+[05:03] not be easy to sell on a short-term basis.
+[05:07] For its part, Tether says it is increasing its holdings of US Treasury bills - which
+[05:12] are viewed as safe and easily convertible to cash - while at the same time reducing
+[05:16] the amount of commercial paper it’s sitting on.
+[05:19] Some of Tether's critics also worry it has been used to  manipulate crypto prices, a claim the company denies.
+[05:25] I asked Paolo Ardoino, Tether’s chief technology officer, to address some of the concerns surrounding the stablecoin.
+[05:33] Tether did not drop below $1 with its peg.
+[05:38] So, the price of Tether on two or three exchanges went below the dollar because of lack of liquidity.
+[05:45] For the entire time, Tether always honors its redemptions for $1.
+[05:50] Tether, in 48 hours, redeemed $7 billion-plus, that is around 10% of their assets,
+[05:59] without the blink of an eye.
+[06:01] There is no stablecoin, but also there is no bank institution, that has a track record
+[06:06] today successfully redeeming 10% of its assets in 48 hours.
+[06:11] The UST debacle has put regulators on edge.
+[06:14] Governments in the U.S., U.K. and EU want new rules aimed at taming stablecoins, a market
+[06:20] that was worth over $150 billion in the middle of 2022. Larisa Yarovoya, associate professor of finance
+[06:27] at the University of Southampton's business school, said there's an urgent need for stablecoin regulation.
+[06:32] It is very, very hard to police, it’s very hard to control.
+[06:35] We don't have yet any regulation in this area.
+[06:37] If you have a look on the stablecoins, they can appear,  be there for four or five months, and after, disappear.
+[06:44] So, the lifespan of certain stablecoins, it's actually very short.
+[06:48] In the U.K., the government has recommended giving the Bank of England powers to
+[06:52] step in if a stablecoin of "systemic scale" ends up failing.
+[06:56] While most economists agree stablecoins aren't yet big enough to pose a "systemic" risk,
+[07:00] they're concerned that could eventually be the case if stablecoins are left to grow to
+[07:04] a point where they become too big to fail — similar to what happened with the 2008 financial crisis.
+[07:09] This gives me nightmares because it takes me back to the Lehman Brothers collapse in 2008.
+[07:15] And everybody was saying the same thing at the time.
+[07:18] The financial world is so complex, that nobody quite understood all these financial Instruments
+[07:22] and how they interacted with each other.
+[07:24] So nobody knew that there was trouble on the horizon because it was too much
+[07:28] for any one human brain to understand.
+[07:31] Similarly, with Terra Luna, the complexity just bamboozled everybody.
+[07:36] I think, in general, all cryptocurrency market participants will benefit from better regulation
+[07:43] of all the assets that are currently in circulation, including stable coins.
+[07:48] I think better regulation will improve transparency and will improve trust in this technology.
+[07:56] If we can offer certain system of auditing, of control, of monitoring,
+[08:03] better requirements on the transparency and disclosure,  so I think this really will help everyone.

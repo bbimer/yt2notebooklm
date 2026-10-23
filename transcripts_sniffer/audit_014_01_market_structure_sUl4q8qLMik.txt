@@ -1,0 +1,1533 @@
+================================================================================
+NULLSPREAD RESEARCH · СУБТИТРЫ ВИДЕО ДЛЯ АУДИТА #14
+Модуль: День 2. Модуль 1: Архитектура рынка, биржи и маркет-мейкеры (01_market_structure)
+Поисковый запрос: how crypto market makers work wintermute jump trading
+================================================================================
+ID видео: sUl4q8qLMik
+Название: The $20B Altcoin Market Crash Explained By Top Market Maker Wintermute | Jake Ostrovskis
+Канал: New Era Finance Podcast
+Ссылка: https://www.youtube.com/watch?v=sUl4q8qLMik
+Объем: 10107 слов (~72.2 мин)
+Язык: en
+Файл: audit_014_01_market_structure_sUl4q8qLMik.txt
+Создан: 2026-10-23 06:02:51
+================================================================================
+
+[00:00] Where were you on October 10th?
+[00:02] >> It was a very intense few hours.
+[00:05] >> The [ __ ] is happening there?
+[00:07] >> There was a fundamental catalyst and
+[00:09] then obviously something somewhere
+[00:12] had popped.
+[00:13] >> A lot of things were connected to each
+[00:14] other.
+[00:15] >> Yeah, for sure.
+[00:16] >> And then quite quickly the rumors about
+[00:19] Wintermute came in.
+[00:20] >> Yeah.
+[00:21] >> Meet Jake Ostroskis, head of OTC at
+[00:24] Wintermute, one of the largest markets
+[00:27] makers in crypto. In this episode, we
+[00:29] talk about the biggest crypto crash in
+[00:31] history, what it revealed about market
+[00:33] structure, and how market makers like
+[00:35] Vintimute help stabilize liquidity
+[00:38] across exchanges and OTC markets. Jake
+[00:41] shares his insights on token listings,
+[00:44] institutional flows, and the real
+[00:46] mechanics behind crypto's most important
+[00:48] trades and market makers. Trying to
+[00:50] pinpoint exactly where the pain point
+[00:54] was that caused this is very difficult
+[00:56] if not impossible.
+[00:57] >> Ultimately the market has expanded so
+[00:59] market makers become bigger too and
+[01:01] market makers are required to operate in
+[01:05] >> the system otherwise the system doesn't
+[01:07] work for sure. Everyone thinks that
+[01:09] market makers make money on every single
+[01:10] trade.
+[01:11] >> We're in a game of variance. It's more
+[01:13] of a an art than a science in that
+[01:15] regard. I think there's always going to
+[01:18] be
+[01:19] an edge [music] in crypto as a retail
+[01:22] participant. But then on the other side,
+[01:28] before we continue, I would like to ask
+[01:30] you for a favor. New era finance is
+[01:33] designed and started to educate you
+[01:36] about the future of finance. And I think
+[01:38] that blockchain and web 3 is going to
+[01:41] rebuild everything that we know about
+[01:43] finance. And that's through those guests
+[01:46] and the in-depth conversations that we
+[01:48] have. However, more than 80% of you are
+[01:51] watching this without being subscribed.
+[01:54] And if we get more subscribers and more
+[01:56] views and we can start building this
+[01:58] community, we can get better guests. We
+[02:01] can improve the content and we can start
+[02:03] building. And in that way, we can start
+[02:05] educating you even more. So I would like
+[02:08] to ask you for a simple favor to check
+[02:10] whether you are subscribed and if you're
+[02:13] not please do so we can start and
+[02:15] continue to build this channel towards a
+[02:17] bigger channel to help you all. Thank
+[02:19] you very much and enjoy the episode.
+[02:29] [music]
+[02:32] >> Welcome to the show Jake. Um the first
+[02:35] thing I have to ask where were you on
+[02:39] October 10th? [laughter]
+[02:42] >> Uh um unfortunately was at home. So
+[02:46] obviously naturally I mean how our
+[02:48] trading desk is set up is that London
+[02:51] would trade cover ultimately until
+[02:54] Singapore come online and it was in the
+[02:56] window between obviously London passing
+[02:58] over to Singapore um and therefore
+[03:00] obviously you can't be leaving people um
+[03:03] with with a book that isn't
+[03:06] neat and tidy. So it was all sort of
+[03:08] hands on deck people coming back online.
+[03:11] Um but yeah, it was obviously then early
+[03:13] like late on Friday night, early into
+[03:15] Saturday morning. Um but yeah, I mean
+[03:18] >> everyone sort of says like where where
+[03:20] were you like it was this big event
+[03:21] which no doubt it was but I mean it was
+[03:23] there was maybe 30 minutes of
+[03:26] >> chaos marketwide and then it did settle
+[03:28] down quite quickly. Um which I guess
+[03:32] probably is kudos to maybe the market
+[03:34] structure has evolved a lot. If this had
+[03:36] happened maybe three or four years ago,
+[03:38] I think it would have been an entirely
+[03:40] different story. Um, and as we've seen
+[03:42] in the past, I mean, things have
+[03:44] happened and I guess skeletons have come
+[03:46] up to the bodies have floated up a lot
+[03:49] quicker. Um, but yeah, I think overall
+[03:52] like it was a very intense few hours,
+[03:55] very active. Um, obviously quoting
+[03:57] prices through the whole the first start
+[04:00] of it and when spikes. Yeah.
+[04:03] >> Yeah. I mean a lot of vaults it became
+[04:05] very difficult to price things for that
+[04:07] period because obviously when we're
+[04:08] quoting OTC we are leaning quite heavily
+[04:11] on where all of the volume or most of
+[04:13] the volume is being done to come to our
+[04:15] fair value price as as a market maker
+[04:17] and when you've got even like Ave is
+[04:20] trading maybe 10% 15% off on X exchange
+[04:23] versus Y
+[04:24] >> you then have to really be thinking
+[04:26] about okay well what is the fair value
+[04:29] price here because
+[04:30] >> you can make some judgments about okay
+[04:32] the price is off, but there's there's
+[04:34] there's nothing in the book. So
+[04:36] therefore, that's probably the fair
+[04:37] price. And I guess obviously experience
+[04:39] helps a little bit in those situations
+[04:41] and obviously blessed enough to have
+[04:43] experience with other asset classes as
+[04:44] well. So you sort of know how things
+[04:46] trade in in crisis, but
+[04:49] settled down relatively quickly to the
+[04:51] point where everyone was fairly
+[04:52] comfortable again with positions, risks,
+[04:55] and yeah, I guess it was uh it was good
+[04:57] to see things in action basically. Well,
+[05:00] I mean, as I've said prior to this
+[05:03] conversation, we run our own liquid
+[05:05] funds, high frequency trading, basically
+[05:07] volatility, and uh I woke up while my in
+[05:10] my holiday days in Lombok and uh 6 hours
+[05:14] ahead. So, I got some calls from friends
+[05:17] and uh I was usually when they call the
+[05:20] last time that they did was the COVID
+[05:22] crash,
+[05:22] >> right? So, I knew that if they call
+[05:24] during midnight or during my sleep, um,
+[05:27] it's going to be really bad. And I
+[05:29] logged into Trading View and I saw some
+[05:32] - 60%, - 45%. I was like, what the [ __ ]
+[05:35] is happening, man? So, I logged into the
+[05:38] account and I was like, okay, I don't
+[05:41] know what has happened, but something
+[05:43] broke down.
+[05:44] >> Yeah.
+[05:44] >> That had nothing to do with anything
+[05:46] fundamentally.
+[05:47] >> Yeah. And it's just basically a flawed
+[05:51] system in Binance or anything that
+[05:53] cracked down there. And then quite
+[05:55] quickly
+[05:57] the rumors about Wintermute came in.
+[05:59] >> Yeah.
+[06:00] >> That Winmu crashed down or that they
+[06:03] went bankrupt or
+[06:05] but that none of it is true as you
+[06:08] basically take no position. But during
+[06:10] that period the risk are going up, the
+[06:12] spreads are going up.
+[06:13] >> Yeah, for sure. How did Wintermute
+[06:15] handle the entire few hours of peak
+[06:18] mania?
+[06:20] >> I guess it just comes down to all hands
+[06:22] on deck. Like 24/7 we have this
+[06:24] ultimately living breathing organism
+[06:27] which is the trading system, right? And
+[06:30] >> each day you take positions, you hedge
+[06:32] them out, you take positions, you get
+[06:33] market neutral as as the market passes
+[06:35] you positions. The difference when it
+[06:37] gets super volatile is that you're
+[06:39] landed with lots of positions all at
+[06:41] once. Yeah.
+[06:42] >> And as we obviously now know like there
+[06:44] was a lot of sort of ADLs that were
+[06:46] happening on exchanges which then for a
+[06:48] period of time may have blown out some
+[06:51] people elsewhere. Um I mean I think it's
+[06:53] fairly public knowledge that there was a
+[06:55] small percentage of our book that I
+[06:58] guess that side of the trade did come
+[07:00] undone. So but you then just have to get
+[07:02] delta neutral quite quickly. Um a lot of
+[07:05] it's algorithmic anyway. So
+[07:07] >> the main human involvement is always
+[07:09] checking risks and the largest issue
+[07:12] that we really had like we we we
+[07:13] maintained fairly solid uptime through
+[07:15] the whole of it which again like we all
+[07:17] look back and we're like that that was
+[07:19] quite impressive that that that that we
+[07:21] able we were able to do that and the
+[07:22] systems held. The issue we had was
+[07:25] moving inventory between exchanges and
+[07:27] where we needed it. So like maybe
+[07:28] something was trading really far out,
+[07:30] but it was trading far out because
+[07:32] people couldn't get inventory onto XYZ
+[07:35] place.
+[07:36] >> And that was really like the main
+[07:37] headache, getting inventory to the right
+[07:40] place in order to put things back in
+[07:41] line.
+[07:42] >> And that is obviously something
+[07:43] completely outside of the your control
+[07:45] because you're you're leaning on block
+[07:47] times, you're leaning on exchange
+[07:48] deposits and all of these things that
+[07:50] are obviously fairly fragile when when
+[07:53] everyone is one way trying to do the
+[07:55] same thing. But yeah, ultimately it
+[07:58] started settled down quite quickly. We
+[08:00] were quoting all night. Um, it was great
+[08:02] to be able to There's a lot of
+[08:04] counterparties that had come in for like
+[08:06] big OTC trades who there's a lot of
+[08:09] other desks that seem to have been down
+[08:10] over that period and ended up coming
+[08:12] back to us. Maybe there were historic
+[08:13] relationships which had been trading
+[08:15] away elsewhere and that element really
+[08:17] helped us on like a service level. But
+[08:20] yeah, I mean by like all accounts as you
+[08:22] said like I woke up to messages from
+[08:24] friends who'd never touched crypto
+[08:25] saying are you okay? I saw what
+[08:26] happened. I was like what do you mean
+[08:28] what happened? [laughter]
+[08:30] >> Like is uh in crypto it's like when
+[08:32] you've been through a few of these
+[08:34] events which it was a market event as
+[08:36] you said it wasn't fundamentally it was
+[08:39] there was a fundamental catalyst and
+[08:41] then obviously something somewhere
+[08:45] a lot of things were connected to each
+[08:46] other. Yeah, for sure. I think well the
+[08:50] first initial emotional reaction I had
+[08:53] was my account is liquidated because I
+[08:56] used to trade per a lot
+[08:57] >> right
+[08:57] >> and when this I remember that I during
+[09:00] the FTX crash I was also spending my
+[09:02] holidays in Oman
+[09:04] >> right
+[09:04] >> and my entire account blew up during
+[09:07] that crash and Luna was the same was
+[09:10] also during holidays so maybe I just
+[09:11] shouldn't be taking holidays at all but
+[09:14] um all the friends were texting me like
+[09:17] are you okay did survive and actually a
+[09:20] lot of funds have collapsed or like
+[09:23] market neutral delta neutral accounts
+[09:25] that have been
+[09:26] >> um shorting per long sport or the other
+[09:29] way around where crushed through the
+[09:32] system that was applied during those
+[09:34] hours
+[09:35] >> which you referenced as ADL.
+[09:37] >> Yeah.
+[09:38] >> Would you be able to explain that to the
+[09:40] listeners what ADL actually is because
+[09:42] nobody knew about the entire thing
+[09:44] before
+[09:45] >> Yeah.
+[09:46] >> Friday the 10th I guess. Yeah, I mean
+[09:48] it's just it's a it's a way to al for
+[09:50] exchanges ultimately to protect
+[09:52] themselves from going bankrupt and
+[09:54] obviously technically users as well.
+[09:56] That's what it's in place for.
+[09:58] >> It allows them to obviously take
+[10:00] positions out that they would deem don't
+[10:02] have the other side of the trade. So
+[10:04] obviously the issue in this case was
+[10:06] that people were short and they were
+[10:08] blown out of a short leg and then left
+[10:10] naked long. So they were taken out of a
+[10:11] profitable position. For every short
+[10:14] there's obviously a long and if those
+[10:17] orders don't match up at some point that
+[10:19] is when obviously these ADLs tend to
+[10:21] happen and different exchanges have
+[10:24] different methods of calculating how
+[10:26] it's done. I think a large thing that
+[10:30] added to the microstructure component
+[10:32] here is the advent and the growth in I
+[10:34] guess the perex farming because
+[10:37] >> there's a lot of capital there and those
+[10:40] those were very very clearly leveraged
+[10:43] on both sides of the trade. So maybe
+[10:45] they were leveraged long on one side and
+[10:47] they were leveraged short on another
+[10:49] side and that meant that there were
+[10:50] probably some blowout on both legs which
+[10:55] >> it's ultimately that that's where the
+[10:56] capital has disintegrated ultimately and
+[10:59] that's what added to the force
+[11:01] liquidations.
+[11:03] >> Trying to pinpoint exactly where the
+[11:06] pain point was that caused this is very
+[11:09] difficult if not impossible. It's a lot
+[11:12] of sort of a lot of people are looking
+[11:14] through the scraps and trying to find
+[11:16] like where it actually started. But I
+[11:19] think it's so difficult with the current
+[11:20] micro structure because you never know
+[11:24] the intention of someone on one side of
+[11:26] a trade. You never know if it's one part
+[11:27] of a hedge. You never know if they've
+[11:29] got I don't know a long delta somewhere
+[11:31] although it's a complete directional
+[11:33] trade. But
+[11:34] >> as you said, like logically, you would
+[11:36] have thought that some of the long short
+[11:38] funds probably had a very difficult
+[11:41] evening, especially if they're using a
+[11:42] lot of leverage on on the per legs.
+[11:45] >> That said, I've actually been surprised
+[11:47] in that chatting not just to our
+[11:50] counterparty base, but also like other
+[11:52] desks. I mean we're we're obviously chat
+[11:54] to other desks as well and generally
+[11:57] everyone seems to have survived pretty
+[11:59] well and there's no one yet that seems
+[12:01] to be like okay I think there's a bit of
+[12:03] pain in this corner. So in terms of like
+[12:06] systemic impact at the moment and I hope
+[12:09] I won't be made to eat my words but it
+[12:11] doesn't feel like there was a huge blow
+[12:14] up or huge enough to be this sort of
+[12:16] bleed out like we had in the last cycle
+[12:18] where you saw a few of obviously like
+[12:20] >> scale free and then but then obviously
+[12:23] that was looped with a lot of leverage
+[12:25] from the lending desks as well which
+[12:26] hasn't existed ultimately this cycle
+[12:28] >> and a lot of contagion because they were
+[12:31] borrowing funds from another one
+[12:33] actually we're doing it again internally
+[12:35] to another entity. So
+[12:37] >> to be honest, the the ones that have
+[12:39] actually been hurt through this entire
+[12:41] crash are retail traders that are naked
+[12:43] long in BBS or
+[12:46] >> are shorting and longing in different
+[12:48] occasions and then both of them get
+[12:50] squashed out.
+[12:51] >> Yeah.
+[12:52] >> Um or funds that are having a very basic
+[12:57] market neutral strategy or funding or
+[12:59] whatever they do, those have also been
+[13:01] blown up.
+[13:02] >> Yeah. Um, especially in the in the
+[13:05] Netherlands in in the rumors, some funds
+[13:08] have had some serious issues, but not
+[13:10] really a big big one.
+[13:12] >> Exactly.
+[13:12] >> That's that's it's interesting though
+[13:14] because it's 20 billion.
+[13:16] >> Yeah,
+[13:16] >> they say. So,
+[13:18] >> you should expect that the big one has
+[13:21] been blown up. I think it's the the
+[13:23] numbers I guess would have to be taken
+[13:26] with a slight pinch of salt because if
+[13:27] it's 20 billion even if they're running
+[13:30] that leverage on like a 50% ratio you
+[13:33] have it already. So I don't know I it
+[13:36] seems to have been like a lot of the big
+[13:38] positions that were blown out and how
+[13:40] those mechanisms tend to work is they
+[13:43] will look algorithmically at the most
+[13:45] highly leveraged positions first and
+[13:47] therefore as a proxy that actual
+[13:49] headline number it's great for the press
+[13:52] and the media but actually on the
+[13:54] underlying it's not going to be as big
+[13:57] as that. Not saying there was a huge
+[13:58] pain. It was obviously very big pain and
+[14:01] you could just you just need to look at
+[14:02] the charts to see that. But the headline
+[14:04] number and the actual reality I think
+[14:06] are probably two different things. Um
+[14:08] and also I mean we've seen this like
+[14:10] throughout this cycle when people have
+[14:12] been quite I guess overt and um about
+[14:16] talking about how exchanges are uh I
+[14:20] guess putting out and sharing their
+[14:21] liquidation data like you had um sort of
+[14:24] a few of the um I guess large CEOs come
+[14:28] out and say okay we weren't like putting
+[14:30] this out and reporting properly now we
+[14:32] are. You've then got like Coin Glass who
+[14:34] are like taking different elements of
+[14:36] liquidation data and saying this is
+[14:38] right, this is wrong and then I mean
+[14:39] there's there the micro structure there
+[14:42] for a centralized reporting system
+[14:43] obviously doesn't exist as a function of
+[14:45] the market being fragmented.
+[14:47] >> Mhm.
+[14:47] >> Um so yeah I think it's very hard to
+[14:50] sort of peacemail your way through the
+[14:52] the wreck.
+[14:53] >> That's actually true. But um ultimately
+[14:55] if you went on to social media the days
+[14:57] after it was very clear that retail
+[14:59] altcoin long traders were completely
+[15:02] vanished away.
+[15:03] >> Yeah.
+[15:03] >> Um then I actually got a quote here
+[15:07] which is uh from a king
+[15:09] >> right
+[15:09] >> um I was listening to a podcast to
+[15:11] prepare for this show and he said I'm
+[15:14] generally very sad that people are
+[15:16] stupid and post all sorts of things.
+[15:18] This is more or less on the comments on
+[15:20] interview,
+[15:20] >> right?
+[15:21] >> But these are the people that gamble on
+[15:23] altcoins and as long as they keep going
+[15:24] to the casino, we make money out of it.
+[15:27] So, I'm fine with it. The thing is I've
+[15:30] been listening to Fainy like three or
+[15:32] four podcasts right now. And I'm just
+[15:35] generally interested how is it to work
+[15:38] for him in in Wintermute? Is he like
+[15:42] that direct as well towards the team or
+[15:45] how is it to be with him?
+[15:47] Yeah, I mean it's it's it's
+[15:49] >> it's such a funny troll to be fair.
+[15:52] >> Yeah, I mean he's he's he's brilliant
+[15:55] online. I think people love to sort of
+[15:57] as you mentioned obviously love through
+[15:59] the comments, but I think a lot of what
+[16:02] he says is is very true. It's true.
+[16:04] >> It's no it's not like a lot of fluff.
+[16:08] It's very direct. It's to the point.
+[16:09] It's exactly sort of what you probably
+[16:11] need from ultimately a leader. And when
+[16:14] you do see that being put across in in
+[16:16] in a public forum, it's like okay well
+[16:19] like that's probably how everyone feels
+[16:21] across the market and it is the reality
+[16:23] of it and it's not hiding it like a lot
+[16:25] of other people I think like to do but
+[16:27] ultimately yeah I mean that quote
+[16:29] directly I mean we
+[16:30] >> we gain nothing from people leaving the
+[16:32] market we gain from being in the center
+[16:35] of the market as it's growing and
+[16:37] expanding.
+[16:37] >> Yeah.
+[16:38] >> So from our perspective that is exactly
+[16:41] sort of people need to continue trading
+[16:45] and for that we can only hope that
+[16:48] people are able to come back and
+[16:50] obviously participate because it's a new
+[16:53] sort of system that's being generated
+[16:55] and I think that's sort of quarter
+[16:57] >> our belief anyway just the beta over the
+[16:59] next 5 years of being involved in the
+[17:01] market is significant and I don't think
+[17:04] anyone wants to see it like collapse
+[17:05] right that's why we're all in the in
+[17:08] crypto digital assets in the first place
+[17:10] >> actually that's true and I think um He's
+[17:12] been very straightforward with his
+[17:14] answers on a lot of difficult topics.
+[17:17] >> Yeah.
+[17:18] >> And he's applying a lot of game theory
+[17:20] when it comes to like situations or
+[17:23] trade-offs that are happening in the
+[17:24] markets. Like if
+[17:26] we're going to talk about it too, but
+[17:28] like token valuations in general.
+[17:29] There's a lot of negativity surrounding
+[17:32] listings that are taking place and then
+[17:33] Winmute get blamed for the fact that the
+[17:36] token goes down. But then his answer is
+[17:38] yeah,
+[17:39] >> maybe the value of the token is just way
+[17:40] too high. Yeah,
+[17:42] >> because ultimately a market maker
+[17:45] doesn't have a position.
+[17:47] >> Yeah.
+[17:47] >> Maybe barely, but just market neutral in
+[17:50] general.
+[17:51] >> Yeah.
+[17:52] >> And if there is like a certain flow
+[17:55] taking place. So like for instance, if a
+[17:58] retail trader is selling 5 million of
+[18:00] Bitcoin on one exchange, there's a
+[18:03] spread between two exchanges and that's
+[18:04] where you
+[18:06] >> take the spread. Yeah. That's what a
+[18:08] market maker does, right? So there's no
+[18:10] point or no added value of kicking out
+[18:15] people out of the system.
+[18:16] >> Yeah.
+[18:17] >> For winter mute, right?
+[18:18] >> No. It's it would be completely against
+[18:21] our interest to do that, right? Because
+[18:23] >> there's no long-term game out of it. So
+[18:25] >> Sure. going into like from this big
+[18:28] event that took place um what do you
+[18:32] think is required to make it more
+[18:34] sustainable for like those type of
+[18:36] participants in the markets like the
+[18:38] retail trader that wants to come in gets
+[18:40] kicked out again coins are suffering
+[18:43] again
+[18:44] >> what do we need in terms of safety to
+[18:46] prevent this
+[18:48] >> I think obviously the large
+[18:51] issue almost or consideration that comes
+[18:54] up every single time one of these big
+[18:56] liquidation moves happens is the levels
+[19:00] of increased leverage in the system
+[19:01] building up to it.
+[19:03] >> And in any market anywhere in the world
+[19:07] like large increases in leverage are
+[19:10] almost completely correlated with
+[19:12] subsequent blowups in some way, shape or
+[19:15] form. And yes, these are we're in a new
+[19:18] market. We're this world growing world
+[19:21] of digital assets where things are being
+[19:22] reinvented somewhat. But the core first
+[19:25] principles do remain. If you if people
+[19:27] use a lot of leverage at some point like
+[19:31] this is this is how things end in the
+[19:34] short term.
+[19:35] >> Mh.
+[19:35] >> So I think that component is very
+[19:38] difficult. How what the solution is I
+[19:41] don't know because if centralized
+[19:42] exchanges cap leverage it would push
+[19:44] people onto dexes and it would still
+[19:46] continue.
+[19:46] >> Fair enough. Yeah. It's more of like a
+[19:49] okay moving from this model where people
+[19:52] are just seeing this as speculative
+[19:54] assets to let's trade this more like an
+[19:58] equity where you have an underlying cash
+[20:00] flow and you have a reason to believe in
+[20:02] something and therefore you can sit in
+[20:04] something for longer period of time
+[20:05] because you believe it's going to go up
+[20:06] and you're not trying to guess the next
+[20:08] >> 100 basis point move in something
+[20:10] intraday. That's where the that's where
+[20:12] ultimately this
+[20:14] >> churn happens. But then on the other
+[20:16] side like yourself like if you're
+[20:17] investing in things cuz you believe in
+[20:19] things and those long-term
+[20:22] holders that is the people who will sit
+[20:24] in spot or use a little bit of leverage.
+[20:26] Leverage is great in the right
+[20:27] scenarios. It's bad when you get
+[20:30] everyone piling into something. You see
+[20:32] it in the funding rates, right? Like
+[20:33] every time Bitcoin's made a new high,
+[20:35] you look at Hyperlquid, which I think
+[20:37] now is probably a bit of a better proxy
+[20:39] for the actual leverage in the system
+[20:40] because
+[20:41] >> there's a lot of other projects that are
+[20:43] obviously running these huge basis
+[20:45] trades on uh I guess your traditional
+[20:48] sexes and even the CME which is
+[20:50] compressing that. It's no longer a great
+[20:52] signal. But then if you look at that on
+[20:54] >> decentralized exchanges, it's not the
+[20:56] same. So you can see where the leverage
+[20:58] is getting quite large and that sort of
+[21:01] makes you think okay that's actually the
+[21:02] pocket where it's happening at the
+[21:04] moment which is why I go back to that
+[21:06] micro structure point in that it isn't
+[21:08] being really interesting to see like how
+[21:10] traders have moved and leaned towards
+[21:12] these dexes
+[21:14] obviously a lot of them and there is
+[21:16] some capital there that won't be sticky
+[21:18] they might be just looking to farm an
+[21:20] airdrop but ultimately I think when
+[21:21] people interact with those and
+[21:23] >> like learn about them then ultimately
+[21:25] that is probably flows down from there
+[21:28] and if people stay on those venues
+[21:29] that's going to be something to watch
+[21:30] but
+[21:31] >> good one I think um if we look at safety
+[21:35] measures in general I think one of the
+[21:37] most common topics right now is circuit
+[21:39] breakers
+[21:40] >> which is very difficult if you have so
+[21:43] many houses to trade on
+[21:46] >> um the other one is um well your
+[21:49] background is also outside of crypto
+[21:51] >> um I think you've been trading oil
+[21:53] >> so I was I was in a global macro sey
+[21:55] before. So I traded everything from like
+[21:57] oil to like lean hogs to like obviously
+[22:00] then single name equities to FX. So
+[22:03] yeah, everything under the sun
+[22:05] ultimately. Um
+[22:06] >> but that's a different market.
+[22:08] >> Yeah, very different market.
+[22:09] >> And if you want to trade um well
+[22:13] probably a lot of those commodities with
+[22:15] equities with leverage.
+[22:17] >> Yeah,
+[22:17] >> it's not as easy as with crypto.
+[22:19] >> Yeah. So from safety measures, you would
+[22:23] argue that lowering the leverage on all
+[22:26] the exchanges is probably the safest way
+[22:28] going forward.
+[22:29] >> Yeah.
+[22:29] >> Um because retail traders have the
+[22:32] impression to go more risk on by adding
+[22:35] leverage while leverage is actually
+[22:37] mostly being used to decrease risk.
+[22:39] >> Yes, for sure.
+[22:40] >> Yeah.
+[22:40] >> That's how you should be doing it,
+[22:42] right?
+[22:42] >> Yeah. I mean, well, that's like if you
+[22:43] think about the use in crypto of even
+[22:47] something like options, right? like
+[22:49] options at their very core in any other
+[22:51] market are insurance products. That's
+[22:53] what they are.
+[22:54] >> Yeah.
+[22:54] >> Not in crypto. They have been
+[22:56] traditionally uses to add leverage and
+[22:58] that has been to be fair that is
+[23:00] changing and we're seeing a lot of that
+[23:01] float change and you can see it in like
+[23:03] the nature of like the volatility
+[23:05] surface. But historically that wasn't
+[23:07] the case and that's just because
+[23:08] everyone is just looking to add leverage
+[23:10] when they think the market is hot.
+[23:13] >> And that comes again like to per like
+[23:15] traditionally people would use futures
+[23:16] to hedge risk. They were That's how it
+[23:19] used to be. Yeah,
+[23:19] >> that's how it used to be. Um, but now
+[23:21] obviously these amazing products called
+[23:23] perpetuals, which at the very nature are
+[23:25] fantastic, great product market fit. The
+[23:27] NASDAQ is now looking at them like
+[23:29] they're probably going to become the
+[23:30] gold standard in leverage futures
+[23:32] markets all around the world at some
+[23:34] point. I do believe that because they
+[23:36] have huge advantages. The disadvantage
+[23:38] obviously as you said for longevity in
+[23:41] the short term is that at the moment
+[23:44] there is no cap on leverage but being
+[23:47] realistic as you said as well like
+[23:49] because there's so many different
+[23:51] exchanges if one exchange captured
+[23:53] people at 10 another one would use that
+[23:55] as an advertising model to bring them
+[23:58] over. So in a realistic world, I don't
+[24:00] know if that is the answer. Circuit
+[24:02] breakers, yes. Um I do think that would
+[24:06] be in an ideal world, but again, the
+[24:08] level of fragmentation and who's going
+[24:10] to police that cuz there has to be
+[24:12] someone to police that if that's
+[24:14] marketwide like that that doesn't at the
+[24:16] moment doesn't work. That is a problem
+[24:19] that I'm sure at some point someone will
+[24:21] try and solve. But when you have so many
+[24:24] different dexes on so many different
+[24:27] chains and then you have so many
+[24:28] centralized exchanges, you're going to
+[24:31] at some point to even consider putting
+[24:33] that model in place, you would need
+[24:35] someone overseeing that whole market
+[24:37] structure.
+[24:39] >> And then I guess you get into arguments
+[24:40] who's best place to do that, which I
+[24:42] guess at the moment I wouldn't even know
+[24:44] where to start with that argument. Um,
+[24:47] >> no, that's like it's it's so difficult.
+[24:50] I mean even from that example but
+[24:54] there's a different example. I'm from
+[24:56] Netherlands.
+[24:56] >> Yeah.
+[24:57] >> We have my car which basically excluded
+[25:00] me from trading on Binance for already
+[25:02] like four or five years
+[25:04] >> and then one exchange after another left
+[25:08] the country and then you're basically
+[25:11] left over with Maxi and a few of those
+[25:13] like tier whatever exchanges.
+[25:15] >> Yeah.
+[25:16] >> Um
+[25:17] >> and you're not able to trade futures. So
+[25:19] what do you do? You go on to Hyperlquid
+[25:21] or on to Auster or any of the other ones
+[25:24] >> and trade futures there and then you can
+[25:26] create a regulation but it doesn't have
+[25:30] any impact at all if you have a DEX
+[25:31] >> doesn't move the needle.
+[25:32] >> So then it brings me back to how are you
+[25:36] going to create an efficient market.
+[25:38] >> Yeah. If people want to trade with that
+[25:40] leverage, well, let them, but that
+[25:44] ultimately also ends up with people
+[25:45] being kicked out and then we are going
+[25:48] to keep having these sort of events.
+[25:50] >> Yeah.
+[25:51] >> It's just it's just a big sort of
+[25:54] tradeoff like one way or the other it's
+[25:56] not going to be fully practiced in an
+[26:00] efficient way. Right. I guess like the
+[26:03] flip side to that is that considering
+[26:05] where the market is now compared to five
+[26:08] years ago, right? Yeah.
+[26:10] >> We are trending in the right direction.
+[26:12] These things never go in a straight
+[26:14] line. Like we we were we were going
+[26:16] somewhere.
+[26:17] >> FTX happened that big blow up or you saw
+[26:21] all of the contagion that set us back a
+[26:23] couple of years then we've gone up again
+[26:25] and now arguably we've had this big
+[26:27] liquidation event. We don't really know
+[26:30] what comes out the other side of it. You
+[26:31] know there's a lot of pain somewhere.
+[26:33] You can sort of pinpoint where the rough
+[26:37] problems have stemmed from i.e. leverage
+[26:39] but it's very difficult to find an exact
+[26:41] actor in that space. Um but like any
+[26:45] market development like think 2008 no
+[26:49] one really knew about CDOS's beforehand
+[26:51] right no one knew about like this reh
+[26:54] hypothecation of of mortgage back
+[26:56] securities after that blew up the
+[26:58] regulation happened people realized okay
+[27:00] let's do that so it's not going to
+[27:01] happen again and markets again like they
+[27:04] are going very back to first principles
+[27:07] again like people do learn from them
+[27:09] mistakes and this is something that
+[27:13] people now will look at and say okay
+[27:14] well that's as you said like people
+[27:16] learned about ADLs now everyone I think
+[27:20] really trading this actively is very
+[27:21] aware of what that is and what the
+[27:23] impact could be before last week very
+[27:26] few people in the market probably were
+[27:28] and that has changed in itself so then
+[27:29] you say okay well the next big dump is
+[27:32] probably not going to be caused by that
+[27:33] because something else and it'll be
+[27:35] something else like markets don't tend
+[27:37] to
+[27:38] >> crash or have a big negative event when
+[27:43] something is expected or well very well
+[27:45] known about because people can arguably
+[27:48] always model something in their head of
+[27:50] the risks there.
+[27:51] >> Mhm.
+[27:51] >> Um and it's always the thing it's the
+[27:53] it's the devil you don't know that
+[27:56] ultimately ends up being the big impact.
+[27:58] So
+[27:59] >> funny enough I was um I started reading
+[28:02] the book uh the black swan during my
+[28:04] holiday. [laughter]
+[28:05] >> Yeah. Yeah. Yeah.
+[28:07] >> It's not about like those big events but
+[28:09] it's in the context of everything.
+[28:11] >> Yeah. like how much do we know that we
+[28:13] don't know?
+[28:13] >> Yeah,
+[28:14] >> that's essentially like uh basically
+[28:16] everything is a black swan. Yeah,
+[28:18] >> that's what his
+[28:19] >> conclusion is. It's fascinating to read.
+[28:21] >> It is. Yeah.
+[28:22] >> And then it's also like how are you
+[28:24] going to optimize for the outlier or are
+[28:27] you going to optimize for just
+[28:29] everything and then there's that one
+[28:31] tiny bit that if that happens, it
+[28:34] happens and it's out of your control.
+[28:35] >> Yeah. And that feels like we can spend a
+[28:39] lot of time making this better, but this
+[28:42] was just a chain reaction of events
+[28:45] taking place in such a short window of
+[28:47] time that we couldn't prevent.
+[28:49] >> Yeah,
+[28:50] >> that's I kind of feel like that that was
+[28:52] it
+[28:52] >> to be honest. Trump saying something
+[28:56] fine.
+[28:56] >> Yeah.
+[28:57] >> Then uh the Binance three pairs that
+[29:00] basically broke down because they were
+[29:01] going to be priced different in a few
+[29:03] days. Coincidence. Yeah.
+[29:05] >> And then well market makers being fuel
+[29:08] with full with their inventory on
+[29:10] Binance not being able to deposit.
+[29:12] >> Yeah.
+[29:13] >> That cost the entire reaction on the
+[29:16] market, right? So how was it for um for
+[29:20] you to uh to run the OTC
+[29:23] >> during those hours?
+[29:24] >> I mean it should be very difficult.
+[29:26] >> It should be very difficult. Yeah. I
+[29:27] mean, again, like a lot of it comes down
+[29:29] to like if if the pricing holds up and
+[29:32] your you can trust your price as your
+[29:35] mid price,
+[29:36] >> it's it's fine. As soon as you can't you
+[29:38] lose faith in the ability to trust a mid
+[29:41] price, then you can't show a bidding
+[29:43] offer that you'd stand behind. And when
+[29:45] things were off on different exchanges
+[29:47] and people were trying to come together
+[29:49] and think, okay, what's right, what's
+[29:50] wrong, what are you um taking out of the
+[29:53] pricing, etc. All of that is a process.
+[29:56] A lot of that happens very quickly as
+[29:57] well, right? Um, a lot of it was looking
+[30:00] at, okay, even down to like pricing at
+[30:03] that point, someone looking to do like a
+[30:04] big USDT trade, USDT on different
+[30:07] exchanges was trading all over the
+[30:09] place. So, even that as a very simple
+[30:12] like vanilla example, it then becomes
+[30:15] okay, you can't just trust your mid
+[30:16] price. You've got to look at what you've
+[30:18] actually got to be super aware of what
+[30:20] is going on around like why is that over
+[30:22] there? really why it was over because
+[30:23] everyone was buying it and because they
+[30:25] were getting liquidated and or or
+[30:27] selling down anything that they did have
+[30:29] and they were they were bidding up USDT
+[30:31] for example, but that was having on more
+[30:33] on one exchange and it wasn't another.
+[30:35] So then that feeds into your estimation
+[30:37] of where price should be and then that
+[30:39] allows you to build keep keep the show
+[30:41] on the road ultimately. Um
+[30:43] >> but yeah, it very much was like we were
+[30:45] very cognizant of all of our competitors
+[30:49] again going back to like the game
+[30:50] theory, right? everyone is in the same
+[30:52] position and it then becomes almost like
+[30:55] let's get keep running. Let's keep
+[30:57] showing pricing. Let's make sure
+[30:59] everything is back in line as soon as
+[31:01] possible. We want to be the first people
+[31:03] and we want to have the highest up time.
+[31:05] >> And genuinely, I think we did a very
+[31:06] good job at it. And so yeah, then after
+[31:08] the first half an hour, it's sort of
+[31:10] okay, you've obviously got to quote
+[31:11] wider cuz by proxy of the ranges and
+[31:13] because we're a prop desk as well,
+[31:15] >> any trade that we take with the
+[31:17] counterparty becomes our risk at that
+[31:19] point and we have to be happy that we
+[31:21] can hedge out and obviously still take a
+[31:23] spread. So there's a lot of different
+[31:24] things that we had to think about, but
+[31:26] yeah, ultimately another day at the
+[31:27] office, I think. Was it a where was our
+[31:30] like peak mania in terms of the OTC
+[31:32] trading then themselves too or was there
+[31:35] like a lot of panic taking place from
+[31:38] big buyers and sellers executing trades
+[31:41] on the markets or
+[31:43] >> not particularly. I mean I guess our
+[31:45] spot our OTC franchise is heavily
+[31:48] dominated by spot trading. So as a
+[31:51] function of that, we actually saw more
+[31:53] people coming in and trying to buy the
+[31:56] the dips because it was very like yes,
+[31:59] there was a catalyst clearly that the
+[32:01] that Trump had threatened tariffs again,
+[32:04] but I think this taco thing does reign
+[32:06] true and we've seen it be brought back
+[32:07] since. So I think everyone quite quickly
+[32:09] understood that it was a huge reaction
+[32:11] and probably not relative to the initial
+[32:14] news. So we did see people coming in and
+[32:15] trying to buy the dip. Obviously, you
+[32:17] had to be wide because things were
+[32:20] blipping down 60% and then coming back
+[32:22] up and you're like, "Okay, well, gonna
+[32:25] have to be wider here." But then people
+[32:27] were were were coming in and sort of
+[32:29] realized that there nothing really was
+[32:31] trading on on the wicks. Like, if you
+[32:32] actually look at what did trade, a lot
+[32:34] of it was just forced. Um, there was no
+[32:37] humans really there. Um but then as soon
+[32:39] as it like came back and to the point
+[32:41] where we were showing reasonably good
+[32:44] pricing and of course like when it's
+[32:45] going on you're showing really wide as
+[32:48] things come back in and then naturally
+[32:50] people aren't going to trade when it's
+[32:51] super wide. So then on the OTC guys were
+[32:54] then like okay we'll keep an eye on it
+[32:55] when we can tighten spreads oping like
+[32:57] yeah okay I can tighten up here I'm
+[32:58] happy I'm happier with our pricing here
+[33:01] than it was five minutes ago and then
+[33:03] you yeah get over the line but
+[33:05] >> it's just more about like twoing and
+[33:06] throwing with counterparties trying to
+[33:08] get price that they're happy to trade on
+[33:10] price that we're happy to take a risk
+[33:11] and it's much more relationship driven
+[33:13] than like yeah and that's why I guess
+[33:16] you still have traders human traders on
+[33:19] the other side of the book right um cuz
+[33:20] that that side of It really does help
+[33:22] when the markets turn like that.
+[33:24] >> Um, for context, I mean the OTC trading
+[33:28] firm or the OTC trading part is very
+[33:31] clear for me.
+[33:32] >> Mhm.
+[33:32] >> But on a regular day, what type of
+[33:35] trading do you do? Who are your
+[33:38] counterparties?
+[33:39] >> Yeah.
+[33:39] >> What is just a business day?
+[33:41] >> So on the OTC side, I mean, we've got
+[33:43] about 2 and a half thousand
+[33:44] counterparties globally, and that's
+[33:47] predominantly on on on the spot side.
+[33:49] Um, we have another book that trades
+[33:51] derivatives, which I guess we touch on
+[33:53] after, but like on the spot side, we
+[33:55] have everyone from I guess um large
+[33:58] holders, maybe it's a venture firm,
+[34:00] maybe it's a liquid fund. Um, maybe it's
+[34:03] a early investor, someone put money into
+[34:05] an ICO. So, we have that side of the
+[34:07] market. And then on the other side, we
+[34:09] have like everyone from sort of
+[34:11] traditional hedge funds, then
+[34:13] cryptospecific, cryptonative hedge
+[34:15] funds, um, right down to sort of
+[34:17] corporate levels. So now obviously used
+[34:19] to be seeing the corporate market
+[34:21] becoming really large part of intraday
+[34:23] flow. So we're seeing a lot of that. We
+[34:25] also have um roots into a lot of the
+[34:28] wholesale brokers and counterparties. So
+[34:31] we're doing a lot of that flow that
+[34:33] comes from agency desks. So the book is
+[34:36] by proxy
+[34:38] offsets itself fairly naturally which is
+[34:41] great from our pricing perspective
+[34:43] because it means we can be
+[34:44] >> very tight. It means we can spend a lot
+[34:46] of time instead of focusing on pricing,
+[34:48] focusing on our like relationship side
+[34:50] of things, i.e. sharing what we're
+[34:52] seeing in the market. Um, talking with
+[34:54] the higher touch counterparties, like
+[34:56] just ultimately helping them understand
+[34:58] what's going on on any given day. Um,
+[35:00] and then on the other side, there's
+[35:02] obviously the the derivatives that we
+[35:04] trade out of Asia, which then that looks
+[35:06] a little bit different. that is
+[35:08] predominantly like cover call
+[35:09] overwriting on a project treasury
+[35:12] helping them to monetize without selling
+[35:14] down for example and then we'll have
+[35:16] like okay again like someone might have
+[35:19] like an axe on the curve and they want
+[35:21] to express that. So maybe there's that
+[35:23] side of the market as well. So we see a
+[35:25] huge range basically, but a a normal day
+[35:28] is like on a on a normal day it would be
+[35:31] you're trading, you're chatting to
+[35:33] counterparties,
+[35:34] >> you're providing color. Um [snorts]
+[35:36] you're ultimately just sharing what
+[35:38] you're seeing um and trying to sort of
+[35:40] help them make the best decision they
+[35:42] can in the time. Obviously it's it's
+[35:44] more of a an art than a science in that
+[35:47] regard, but yeah, I think we do a pretty
+[35:49] good job of it overall. So essentially
+[35:52] if [clears throat] we use an example for
+[35:54] this if well recently Tom Lee has been a
+[35:58] big buyer of EA.
+[36:00] >> Yeah.
+[36:00] >> Um he keeps on buying which for me as an
+[36:03] ETH holder is great.
+[36:04] >> Um
+[36:05] >> but he's doing it and he's buying like
+[36:07] 250 million in ET.
+[36:09] >> Yeah.
+[36:09] >> So hypothetically he calls up Win and
+[36:12] says hey I would like to buy 50 million
+[36:15] of ET.
+[36:16] >> And then within a few seconds he gets a
+[36:18] quote.
+[36:18] >> Yeah. And then that's executed. That's
+[36:20] basically what the OTC firm
+[36:22] >> Yeah. I guess to run you through the
+[36:24] sort of specific flow of an OTC trade,
+[36:26] right? So someone comes in for a big
+[36:28] block of XYZ. Um I know where the mid
+[36:31] price is based on our internal pricing
+[36:33] models. That's where we feel like the
+[36:35] fair price is. It's the trader's job to
+[36:37] then decide, okay, if my offer is here,
+[36:39] so I'm willing to sell it to them above
+[36:41] the market. The mid price is here. That
+[36:43] is my theoretical spread. I then as a
+[36:46] trader it's my job to do the trade, book
+[36:48] the trade and then buy it back. And if I
+[36:51] can do that without minimal market
+[36:53] impact,
+[36:54] >> the spread is the spread.
+[36:56] >> Mhm.
+[36:56] >> Obviously, look, like everyone thinks
+[36:58] that market makers make money on every
+[37:00] single trade.
+[37:01] >> We're in a game of variance. So like
+[37:03] naturally, you get some times where
+[37:05] you're short here because you've sold it
+[37:06] to someone. You have to buy it back to
+[37:08] deliver it and the market ends up there
+[37:10] and you actually take a loss on the
+[37:11] trade. It's it's Yeah. I mean, it's a
+[37:14] game of variance. Um, but we're trying
+[37:16] to take tiny little spreads out of every
+[37:20] trade rather than looking to, I guess,
+[37:23] take directional bets on the market
+[37:24] ultimately. And our main concern having
+[37:28] if someone trades a big block with us is
+[37:30] how can we get out of our risk as
+[37:32] quickly as possible. Um, and actually
+[37:35] again like contrary to popular belief,
+[37:37] an OTC desk that operates in principle
+[37:40] in that manner like I've described
+[37:41] instead of an agency desk which will
+[37:43] obviously just try and spread the risk
+[37:45] and get out quickly. The incentives are
+[37:47] aligned in the way because if you are
+[37:50] buying something off me, I'm trying not
+[37:52] to push the market against myself. So
+[37:54] it's like in our interest to be very
+[37:56] very slow getting out of it, but fast
+[37:58] enough to be get the risk off the table
+[38:00] and get our book back to flat. So
+[38:03] >> yeah, that's basically what we spend
+[38:04] most of the day thinking about and
+[38:06] doing.
+[38:07] >> It's interesting because of course if
+[38:09] you do an OTC trade in in anything
+[38:11] outside of the top 50, yeah,
+[38:13] >> the spreads are going to be way bigger
+[38:15] as there is less volume, less liquidity
+[38:18] available to hatch the position or the
+[38:19] other way around.
+[38:20] >> Yeah. Um, and if I'm going to share a um
+[38:24] a website where if people are interested
+[38:27] in becoming a market maker, there are
+[38:28] some websites with games,
+[38:30] >> right,
+[38:30] >> that you can just play around and toy
+[38:32] around. It's funny and that gives you a
+[38:34] kind of insight in how a market maker
+[38:36] works.
+[38:36] >> Yeah.
+[38:37] >> That it's not there is indeed the
+[38:39] impression and that's because I think
+[38:41] market makers became so big so fast
+[38:45] >> that market makers are the ones to be
+[38:47] making a ton of money.
+[38:49] >> Yeah. But that's just not true because
+[38:52] yes the the amount of opportunities for
+[38:55] market makers have grown and that's
+[38:58] where the expansion came in like
+[38:59] exchanges have been growing big time.
+[39:02] Um, of course, we have seen some stuff
+[39:05] happening between exchanges and projects
+[39:07] lately, but um, ultimately the market
+[39:10] has expanded. So, market makers become
+[39:12] bigger too. And market makers are
+[39:14] required to operate in
+[39:16] >> Yeah.
+[39:16] >> the system otherwise the system doesn't
+[39:18] work
+[39:18] >> for sure
+[39:19] >> in some way. If you talk about it, if we
+[39:22] if we see the OTC trading then um how
+[39:25] has that changed since Trump came in and
+[39:28] the entire ETF and debts and treasury
+[39:31] companies were yeah
+[39:32] >> applied? I mean you mentioned that
+[39:34] you're going to open an office in New
+[39:36] York or it's open already.
+[39:37] >> So there is there's there's no trading
+[39:39] in New York. It's um predominantly sort
+[39:41] of BD team is out there. It was very
+[39:43] recent sort of move into the US market.
+[39:45] Obviously, historically, it's been a
+[39:47] very difficult place to be in from a
+[39:49] regulatory standpoint.
+[39:50] >> So, um it had been previously just
+[39:53] decided that it wasn't an area we wanted
+[39:55] to be aggressive in at all or even like
+[39:57] operate in in any capacity. Um whereas
+[40:00] now obviously there's a good opportunity
+[40:03] there to grow the business. I think we
+[40:05] probably feel like in the European
+[40:07] market a lot of people sort of do know
+[40:10] who we are, especially cryptonative. I
+[40:13] think like over the last since Trump
+[40:15] really got in, the main thing that we've
+[40:16] seen that's been slightly different is
+[40:18] that the type of counterparty. So
+[40:20] obviously you always going to have this
+[40:22] really solid cryptonative group of
+[40:25] people who will continue to trade the
+[40:28] assets as the market grows, but we're
+[40:30] now seeing a completely different subset
+[40:32] of
+[40:34] counterparties that want to trade this
+[40:35] stuff and they need access. And that is
+[40:38] really where we're focusing on I think
+[40:39] in terms of a lot of traditional
+[40:42] counterparties at the moment they don't
+[40:43] know they're not going to be as familiar
+[40:44] with the brand Winterview than crypto
+[40:46] native. So that's been a large focus and
+[40:48] that's come down to on the OTC desk
+[40:51] specifically what that looks like is
+[40:53] more of this sort of white glovy
+[40:55] hightouch execution where we're talking
+[40:58] people through the market micro
+[40:59] structure explaining how things work why
+[41:01] we're doing certain things providing
+[41:03] additional color about like liquidity
+[41:05] profiles throughout the day for example
+[41:07] like as you mentioned we've got
+[41:08] different flows now that hit through the
+[41:10] day and arguably a lot of the time most
+[41:12] of the time in fact they're unnamed
+[41:14] because they're coming through a
+[41:15] wholesale counterparty somewhere
+[41:16] somewhere else. But you can sort of see
+[41:18] the liquidity profile through the day
+[41:20] and yeah, it massively impacts spreads
+[41:22] in a relatively illquid asset when you
+[41:25] even when you compare it to like the the
+[41:27] SPY or something, right? Even if you
+[41:28] look at Bitcoin versus SPY, there's a
+[41:30] huge difference in the liquidity
+[41:32] profile.
+[41:32] >> Yeah. And since the advent of the ETFs
+[41:35] and arguably the growth of the US market
+[41:38] like liquidity is now changing into the
+[41:40] middle of the day and it's like the real
+[41:41] belly of the New York session whereas
+[41:43] before and like last cycle a huge amount
+[41:46] of that was being seen overnight in in
+[41:49] European times. like in Apac. But that's
+[41:51] there's different times where it it
+[41:53] shifts and changes and I guess it's our
+[41:55] job and really where we're finding the
+[41:58] ability to share that with these
+[42:00] hightouch counterparties that they are
+[42:02] finding a lot more use there in that
+[42:04] sort of okay this is what's going on. Um
+[42:06] and that's how we're sort of picking up
+[42:08] business.
+[42:09] We I um I spent the time in Lombok and
+[42:12] um during the day or the first hours of
+[42:15] the day basically the ticks were just
+[42:17] like going sideways and then Europe woke
+[42:19] up and it started to move a little bit
+[42:21] and then US came in and it was like all
+[42:23] over the place.
+[42:24] >> Yeah.
+[42:24] >> And back in 2017
+[42:27] >> um it was actually Asia moving the
+[42:30] markets. Yeah.
+[42:30] >> And in 2021 it was more or less Europe.
+[42:33] >> Yeah.
+[42:33] >> And now it's becoming US is that's by
+[42:36] far the biggest market. Anyways,
+[42:38] >> um
+[42:39] When we look ahead of the current
+[42:41] market, I mean before this all happened,
+[42:44] I think Wintermute posted something or I
+[42:47] don't know
+[42:48] >> that you were out of stock of eat
+[42:51] [snorts]
+[42:52] [laughter] which is positive again.
+[42:55] But uh um how's the current situation on
+[42:58] that front?
+[42:59] >> I think we still Yeah. No, I mean it
+[43:02] it's it's somewhat like we laugh every
+[43:04] time those posts come out because it
+[43:06] does show where you are in the shortterm
+[43:08] cycle especially
+[43:10] >> and that was obviously when a lot of the
+[43:12] DATs were buying up ETH and I mean yeah
+[43:14] again going back to that example of like
+[43:16] how we actually operate yes we have
+[43:18] inventory of of of Bitcoin Ethereum on
+[43:21] our balance sheet anyway that's hedged
+[43:23] accordingly
+[43:24] >> when someone comes under a really large
+[43:26] trade I mean it's we would sell that ETH
+[43:28] but we also need to buy it back so we
+[43:30] are also a participant in this market as
+[43:32] well.
+[43:33] >> So, it's technically unless ETH, I don't
+[43:37] know, disintegrates and ceases to exist,
+[43:39] it's physically impossible for us to
+[43:41] never be able to to to to not be able to
+[43:44] sort of deliver ETH basically. We just
+[43:46] have to buy it back on the market like
+[43:48] everyone else. Um,
+[43:49] >> it's not negative for any order
+[43:51] [laughter]
+[43:52] token.
+[43:53] >> Yeah, exactly. I mean the difference in
+[43:54] how we buy it versus how someone else
+[43:56] like if they're going and clicking it on
+[43:58] the exchange, we're trading on every
+[43:59] single available venue and we're doing
+[44:01] it algorithmically.
+[44:03] >> So that is the difference in that like
+[44:05] our technology has been core to our edge
+[44:08] as a trading firm. And for that very
+[44:11] reason that we can hit every single
+[44:13] venue possible in order to just stay on
+[44:17] the on the offer and not be like not
+[44:20] completely wipe the book and push the
+[44:22] market against us.
+[44:23] >> Yeah.
+[44:23] >> And I think that's the main difference.
+[44:25] But yeah, we'd never run out of
+[44:26] Ethereum. Well, um, a question that I
+[44:30] wanted to ask you is if you are a retail
+[44:32] altcoin investor after this lengthy bare
+[44:35] market that we've seen and now we see
+[44:38] this big crash taking place and we blame
+[44:40] everyone except ourselves.
+[44:43] um what is in it for an altcoin investor
+[44:47] or a retail investor that doesn't have
+[44:50] the inside information that a lot of big
+[44:53] parties do have. Like for instance, VC
+[44:56] investors know when other VC investors
+[44:59] are going to do something with a certain
+[45:00] project. Exchanges have certain info,
+[45:03] market makers have contracts. It feels
+[45:06] like there's no real opportunity
+[45:08] anymore.
+[45:08] >> Yeah. What would you say to any investor
+[45:11] at this point in the markets?
+[45:15] >> I think there's always going to be
+[45:18] an edge in crypto as a retail
+[45:21] participant,
+[45:23] especially when you compare it to like
+[45:25] an equity market, for example, or even
+[45:27] as an equal
+[45:29] participant versus a larger
+[45:30] counterparty. And those edges could even
+[45:32] be you are way more nimble and you're
+[45:35] able to move size in and out of a
+[45:37] market. that in itself is hugely
+[45:39] underappreciated. Um, a lot of the stuff
+[45:42] that goes on at the lower end of the
+[45:44] market where obviously a lot of people
+[45:45] seem to make a lot of money. Um, whether
+[45:47] it's lottery tickets, that's outside of
+[45:50] my roommate, but like that seems to be
+[45:53] an edge that is still completely
+[45:54] available and dominated by retail. And
+[45:58] like I wouldn't be able to tell you much
+[45:59] about that market cuz it's it's for us
+[46:02] it's difficult to even spend time
+[46:04] thinking about it because it just it it
+[46:06] won't help us move the needle and it's
+[46:08] not something that we're trading with
+[46:09] counterparties. But
+[46:11] >> I mean I've got friends who have made a
+[46:13] very good amount of money in that
+[46:14] section of the market and sometimes I
+[46:16] think I'm jealous like [laughter]
+[46:19] >> do you know what I mean?
+[46:19] >> Tell me about it.
+[46:20] >> So like there's people there is still
+[46:21] the opportunity there. Um I think even
+[46:24] like my view is there's there's two if
+[46:26] you really believe in crypto in general
+[46:29] and I do think people could do very very
+[46:31] well just being long the beta of this
+[46:33] market for the next 5 or 10 years that
+[46:35] in itself I think is probably an edge in
+[46:39] that okay it's almost like a risk
+[46:41] premier if you believe more than the
+[46:42] rest of the market at that period in
+[46:44] time
+[46:45] >> some people will have seen that move and
+[46:47] been filled at a very good price because
+[46:49] they just had an order in that's an edge
+[46:51] you can do that as a retail participant.
+[46:54] But yeah, I think like a lot of people
+[46:56] seem to overtrade a lot and I that
+[46:58] naturally is never going to be good.
+[47:00] Like I mean it's it's obviously a
+[47:02] well-known fact probably like if you're
+[47:04] buying and hold like even in the S&P if
+[47:07] you bought and held the S&P like a lot
+[47:09] of active hedge funds even underperform
+[47:11] that benchmark. So fair enough. I think
+[47:13] if you believe strongly in the market
+[47:14] and you're willing to stand by whatever
+[47:16] you pick for the next five years, that
+[47:18] in itself is probably an edge if you sit
+[47:20] on the hands and ride it.
+[47:22] >> Obviously, again, back to Kenny's
+[47:23] comment, that's obviously it wouldn't
+[47:25] help us. So, maybe that pushes people
+[47:28] further towards it, but
+[47:30] >> it's that's ultimately how people do.
+[47:32] >> Yeah.
+[47:33] >> Yeah. And it's it's it's seeing it as a
+[47:35] bit of a marathon, not a sprint. I think
+[47:37] >> it's also if you well for instance gold
+[47:40] has been going absolutely vertical the
+[47:43] past 3 years I think in terms of
+[47:45] >> events it has been the most volatile
+[47:48] move up um even heavier than 1979 in
+[47:51] terms of volatility I guess
+[47:54] >> um but if you have been DCAing into gold
+[47:56] for the past 30 years you would have had
+[47:58] a tremendous return
+[48:00] >> if you did it with the S&P the hurdle
+[48:02] rate would have been 8% or whatever
+[48:05] >> um if you do it with Bitcoin it's like
+[48:07] 50% per year.
+[48:08] >> Yeah.
+[48:09] >> So simply buying and stacking sets is
+[48:11] just the best strategy going forward.
+[48:14] And then you don't need to go on a risk
+[48:16] curve to risk it all.
+[48:17] >> Yeah.
+[48:18] >> Because at the end of the day if you
+[48:19] stay in the game that's what you need to
+[48:22] do. And then Wintermute has had some
+[48:23] tests as well. FTX has been a pretty big
+[48:27] >> well chunk of the entire eventry for
+[48:29] Wintermute and any other market maker.
+[48:32] Um and if as long as you do that and the
+[48:34] market keeps expanding then you'll be
+[48:36] fine I guess.
+[48:36] >> Yeah. I mean it's literally it's about
+[48:38] surviving like ultimately um yeah we
+[48:41] want to see the market do well because
+[48:43] the market does well do well as a
+[48:44] function of the fact that more people
+[48:46] will be trading there's more volume
+[48:48] going through and naturally we need
+[48:50] volume to we live and breathe on on
+[48:52] trading volume right um at the end of
+[48:53] the day and so for us to see the market
+[48:56] grow over the next 5 10 15 20 years that
+[49:00] is the best thing we can do and it's
+[49:01] definitely as you said like we we
+[49:03] playing a long game which again has seen
+[49:06] us through multiple different sort of
+[49:08] cycles in the market and we've come out
+[49:10] on top and like built the brand and
+[49:13] >> I guess the wins do start compounding to
+[49:16] the point where
+[49:17] >> I do feel like we're in a fantastic
+[49:19] position and yeah I mean it's like the
+[49:22] best thing for everyone that works here
+[49:24] is that the whole market grows together
+[49:26] and I do think yeah short- termism I
+[49:28] think is probably the killer of of
+[49:30] anyone looking to get rich quick.
+[49:32] >> That's actually true. Um, where do you
+[49:35] see the biggest expansion taking place
+[49:37] in the next few years for Wintermute or
+[49:41] the OTC desk?
+[49:44] >> Yeah, I think like the there's
+[49:46] definitely the a corporate market that's
+[49:47] opened up fairly aggressively. Um, that
+[49:51] is naturally to
+[49:53] almost akin to like the growth in like
+[49:55] FX brokers, right? like they
+[49:58] rode a wave where corporates started to
+[50:00] look at non-bank providers and I think
+[50:02] that's probably going to continue to
+[50:03] happen there.
+[50:04] >> That is naturally going to be a large
+[50:06] portion of
+[50:08] this the token supply will end up
+[50:11] sitting in those corporate balance
+[50:12] sheets. Then obviously then you have the
+[50:14] the question of when sovereigns start
+[50:16] properly getting involved on a large
+[50:18] scale but I think that's probably again
+[50:19] a bit longer term. um the function of
+[50:23] those corporates then having a large
+[50:25] balance sheet of assets some may be
+[50:27] productive i.e. obviously ETH is a
+[50:29] productive asset some might not be i.e.
+[50:31] Bitcoin. I think there'll be a big
+[50:33] opportunity there in terms of how you
+[50:35] help um those kind of counterparties who
+[50:37] don't intend to sell and are not
+[50:39] technically leveraged if they're not
+[50:41] using large sort of debt packages
+[50:45] >> um in terms of how to make that
+[50:47] productive. And I think that is an area
+[50:49] we are starting to see a lot of interest
+[50:51] in. Um again like on the spot side the
+[50:54] more people who are coming in from the
+[50:56] market you're going to get like these
+[50:58] bigname tech firms at some point who
+[51:00] start really becoming very active and
+[51:02] that in itself opens up a whole new
+[51:04] world and I think regionally obviously
+[51:06] the US is very interesting to to get
+[51:08] involved in and the tokenization of
+[51:10] other assets as well that are going to
+[51:12] come on the blockchain that in itself is
+[51:14] another huge trend that I think we're
+[51:15] going to see really take off and that's
+[51:17] down to like any sort of tokenized asset
+[51:20] that's currently traded on um I don't
+[51:22] know NASDAQ um they're likely to have a
+[51:26] counterpart probably on the blockchain.
+[51:28] So all of this stuff like is longerterm
+[51:31] planning but yeah I mean I think there's
+[51:32] probably going to be a lot of demand
+[51:34] then from those uh different avenues. I
+[51:37] mean yes and I think that uh we're just
+[51:40] still at the very early stages of
+[51:42] everything that's been happening or is
+[51:44] going to happen in the space and uh even
+[51:47] governments but also even the bigger
+[51:50] protocols that have treasuries that have
+[51:52] tokens that want to make it work to get
+[51:54] the yield out of it. It's just treasury
+[51:56] management that is also part of the the
+[51:59] work that a market maker is doing. Um we
+[52:02] need to round it off. Um, I can talk for
+[52:05] hours about trading and OTC and all
+[52:07] those things, but uh probably you will
+[52:09] you will be on the show at some point
+[52:11] again. Um, where can we find you on the
+[52:15] internet or anything related to Winm?
+[52:17] Well,
+[52:18] >> I would strongly advise people to follow
+[52:21] Gany too, but [laughter]
+[52:22] >> for sure that's that should be the first
+[52:24] port of call. Yeah.
+[52:25] >> Yeah, that's the one.
+[52:26] >> Um, but where can we find you fed?
+[52:28] >> I mean, my Twitter handle is J
+[52:31] Wintermute. Um, so fairly simple. And
+[52:34] yeah, obviously follow Winter Mute in
+[52:36] general. If you want to touch on
+[52:37] anything OTC wise, my DMs are open. I do
+[52:40] reply as well. So
+[52:41] >> that's nice.
+[52:41] >> Yeah, I'm not I'm not don't have 800,000
+[52:44] followers like you. So
+[52:45] >> I [laughter] do reply on my DMs, too. If
+[52:48] you're if you're a project looking for a
+[52:50] market maker, if you're a big trader
+[52:52] that wants to get in or out of
+[52:53] positions, then it's the best to go to
+[52:55] you.
+[52:56] >> Yeah, exactly. And then if not, we can
+[52:58] put you point you in the right
+[52:59] direction. But yeah, I mean, we're all
+[53:01] looped in and more than happy to talk to
+[53:03] anyone really who's interested in any of
+[53:05] the above. So, yeah.
+[53:06] >> All right. Well, thank you for spending
+[53:08] the time here in London.
+[53:10] >> Thanks for having me.
+[53:10] >> Good luck on the talk. I think you still
+[53:13] have one
+[53:13] >> already been. So, all right. Well, um,
+[53:18] >> thanks again and good luck on the
+[53:20] journey and thanks for explaining
+[53:21] everything surrounding the crash and,
+[53:24] uh, good luck with, uh, hopefully a more
+[53:26] calmer market.
+[53:27] >> Let's see.
+[53:28] >> Thank you.
+[53:28] >> Thank you. Chest.
