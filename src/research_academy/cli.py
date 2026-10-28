@@ -15,11 +15,13 @@ from research_academy.academy.question_generator import QuestionGenerator
 from research_academy.academy.roleplay import InvestorPersona, RoleplaySession
 from research_academy.config import get_config
 from research_academy.database import Database
+from research_academy.domain.manager import DomainManager
 from research_academy.models import DiscoveryStatus
 from research_academy.pipeline.analysis import AnalysisPipeline
 from research_academy.pipeline.discovery import DiscoveryEngine
 from research_academy.pipeline.publishing import Publisher
 from research_academy.pipeline.transcription import TranscriptionPipeline
+from research_academy.pipeline.web_harvester import WebHarvester
 from research_academy.scheduler import ContinuousResearchCoordinator
 
 console = Console()
@@ -78,26 +80,36 @@ def doctor_cmd() -> None:
 
 @cli.command("status")
 def status_cmd() -> None:
-    """Show database summary, video processing stages, and knowledge base stats."""
+    """Show database summary, video and web processing stages, and knowledge base stats."""
     config = get_config()
     db = Database(config.database_path)
+    manager = DomainManager(config.project_root)
 
     videos = db.list_videos(limit=1000)
+    docs = db.list_documents(limit=1000)
     status_counts = {}
     for v in videos:
         status_counts[v.discovery_status.value] = status_counts.get(v.discovery_status.value, 0) + 1
+    for d in docs:
+        key = f"Doc: {d.discovery_status.value}"
+        status_counts[key] = status_counts.get(key, 0) + 1
 
     table = Table(title="Research Academy Status", show_header=True, header_style="bold magenta")
     table.add_column("Metric / Status", style="cyan")
     table.add_column("Count", style="green")
 
     table.add_row("Total Videos in DB", str(len(videos)))
+    table.add_row("Total Web Documents in DB", str(len(docs)))
+    table.add_row("Active Domains", ", ".join(manager.list_domains()))
     for status, count in status_counts.items():
         table.add_row(f"Status: {status}", str(count))
 
     # Knowledge base markdown files
     sources_dir = config.project_root / "knowledge_base" / "sources"
     md_sources = list(sources_dir.rglob("*.md")) if sources_dir.exists() else []
+    domain_sources_dir = config.project_root / "knowledge_base" / "domains"
+    if domain_sources_dir.exists():
+        md_sources += list(domain_sources_dir.rglob("*.md"))
     table.add_row("Published Verified Sources", str(len(md_sources)))
 
     console.print(table)
@@ -226,18 +238,22 @@ def retry_failed_cmd() -> None:
     "export_format",
     type=click.Choice(["pack", "bundle", "csv", "markdown"]),
     default="pack",
-    help="Export format: pack (9 discrete NotebookLM files), bundle (single file), csv (index), markdown (sources directory)"
+    help="Export format: pack (NotebookLM files), bundle (single file), csv (index), markdown (sources directory)",
 )
-def export_cmd(export_format: str) -> None:
+@click.option("--domain", default="crypto", help="Domain to export (crypto, computer_science, english_learning)")
+def export_cmd(export_format: str, domain: str) -> None:
     """Export collected intelligence to NotebookLM pack, bundle, CSV index, or Markdown files."""
     config = get_config()
     db = Database(config.database_path)
     publisher = Publisher(db, config.project_root)
 
     if export_format == "pack":
-        path = publisher.export_notebooklm_pack()
-        console.print(f"[bold green]NotebookLM 9-source pack generated successfully in:[/bold green] [cyan]{path}[/cyan]")
-        console.print("[dim]Включает: 00_PRODUCT_CLAIMS, 00_SALES_OBJECTIONS, 7 файлов модулей по дням и README с промптом для подкаста.[/dim]")
+        path = publisher.export_notebooklm_pack(domain=domain)
+        console.print(f"[bold green]NotebookLM pack for '{domain}' generated successfully in:[/bold green] [cyan]{path}[/cyan]")
+        if domain == "crypto":
+            console.print("[dim]Включает: 00_PRODUCT_CLAIMS, 00_SALES_OBJECTIONS, 7 файлов модулей по дням и README с промптом для подкаста.[/dim]")
+        else:
+            console.print(f"[dim]Включает: 00_DOMAIN_FOUNDATIONS, тематические модули домена '{domain}' и README с промптом для подкаста.[/dim]")
     elif export_format == "bundle":
         path = publisher.build_notebooklm_bundle()
         console.print(f"[bold green]NotebookLM single bundle generated:[/bold green] [cyan]{path}[/cyan]")
@@ -246,6 +262,162 @@ def export_cmd(export_format: str) -> None:
         console.print(f"[bold green]CSV index exported successfully:[/bold green] [cyan]{path}[/cyan]")
     elif export_format == "markdown":
         console.print(f"[bold green]Markdown sources stored in:[/bold green] [cyan]{publisher.sources_dir}[/cyan]")
+
+
+# --- Domain Management Group ---
+
+@cli.group("domain")
+def domain_group() -> None:
+    """Manage domain profiles (crypto, computer_science, english_learning, etc.)."""
+    pass
+
+
+@domain_group.command("list")
+def domain_list_cmd() -> None:
+    """List all registered knowledge domains."""
+    config = get_config()
+    manager = DomainManager(config.project_root)
+    domains = manager.list_domains()
+
+    table = Table(title="Knowledge Domains", show_header=True, header_style="bold cyan")
+    table.add_column("Domain ID", style="bold green")
+    table.add_column("Domain Name", style="white")
+    table.add_column("Topics Count", style="yellow")
+    table.add_column("Trusted Sources")
+
+    for d_id in domains:
+        profile = manager.get_domain(d_id)
+        table.add_row(
+            profile.id,
+            profile.name,
+            str(len(profile.topics)),
+            ", ".join(profile.config.trusted_sources[:3]) or "None",
+        )
+
+    console.print(table)
+
+
+@domain_group.command("info")
+@click.argument("domain_id")
+def domain_info_cmd(domain_id: str) -> None:
+    """Show details, topics, and configuration for a domain."""
+    config = get_config()
+    manager = DomainManager(config.project_root)
+    try:
+        profile = manager.get_domain(domain_id)
+    except Exception as e:
+        console.print(f"[bold red]Domain not found:[/bold red] {e}")
+        return
+
+    console.print(Panel.fit(
+        f"[bold cyan]{profile.name}[/bold cyan] ([green]{profile.id}[/green])\n"
+        f"[dim]{profile.description}[/dim]\n\n"
+        f"Trusted Sources: {', '.join(profile.config.trusted_sources)}\n"
+        f"Blacklisted Domains: {', '.join(profile.config.blacklisted_domains)}\n"
+        f"Topics: {len(profile.topics)}",
+        title=f"Domain Info: {profile.id}"
+    ))
+
+    if profile.topics:
+        t_table = Table(title=f"Topics in {profile.id}", show_header=True)
+        t_table.add_column("ID", style="cyan", no_wrap=True)
+        t_table.add_column("Title", style="bold")
+        t_table.add_column("Queries (RU/EN)")
+        for t in profile.topics:
+            all_q = t.queries_ru + t.queries_en
+            t_table.add_row(t.id, t.title, f"{len(all_q)} queries ({', '.join(all_q[:2])}...)")
+        console.print(t_table)
+
+
+# --- Web Ingestion & Harvesting Group ---
+
+@cli.group("web")
+def web_group() -> None:
+    """Primary web source discovery, decompilation, and ingestion."""
+    pass
+
+
+@web_group.command("search")
+@click.option("--domain", default="computer_science", help="Target domain")
+@click.option("--topic", required=True, help="Topic identifier")
+@click.option("--max-results", default=5, help="Max web search results")
+def web_search_cmd(domain: str, topic: str, max_results: int) -> None:
+    """Search for primary web articles, documentation, and papers for a topic."""
+    config = get_config()
+    db = Database(config.database_path)
+    manager = DomainManager(config.project_root)
+    harvester = WebHarvester(config, db, domain_manager=manager)
+
+    console.print(f"[bold cyan]Searching web for topic:[/bold cyan] {topic} [Домен: [yellow]{domain}[/yellow]]")
+    profile = manager.get_domain(domain)
+    topic_obj = profile.get_topic(topic)
+    if not topic_obj:
+        console.print(f"[bold red]Topic '{topic}' not found in domain '{domain}'.[/bold red]")
+        return
+
+    results = harvester.search_provider.search_for_topic(
+        topic=topic_obj, domain_config=profile.config, max_results=max_results
+    )
+    if not results:
+        console.print("[yellow]No search results found.[/yellow]")
+        return
+
+    table = Table(title=f"Web Search Results ({topic})", show_header=True)
+    table.add_column("#", style="dim")
+    table.add_column("Title", style="bold")
+    table.add_column("URL", style="cyan")
+    table.add_column("Score", style="green")
+
+    for i, res in enumerate(results, 1):
+        table.add_row(str(i), res.title[:60], res.url, f"{res.score:.1f}")
+
+    console.print(table)
+
+
+@web_group.command("ingest")
+@click.argument("url")
+@click.option("--domain", default="computer_science", help="Target domain (computer_science, english_learning, etc.)")
+@click.option("--topic", default="general", help="Target topic identifier")
+@click.option("--analyze/--no-analyze", default=True, help="Run two-pass AI analysis after extraction")
+@click.option("--force", is_flag=True, help="Force Methodist pass even if Gatekeeper flagged review/borderline")
+def web_ingest_cmd(url: str, domain: str, topic: str, analyze: bool, force: bool) -> None:
+    """Fetch, decompile, and optionally run two-pass analysis on a primary web article."""
+    config = get_config()
+    db = Database(config.database_path)
+    manager = DomainManager(config.project_root)
+    harvester = WebHarvester(config, db, domain_manager=manager)
+
+    console.print(f"[bold cyan]Ingesting primary web source:[/bold cyan] {url}")
+    console.print(f"Domain: [yellow]{domain}[/yellow] | Topic: [yellow]{topic}[/yellow]")
+
+    try:
+        source = harvester.ingest_url(url=url, topic_id=topic, domain=domain)
+    except Exception as e:
+        console.print(f"[bold red]Extraction failed:[/bold red] {e}")
+        return
+
+    console.print(f"[bold green]Successfully extracted & decompiled:[/bold green] {source.title}")
+    console.print(f"- Words: [yellow]{source.word_count}[/yellow] | Segments: [yellow]{len(source.segments)}[/yellow] [SEC-XX]")
+
+    if not analyze:
+        console.print("[dim]Analysis skipped (--no-analyze).[/dim]")
+        return
+
+    console.print("[bold cyan]Executing Isomorphic Two-Pass AI Analysis...[/bold cyan]")
+    analysis = AnalysisPipeline(config, db, domain_manager=manager)
+    gate_res, meth_res = analysis.run_two_pass_analysis(source=source, force_methodist=force)
+
+    if gate_res:
+        console.print(f"Gatekeeper Decision: [bold]{gate_res.decision.value}[/bold] (Score: {gate_res.relevance_score}/10, Noise: {gate_res.commercial_noise_score}/10)")
+    if meth_res:
+        dest_dir = (
+            f"knowledge_base/sources/{source.topic_id}/"
+            if source.domain == "crypto"
+            else f"knowledge_base/domains/{source.domain}/sources/{source.topic_id}/"
+        )
+        console.print(f"[bold green]Methodist pass completed! Verified source published under:[/bold green] [cyan]{dest_dir}[/cyan]")
+    else:
+        console.print("[yellow]Document did not pass Gatekeeper threshold. Methodist pass skipped. (Use --force to override)[/yellow]")
 
 
 # --- Sales Academy Subgroup ---

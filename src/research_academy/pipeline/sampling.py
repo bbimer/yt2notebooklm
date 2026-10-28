@@ -2,8 +2,9 @@
 
 from __future__ import annotations
 
+import re
 from typing import List, Tuple
-from research_academy.models import TranscriptSegment, VideoTranscript
+from research_academy.models import ContentSegment, SourceContent, TranscriptSegment, VideoTranscript
 
 
 def _segments_to_text(segments: List[TranscriptSegment]) -> Tuple[str, int]:
@@ -119,4 +120,73 @@ def sample_transcript_multi_window(
         f"### [ОКНО 2: ЯДРО, МАТЕМАТИКА И МЕХАНИКА · {t_start2} – {t_end2}]\n{txt2}\n\n"
         f"### [ОКНО 3: ВЫВОДЫ, ЗАКЛЮЧЕНИЕ И ДИСКЛЕЙМЕРЫ · {t_start3} – {t_end3}]\n{txt3}"
     )
+
+
+def sample_web_document_structural(
+    source: SourceContent,
+    max_words: int = 2000,
+) -> str:
+    """
+    Structural Outline Sampling for Web Documents:
+    1. Document Outline (all H1-H3 sections).
+    2. Lead/Intro (SEC-01).
+    3. Payload Core (2-3 segments from middle with tables, code, or high numbers density).
+    4. Conclusion (last segment).
+    Total size ~1.5k-2k words, giving Gatekeeper 100% clarity on depth vs fluff.
+    """
+    segments = source.segments
+    if not segments:
+        text = source.full_clean_text
+        words = text.split()
+        return " ".join(words[:max_words]) if len(words) > max_words else text
+
+    total_words = source.word_count or sum(s.word_count for s in segments)
+    if total_words <= max_words:
+        lines = [f"[{s.anchor_id}]\n{s.text}" for s in segments]
+        return "\n\n".join(lines)
+
+    # 1. Outline
+    outline_lines = [f"- {s.anchor_id}" for s in segments]
+    outline_str = "### [ОГЛАВЛЕНИЕ ДОКУМЕНТА]\n" + "\n".join(outline_lines)
+
+    # 2. Lead (SEC-01)
+    lead_seg = segments[0]
+    lead_str = f"### [ЛИД / АБСТРАКТ: {lead_seg.anchor_id}]\n{lead_seg.text}"
+
+    # 3. Conclusions (Final segment)
+    concl_seg = segments[-1]
+    concl_str = f"### [ВЫВОДЫ И ЗАКЛЮЧЕНИЕ: {concl_seg.anchor_id}]\n{concl_seg.text}"
+
+    # 4. Core Payload (2-3 middle segments with max data density)
+    middle_candidates = segments[1:-1]
+    core_selected = []
+    if middle_candidates:
+        def density_score(seg: ContentSegment) -> float:
+            score = 0.0
+            if seg.has_table:
+                score += 10.0
+            if seg.has_code:
+                score += 8.0
+            digits_count = len(re.findall(r"\d+", seg.text))
+            math_count = len(re.findall(r"\$|\^|_|\{", seg.text))
+            score += min(5.0, (digits_count + math_count) / 10.0)
+            return score
+
+        middle_sorted = sorted(middle_candidates, key=density_score, reverse=True)
+        core_selected = sorted(middle_sorted[:3], key=lambda s: s.index)
+
+    core_blocks = []
+    for s in core_selected:
+        core_blocks.append(f"### [ЯДРО ПЛОТНОСТИ ФАКТУРЫ: {s.anchor_id}]\n{s.text}")
+
+    core_str = "\n\n".join(core_blocks)
+    return f"{outline_str}\n\n{lead_str}\n\n{core_str}\n\n{concl_str}"
+
+
+def sample_source_content(source: SourceContent, max_words: int = 2000) -> str:
+    """Unified sampling entry point for any SourceContent (video or web)."""
+    if source.source_type == "web":
+        return sample_web_document_structural(source, max_words=max_words)
+    lines = [f"[{s.anchor_id}] {s.text}" for s in source.segments]
+    return "\n".join(lines)
 

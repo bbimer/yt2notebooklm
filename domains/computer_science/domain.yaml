@@ -1,0 +1,19 @@
+id: "computer_science"
+name: "Computer Science & Computer Architecture"
+description: "Академическая информатика, дискретная математика, архитектура ЭВМ, системы счисления и низкоуровневые алгоритмы."
+trusted_sources:
+  - "wikipedia.org"
+  - "habr.com"
+  - "geeksforgeeks.org"
+  - "mit.edu"
+  - "stanford.edu"
+  - "gnu.org"
+  - "ietf.org"
+blacklisted_domains:
+  - "tiktok.com"
+  - "instagram.com"
+  - "pinterest.com"
+  - "quora.com"
+default_prefilter_min_words: 250
+default_max_words: 15000
+

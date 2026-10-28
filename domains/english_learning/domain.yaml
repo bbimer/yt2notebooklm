@@ -1,0 +1,17 @@
+id: "english_learning"
+name: "English Language Acquisition: Business & Technical Fluency"
+description: "Методология интенсивного освоения английского языка, интервальные повторения, контекстный вокабуляр, чанкинг, преодоление речевого барьера и бизнес-коммуникация."
+trusted_sources:
+  - "bbc.co.uk"
+  - "cambridge.org"
+  - "oxfordlearnersdictionaries.com"
+  - "britishcouncil.org"
+  - "en.wikipedia.org"
+  - "fluentu.com"
+blacklisted_domains:
+  - "tiktok.com"
+  - "instagram.com"
+  - "pinterest.com"
+default_prefilter_min_words: 250
+default_max_words: 15000
+

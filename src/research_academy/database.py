@@ -17,6 +17,7 @@ from research_academy.models import (
     TranscriptSegment,
     VideoMetadata,
     VideoTranscript,
+    WebDocumentMetadata,
     utc_now,
 )
 
@@ -34,6 +35,7 @@ CREATE TABLE IF NOT EXISTS videos (
     channel_follower_count INTEGER,
     url TEXT NOT NULL,
     topic_id TEXT NOT NULL,
+    domain TEXT DEFAULT 'crypto',
     language TEXT,
     like_ratio REAL,
     views_to_subscribers_ratio REAL,
@@ -42,6 +44,27 @@ CREATE TABLE IF NOT EXISTS videos (
     created_at TEXT NOT NULL,
     updated_at TEXT NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS documents (
+    document_id TEXT PRIMARY KEY,
+    domain TEXT NOT NULL DEFAULT 'crypto',
+    topic_id TEXT NOT NULL,
+    url TEXT NOT NULL,
+    title TEXT NOT NULL,
+    author_or_domain TEXT,
+    published_at TEXT,
+    clean_markdown TEXT NOT NULL,
+    outline_json TEXT,
+    word_count INTEGER NOT NULL,
+    discovery_status TEXT NOT NULL,
+    status_reason TEXT,
+    created_at TEXT NOT NULL,
+    updated_at TEXT NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS idx_documents_topic ON documents(topic_id);
+CREATE INDEX IF NOT EXISTS idx_documents_status ON documents(discovery_status);
+CREATE INDEX IF NOT EXISTS idx_documents_domain ON documents(domain);
 
 CREATE TABLE IF NOT EXISTS video_queries (
     video_id TEXT NOT NULL,
@@ -104,6 +127,35 @@ CREATE TABLE IF NOT EXISTS claims (
     FOREIGN KEY (video_id) REFERENCES videos(video_id) ON DELETE CASCADE
 );
 
+CREATE TABLE IF NOT EXISTS document_evaluations (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    document_id TEXT NOT NULL,
+    pass_type TEXT NOT NULL,
+    relevance_score REAL,
+    technical_depth_score REAL,
+    practical_value_score REAL,
+    source_quality_score REAL,
+    commercial_noise_score REAL,
+    decision TEXT NOT NULL,
+    reasons_json TEXT,
+    analysis_json TEXT,
+    evaluated_at TEXT NOT NULL,
+    FOREIGN KEY (document_id) REFERENCES documents(document_id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS document_claims (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    document_id TEXT NOT NULL,
+    claim_type TEXT NOT NULL,
+    statement TEXT NOT NULL,
+    anchor_id TEXT,
+    independent_evidence TEXT,
+    verification_status TEXT NOT NULL DEFAULT 'unverified',
+    allowed_sales_phrasing TEXT,
+    verified_at TEXT,
+    FOREIGN KEY (document_id) REFERENCES documents(document_id) ON DELETE CASCADE
+);
+
 CREATE TABLE IF NOT EXISTS jobs_log (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     job_type TEXT NOT NULL,
@@ -118,6 +170,8 @@ CREATE INDEX IF NOT EXISTS idx_videos_topic ON videos(topic_id);
 CREATE INDEX IF NOT EXISTS idx_videos_status ON videos(discovery_status);
 CREATE INDEX IF NOT EXISTS idx_evaluations_video ON evaluations(video_id);
 CREATE INDEX IF NOT EXISTS idx_claims_status ON claims(verification_status);
+CREATE INDEX IF NOT EXISTS idx_doc_evaluations_doc ON document_evaluations(document_id);
+CREATE INDEX IF NOT EXISTS idx_doc_claims_doc ON document_claims(document_id);
 """
 
 
@@ -144,6 +198,11 @@ class Database:
     def init_schema(self) -> None:
         with self.get_connection() as conn:
             conn.executescript(SCHEMA_SQL)
+            # Safe non-breaking migration for domain column in videos
+            cur = conn.execute("PRAGMA table_info(videos);")
+            columns = [r["name"] for r in cur.fetchall()]
+            if "domain" not in columns:
+                conn.execute("ALTER TABLE videos ADD COLUMN domain TEXT DEFAULT 'crypto';")
 
     # --- Videos & Deduplication ---
 
@@ -153,6 +212,7 @@ class Database:
         Returns True if newly inserted, False if already existed.
         """
         now_str = utc_now().isoformat()
+        domain = getattr(video, "domain", "crypto") or "crypto"
         with self.get_connection() as conn:
             cur = conn.execute("SELECT video_id, discovery_status FROM videos WHERE video_id = ?", (video.video_id,))
             row = cur.fetchone()
@@ -164,10 +224,10 @@ class Database:
                     INSERT INTO videos (
                         video_id, title, description, channel_id, channel_title,
                         published_at, duration_seconds, view_count, like_count,
-                        channel_follower_count, url, topic_id, language,
+                        channel_follower_count, url, topic_id, domain, language,
                         like_ratio, views_to_subscribers_ratio, discovery_status,
                         status_reason, created_at, updated_at
-                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                     """,
                     (
                         video.video_id,
@@ -182,6 +242,7 @@ class Database:
                         video.channel_follower_count,
                         video.url,
                         video.topic_id,
+                        domain,
                         video.language,
                         video.like_ratio,
                         video.views_to_subscribers_ratio,
@@ -371,20 +432,24 @@ class Database:
     # --- Evaluations ---
 
     def save_gatekeeper_evaluation(
-        self, video_id: str, eval_res: GatekeeperEvaluation
+        self, source_id: str, eval_res: GatekeeperEvaluation
     ) -> None:
         now_str = utc_now().isoformat()
+        is_document = self.get_document(source_id) is not None
+        table_name = "document_evaluations" if is_document else "evaluations"
+        id_col = "document_id" if is_document else "video_id"
+
         with self.get_connection() as conn:
             conn.execute(
-                """
-                INSERT INTO evaluations (
-                    video_id, pass_type, relevance_score, technical_depth_score,
+                f"""
+                INSERT INTO {table_name} (
+                    {id_col}, pass_type, relevance_score, technical_depth_score,
                     practical_value_score, source_quality_score, commercial_noise_score,
                     decision, reasons_json, evaluated_at
                 ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """,
                 (
-                    video_id,
+                    source_id,
                     "gatekeeper",
                     eval_res.relevance_score,
                     eval_res.technical_depth_score,
@@ -398,18 +463,22 @@ class Database:
             )
 
     def save_methodist_analysis(
-        self, video_id: str, analysis: MethodistAnalysis
+        self, source_id: str, analysis: MethodistAnalysis
     ) -> None:
         now_str = utc_now().isoformat()
+        is_document = self.get_document(source_id) is not None
+        eval_table = "document_evaluations" if is_document else "evaluations"
+        id_col = "document_id" if is_document else "video_id"
+
         with self.get_connection() as conn:
             conn.execute(
-                """
-                INSERT INTO evaluations (
-                    video_id, pass_type, decision, analysis_json, evaluated_at
+                f"""
+                INSERT INTO {eval_table} (
+                    {id_col}, pass_type, decision, analysis_json, evaluated_at
                 ) VALUES (?, ?, ?, ?, ?)
                 """,
                 (
-                    video_id,
+                    source_id,
                     "methodist",
                     "ACCEPTED",
                     analysis.model_dump_json(),
@@ -417,33 +486,63 @@ class Database:
                 ),
             )
             # Save claims
-            for claim in analysis.key_claims:
-                conn.execute(
-                    """
-                    INSERT INTO claims (
-                        video_id, claim_type, statement, timestamp_seconds,
-                        timestamp_formatted, independent_evidence,
-                        verification_status, allowed_sales_phrasing, verified_at
-                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-                    """,
-                    (
-                        video_id,
-                        claim.claim_type.value,
-                        claim.statement,
-                        claim.timestamp_seconds,
-                        claim.timestamp_formatted,
-                        claim.independent_evidence,
-                        claim.verification_status,
-                        claim.allowed_sales_phrasing,
-                        now_str,
-                    ),
-                )
+            if is_document:
+                for claim in analysis.key_claims:
+                    conn.execute(
+                        """
+                        INSERT INTO document_claims (
+                            document_id, claim_type, statement, anchor_id,
+                            independent_evidence, verification_status,
+                            allowed_sales_phrasing, verified_at
+                        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                        """,
+                        (
+                            source_id,
+                            claim.claim_type.value,
+                            claim.statement,
+                            claim.anchor_id or claim.timestamp_formatted,
+                            claim.independent_evidence,
+                            claim.verification_status,
+                            claim.allowed_sales_phrasing,
+                            now_str,
+                        ),
+                    )
+            else:
+                for claim in analysis.key_claims:
+                    conn.execute(
+                        """
+                        INSERT INTO claims (
+                            video_id, claim_type, statement, timestamp_seconds,
+                            timestamp_formatted, independent_evidence,
+                            verification_status, allowed_sales_phrasing, verified_at
+                        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                        """,
+                        (
+                            source_id,
+                            claim.claim_type.value,
+                            claim.statement,
+                            claim.timestamp_seconds,
+                            claim.timestamp_formatted,
+                            claim.independent_evidence,
+                            claim.verification_status,
+                            claim.allowed_sales_phrasing,
+                            now_str,
+                        ),
+                    )
 
-    def get_latest_evaluation(self, video_id: str, pass_type: str = "gatekeeper") -> Optional[Dict[str, Any]]:
+    def get_latest_evaluation(self, source_id: str, pass_type: str = "gatekeeper") -> Optional[Dict[str, Any]]:
         with self.get_connection() as conn:
             cur = conn.execute(
                 "SELECT * FROM evaluations WHERE video_id = ? AND pass_type = ? ORDER BY id DESC LIMIT 1",
-                (video_id, pass_type),
+                (source_id, pass_type),
+            )
+            row = cur.fetchone()
+            if row:
+                return dict(row)
+            # Fallback to document_evaluations
+            cur = conn.execute(
+                "SELECT * FROM document_evaluations WHERE document_id = ? AND pass_type = ? ORDER BY id DESC LIMIT 1",
+                (source_id, pass_type),
             )
             row = cur.fetchone()
             return dict(row) if row else None
@@ -466,4 +565,133 @@ class Database:
             conn.execute(
                 "UPDATE jobs_log SET status = ?, details_json = ?, finished_at = ? WHERE id = ?",
                 (status, details_str, now_str, job_id),
+            )
+
+    # --- Documents (Web Sources) ---
+
+    def upsert_document(self, doc: WebDocumentMetadata) -> bool:
+        """
+        Inserts or updates web document metadata.
+        Returns True if newly inserted, False if updated.
+        """
+        now_str = utc_now().isoformat()
+        with self.get_connection() as conn:
+            cur = conn.execute("SELECT document_id, discovery_status FROM documents WHERE document_id = ?", (doc.document_id,))
+            row = cur.fetchone()
+            is_new = row is None
+
+            if is_new:
+                conn.execute(
+                    """
+                    INSERT INTO documents (
+                        document_id, domain, topic_id, url, title, author_or_domain,
+                        published_at, clean_markdown, outline_json, word_count,
+                        discovery_status, status_reason, created_at, updated_at
+                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    """,
+                    (
+                        doc.document_id,
+                        doc.domain,
+                        doc.topic_id,
+                        doc.url,
+                        doc.title,
+                        doc.author_or_domain,
+                        doc.published_at.isoformat() if doc.published_at else None,
+                        doc.clean_markdown,
+                        doc.outline_json,
+                        doc.word_count,
+                        doc.discovery_status.value,
+                        doc.status_reason,
+                        now_str,
+                        now_str,
+                    ),
+                )
+            else:
+                conn.execute(
+                    """
+                    UPDATE documents SET
+                        title = ?,
+                        author_or_domain = ?,
+                        clean_markdown = ?,
+                        outline_json = ?,
+                        word_count = ?,
+                        discovery_status = ?,
+                        status_reason = ?,
+                        updated_at = ?
+                    WHERE document_id = ?
+                    """,
+                    (
+                        doc.title,
+                        doc.author_or_domain,
+                        doc.clean_markdown,
+                        doc.outline_json,
+                        doc.word_count,
+                        doc.discovery_status.value,
+                        doc.status_reason,
+                        now_str,
+                        doc.document_id,
+                    ),
+                )
+            return is_new
+
+    def get_document(self, document_id: str) -> Optional[WebDocumentMetadata]:
+        with self.get_connection() as conn:
+            cur = conn.execute("SELECT * FROM documents WHERE document_id = ?", (document_id,))
+            row = cur.fetchone()
+            if not row:
+                return None
+            data = dict(row)
+            if data.get("published_at"):
+                data["published_at"] = datetime.fromisoformat(data["published_at"])
+            data["created_at"] = datetime.fromisoformat(data["created_at"])
+            data["updated_at"] = datetime.fromisoformat(data["updated_at"])
+            return WebDocumentMetadata.model_validate(data)
+
+    def list_documents(
+        self,
+        domain: Optional[str] = None,
+        topic_id: Optional[str] = None,
+        status: Optional[DiscoveryStatus] = None,
+        limit: int = 100,
+    ) -> List[WebDocumentMetadata]:
+        query = "SELECT * FROM documents WHERE 1=1"
+        params: List[Any] = []
+        if domain:
+            query += " AND domain = ?"
+            params.append(domain)
+        if topic_id:
+            query += " AND topic_id = ?"
+            params.append(topic_id)
+        if status:
+            query += " AND discovery_status = ?"
+            params.append(status.value)
+        query += " ORDER BY created_at DESC LIMIT ?"
+        params.append(limit)
+
+        with self.get_connection() as conn:
+            cur = conn.execute(query, params)
+            docs = []
+            for row in cur.fetchall():
+                data = dict(row)
+                if data.get("published_at"):
+                    data["published_at"] = datetime.fromisoformat(data["published_at"])
+                data["created_at"] = datetime.fromisoformat(data["created_at"])
+                data["updated_at"] = datetime.fromisoformat(data["updated_at"])
+                docs.append(WebDocumentMetadata.model_validate(data))
+            return docs
+
+    def update_document_status(
+        self, document_id: str, status: DiscoveryStatus, reason: Optional[str] = None
+    ) -> None:
+        now_str = utc_now().isoformat()
+        with self.get_connection() as conn:
+            conn.execute(
+                """
+                UPDATE documents SET
+                    discovery_status = ?,
+                    status_reason = ?,
+                    updated_at = ?
+                WHERE document_id = ?
+                """,
+                (status.value, reason, now_str, document_id),
             )

@@ -1,0 +1,40 @@
+topics:
+  - id: "01_spaced_repetition_and_vocab"
+    name: "Интервальные повторения, контекстный вокабуляр и активный лексикон"
+    description: "Когнитивные принципы долгосрочного запоминания слов, кривая забывания Эббингауза, контекстное изучение словосочетаний и метод интервальных повторений (SRS)."
+    priority: 1
+    min_duration_seconds: 300
+    max_duration_seconds: 2400
+    queries_ru:
+      - "интервальные повторения английский язык методика"
+      - "как эффективно учить английские слова в контексте"
+      - "кривая эббингауза изучение языков spaced repetition"
+    queries_en:
+      - "spaced repetition system vocabulary acquisition language learning"
+      - "contextual vocabulary learning methods linguistic research"
+      - "ebbinghaus forgetting curve language learning application"
+    key_terms:
+      - "Spaced Repetition System (SRS)"
+      - "Forgetting Curve"
+      - "Active Recall"
+      - "Contextual Clues"
+      - "Collocations"
+
+  - id: "02_grammar_patterns_and_speech"
+    name: "Лексический подход (чанкинг), речевые паттерны и преодоление языкового барьера"
+    description: "Освоение грамматики через готовые устойчивые речевые блоки (chunks/collocations), преодоление страха говорения и автоматизация беглой речи."
+    priority: 2
+    min_duration_seconds: 300
+    max_duration_seconds: 2400
+    queries_ru:
+      - "лексический подход в изучении английского языка чанкинг"
+      - "как преодолеть языковой барьер английский беглая речь"
+    queries_en:
+      - "lexical approach chunking language fluency teaching"
+      - "overcoming speaking anxiety language barrier adults"
+    key_terms:
+      - "Lexical Approach"
+      - "Chunking"
+      - "Language Anxiety / Affective Filter"
+      - "Fluency vs Accuracy"
+

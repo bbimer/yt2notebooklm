@@ -12,6 +12,7 @@ from research_academy.database import Database
 from research_academy.models import (
     DiscoveryStatus,
     MethodistAnalysis,
+    SourceContent,
     VideoMetadata,
     VideoTranscript,
 )
@@ -77,14 +78,27 @@ class Publisher:
 
     def render_markdown_summary(
         self,
-        video: VideoMetadata,
-        analysis: MethodistAnalysis,
+        video: Optional[VideoMetadata] = None,
+        analysis: Optional[MethodistAnalysis] = None,
         transcript: Optional[VideoTranscript] = None,
         gatekeeper_score: Optional[float] = None,
+        source: Optional[SourceContent] = None,
     ) -> str:
         """
         Renders a structured, verified Markdown document compliant with Section 11 of the specification.
+        Isomorphic for both video and web sources.
         """
+        if source is None:
+            if video is None:
+                raise ValueError("Either video or source must be provided")
+            source = SourceContent.from_video(
+                video,
+                transcript or VideoTranscript(video_id=video.video_id, language="ru", full_raw_text="", full_normalized_text=""),
+                domain=getattr(video, "domain", "crypto"),
+            )
+        if analysis is None:
+            raise ValueError("analysis must be provided")
+
         terms_md = ""
         for item in analysis.terminology_and_slang:
             term = item.get("term", "")
@@ -113,28 +127,37 @@ class Publisher:
             else:
                 status_label = status.upper()
 
+            anchor_display = c.anchor_id or c.timestamp_formatted or "N/A"
+            if str(anchor_display).startswith("SEC-"):
+                ref_link = f"Раздел: {anchor_display}"
+            elif c.timestamp_seconds is not None:
+                ref_link = f"{source.url}&t={int(c.timestamp_seconds)}s ({anchor_display})"
+            else:
+                ref_link = f"{anchor_display}"
+
             claims_md += (
                 f"- **[{status_label}]** {c.statement}\n"
-                f"  - Ссылка/Таймкод: {video.url}&t={int(c.timestamp_seconds or 0)}s ({c.timestamp_formatted or 'N/A'})\n"
+                f"  - Ссылка/Якорь: {ref_link}\n"
                 f"  - Цитата автора: *«{c.quote_text or c.statement}»*\n"
             )
             if c.allowed_sales_phrasing:
                 claims_md += f"  - Формулировка для менеджера: *«{c.allowed_sales_phrasing}»*\n"
 
-        timestamps_md = ""
-        if transcript and transcript.segments:
-            # Output selected representative segments (e.g. every 2-3 minutes)
+        anchors_md = ""
+        if source.source_type == "web":
+            for s in source.segments[:15]:
+                anchors_md += f"- **{s.anchor_id}**: {s.text[:90].strip()}...\n"
+        elif transcript and transcript.segments:
             step = max(1, len(transcript.segments) // 10)
             for seg in transcript.segments[::step][:12]:
-                timestamps_md += f"- [{seg.timestamp_formatted}]({video.url}&t={int(seg.start_seconds)}s) — {seg.text[:80]}...\n"
+                anchors_md += f"- [{seg.timestamp_formatted}]({source.url}&t={int(seg.start_seconds)}s) — {seg.text[:80]}...\n"
 
-        md_content = f"""# {video.title}
+        md_content = f"""# {source.title}
 
-- **URL:** {video.url}
-- **Канал:** {video.channel_title}
-- **Дата публикации:** {video.published_at.strftime('%Y-%m-%d') if video.published_at else 'Не указана'}
-- **Язык:** {video.language or 'en'}
-- **Дата обработки:** {video.updated_at.strftime('%Y-%m-%d %H:%M UTC')}
+- **URL:** {source.url}
+- **Канал / Автор:** {source.author_or_domain}
+- **Домен:** {source.domain}
+- **Тематический модуль:** {source.topic_id}
 - **Рейтинг Gatekeeper:** {gatekeeper_score or 'N/A'}/10
 - **Статус проверки:** Проверено (Methodist Verified)
 
@@ -168,7 +191,7 @@ class Publisher:
 {risks_md or 'Не зафиксированы.'}
 
 ### Кликабельные таймкоды ключевых моментов
-{timestamps_md or 'Таймкоды отсутствуют.'}
+{anchors_md or 'Таймкоды отсутствуют.'}
 
 ---
 
@@ -190,6 +213,38 @@ class Publisher:
 """
         return md_content
 
+    def publish_source_analysis(
+        self,
+        source: SourceContent,
+        analysis: MethodistAnalysis,
+        gatekeeper_score: Optional[float] = None,
+    ) -> Path:
+        slug = slugify(source.title)
+        filename = f"{source.source_id}_{slug}.md"
+        if source.domain == "crypto":
+            module_dir = self.sources_dir / (source.topic_id or "general")
+        else:
+            module_dir = (
+                self.output_dir
+                / "knowledge_base"
+                / "domains"
+                / source.domain
+                / "sources"
+                / (source.topic_id or "general")
+            )
+        module_dir.mkdir(parents=True, exist_ok=True)
+        filepath = module_dir / filename
+
+        content = self.render_markdown_summary(
+            analysis=analysis,
+            gatekeeper_score=gatekeeper_score,
+            source=source,
+        )
+        with open(filepath, "w", encoding="utf-8") as f:
+            f.write(content)
+
+        return filepath
+
     def publish_video_analysis(
         self,
         video: VideoMetadata,
@@ -197,18 +252,12 @@ class Publisher:
         transcript: Optional[VideoTranscript] = None,
         gatekeeper_score: Optional[float] = None,
     ) -> Path:
-        slug = slugify(video.title)
-        filename = f"{video.video_id}_{slug}.md"
-        # Organize into module-specific subdirectories (e.g. 01_market_structure/)
-        module_dir = self.sources_dir / (video.topic_id or "general")
-        module_dir.mkdir(parents=True, exist_ok=True)
-        filepath = module_dir / filename
-
-        content = self.render_markdown_summary(video, analysis, transcript, gatekeeper_score)
-        with open(filepath, "w", encoding="utf-8") as f:
-            f.write(content)
-
-        return filepath
+        source = SourceContent.from_video(
+            video,
+            transcript or VideoTranscript(video_id=video.video_id, language="ru", full_raw_text="", full_normalized_text=""),
+            domain=getattr(video, "domain", "crypto"),
+        )
+        return self.publish_source_analysis(source, analysis, gatekeeper_score)
 
     def build_notebooklm_bundle(self) -> Path:
         """
@@ -236,14 +285,65 @@ class Publisher:
 
         return bundle_path
 
-    def export_notebooklm_pack(self) -> Path:
+    def export_notebooklm_pack(self, domain: str = "crypto") -> Path:
         """
-        Exports discrete 9-file package optimized for NotebookLM multi-source checkboxes:
-        - 00_PRODUCT_CLAIMS_AND_LANDING.md
-        - 00_SALES_OBJECTIONS.md
-        - Day_1_00_Fundamentals.md ... Day_7_06_Quant_Stack.md
-        - README_NOTEBOOKLM_GUIDE.md (with custom Audio Overview prompt and tips)
+        Exports discrete package optimized for NotebookLM multi-source checkboxes.
+        Supports 'crypto' (default 9-file pack) and custom domains (Topic_*.md files).
         """
+        if domain != "crypto":
+            from research_academy.domain.manager import DomainManager
+
+            manager = DomainManager(self.output_dir)
+            profile = manager.get_domain(domain)
+            domain_pack_dir = self.exports_dir / "notebooklm_pack" / domain
+            domain_pack_dir.mkdir(parents=True, exist_ok=True)
+
+            # 1. 00_DOMAIN_FOUNDATIONS.md
+            if profile.claims_text:
+                (domain_pack_dir / "00_DOMAIN_FOUNDATIONS.md").write_text(
+                    f"# {profile.name} — Фундаментальный базис\n\n{profile.claims_text}",
+                    encoding="utf-8",
+                )
+
+            # 2. Topic modules
+            domain_sources_dir = self.output_dir / "knowledge_base" / "domains" / domain / "sources"
+            for topic in profile.topics:
+                filename = f"Topic_{topic.id}.md"
+                topic_dir = domain_sources_dir / topic.id
+                verified_files = sorted(topic_dir.glob("*.md")) if topic_dir.exists() else []
+
+                content = [
+                    f"# {topic.title}\n",
+                    f"**Описание:** {topic.description}\n",
+                    f"**Ключевые концепции:** {', '.join(topic.key_terms)}\n",
+                    "---\n",
+                ]
+
+                if verified_files:
+                    content.append(f"## Проверенные первоисточники ({len(verified_files)} документов/статей)\n")
+                    for vf in verified_files:
+                        content.append(f"### Источник: {vf.stem}\n")
+                        content.append(vf.read_text(encoding="utf-8"))
+                        content.append("\n\n---\n")
+                else:
+                    content.append("## Статус сбора материала\n")
+                    content.append("*Материалы для данной темы находятся в очереди сбора и верификации.*\n")
+
+                (domain_pack_dir / filename).write_text("\n".join(content), encoding="utf-8")
+
+            # 3. Domain NotebookLM Guide
+            guide_text = f"""# Руководство по работе с Google NotebookLM — {profile.name}
+
+## 1. Загрузка в NotebookLM
+Загрузите все сгенерированные файлы из папки `{domain_pack_dir.name}` в новый блокнот NotebookLM.
+
+## 2. Генерация Audio Overview (Подкаста)
+В левой панели NotebookLM отметьте галочками изучаемую тему и нажмите «Customize»:
+> «Обсуждайте материал на русском языке в формате академического диалога двух ведущих экспертов. Делайте акцент на глубине, доказательствах и практических кейсах по теме {profile.name}. Без поверхностных упрощений и клише».
+"""
+            (domain_pack_dir / "README_NOTEBOOKLM_GUIDE.md").write_text(guide_text, encoding="utf-8")
+            return domain_pack_dir
+
         from research_academy.queries_config import SEARCH_MATRIX
 
         pack_dir = self.exports_dir / "notebooklm_pack"

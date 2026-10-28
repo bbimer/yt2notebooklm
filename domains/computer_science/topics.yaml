@@ -1,0 +1,36 @@
+topics:
+  - id: "01_binary_numeral_system"
+    name: "Позиционные системы счисления, двоичная арифметика и машинное представление данных"
+    priority: 1
+    min_duration_seconds: 300
+    max_duration_seconds: 3600
+    queries_ru:
+      - "двоичная система счисления перевод чисел алгоритм примеры"
+      - "двоичная арифметика сложение вычитание умножение столбиком"
+      - "прямой обратный дополнительный код двоичные числа переполнение"
+      - "представление чисел с плавающей точкой IEEE 754 мантисса порядок"
+      - "побитовые операции AND OR XOR сдвиги применение в программировании"
+    queries_en:
+      - "binary numeral system conversion base 2 8 10 16 explained"
+      - "two's complement binary representation signed integers arithmetic"
+      - "IEEE 754 floating point standard single double precision bits"
+      - "bitwise operations manipulation bit shift AND OR XOR practical examples"
+    key_terms:
+      - "двоичная система"
+      - "дополнительный код"
+      - "прямой код"
+      - "обратный код"
+      - "переполнение разрядной сетки"
+      - "IEEE 754"
+      - "плавающая точка"
+      - "мантисса"
+      - "порядок"
+      - "побитовые операции"
+      - "двоичный сдвиг"
+      - "binary system"
+      - "two's complement"
+      - "floating point"
+      - "mantissa"
+      - "bitwise"
+      - "bit shift"
+

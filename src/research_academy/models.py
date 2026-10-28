@@ -18,6 +18,8 @@ class DiscoveryStatus(str, Enum):
     QUEUED_FOR_TRANSCRIPT = "QUEUED_FOR_TRANSCRIPT"
     TRANSCRIPT_FETCHED = "TRANSCRIPT_FETCHED"
     TRANSCRIPT_FAILED = "TRANSCRIPT_FAILED"
+    EXTRACTED = "EXTRACTED"
+    REJECTED_EXTRACTION = "REJECTED_EXTRACTION"
     GATEKEEPER_REJECTED = "GATEKEEPER_REJECTED"
     GATEKEEPER_REVIEW = "GATEKEEPER_REVIEW"
     GATEKEEPER_ACCEPTED = "GATEKEEPER_ACCEPTED"
@@ -54,12 +56,17 @@ class QuestionCategory(str, Enum):
 class TopicConfig(BaseModel):
     id: str
     name: str
+    description: Optional[str] = ""
     priority: int = 1
     min_duration_seconds: int = 420
     max_duration_seconds: int = 2700
     queries_en: List[str] = Field(default_factory=list)
     queries_ru: List[str] = Field(default_factory=list)
     key_terms: List[str] = Field(default_factory=list)
+
+    @property
+    def title(self) -> str:
+        return self.name
 
 
 class VideoMetadata(BaseModel):
@@ -75,6 +82,7 @@ class VideoMetadata(BaseModel):
     channel_follower_count: Optional[int] = None
     url: str
     topic_id: str
+    domain: str = "crypto"
     queries_matched: List[str] = Field(default_factory=list)
     language: Optional[str] = None
     like_ratio: Optional[float] = None
@@ -171,11 +179,104 @@ class ClaimModel(BaseModel):
     source_url: str = ""
     timestamp_seconds: Optional[float] = None
     timestamp_formatted: Optional[str] = None
-    quote_text: Optional[str] = Field(default=None, description="Exact quote from transcript around timestamp")
+    anchor_id: Optional[str] = None
+    quote_text: Optional[str] = Field(default=None, description="Exact quote from transcript or document around anchor")
     independent_evidence: Optional[str] = None
     verification_status: str = "unverified"  # verified, unverified, disputed
     allowed_sales_phrasing: Optional[str] = None
     verified_at: Optional[datetime] = None
+
+    @property
+    def source_anchor(self) -> str:
+        if self.anchor_id:
+            return self.anchor_id
+        if self.timestamp_formatted:
+            return self.timestamp_formatted
+        if self.timestamp_seconds is not None:
+            mins = int(self.timestamp_seconds // 60)
+            secs = int(self.timestamp_seconds % 60)
+            return f"{mins:02d}:{secs:02d}"
+        return "UNKNOWN"
+
+
+class ContentSegment(BaseModel):
+    index: int
+    anchor_id: str  # e.g. "04:15" for video or "SEC-03 | Архитектура" for web
+    title: Optional[str] = None
+    text: str
+    has_table: bool = False
+    has_code: bool = False
+    word_count: int = 0
+
+    @property
+    def timestamp_formatted(self) -> str:
+        # Backward-compatibility alias
+        return self.anchor_id
+
+
+class SourceContent(BaseModel):
+    source_id: str  # video_id or web_{hash}
+    source_type: str = "youtube"  # "youtube", "web", "doc"
+    domain: str = "crypto"
+    topic_id: str
+    title: str
+    url: str
+    author_or_domain: str = ""
+    segments: List[ContentSegment] = Field(default_factory=list)
+    full_clean_text: str = ""
+    word_count: int = 0
+    has_high_density_data: bool = False
+    outline: List[str] = Field(default_factory=list)
+
+    @classmethod
+    def from_video(
+        cls, video: VideoMetadata, transcript: VideoTranscript, domain: str = "crypto"
+    ) -> SourceContent:
+        segments = []
+        for idx, s in enumerate(transcript.segments, 1):
+            segments.append(
+                ContentSegment(
+                    index=idx,
+                    anchor_id=s.timestamp_formatted,
+                    title=None,
+                    text=s.text,
+                    has_table=False,
+                    has_code=False,
+                    word_count=len(s.text.split()),
+                )
+            )
+        full_text = transcript.full_normalized_text or transcript.full_raw_text
+        return cls(
+            source_id=video.video_id,
+            source_type="youtube",
+            domain=domain,
+            topic_id=video.topic_id,
+            title=video.title,
+            url=video.url,
+            author_or_domain=video.channel_title,
+            segments=segments,
+            full_clean_text=full_text,
+            word_count=transcript.word_count or len(full_text.split()),
+            has_high_density_data=False,
+            outline=[],
+        )
+
+
+class WebDocumentMetadata(BaseModel):
+    document_id: str
+    domain: str = "crypto"
+    topic_id: str
+    url: str
+    title: str
+    author_or_domain: str = ""
+    published_at: Optional[datetime] = None
+    clean_markdown: str = ""
+    outline_json: Optional[str] = None
+    word_count: int = 0
+    discovery_status: DiscoveryStatus = DiscoveryStatus.NEW
+    status_reason: Optional[str] = None
+    created_at: datetime = Field(default_factory=utc_now)
+    updated_at: datetime = Field(default_factory=utc_now)
 
 
 class MethodistAnalysis(BaseModel):

@@ -1,0 +1,17 @@
+id: "crypto"
+name: "Syndicate Intelligence: Криптовалюты и микроструктура деска"
+description: "Институциональная микроструктура рынка, дельта-нейтральный арбитраж, деривативы и анатомия манипуляций."
+trusted_sources:
+  - "Wintermute"
+  - "Jump Trading"
+  - "Glassnode"
+  - "Coinglass"
+blacklisted_domains:
+  - "tiktok.com"
+  - "instagram.com"
+  - "t.me"
+  - "pinterest.com"
+default_prefilter_min_words: 250
+default_max_words: 15000
+claims_file: "claims/PRODUCT_CLAIMS.md"
+

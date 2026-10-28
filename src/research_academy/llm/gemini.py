@@ -15,11 +15,15 @@ from research_academy.llm.prompts import (
     build_gatekeeper_prompt,
     build_methodist_prompt,
 )
-from research_academy.pipeline.sampling import sample_transcript_multi_window
+from research_academy.pipeline.sampling import (
+    sample_source_content,
+    sample_transcript_multi_window,
+)
 from research_academy.pipeline.scoring import apply_gatekeeper_scoring
 from research_academy.models import (
     GatekeeperEvaluation,
     MethodistAnalysis,
+    SourceContent,
     VideoMetadata,
     VideoTranscript,
 )
@@ -111,5 +115,84 @@ class GeminiLLMProvider(LLMProvider):
                     raise RuntimeError(f"Methodist LLM analysis failed after 3 attempts: {e}") from e
                 time.sleep(2 ** attempt)
 
+        raise RuntimeError("Unreachable")
+
+    def evaluate_gatekeeper_source(
+        self,
+        source: SourceContent,
+        system_prompt: Optional[str] = None,
+    ) -> GatekeeperEvaluation:
+        sample_text = sample_source_content(source, max_words=4500)
+        prompt = (
+            f"Тема/Модуль: {source.topic_id} (Домен: {source.domain})\n"
+            f"Название источника: {source.title}\n"
+            f"Автор / Площадка: {source.author_or_domain}\n"
+            f"URL: {source.url}\n\n"
+            f"ВЫБОРКА КОНТЕНТА:\n{sample_text}\n\n"
+            f"Оцени данный материал строго по критериям и верни JSON."
+        )
+        sys_prompt = system_prompt or GATEKEEPER_SYSTEM_PROMPT
+        for attempt in range(3):
+            try:
+                response = self.client.models.generate_content(
+                    model=self.model_name,
+                    contents=prompt,
+                    config=types.GenerateContentConfig(
+                        system_instruction=sys_prompt,
+                        response_mime_type="application/json",
+                        response_schema=GatekeeperEvaluation,
+                        temperature=0.2,
+                    ),
+                )
+                raw_eval = GatekeeperEvaluation.model_validate_json(response.text)
+                return apply_gatekeeper_scoring(raw_eval)
+            except Exception as e:
+                logger.warning("Gatekeeper Source Gemini attempt %d failed: %s", attempt + 1, e)
+                if attempt == 2:
+                    raise RuntimeError(f"Gatekeeper Source LLM analysis failed: {e}") from e
+                time.sleep(2 ** attempt)
+        raise RuntimeError("Unreachable")
+
+    def generate_methodist_source(
+        self,
+        source: SourceContent,
+        system_prompt: Optional[str] = None,
+        claims_text: Optional[str] = None,
+    ) -> MethodistAnalysis:
+        if source.segments:
+            formatted_text = "\n\n".join(
+                f"[{s.anchor_id}]\n{s.text}" for s in source.segments if s.text.strip()
+            )
+        else:
+            formatted_text = source.full_clean_text
+
+        prompt = (
+            f"Тема: {source.topic_id} (Домен: {source.domain})\n"
+            f"Название материала: {source.title}\n"
+            f"Автор / Площадка: {source.author_or_domain}\n"
+            f"URL: {source.url}\n\n"
+            f"ПОЛНЫЙ ТЕКСТ / СЕГМЕНТЫ:\n{formatted_text}\n\n"
+            f"ФУНДАМЕНТАЛЬНЫЕ ТЕЗИСЫ ДОМЕНА:\n{claims_text or 'Не заданы.'}\n\n"
+            f"Сформируй глубокий структурированный методический разбор по схеме MethodistAnalysis."
+        )
+        sys_prompt = system_prompt or METHODIST_SYSTEM_PROMPT
+        for attempt in range(3):
+            try:
+                response = self.client.models.generate_content(
+                    model=self.model_name,
+                    contents=prompt,
+                    config=types.GenerateContentConfig(
+                        system_instruction=sys_prompt,
+                        response_mime_type="application/json",
+                        response_schema=MethodistAnalysis,
+                        temperature=0.3,
+                    ),
+                )
+                return MethodistAnalysis.model_validate_json(response.text)
+            except Exception as e:
+                logger.warning("Methodist Source Gemini attempt %d failed: %s", attempt + 1, e)
+                if attempt == 2:
+                    raise RuntimeError(f"Methodist Source LLM analysis failed: {e}") from e
+                time.sleep(2 ** attempt)
         raise RuntimeError("Unreachable")
 

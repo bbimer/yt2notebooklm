@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import re
 from pathlib import Path
-from typing import List, Optional
+from typing import Any, List, Optional
 from research_academy.models import ClaimModel, ClaimType, VideoTranscript
 
 
@@ -48,42 +48,69 @@ class ClaimVerifier:
                 claim.allowed_sales_phrasing = "ЗАПРЕЩЕНО: Формулировка содержит неподтвержденные гарантии доходности или безрисковости."
                 return claim
 
-        # 2. Check timestamp boundaries
-        if claim.timestamp_seconds is not None:
-            if claim.timestamp_seconds < 0:
-                claim.verification_status = "unverified"
-                claim.allowed_sales_phrasing = f"Неподтверждено: Ошибочный отрицательный таймкод ({claim.timestamp_formatted})."
-                return claim
-
-            if max_duration_seconds and max_duration_seconds > 0:
-                if claim.timestamp_seconds > (max_duration_seconds + 30):
+        # 2. Check anchor boundaries & quote matching for structural SEC- anchors
+        anchor = claim.anchor_id or (claim.timestamp_formatted if str(claim.timestamp_formatted or "").startswith("SEC-") else None)
+        if anchor and anchor.startswith("SEC-"):
+            if transcript and hasattr(transcript, "segments") and (claim.quote_text or claim.statement):
+                quote = (claim.quote_text or claim.statement).strip().lower()
+                quote_words = [w for w in re.findall(r"\w+", quote) if len(w) > 3]
+                if quote_words:
+                    matched_sec = False
+                    for seg in transcript.segments:
+                        seg_anchor = getattr(seg, "anchor_id", getattr(seg, "timestamp_formatted", ""))
+                        if anchor in seg_anchor or seg_anchor in anchor:
+                            seg_text = getattr(seg, "text", "").lower()
+                            matches = sum(1 for w in quote_words if w in seg_text)
+                            if matches >= max(1, len(quote_words) // 3):
+                                matched_sec = True
+                                break
+                    if not matched_sec and claim.quote_text:
+                        claim.verification_status = "unverified"
+                        claim.allowed_sales_phrasing = f"Неподтверждено: Цитата автора не обнаружена в секции {anchor}."
+                        return claim
+                    if matched_sec:
+                        claim.claim_type = ClaimType.SOURCE_CLAIM
+                        claim.verification_status = "verified"
+                        claim.independent_evidence = f"Source quote verified in {anchor}"
+                        return claim
+        else:
+            # 2. Check timestamp boundaries
+            if claim.timestamp_seconds is not None:
+                if claim.timestamp_seconds < 0:
                     claim.verification_status = "unverified"
-                    claim.allowed_sales_phrasing = f"Неподтверждено: Таймкод {claim.timestamp_formatted} выходит за рамки видео (~{max_duration_seconds} сек)."
+                    claim.allowed_sales_phrasing = f"Неподтверждено: Ошибочный отрицательный таймкод ({claim.timestamp_formatted})."
                     return claim
 
-        # 3. Check quote evidence in transcript around timestamp
-        if transcript and transcript.segments and (claim.quote_text or claim.statement):
-            quote = (claim.quote_text or claim.statement).strip().lower()
-            quote_words = [w for w in re.findall(r"\w+", quote) if len(w) > 3]
+                if max_duration_seconds and max_duration_seconds > 0:
+                    if claim.timestamp_seconds > (max_duration_seconds + 30):
+                        claim.verification_status = "unverified"
+                        claim.allowed_sales_phrasing = f"Неподтверждено: Таймкод {claim.timestamp_formatted} выходит за рамки видео (~{max_duration_seconds} сек)."
+                        return claim
 
-            if quote_words:
-                matched_nearby = False
-                ts = claim.timestamp_seconds
+            # 3. Check quote evidence in transcript around timestamp
+            if transcript and hasattr(transcript, "segments") and (claim.quote_text or claim.statement):
+                quote = (claim.quote_text or claim.statement).strip().lower()
+                quote_words = [w for w in re.findall(r"\w+", quote) if len(w) > 3]
 
-                # Look around timestamp window (±60s) or across segments
-                for seg in transcript.segments:
-                    if ts is not None and abs(seg.start_seconds - ts) > 60:
-                        continue
-                    seg_lower = seg.text.lower()
-                    matches = sum(1 for w in quote_words if w in seg_lower)
-                    if matches >= max(1, len(quote_words) // 3):
-                        matched_nearby = True
-                        break
+                if quote_words:
+                    matched_nearby = False
+                    ts = claim.timestamp_seconds
 
-                if not matched_nearby and claim.quote_text:
-                    claim.verification_status = "unverified"
-                    claim.allowed_sales_phrasing = f"Неподтверждено: Цитата автора не обнаружена в транскрипте на таймкоде {claim.timestamp_formatted}."
-                    return claim
+                    # Look around timestamp window (±60s) or across segments
+                    for seg in transcript.segments:
+                        start_sec = getattr(seg, "start_seconds", None)
+                        if ts is not None and start_sec is not None and abs(start_sec - ts) > 60:
+                            continue
+                        seg_lower = getattr(seg, "text", "").lower()
+                        matches = sum(1 for w in quote_words if w in seg_lower)
+                        if matches >= max(1, len(quote_words) // 3):
+                            matched_nearby = True
+                            break
+
+                    if not matched_nearby and claim.quote_text:
+                        claim.verification_status = "unverified"
+                        claim.allowed_sales_phrasing = f"Неподтверждено: Цитата автора не обнаружена в транскрипте на таймкоде {claim.timestamp_formatted}."
+                        return claim
 
         # 4. Check against confirmed product claims in PRODUCT_CLAIMS.md
         if "дельта-нейтральн" in stmt_lower or "delta neutral" in stmt_lower:
@@ -113,7 +140,7 @@ class ClaimVerifier:
     def verify_all(
         self,
         claims: List[ClaimModel],
-        transcript: Optional[VideoTranscript] = None,
+        transcript: Optional[Any] = None,
         max_duration_seconds: Optional[int] = None,
     ) -> List[ClaimModel]:
         return [
