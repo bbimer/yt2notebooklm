@@ -1,220 +1,282 @@
-# 🧠 yt2notebooklm: Next-Gen Knowledge Consumption Engine
+# yt2notebooklm: Multi-Domain Research and Knowledge Extraction Engine
 
-> **Движок потребления знаний новой эры:** Автономная трансформация терабайтов видео с YouTube в верифицированные многослойные учебные модули для Google NotebookLM.
-
-[![Python 3.12](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
-[![Architecture](https://img.shields.io/badge/pipeline-2--Pass%20Gatekeeper%20%2B%20Methodist-green.svg)]()
-[![Target](https://img.shields.io/badge/export-Google%20NotebookLM-orange.svg)]()
+Autonomous transformation of heterogeneous technical sources (YouTube video transcripts, official web documentation, whitepapers, and academic publications) into verified, structured, multi-layer educational modules formatted for Google NotebookLM, Markdown knowledge bases, DOCX, and PDF.
 
 ---
 
-## ⚡ Манифест: Конец эры «просмотра говорящих голов»
+## 1. System Overview and Core Invariants
 
-Эпоха, когда человек тратил десятки часов на просмотр бесконечных видео ради двух крупиц инсайта, подошла к концу. 
+The engine solves the problem of automated deep extraction of verified engineering and domain knowledge from noisy unstructured sources without human intervention and without token wastage.
 
-Стандартные «AI-саммаризаторы» не решают проблему: они дают 5 поверхностных буллетов, по которым невозможно глубоко изучить сложную прикладную тему (микроструктуру рынка, квант-финансы, разработку, безопасность).
+### Core Architectural Invariants
 
-**`yt2notebooklm`** реализует принципиально новый формат потребления информации:
-1. **Матричный харвестер:** Вы задаете семантическую матрицу поисковых запросов и стоп-слов. Система автоматически находит первоисточники и извлекает субтитры без дорогой транскрибации.
-2. **2-Pass AI Фильтрация (DeepSeek / Gemini):**
-   - **Gatekeeper (Pass A):** Программный и семантический барьер. Оценивает техническую глубину и мгновенно отсекает 70-80% инфоцыганства, кликбейта и банальностей без лишнего расхода токенов.
-   - **Методист (Pass B):** Деконструирует речь автора в 4 строгих слоя знаний (*Рыночная механика $\rightarrow$ Факты против мнений с таймкодами $\rightarrow$ Психология и разбор мифов $\rightarrow$ Прикладное применение*).
-3. **Мост в Google NotebookLM:** Материалы дня компилируются в дискретные модульные источники. Загрузив их в NotebookLM, вы получаете персонализированный интерактивный AI-подкаст (Audio Overview) и диалогового ментора с мгновенным цитированием конкретных секунд видео.
+1. **Isomorphic Ingestion Contract (`SourceContent`):**
+   The two-pass analytical core (`analysis.py`), claim verifier (`verification.py`), and exporter (`publishing.py`) are strictly agnostic to source origin. Both YouTube video transcripts (timestamped) and web pages / documentation (sectioned via `[SEC-XX]`) normalize into the unified `SourceContent` data model.
 
----
+2. **Strict Two-Pass AI Evaluation (Gatekeeper -> Methodist):**
+   - **Pass A (Gatekeeper):** Fast, low-cost evaluation of relevance, technical depth, and commercial noise. Rejects marketing fluff, affiliate promotions, and superficial summaries. When rejected, Pass B is skipped to prevent token waste.
+   - **Pass B (Methodist):** Executes only on accepted sources. Deconstructs the source into 4 distinct knowledge layers: Market/Engineering Mechanics, Verified Facts vs Opinions with anchors, Pitfalls/Myths, and Practical Implementation.
 
-## 1. Ключевые принципы
+3. **Multi-Domain Architecture:**
+   Knowledge is partitioned by domain profiles located in `config/domains/<domain>.yaml` and stored in `knowledge_base/domains/<domain>/`. Supported domains include:
+   - `crypto_trading`: Market microstructure, delta-neutral arbitrage, order routing, funding.
+   - `computer_science`: Numeral systems, ALU hardware arithmetic, CPU architecture, standards (IEEE 754).
+   - Custom extensible domains via configuration.
 
-1. **Качество ответов важнее объема данных:** Цель системы — не накопить тысячи бессмысленных видео, а превратить проверенные первоисточники в практическую базу знаний и научить команду говорить с профессионалами на одном языке.
-2. **Нулевой толерант к инфоцыганству:**
-   - Строгий отсев подозрительных коммерческих признаков и скама на этапе пре-фильтрации.
-   - Двухфазный AI-фильтр: легковесный **Gatekeeper** (отсекает шлак) и глубокий **Методист** (создает подробный конспект).
-   - Принцип **Fact Verification**: утверждения разделяются на `[РЫНОЧНЫЙ ФАКТ]` и `[ГИПОТЕЗА / СОВЕТ АВТОРА]`.
-3. **Бесплатные и быстрые субтитры:** В 95% случаев субтитры извлекаются мгновенно через `youtube-transcript-api` без дорогостоящей транскрибации аудио. Для перспективных видео без субтитров предусмотрен отключаемый fallback через Groq Whisper.
+4. **Claim Verification & Strict Non-Hallucination:**
+   Author assertions are verified against domain ground truth (`PRODUCT_CLAIMS.md` or domain references). Unsubstantiated claims are marked as hypotheses and prevented from entering production sales or engineering playbooks.
 
----
-
-## 2. Архитектура пайплайна
-
-```
-[Поисковая матрица / Каналы]
-             │
-             ▼
-01. Discovery Engine (YouTube Data API v3 / yt-dlp / Mock)
-             │
-             ▼
-02. Deduplication & Query Association (SQLite Primary Key: video_id)
-             │
-             ▼
-03. Video Ranking & Pre-Filter (Длительность, мин. просмотры, стоп-слова)
-             │
-             ▼
-04. Transcript Pipeline (youtube-transcript-api + нормализация крипто-терминов)
-             │
-             ▼
-05. Gatekeeper LLM Pass A (1-10 оценка глубины, шума, релевантности: ACCEPT / REVIEW / REJECT)
-             │ (Только при ACCEPT)
-             ▼
-06. Methodist LLM Pass B (Конспект, 5 вопросов клиентов, сленг, таймкоды)
-             │
-             ▼
-07. Claims Verifier & Boundaries (Сверка с knowledge_base/product/PRODUCT_CLAIMS.md)
-             │
-      ┌──────┴──────────────────────────┐
-      ▼                                 ▼
-08A. Knowledge Base & Exports     08B. Sales Academy
- - sources/{video_id}.md           - Question Generator
- - exports/index.csv               - Interactive Roleplay (Скептичный инвестор)
- - exports/notebooklm_bundle.md    - Strict Answer Evaluator (Критическая ошибка = блок)
-```
+5. **Multi-Format Publication Pipeline:**
+   Export targets include:
+   - Google NotebookLM discrete knowledge packs (`exports/notebooklm_pack/`).
+   - Single-file master bundles (`exports/notebooklm_bundle.md`).
+   - Structured CSV indexes (`exports/index.csv`).
+   - Production academic PDFs and Word documents conforming to official standards (via Pandoc, KaTeX, and Playwright).
 
 ---
 
-## 3. Структура проекта
+## 2. Agent Execution Guide: Operating Instructions for AI Agents
 
-```
-nullspread-research-academy/
-├── README.md                          # Документация и руководство пользователя
-├── pyproject.toml                     # Зависимости и конфигурация сборки
-├── .env.example                       # Шаблон переменных окружения
-├── .gitignore                         # Исключения Git
-├── config/
-│   ├── topics.yaml                    # Темы исследования и матрица запросов (RU/EN)
-│   ├── trusted_channels.yaml          # Белый список институциональных каналов
-│   ├── scoring.yaml                   # Пороги отбора, веса и стоп-слова
-│   └── schedule.yaml                  # Настройки фонового планировщика
-├── src/
-│   └── research_academy/
-│       ├── cli.py                     # CLI команды (Click + Rich)
-│       ├── config.py                  # Pydantic-валидация конфигов и env
-│       ├── database.py                # SQLite-хранилище, связи и логирование заданий
-│       ├── models.py                  # Доменные модели данных Pydantic v2
-│       ├── scheduler.py               # Планировщик APScheduler и координатор
-│       ├── providers/
-│       │   ├── base.py                # Абстрактные интерфейсы провайдеров
-│       │   ├── youtube_api.py         # YouTube Data API v3 (официальный адаптер)
-│       │   ├── yt_dlp_provider.py     # yt-dlp адаптер (резервный поиск)
-│       │   ├── transcripts.py         # Извлечение субтитров YouTube
-│       │   ├── audio_fallback.py      # Резервный Groq Whisper адаптер
-│       │   └── mock_provider.py       # Оффлайн Mock-провайдер для тестов
-│       ├── pipeline/
-│       │   ├── discovery.py           # Поиск и координация запросов
-│       │   ├── deduplication.py       # Дедупликация и агрегация поисковых запросов
-│       │   ├── ranking.py             # Предварительный математический отсев
-│       │   ├── normalization.py       # Нормализация криптотерминов автосубтитров
-│       │   ├── transcription.py       # Пайплайн получения транскриптов
-│       │   ├── analysis.py            # Двухпроходный анализ (Gatekeeper + Methodist)
-│       │   ├── verification.py        # Верификация фактов и границ продаж
-│       │   └── publishing.py          # Экспорт в Markdown, CSV и NotebookLM
-│       ├── llm/
-│       │   ├── base.py                # Абстрактный интерфейс LLM
-│       │   ├── gemini.py              # Реализация Gemini через google-genai SDK
-│       │   ├── mock_llm.py            # Детерминированный Mock LLM
-│       │   └── prompts.py             # Системные промпты Gatekeeper и Методиста
-│       └── academy/
-│           ├── question_generator.py  # Генератор проверочных вопросов
-│           ├── evaluation.py          # Оценка ответов и блокировка критических ошибок
-│           └── roleplay.py            # Ролевой тренажер со скептичным клиентом
-├── knowledge_base/
-│   ├── product/
-│   │   ├── PRODUCT_CLAIMS.md          # Единственный источник правды о NULLSPREAD
-│   │   └── SALES_OBJECTIONS.md        # Разбор возражений клиентов
-│   ├── sources/                       # Markdown-конспекты одобренных видео
-│   ├── concepts/
-│   ├── playbooks/
-│   └── reviews/
-├── exports/                           # Экспортированные CSV и NotebookLM пакеты
-├── data/                              # SQLite база данных
-└── tests/                             # Полный набор тестов pytest
-```
+This section is a machine-readable protocol for autonomous agents operating inside or with this repository.
 
----
+### Quick Orientation for Agents
 
-## 4. Быстрый старт
+- **Root CLI Command:** `research` (entry point defined in `pyproject.toml` pointing to `research_academy.cli:cli`).
+- **Configuration Root:** `config/` (contains `scoring.yaml`, `topics.yaml`, `schedule.yaml`, `domains/`).
+- **Database:** SQLite at `data/research_academy.db` managed via `research_academy.database:Database`.
+- **Primary Code Modules:** `src/research_academy/`.
+- **Knowledge Base Output:** `knowledge_base/domains/<domain>/sources/<topic>/`.
+- **Test Suite:** 52 pytest cases covering all providers, pipelines, models, and CLI tools.
 
-### 1. Установка в чистом окружении
+### Agent Workflow Playbooks
+
+#### Playbook A: Ingest and Analyze a Web Page or Documentation URL
+When tasked with extracting knowledge from an article, documentation page, or technical blog:
 ```bash
-cd nullspread-research-academy
-pip install -e .
+# 1. Fetch, decompile into clean markdown, split into [SEC-XX], and run 2-pass analysis
+research web ingest "https://example.com/article" --domain computer_science --topic 01_binary_numeral_system --analyze
+
+# 2. View database record and ingestion status
+research status
+```
+Programmatic equivalent:
+```python
+from research_academy.pipeline.web_extractor import WebExtractor
+from research_academy.pipeline.analysis import AnalysisPipeline
+from research_academy.config import AppConfig
+
+config = AppConfig.load()
+extractor = WebExtractor()
+source_content = extractor.extract_from_url("https://example.com/article", domain="computer_science", topic="01_binary_numeral_system")
+# source_content.segments contain [SEC-01], [SEC-02] anchors
 ```
 
-### 2. Настройка переменных окружения
-Скопируйте шаблон `.env.example` в `.env`:
+#### Playbook B: Ingest and Analyze a YouTube Video
+When given a YouTube URL or video ID:
 ```bash
-cp .env.example .env
+# Process video through transcript extraction, Gatekeeper Pass A, and Methodist Pass B
+research process --video-id "https://www.youtube.com/watch?v=VIDEO_ID"
 ```
-Заполните ключи при наличии:
-- `YOUTUBE_API_KEY` — ключ YouTube Data API v3 (если не указан, система работает в демонстрационном Mock-режиме).
-- `GEMINI_API_KEY` — ключ Google Gemini API (для `gemini-2.5-flash`).
-- `GROQ_API_KEY` — опционально, для резервной аудиотранскрибации.
+Programmatic equivalent:
+```python
+from research_academy.pipeline.transcription import TranscriptPipeline
+from research_academy.pipeline.analysis import AnalysisPipeline
+# Subtitles are fetched without audio transcription in 95% of cases via youtube-transcript-api.
+```
 
-### 3. Диагностика окружения
+#### Playbook C: Automated Matrix Harvesting
+To scan configured query matrices, filter negative keywords, and extract top candidate videos:
+```bash
+research harvest --topic 01_market_structure
+```
+
+#### Playbook D: Compiling Exports for NotebookLM
+To generate fresh knowledge bundles after ingestion:
+```bash
+# Generate NotebookLM pack (day-based discrete modules)
+research export --format notebooklm
+
+# Generate unified single bundle
+research export --format bundle
+
+# Generate tabular CSV index
+research export --format csv
+```
+
+#### Playbook E: Running Diagnostic Checks
+Before initiating operations, verify environment integrity:
 ```bash
 research doctor
 ```
-Команда проверит состояние базы данных SQLite, наличие библиотек и конфигураций **без раскрытия секретов**.
 
 ---
 
-## 5. Справочник команд CLI
+## 3. Project Directory Structure
 
-| Команда | Описание |
-|---|---|
-| `research doctor` | Диагностика компонентов, квот и переменных окружения |
-| `research status` | Сводка базы данных: количество видео по статусам обработки |
-| `research search --topic 01_market_structure` | Поиск видео по утвержденной матрице запросов темы |
-| `research process --video-id VIDEO_ID` | Транскрибация и двухпроходный анализ конкретного видео |
-| `research audit [URL_OR_ID]` | Полуручной аудит: за 1 сек забирает субтитры, считает маркеры и копирует 5-балльный промпт в буфер для ChatGPT/Claude |
-| `research sniffer` | Демон-слушатель буфера обмена: копируешь любую ссылку YouTube в браузере -> промпт проверки мгновенно в буфере со звуковым сигналом! |
-| `research update [--dry-run]` | Полный цикл регулярного обновления (поиск → транскрипт → LLM) |
-| `research retry-failed` | Повторная попытка транскрибации для ранее упавших видео |
-| `research export --format csv` | Экспорт каталога видео в `exports/index.csv` |
-| `research export --format bundle` | Сборка единого пакета знаний для загрузки в Google NotebookLM |
-| `research academy quiz --topic 02_arbitrage_types` | Интерактивный экзамен менеджера по концепциям темы |
-| `research academy roleplay --difficulty hard` | Спарринг-тренажер: диалог со скептичным инвестором ($50k депозит) |
+```
+nullspread-research-academy/
+├── README.md                          # Engine documentation and agent manual
+├── pyproject.toml                     # Python packaging and dependency specs
+├── .env.example                       # Environment variable templates
+├── config/                            # Pipeline and domain configurations
+│   ├── scoring.yaml                   # Thresholds, scoring weights, stop-words
+│   ├── topics.yaml                    # Query matrices and topic definitions
+│   ├── trusted_channels.yaml          # Institutional whitelist channels
+│   ├── schedule.yaml                  # Background scheduling configuration
+│   └── domains/                       # Domain profile configurations
+│       ├── crypto_trading.yaml        # Market microstructure domain
+│       └── computer_science.yaml      # Architecture & algorithms domain
+├── src/
+│   └── research_academy/
+│       ├── cli.py                     # Click CLI interface
+│       ├── config.py                  # Pydantic v2 application configuration
+│       ├── database.py                # SQLite repository, schema, and queries
+│       ├── models.py                  # Domain models (SourceContent, Passes, Reviews)
+│       ├── scheduler.py               # Background task scheduler
+│       ├── providers/
+│       │   ├── base.py                # Abstract provider contracts
+│       │   ├── youtube_api.py         # YouTube Data API v3 provider
+│       │   ├── yt_dlp_provider.py     # yt-dlp fallback discovery
+│       │   ├── transcripts.py         # Transcript extraction engine
+│       │   ├── audio_fallback.py      # Groq Whisper fallback provider
+│       │   └── mock_provider.py       # Deterministic test provider
+│       ├── pipeline/
+│       │   ├── discovery.py           # Candidate discovery coordinator
+│       │   ├── deduplication.py       # URL / Video ID deduplication
+│       │   ├── ranking.py             # Pre-LLM mathematical heuristics
+│       │   ├── normalization.py       # Domain terminology transcript normalizer
+│       │   ├── transcription.py       # Transcript acquisition flow
+│       │   ├── web_extractor.py       # Web source parser & decompiler
+│       │   ├── sampling.py            # Segment-based transcript window sampler
+│       │   ├── analysis.py            # Two-pass LLM pipeline (Gatekeeper + Methodist)
+│       │   ├── verification.py        # Fact and boundary verification against ground truth
+│       │   └── publishing.py          # Exporter to Markdown, CSV, and NotebookLM packs
+│       ├── llm/
+│       │   ├── base.py                # Abstract LLM provider interface
+│       │   ├── gemini.py              # Google Gemini implementation
+│       │   ├── openrouter.py          # OpenRouter multi-model LLM provider
+│       │   ├── mock_llm.py            # Deterministic Mock LLM for offline tests
+│       │   └── prompts.py             # Prompts for Gatekeeper, Methodist, and Verifier
+│       └── academy/
+│           ├── question_generator.py  # Managerial test questions generator
+│           ├── evaluation.py          # Strict evaluation & critical error blocker
+│           └── roleplay.py            # Interactive client simulation sparring
+├── knowledge_base/                    # Persistent curated knowledge repository
+│   ├── product/                       # Ground truth claims (PRODUCT_CLAIMS.md)
+│   └── domains/                       # Domain-partitioned knowledge bases
+│       ├── crypto_trading/            # Crypto trading sources and modules
+│       └── computer_science/          # CS sources, DOCX, and academic PDF reports
+├── exports/                           # Staging directory for generated bundles
+├── data/                              # SQLite persistent storage (research_academy.db)
+└── tests/                             # 52 unit and integration pytest suites
+```
 
 ---
 
-## 6. Двухпроходный AI-анализ
+## 4. CLI Reference Manual
 
-### Проход A: Gatekeeper
-Модель оценивает видео по шкале 1–10:
-- `relevance_score` — соответствие теме
-- `technical_depth_score` — глубина механики против поверхностных обещаний
-- `practical_value_score` — прикладная применимость для деска
-- `source_quality_score` — уровень экспертизы канала
-- `commercial_noise_score` — штраф за рекламу сигналов и рефералок
-- **Решение:** `ACCEPT` (>= 7.0), `REVIEW` (5.5 - 6.9), `REJECT` (< 5.5). При отклонении дорогостоящий проход Методиста не запускается.
-
-### Проход B: Методист
-Запускается **только для принятых видео**:
-1. Формирует структурированный конспект по разделам стандарта (Краткое содержание, Механизмы, Термины, Риски, Численные примеры).
-2. Выделяет **5 каверзных вопросов клиентов** с эталонными ответами.
-3. Проверяет утверждения автора и привязывает их к реальным таймкодам транскрипта.
-4. Сверяет выводы с `PRODUCT_CLAIMS.md`. Если прямая связь не доказана, материал помечается как общетехнический без ложных привязок.
-
----
-
-## 7. Sales Academy и блокировка критических ошибок
-
-Тренажер оценивает ответы менеджеров по 5 параметрам:
-1. Фактическая точность.
-2. Понимание рыночной механики (стакан, дельта, фандинг, сведение ордеров).
-3. Доступность изложения без потери строгости.
-4. Освещение рисков и ограничений.
-5. Отсутствие неподтвержденных обещаний.
-
-> **Правило критической ошибки (Critical Error Blocking):**
-> Если менеджер обещает «100% гарантию», называет дельта-нейтральность «полностью безрисковой» или заявляет, что алгоритм «быстрее всех в мире», сценарий **немедленно блокируется и считается проваленным**, даже если ответ звучал красноречиво.
+| Command | Arguments / Flags | Description |
+| :--- | :--- | :--- |
+| `research doctor` | None | Validates database connectivity, API key presence, directory structure, and dependencies. |
+| `research status` | None | Displays database record counts, pipeline breakdown by status (PENDING, ACCEPT, REJECT, PROCESSED). |
+| `research domain list` | None | Lists all registered knowledge domains and their configured root directories. |
+| `research domain info` | `<name>` | Outputs topics, target keywords, and scoring weights for a specified domain. |
+| `research web search` | `--topic <name> [--domain <name>]` | Discovers primary web articles, documentation pages, and RFCs for a topic. |
+| `research web ingest` | `<url> [--domain <name>] [--topic <name>] [--analyze/--no-analyze]` | Fetches web article, decomposes into `[SEC-XX]` segments, and runs 2-pass analysis. |
+| `research search` | `--topic <name>` | Queries YouTube for candidate videos according to configured search matrices. |
+| `research process` | `--video-id <url_or_id>` | Runs transcript extraction, Gatekeeper Pass A, and Methodist Pass B on a video. |
+| `research harvest` | `--topic <name>` | Autonomous matrix harvester: discovers candidates, filters stop words, and processes transcripts. |
+| `research audit` | `<url_or_id>` | Instant subtitle extraction and 5-point audit prompt copied directly to clipboard. |
+| `research sniffer` | None | Clipboard daemon: intercept YouTube links copied in browser and generate audit prompts. |
+| `research update` | `[--dry-run]` | Executes the full automated update cycle (discovery -> ingest -> analyze -> export). |
+| `research retry-failed` | None | Retries failed transcript fetches using alternate providers or Whisper fallback. |
+| `research export` | `--format <notebooklm\|bundle\|csv\|markdown>` | Compiles curated intelligence into requested delivery formats. |
+| `research academy quiz` | `--topic <name>` | Launches technical quiz based on verified source knowledge. |
+| `research academy roleplay` | `[--difficulty easy\|medium\|hard]` | Interactive sparring session with simulated skeptical institutional client. |
 
 ---
 
-## 8. Запуск тестов
+## 5. Data Contracts and Pipeline Mechanics
 
-Проект оснащен 25 unit- и интеграционными тестами с моками, не требующими реальных API-ключей и не расходующими баланс:
+### Unified `SourceContent` Model
+Defined in `src/research_academy/models.py`:
+```python
+class SourceSegment(BaseModel):
+    segment_id: str          # "00:01:23" for video or "[SEC-01]" for web
+    start_sec: float         # Starting second or sequential ordinal
+    end_sec: float           # Ending second or sequential ordinal
+    text: str                # Normalized content text
 
+class SourceContent(BaseModel):
+    source_id: str           # YouTube video_id or SHA256 web slug
+    source_type: str         # "youtube" | "web"
+    title: str               # Document or video title
+    url: str                 # Canonical source URL
+    domain: str              # Target domain (e.g. "computer_science")
+    topic: str               # Topic identifier
+    segments: list[SourceSegment]
+    raw_markdown: str = ""   # Full preserved markdown body
+```
+
+### Gatekeeper Pass A Result Contract
+```python
+class GatekeeperPassAResult(BaseModel):
+    decision: GatekeeperDecision  # ACCEPT (>=7.0) | REVIEW (5.5-6.9) | REJECT (<5.5)
+    relevance_score: float        # 1.0 - 10.0
+    technical_depth_score: float  # 1.0 - 10.0
+    practical_value_score: float  # 1.0 - 10.0
+    source_quality_score: float   # 1.0 - 10.0
+    commercial_noise_score: float # 1.0 - 10.0 (penalty)
+    reasoning: str
+```
+
+### Methodist Pass B Result Contract
+```python
+class MethodistPassBResult(BaseModel):
+    summary: str
+    key_takeaways: list[str]
+    technical_mechanisms: list[str]
+    claims_analysis: list[ClaimItem]      # Claims matched with [SEC-XX] or timestamps
+    applied_rules: list[str]
+    client_questions: list[ClientQnA]     # 5 tough client questions with model answers
+    industry_slang: list[SlangTerm]
+    confidence_score: float
+```
+
+---
+
+## 6. Setup and Verification
+
+### Prerequisites
+- Python 3.12 or higher.
+- Git.
+- Optional: Google Chrome or Microsoft Edge (for Playwright PDF rendering).
+- Optional: Pandoc 3.0+ (for DOCX export).
+
+### Installation
+```bash
+git clone https://github.com/bbimer/yt2notebooklm.git
+cd yt2notebooklm
+pip install -e .
+```
+
+### Environment Configuration
+Copy `.env.example` to `.env` and provide required keys:
+```env
+# Primary LLM Options (at least one required for live LLM execution)
+OPENROUTER_API_KEY=your_openrouter_api_key_here
+GEMINI_API_KEY=your_gemini_api_key_here
+
+# YouTube Discovery (optional; mock provider activates if absent)
+YOUTUBE_API_KEY=your_youtube_data_api_v3_key_here
+
+# Audio Fallback (optional)
+GROQ_API_KEY=your_groq_whisper_key_here
+```
+
+### Verification
+Run the complete 52-test test suite to ensure all subsystems, models, and pipelines operate within parameters:
 ```bash
 pytest
 ```
-Тесты проверяют дедупликацию, фильтрацию стоп-слов, нормализацию автосубтитров, таймкоды, поведение Gatekeeper/Методиста, генератор вопросов и блокировку критических ошибок менеджера.
-
+All tests use deterministic mocks and run offline without consuming live API quotas or leaking secrets.
