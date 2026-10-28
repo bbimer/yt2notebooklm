@@ -43,6 +43,16 @@ def _import_prompts_from_file(path: Path) -> Tuple[str, str]:
 
 
 class DomainManager:
+    DOMAIN_ALIASES: Dict[str, str] = {
+        "crypto_trading": "crypto",
+        "trading": "crypto",
+        "crypto": "crypto",
+        "cs": "computer_science",
+        "computer_science": "computer_science",
+        "english": "english_learning",
+        "english_learning": "english_learning",
+    }
+
     def __init__(self, project_root: Optional[Path] = None):
         if project_root is None:
             from research_academy.config import find_project_root
@@ -51,6 +61,11 @@ class DomainManager:
             self.project_root = project_root
         self.domains_dir = self.project_root / "domains"
         self._cache: Dict[str, DomainProfile] = {}
+
+    def resolve_domain_id(self, domain_id: str) -> str:
+        """Resolves aliases like 'crypto_trading' -> 'crypto' or 'cs' -> 'computer_science'."""
+        cleaned = domain_id.lower().strip()
+        return self.DOMAIN_ALIASES.get(cleaned, cleaned)
 
     def list_domains(self) -> List[str]:
         """Lists available domain identifiers."""
@@ -74,12 +89,14 @@ class DomainManager:
 
     def get_domain(self, domain_id: str = "crypto") -> DomainProfile:
         """Retrieves and caches domain profile by id. Defaults to crypto with fallback."""
-        if domain_id in self._cache:
-            return self._cache[domain_id]
+        target_id = self.resolve_domain_id(domain_id)
+        if target_id in self._cache:
+            return self._cache[target_id]
 
-        domain_dir = self.domains_dir / domain_id
+        domain_dir = self.domains_dir / target_id
         if domain_dir.exists():
-            profile = self._load_from_directory(domain_dir, domain_id)
+            profile = self._load_from_directory(domain_dir, target_id)
+            self._cache[target_id] = profile
             self._cache[domain_id] = profile
             return profile
 
@@ -87,19 +104,21 @@ class DomainManager:
         from research_academy.config import find_project_root
         repo_root = find_project_root()
         if repo_root != self.project_root:
-            repo_domain_dir = repo_root / "domains" / domain_id
+            repo_domain_dir = repo_root / "domains" / target_id
             if repo_domain_dir.exists():
-                profile = self._load_from_directory(repo_domain_dir, domain_id)
+                profile = self._load_from_directory(repo_domain_dir, target_id)
+                self._cache[target_id] = profile
                 self._cache[domain_id] = profile
                 return profile
 
         # Fallback for default crypto domain if custom directory not found
-        if domain_id == "crypto":
+        if target_id == "crypto":
             profile = self._create_crypto_fallback()
+            self._cache[target_id] = profile
             self._cache[domain_id] = profile
             return profile
 
-        raise ValueError(f"Domain '{domain_id}' not found in {self.domains_dir}")
+        raise ValueError(f"Domain '{domain_id}' (resolved as '{target_id}') not found in {self.domains_dir}")
 
     def _load_from_directory(self, domain_dir: Path, domain_id: str) -> DomainProfile:
         domain_yaml_path = domain_dir / "domain.yaml"

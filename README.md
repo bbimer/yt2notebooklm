@@ -90,8 +90,10 @@ To scan configured query matrices, filter negative keywords, and extract top can
 research harvest --topic 01_market_structure
 ```
 
-#### Playbook D: Compiling Exports for NotebookLM
-To generate fresh knowledge bundles after ingestion:
+#### Playbook D: Compiling Knowledge Bundles and Academic Reports
+To generate structured knowledge bundles or format academic reports after ingestion:
+
+##### 1. Curated Knowledge Exports
 ```bash
 # Generate NotebookLM pack (day-based discrete modules)
 research export --format notebooklm
@@ -101,6 +103,16 @@ research export --format bundle
 
 # Generate tabular CSV index
 research export --format csv
+```
+
+##### 2. Academic Publishing (KaTeX PDF and Word DOCX)
+To compile academic research papers complying with ДСТУ 8302:2015 into vector PDF and Microsoft Word DOCX:
+```bash
+# Render vector PDF with KaTeX math, dot leaders, and symmetric 20mm margins
+python scratch/build_perfect_pdf.py
+
+# Export to Word DOCX with native OMML mathematical formulas
+pandoc -f markdown+pipe_tables knowledge_base/domains/computer_science/referat_binary_numeral_systems_ua.md -o knowledge_base/domains/computer_science/referat_binary_numeral_systems.docx
 ```
 
 #### Playbook E: Running Diagnostic Checks
@@ -180,7 +192,7 @@ nullspread-research-academy/
 | `research doctor` | None | Validates database connectivity, API key presence, directory structure, and dependencies. |
 | `research status` | None | Displays database record counts, pipeline breakdown by status (PENDING, ACCEPT, REJECT, PROCESSED). |
 | `research domain list` | None | Lists all registered knowledge domains and their configured root directories. |
-| `research domain info` | `<name>` | Outputs topics, target keywords, and scoring weights for a specified domain. |
+| `research domain info` | `<name>` | Outputs topics, target keywords, and scoring weights for a specified domain (supports aliases: `crypto`, `crypto_trading`, `cs`, `computer_science`). |
 | `research web search` | `--topic <name> [--domain <name>]` | Discovers primary web articles, documentation pages, and RFCs for a topic. |
 | `research web ingest` | `<url> [--domain <name>] [--topic <name>] [--analyze/--no-analyze]` | Fetches web article, decomposes into `[SEC-XX]` segments, and runs 2-pass analysis. |
 | `research search` | `--topic <name>` | Queries YouTube for candidate videos according to configured search matrices. |

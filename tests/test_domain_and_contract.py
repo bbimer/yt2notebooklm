@@ -32,14 +32,19 @@ def test_domain_manager_crypto_and_computer_science():
     assert "crypto" in domains
     assert "computer_science" in domains
 
-    # 1. Crypto domain
+    # 1. Crypto domain (canonical and aliases)
     crypto = manager.get_domain("crypto")
     assert crypto.id == "crypto"
     assert len(crypto.topics) >= 7
     assert "Forensic Gatekeeper" in crypto.gatekeeper_prompt
     assert "Sales Academy" in crypto.methodist_prompt
 
-    # 2. Computer Science domain
+    crypto_alias1 = manager.get_domain("crypto_trading")
+    assert crypto_alias1.id == "crypto"
+    crypto_alias2 = manager.get_domain("trading")
+    assert crypto_alias2.id == "crypto"
+
+    # 2. Computer Science domain (canonical and alias)
     cs = manager.get_domain("computer_science")
     assert cs.id == "computer_science"
     topic_ids = [t.id for t in cs.topics]
@@ -47,6 +52,9 @@ def test_domain_manager_crypto_and_computer_science():
     assert "Академический Gatekeeper" in cs.gatekeeper_prompt
     assert "IEEE 754" in cs.gatekeeper_prompt or "двоичная" in cs.gatekeeper_prompt.lower()
     assert "Computer Science" in cs.methodist_prompt
+
+    cs_alias = manager.get_domain("cs")
+    assert cs_alias.id == "computer_science"
 
 
 def test_claim_model_backward_compatibility():
