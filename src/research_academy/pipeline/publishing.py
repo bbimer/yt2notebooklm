@@ -120,25 +120,32 @@ class Publisher:
         claims_md = ""
         for c in analysis.key_claims:
             status = c.verification_status
-            if status == "market_fact":
-                status_label = "РЫНОЧНЫЙ ФАКТ"
+            if status in ("market_fact", "verified"):
+                status_label = "РЫНОЧНЫЙ ФАКТ / ПОДТВЕРЖДЕНО"
             elif status == "author_hypothesis":
                 status_label = "ГИПОТЕЗА / СОВЕТ АВТОРА"
             else:
                 status_label = status.upper()
 
             anchor_display = c.anchor_id or c.timestamp_formatted or "N/A"
-            if str(anchor_display).startswith("SEC-"):
-                ref_link = f"Раздел: {anchor_display}"
+            if source.source_type == "web":
+                if c.anchor_id:
+                    ref_link = f"[{c.anchor_id}]({source.url}) (Раздел: {c.anchor_id})"
+                else:
+                    ref_link = f"[Первоисточник]({source.url})"
+            elif str(anchor_display).startswith("SEC-"):
+                ref_link = f"[{anchor_display}]({source.url})"
             elif c.timestamp_seconds is not None:
-                ref_link = f"{source.url}&t={int(c.timestamp_seconds)}s ({anchor_display})"
+                sep = "&" if "?" in source.url else "?"
+                ref_link = f"[{anchor_display}]({source.url}{sep}t={int(c.timestamp_seconds)}s)"
             else:
                 ref_link = f"{anchor_display}"
 
+            quote_label = "Цитата первоисточника" if source.source_type == "web" else "Цитата автора"
             claims_md += (
                 f"- **[{status_label}]** {c.statement}\n"
                 f"  - Ссылка/Якорь: {ref_link}\n"
-                f"  - Цитата автора: *«{c.quote_text or c.statement}»*\n"
+                f"  - {quote_label}: *«{c.quote_text or c.statement}»*\n"
             )
             if c.allowed_sales_phrasing:
                 claims_md += f"  - Формулировка для менеджера: *«{c.allowed_sales_phrasing}»*\n"

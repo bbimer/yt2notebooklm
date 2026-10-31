@@ -33,6 +33,15 @@ The engine solves the problem of automated deep extraction of verified engineeri
    - Structured CSV indexes (`exports/index.csv`).
    - Production academic PDFs and Word documents conforming to official standards (via Pandoc, KaTeX, and Playwright).
 
+6. **Pure Knowledge Base on Disk (Option A) & In-Memory Prompt Injection:**
+   Files saved to `digests/*.md` contain exclusively clean metadata, author chapters/timestamps, and paragraph-split transcripts with zero embedded prompt boilerplate. This ensures 100% clean ingestion into Google NotebookLM, Claude Projects, and RAG vector databases without vector contamination or Audio Overview prompt leakage. Ready-to-execute prompts are attached strictly in-memory into the clipboard on demand.
+
+7. **Multi-Source Comparative Synthesis (`prompt compare`):**
+   Specialized prompts for analyzing 2+ video transcripts simultaneously: extracting consensus, highlighting technical and ideological disputes, fact-checking author claims against one another, extracting unique per-source gems, and generating a unified synthesis matrix without redundancies.
+
+8. **OS-Level Keyboard Integration (`whkd` + `komorebi`):**
+   Seamless integration with Windows tiling window managers via `whkd`, offering zero-latency global hotkeys for background downloading, clipboard path copying (without trailing `\r\n`), prompt generation, and audio confirmation chimes.
+
 ---
 
 ## 2. Agent Execution Guide: Operating Instructions for AI Agents
@@ -41,12 +50,12 @@ This section is a machine-readable protocol for autonomous agents operating insi
 
 ### Quick Orientation for Agents
 
-- **Root CLI Command:** `research` (entry point defined in `pyproject.toml` pointing to `research_academy.cli:cli`).
+- **Root CLI Command:** `research` (entry point defined in `pyproject.toml` pointing to `research_academy.cli:cli` or `python -m research_academy.cli`).
 - **Configuration Root:** `config/` (contains `scoring.yaml`, `topics.yaml`, `schedule.yaml`, `domains/`).
 - **Database:** SQLite at `data/research_academy.db` managed via `research_academy.database:Database`.
 - **Primary Code Modules:** `src/research_academy/`.
-- **Knowledge Base Output:** `knowledge_base/domains/<domain>/sources/<topic>/`.
-- **Test Suite:** 52 pytest cases covering all providers, pipelines, models, and CLI tools.
+- **Knowledge Base Output:** `knowledge_base/domains/<domain>/sources/<topic>/` and `digests/`.
+- **Test Suite:** 65 pytest cases covering all providers, pipelines, models, CLI tools, and hotkey workflows.
 
 ### Agent Workflow Playbooks
 
@@ -59,17 +68,6 @@ research web ingest "https://example.com/article" --domain computer_science --to
 # 2. View database record and ingestion status
 research status
 ```
-Programmatic equivalent:
-```python
-from research_academy.pipeline.web_extractor import WebExtractor
-from research_academy.pipeline.analysis import AnalysisPipeline
-from research_academy.config import AppConfig
-
-config = AppConfig.load()
-extractor = WebExtractor()
-source_content = extractor.extract_from_url("https://example.com/article", domain="computer_science", topic="01_binary_numeral_system")
-# source_content.segments contain [SEC-01], [SEC-02] anchors
-```
 
 #### Playbook B: Ingest and Analyze a YouTube Video
 When given a YouTube URL or video ID:
@@ -77,23 +75,58 @@ When given a YouTube URL or video ID:
 # Process video through transcript extraction, Gatekeeper Pass A, and Methodist Pass B
 research process --video-id "https://www.youtube.com/watch?v=VIDEO_ID"
 ```
-Programmatic equivalent:
-```python
-from research_academy.pipeline.transcription import TranscriptPipeline
-from research_academy.pipeline.analysis import AnalysisPipeline
-# Subtitles are fetched without audio transcription in 95% of cases via youtube-transcript-api.
+
+#### Playbook C: Ad-Hoc Video Digest and In-Memory Prompt Extraction
+When extracting a single video transcript into a clean knowledge-base file with ready-to-execute prompt copied to clipboard:
+```bash
+# Ingest single URL and copy Summary prompt payload into clipboard
+research digest "https://www.youtube.com/watch?v=6BW4lo7f71I" --mode summary
+
+# Process video from clipboard URL and copy Audit prompt payload
+research digest --from-clipboard --mode audit
 ```
 
-#### Playbook C: Automated Matrix Harvesting
+#### Playbook D: Re-Using Saved Digests (In-Memory Wrapping without Disk Modification)
+When retrieving the latest digest or re-wrapping an older file with a new prompt mode:
+```bash
+# Copy clean absolute file path to clipboard (no \r\n, ready for browser Ctrl + O)
+research latest-digest
+
+# In-memory wrap latest digest with Critical Audit prompt and copy to clipboard
+research latest-digest -m audit
+
+# In-memory wrap older digest from last week with Tutorial prompt
+research latest-digest -f "digests/2026-10-31_sample.md" -m tutorial
+
+# Reveal file in Windows Explorer or open in editor
+research latest-digest --reveal
+research latest-digest --open
+```
+
+#### Playbook E: Standalone Prompts for Attached Files (`Ctrl + O` Workflow)
+When files are already attached in Claude, ChatGPT, or NotebookLM via file upload (`Ctrl + O`), avoid duplicate transcript text in the chat input box by copying standalone prompts:
+```bash
+# Copy Executive Summary prompt for 1 attached file
+research prompt summary
+
+# Copy Critical Audit (Bullshit & Scam Filter) prompt for 1 attached file
+research prompt audit
+
+# Copy Actionable Tutorial prompt for 1 attached file
+research prompt tutorial
+
+# Copy Multi-Source Comparison & Synthesis prompt for 2+ attached files
+research prompt compare
+```
+
+#### Playbook F: Automated Matrix Harvesting
 To scan configured query matrices, filter negative keywords, and extract top candidate videos:
 ```bash
 research harvest --topic 01_market_structure
 ```
 
-#### Playbook D: Compiling Knowledge Bundles and Academic Reports
+#### Playbook G: Compiling Knowledge Bundles and Academic Reports
 To generate structured knowledge bundles or format academic reports after ingestion:
-
-##### 1. Curated Knowledge Exports
 ```bash
 # Generate NotebookLM pack (day-based discrete modules)
 research export --format notebooklm
@@ -103,11 +136,7 @@ research export --format bundle
 
 # Generate tabular CSV index
 research export --format csv
-```
 
-##### 2. Academic Publishing (KaTeX PDF and Word DOCX)
-To compile academic research papers complying with ДСТУ 8302:2015 into vector PDF and Microsoft Word DOCX:
-```bash
 # Render vector PDF with KaTeX math, dot leaders, and symmetric 20mm margins
 python scratch/build_perfect_pdf.py
 
@@ -115,7 +144,7 @@ python scratch/build_perfect_pdf.py
 pandoc -f markdown+pipe_tables knowledge_base/domains/computer_science/referat_binary_numeral_systems_ua.md -o knowledge_base/domains/computer_science/referat_binary_numeral_systems.docx
 ```
 
-#### Playbook E: Running Diagnostic Checks
+#### Playbook H: Running Diagnostic Checks
 Before initiating operations, verify environment integrity:
 ```bash
 research doctor
@@ -123,7 +152,26 @@ research doctor
 
 ---
 
-## 3. Project Directory Structure
+## 3. Global Desktop Hotkeys (`whkd` + `komorebi`)
+
+The system integrates directly with Windows hotkey daemon (`whkd`) and the HUD overlay (`cheatsheet.py`):
+
+| Hotkey | Action | Workflow Context |
+| :--- | :--- | :--- |
+| **`Alt + D`** | Ingest YouTube URL from clipboard & copy **Summary** payload | Immediate video processing from browser link |
+| **`Alt + Shift + D`** | Ingest YouTube URL from clipboard & copy **Audit** payload | Scam/fluff detection on newly found video |
+| **`Alt + Ctrl + D`** | Copy clean path to latest digest (without `\r\n`) | Press before `Ctrl + O` in browser upload dialog |
+| **`Alt + Ctrl + S`** | Copy standalone **Summary** prompt | Paste into chat after attaching 1 `.md` file |
+| **`Alt + Ctrl + A`** | Copy standalone **Audit** prompt | Paste into chat after attaching 1 `.md` file |
+| **`Alt + Ctrl + C`** | Copy **Multi-Source Compare & Synthesis** prompt | Paste into chat after attaching **2+ `.md` files** |
+| **`Alt + Ctrl + E`** | Reveal latest digest in Windows Explorer | Direct folder access to generated files |
+| **`Alt + Ctrl + O`** | Open latest digest in VS Code / default editor | Manual review and editing |
+| **`Alt + O`** | Reload `whkd` daemon | Apply hotkey configuration updates |
+| **`Alt + /` / `Alt + F1`** | Show GUI Hotkey Cheat-Sheet HUD | On-screen interactive hotkey reference |
+
+---
+
+## 4. Project Directory Structure
 
 ```
 nullspread-research-academy/
@@ -138,9 +186,11 @@ nullspread-research-academy/
 │   └── domains/                       # Domain profile configurations
 │       ├── crypto_trading.yaml        # Market microstructure domain
 │       └── computer_science.yaml      # Architecture & algorithms domain
+├── digests/                           # Pure knowledge-base digests (Option A)
+│   └── YYYY-MM-DD_<id>_<slug>.md     # Title, Passport, Chapters, Paragraph Transcripts
 ├── src/
 │   └── research_academy/
-│       ├── cli.py                     # Click CLI interface
+│       ├── cli.py                     # Click CLI interface (digest, prompt, latest-digest)
 │       ├── config.py                  # Pydantic v2 application configuration
 │       ├── database.py                # SQLite repository, schema, and queries
 │       ├── models.py                  # Domain models (SourceContent, Passes, Reviews)
@@ -153,6 +203,8 @@ nullspread-research-academy/
 │       │   ├── audio_fallback.py      # Groq Whisper fallback provider
 │       │   └── mock_provider.py       # Deterministic test provider
 │       ├── pipeline/
+│       │   ├── ad_hoc_digest.py       # Ad-hoc digest engine & in-memory prompt builder
+│       │   ├── closer_fast_track.py   # Institutional sales playbook generator
 │       │   ├── discovery.py           # Candidate discovery coordinator
 │       │   ├── deduplication.py       # URL / Video ID deduplication
 │       │   ├── ranking.py             # Pre-LLM mathematical heuristics
@@ -179,20 +231,25 @@ nullspread-research-academy/
 │       ├── crypto_trading/            # Crypto trading sources and modules
 │       └── computer_science/          # CS sources, DOCX, and academic PDF reports
 ├── exports/                           # Staging directory for generated bundles
+│   └── notebooklm_pack/               # Discrete daily modules, battlecards, and playbooks
 ├── data/                              # SQLite persistent storage (research_academy.db)
-└── tests/                             # 52 unit and integration pytest suites
+└── tests/                             # 65 unit and integration pytest suites
 ```
 
 ---
 
-## 4. CLI Reference Manual
+## 5. CLI Reference Manual
 
 | Command | Arguments / Flags | Description |
 | :--- | :--- | :--- |
+| `research digest` | `<url_or_id> [--mode summary\|audit\|tutorial]` | Ingest single video, save clean `.md` to `digests/`, and copy payload to clipboard. |
+| `research digest` | `--from-clipboard [--mode ...]` | Ingest YouTube URL directly from clipboard. |
+| `research latest-digest` | `[-m summary\|audit\|tutorial\|compare] [-f <file>] [-c/-nc] [-o] [-r]` | Copy clean path to clipboard (default) or in-memory wrap content with selected prompt. |
+| `research prompt` | `[summary\|audit\|tutorial\|compare] [-m ...]` | Copy standalone prompt for attached files into clipboard. |
 | `research doctor` | None | Validates database connectivity, API key presence, directory structure, and dependencies. |
 | `research status` | None | Displays database record counts, pipeline breakdown by status (PENDING, ACCEPT, REJECT, PROCESSED). |
 | `research domain list` | None | Lists all registered knowledge domains and their configured root directories. |
-| `research domain info` | `<name>` | Outputs topics, target keywords, and scoring weights for a specified domain (supports aliases: `crypto`, `crypto_trading`, `cs`, `computer_science`). |
+| `research domain info` | `<name>` | Outputs topics, target keywords, and scoring weights for a specified domain. |
 | `research web search` | `--topic <name> [--domain <name>]` | Discovers primary web articles, documentation pages, and RFCs for a topic. |
 | `research web ingest` | `<url> [--domain <name>] [--topic <name>] [--analyze/--no-analyze]` | Fetches web article, decomposes into `[SEC-XX]` segments, and runs 2-pass analysis. |
 | `research search` | `--topic <name>` | Queries YouTube for candidate videos according to configured search matrices. |
@@ -205,55 +262,6 @@ nullspread-research-academy/
 | `research export` | `--format <notebooklm\|bundle\|csv\|markdown>` | Compiles curated intelligence into requested delivery formats. |
 | `research academy quiz` | `--topic <name>` | Launches technical quiz based on verified source knowledge. |
 | `research academy roleplay` | `[--difficulty easy\|medium\|hard]` | Interactive sparring session with simulated skeptical institutional client. |
-
----
-
-## 5. Data Contracts and Pipeline Mechanics
-
-### Unified `SourceContent` Model
-Defined in `src/research_academy/models.py`:
-```python
-class SourceSegment(BaseModel):
-    segment_id: str          # "00:01:23" for video or "[SEC-01]" for web
-    start_sec: float         # Starting second or sequential ordinal
-    end_sec: float           # Ending second or sequential ordinal
-    text: str                # Normalized content text
-
-class SourceContent(BaseModel):
-    source_id: str           # YouTube video_id or SHA256 web slug
-    source_type: str         # "youtube" | "web"
-    title: str               # Document or video title
-    url: str                 # Canonical source URL
-    domain: str              # Target domain (e.g. "computer_science")
-    topic: str               # Topic identifier
-    segments: list[SourceSegment]
-    raw_markdown: str = ""   # Full preserved markdown body
-```
-
-### Gatekeeper Pass A Result Contract
-```python
-class GatekeeperPassAResult(BaseModel):
-    decision: GatekeeperDecision  # ACCEPT (>=7.0) | REVIEW (5.5-6.9) | REJECT (<5.5)
-    relevance_score: float        # 1.0 - 10.0
-    technical_depth_score: float  # 1.0 - 10.0
-    practical_value_score: float  # 1.0 - 10.0
-    source_quality_score: float   # 1.0 - 10.0
-    commercial_noise_score: float # 1.0 - 10.0 (penalty)
-    reasoning: str
-```
-
-### Methodist Pass B Result Contract
-```python
-class MethodistPassBResult(BaseModel):
-    summary: str
-    key_takeaways: list[str]
-    technical_mechanisms: list[str]
-    claims_analysis: list[ClaimItem]      # Claims matched with [SEC-XX] or timestamps
-    applied_rules: list[str]
-    client_questions: list[ClientQnA]     # 5 tough client questions with model answers
-    industry_slang: list[SlangTerm]
-    confidence_score: float
-```
 
 ---
 
@@ -287,7 +295,7 @@ GROQ_API_KEY=your_groq_whisper_key_here
 ```
 
 ### Verification
-Run the complete 52-test test suite to ensure all subsystems, models, and pipelines operate within parameters:
+Run the complete 65-test test suite to ensure all subsystems, models, pipelines, and hotkey generators operate within parameters:
 ```bash
 pytest
 ```

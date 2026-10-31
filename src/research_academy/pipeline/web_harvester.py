@@ -79,19 +79,9 @@ class WebHarvester:
                     outline=outline,
                 )
 
-        headers = {
-            "User-Agent": DEFAULT_USER_AGENT,
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-            "Accept-Language": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7",
-        }
-
-        try:
-            with httpx.Client(timeout=30.0, follow_redirects=True, headers=headers) as client:
-                resp = client.get(canon_url)
-                resp.raise_for_status()
-                html = resp.text
-        except Exception as e:
-            logger.error("Failed to fetch %s: %s", canon_url, e)
+        status_code, html = self.search_provider.smart_fetch_html(canon_url)
+        if status_code != 200 or not html or html.startswith("FETCH_ERROR:"):
+            logger.error("Failed to fetch %s: status=%d", canon_url, status_code)
             doc_meta = WebDocumentMetadata(
                 document_id=doc_id,
                 domain=domain,
@@ -102,10 +92,10 @@ class WebHarvester:
                 clean_markdown="",
                 word_count=0,
                 discovery_status=DiscoveryStatus.REJECTED_EXTRACTION,
-                status_reason=f"HTTP fetch failed: {e}",
+                status_reason=f"HTTP fetch failed: status={status_code}",
             )
             self.db.upsert_document(doc_meta)
-            raise RuntimeError(f"Could not fetch {canon_url}: {e}") from e
+            raise RuntimeError(f"Could not fetch {canon_url}: status={status_code}")
 
         # Extract
         extraction = self.extractor.extract_from_html(html, canon_url)
@@ -146,11 +136,12 @@ class WebHarvester:
     def harvest_topic(
         self,
         topic_id: str,
-        domain: str = "computer_science",
-        max_results: int = 5,
+        domain: str = "crypto",
+        max_results: int = 8,
     ) -> List[SourceContent]:
         """
-        Discovers relevant primary web sources for topic and extracts them into SourceContent.
+        Discovers relevant primary web sources for a topic across its configured web_queries,
+        selecting the top 1 unique valid result per query to build a comprehensive ground truth.
         """
         domain_profile = self.domain_manager.get_domain(domain)
         topic = domain_profile.get_topic(topic_id)
@@ -158,24 +149,35 @@ class WebHarvester:
             logger.warning("Topic %s not found in domain %s", topic_id, domain)
             return []
 
-        search_results = self.search_provider.search_for_topic(
-            topic=topic,
-            domain_config=domain_profile.config,
-            max_results=max_results,
-        )
+        queries = getattr(topic, "web_queries", None) or (topic.queries_en + topic.queries_ru)
+        trusted = getattr(domain_profile.config, "trusted_sources", [])
+        blacklist = getattr(domain_profile.config, "blacklisted_domains", [])
 
         sources: List[SourceContent] = []
-        for res in search_results:
-            try:
-                source = self.ingest_url(
-                    url=res.url,
-                    topic_id=topic_id,
-                    domain=domain,
-                )
-                if source.word_count >= self.extractor.min_words:
-                    sources.append(source)
-            except Exception as e:
-                logger.warning("Could not ingest %s: %s", res.url, e)
+        seen_urls = set()
+
+        for q in queries:
+            if len(sources) >= max_results:
+                break
+            hits = self.search_provider.search(
+                query=q,
+                max_results=3,
+                blacklisted_domains=blacklist,
+                trusted_sources=trusted,
+            )
+            for h in hits:
+                canon_u = canonicalize_url(h["url"])
+                if canon_u in seen_urls:
+                    continue
+                try:
+                    logger.info("Harvesting query '%s' -> %s", q, canon_u)
+                    source = self.ingest_url(url=canon_u, topic_id=topic_id, domain=domain)
+                    if source.word_count >= self.extractor.min_words:
+                        seen_urls.add(canon_u)
+                        sources.append(source)
+                        break  # Take top 1 unique successful document per query
+                except Exception as e:
+                    logger.warning("Could not ingest %s: %s", canon_u, e)
 
         return sources
 

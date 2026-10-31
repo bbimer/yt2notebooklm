@@ -27,6 +27,18 @@ topics:
       - "FDV"
       - "market cap"
       - "token unlock"
+    web_queries:
+      # Кластер 1: L1 Coin vs Token & Механика мемпула / газа (Hard Specs)
+      - "EIP-20 token standard formal specification state contract ethereum"
+      - "EIP-1559 fee market base fee priority fee specification ethereum"
+      - "mempool transaction ordering gas auction PBS proposer builder separation mechanics"
+      # Кластер 2: Стейблкоины: структура резервов, кредитный риск и механика депега в пулах
+      - "USDT USDC reserve composition treasury bills maturity credit risk redemption gate"
+      - "stablecoin depeg mechanics Curve StableSwap pool imbalance liquidity crisis"
+      # Кластер 3: Венчурная токеномика: Low Float / High FDV, стейкинг-лазейки и Secondary OTC
+      - "Low Float High FDV tokenomics venture capital unlock overhang institutional research"
+      - "locked token staking rewards dilution insider dump tokenomics mechanics"
+      - "crypto secondary OTC market locked tokens SAFT discount hedging mechanics"
 
   - id: "01_market_structure"
     name: "День 2. Модуль 1: Архитектура рынка, биржи и маркет-мейкеры"

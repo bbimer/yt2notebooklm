@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import sys
+from datetime import datetime
 from pathlib import Path
 import click
 from rich.console import Console
@@ -589,6 +590,332 @@ def harvest_cmd(module: Optional[str]) -> None:
         console.print(f"\n[bold green]🎉 Полный сбор завершен![/bold green] Всего обработано и сохранено: [yellow]{total}[/yellow] роликов с субтитрами.")
 
 
+@cli.command("digest")
+@click.argument("urls", nargs=-1, required=False)
+@click.option("--from-clipboard", "-c", is_flag=True, default=False, help="Прочитать URL видео прямо из текущего буфера обмена Windows")
+@click.option("--file", "-f", "input_file", type=click.Path(exists=True), help="Файл со списком ссылок (по одной на строку)")
+@click.option("--mode", "-m", type=click.Choice(["summary", "tutorial", "audit"]), default="summary", show_default=True, help="Режим промпта для буфера обмена (summary | tutorial | audit)")
+@click.option("--output-dir", "-o", default="digests", show_default=True, help="Папка для сохранения Markdown дайджестов")
+@click.option("--clipboard/--no-clipboard", default=True, show_default=True, help="Копировать готовый монолитный запрос (промпт + транскрипт) в буфер обмена")
+@click.option("--open", "open_file", is_flag=True, default=False, help="Автоматически открыть созданный Markdown файл в редакторе")
+def digest_cmd(
+    urls: tuple[str, ...],
+    from_clipboard: bool,
+    input_file: Optional[str],
+    mode: str,
+    output_dir: str,
+    clipboard: bool,
+    open_file: bool,
+) -> None:
+    """Extract structured Markdown transcript & prompt from YouTube URL(s) without watching."""
+    import pyperclip
+    from research_academy.pipeline.ad_hoc_digest import (
+        AdHocDigestGenerator,
+        play_chime_error,
+        play_chime_success,
+    )
+    from research_academy.pipeline.transcript_sniffer import extract_youtube_video_id
+
+    target_urls: List[str] = list(urls)
+
+    if from_clipboard:
+        try:
+            cb_content = pyperclip.paste().strip()
+            if cb_content:
+                # Find all YouTube URLs in clipboard
+                found_vids = []
+                for token in cb_content.split():
+                    vid = extract_youtube_video_id(token)
+                    if vid and vid not in found_vids:
+                        found_vids.append(token)
+                if found_vids:
+                    target_urls.extend(found_vids)
+                else:
+                    vid = extract_youtube_video_id(cb_content)
+                    if vid:
+                        target_urls.append(cb_content)
+        except Exception as e:
+            logger.warning("Error reading clipboard: %s", e)
+
+    if input_file:
+        try:
+            with open(input_file, "r", encoding="utf-8") as fp:
+                for line in fp:
+                    line = line.strip()
+                    if line and not line.startswith("#"):
+                        target_urls.append(line)
+        except Exception as e:
+            console.print(f"[bold red]Ошибка чтения файла ссылок:[/bold red] {e}")
+
+    if not target_urls:
+        play_chime_error()
+        console.print(
+            Panel.fit(
+                "[bold red]Не указано ни одной ссылки на YouTube![/bold red]\n\n"
+                "Примеры использования:\n"
+                "  [cyan]python -m research_academy.cli digest \"https://youtu.be/...\"[/cyan]\n"
+                "  [cyan]python -m research_academy.cli digest --from-clipboard --mode summary[/cyan]\n"
+                "  [cyan]python -m research_academy.cli digest --from-clipboard --mode audit[/cyan]\n"
+                "  [cyan]python -m research_academy.cli digest url1 url2 url3 -o my_digests[/cyan]",
+                title="YouTube Digest CLI",
+            )
+        )
+        sys.exit(1)
+
+    out_path = Path(output_dir)
+    out_path.mkdir(parents=True, exist_ok=True)
+    generator = AdHocDigestGenerator(default_output_dir=out_path)
+
+    console.print(f"[bold cyan]🔍 Запуск обработки {len(target_urls)} видео (Режим промпта: [yellow]{mode}[/yellow])...[/bold cyan]\n")
+
+    results = []
+    # If single URL, copy_clipboard is respected. If multiple, copy the first or don't spam.
+    for idx, u in enumerate(target_urls, 1):
+        should_copy = clipboard and (len(target_urls) == 1 or idx == 1)
+        console.print(f"[{idx}/{len(target_urls)}] Извлекаю данные: [dim]{u}[/dim]...")
+        res = generator.process_url(
+            url_or_id=u,
+            output_dir=out_path,
+            mode=mode,
+            copy_clipboard=should_copy,
+        )
+        results.append(res)
+        if res.error:
+            console.print(f"  [bold red]ОШИБКА:[/bold red] {res.error}")
+        else:
+            console.print(
+                f"  [bold green]УСПЕХ:[/bold green] [bold]{res.title}[/bold] ({res.channel}) "
+                f"| Хронометраж: {res.duration_str} ➔ Чтение: ~{res.reading_time_min} мин ({res.word_count:,} слов)"
+            )
+            if res.chapters_count > 0:
+                console.print(f"  [cyan]Главы автора:[/cyan] Найдено {res.chapters_count} глав с таймкодами")
+
+    # Final summary display
+    successful = [r for r in results if not r.error]
+    if successful:
+        table = Table(title="Результаты экстракции (YouTube Digest)", show_header=True, header_style="bold cyan")
+        table.add_column("Видео", style="bold")
+        table.add_column("Канал")
+        table.add_column("Хронометраж")
+        table.add_column("Чтение (~мин)")
+        table.add_column("Файл конспекта")
+
+        total_words = 0
+        for r in successful:
+            total_words += r.word_count
+            table.add_row(
+                r.title[:45] + "..." if len(r.title) > 45 else r.title,
+                r.channel,
+                r.duration_str,
+                f"~{r.reading_time_min} мин",
+                f"[link=file:///{r.markdown_path.resolve()}]{r.markdown_path.name}[/link]",
+            )
+        console.print(table)
+
+        if clipboard and any(r.clipboard_copied for r in successful):
+            console.print(
+                "\n[bold green]Готовый запрос скопирован в буфер обмена![/bold green] "
+                "[bold yellow]Открывай Claude / ChatGPT / DeepSeek и жми Ctrl + V[/bold yellow]"
+            )
+
+        if open_file and successful:
+            try:
+                click.launch(str(successful[0].markdown_path))
+            except Exception as e:
+                logger.warning("Could not open file: %s", e)
+    else:
+        console.print("[bold red]Ни одно видео не удалось обработать.[/bold red]")
+        sys.exit(1)
+
+
+@cli.command("prompt")
+@click.argument(
+    "mode",
+    type=click.Choice(["summary", "audit", "tutorial", "compare", "multi"], case_sensitive=False),
+    default="summary",
+    required=False,
+)
+@click.option(
+    "-m",
+    "--mode",
+    "mode_opt",
+    type=click.Choice(["summary", "audit", "tutorial", "compare", "multi"], case_sensitive=False),
+    default=None,
+    help="Режим промпта (summary | audit | tutorial | compare)",
+)
+def prompt_cmd(mode: str, mode_opt: Optional[str]) -> None:
+    """Скопировать чистый промпт для прикрепленных файлов в буфер обмена."""
+    import pyperclip
+    from research_academy.pipeline.ad_hoc_digest import (
+        get_standalone_prompt,
+        play_chime_success,
+    )
+
+    chosen_mode = mode_opt or mode or "summary"
+    title, prompt_text = get_standalone_prompt(chosen_mode)
+
+    try:
+        pyperclip.copy(prompt_text.strip())
+        play_chime_success()
+    except Exception as e:
+        logger.warning("Failed to copy prompt to clipboard: %s", e)
+
+    console.print(
+        Panel.fit(
+            f"[bold green]Промпт скопирован в буфер обмена![/bold green]\n\n"
+            f"[bold cyan]Название:[/bold cyan] {title}\n"
+            f"[bold yellow]Режим:[/bold yellow] {chosen_mode}\n\n"
+            f"[dim]Вставь через Ctrl + V в окно чата после прикрепления файлов (Ctrl + O).[/dim]",
+            border_style="green",
+        )
+    )
+
+
+@cli.command("latest-digest")
+@click.option(
+    "-m",
+    "--mode",
+    type=click.Choice(["summary", "tutorial", "audit", "compare", "multi"], case_sensitive=False),
+    default=None,
+    help="Режим промпта для оборачивания дайджеста на лету в буфер (summary | tutorial | audit | compare)",
+)
+@click.option(
+    "-f",
+    "--file",
+    "target_file_path",
+    type=click.Path(exists=True, dir_okay=False, path_type=Path),
+    default=None,
+    help="Конкретный файл дайджеста (по умолчанию берется самый свежий)",
+)
+@click.option(
+    "-c/-nc",
+    "--copy/--no-copy",
+    "copy_clipboard",
+    default=True,
+    help="Скопировать в буфер обмена Windows (путь, либо готовый payload при указании -m)",
+)
+@click.option(
+    "-o",
+    "--open",
+    "open_file",
+    is_flag=True,
+    help="Открыть последний файл в редакторе по умолчанию / VS Code",
+)
+@click.option(
+    "-r",
+    "--reveal",
+    "reveal_file",
+    is_flag=True,
+    help="Показать последний файл в Проводнике Windows",
+)
+@click.option(
+    "--relative",
+    is_flag=True,
+    help="Использовать путь относительно корня проекта",
+)
+@click.option(
+    "-d",
+    "--dir",
+    "digest_dir",
+    default="digests",
+    help="Папка с дайджестами (по умолчанию digests)",
+)
+def latest_digest_cmd(
+    mode: Optional[str],
+    target_file_path: Optional[Path],
+    copy_clipboard: bool,
+    open_file: bool,
+    reveal_file: bool,
+    relative: bool,
+    digest_dir: str,
+) -> None:
+    """Найти дайджест, скопировать его путь или обернуть в промпт на лету."""
+    import subprocess
+    from research_academy.pipeline.ad_hoc_digest import (
+        find_latest_digest,
+        play_chime_error,
+        play_chime_success,
+        wrap_digest_with_prompt,
+    )
+
+    if target_file_path:
+        target_file = target_file_path
+    else:
+        target_dir = Path(digest_dir)
+        target_file = find_latest_digest(target_dir)
+
+    if not target_file or not target_file.exists():
+        play_chime_error()
+        console.print(f"[bold red]Файлы дайджестов не найдены![/bold red]")
+        sys.exit(1)
+
+    resolved_path = target_file.resolve()
+    if relative:
+        try:
+            path_to_use = str(resolved_path.relative_to(Path.cwd()))
+        except ValueError:
+            path_to_use = str(resolved_path)
+    else:
+        path_to_use = str(resolved_path)
+
+    # If mode is specified: in-memory wrap content with prompt template without touching disk file!
+    payload_to_copy = None
+    if mode:
+        content = target_file.read_text(encoding="utf-8")
+        payload_to_copy = wrap_digest_with_prompt(content, mode=mode.lower())
+    else:
+        payload_to_copy = path_to_use.strip()
+
+    # 1. Copy to clipboard
+    if copy_clipboard and payload_to_copy:
+        try:
+            import pyperclip
+            pyperclip.copy(payload_to_copy)
+            play_chime_success()
+        except Exception as e:
+            logger.warning("Failed to copy to clipboard: %s", e)
+
+    # 2. Display summary
+    stat = target_file.stat()
+    size_kb = round(stat.st_size / 1024, 1)
+    mod_time = datetime.fromtimestamp(stat.st_mtime).strftime("%Y-%m-%d %H:%M:%S")
+
+    table = Table(title="YouTube дайджест (Локальный доступ)", show_header=True, header_style="bold cyan")
+    table.add_column("Параметр", style="cyan", no_wrap=True)
+    table.add_column("Значение", style="white")
+
+    table.add_row("Файл", target_file.name)
+    table.add_row("Путь", path_to_use)
+    table.add_row("Размер", f"{size_kb} КБ")
+    table.add_row("Изменен", mod_time)
+    if mode:
+        table.add_row("Режим промпта", f"[bold yellow]{mode}[/bold yellow] (обернут на лету в буфер)")
+
+    console.print(table)
+    if copy_clipboard:
+        if mode:
+            console.print(
+                f"[bold green]Дайджест обернут в промпт ([yellow]{mode}[/yellow]) и скопирован в буфер обмена![/bold green]\n"
+                "[bold cyan]Жми Ctrl + V в чат Claude / ChatGPT / DeepSeek[/bold cyan]"
+            )
+        else:
+            console.print("[bold green]Путь скопирован в буфер обмена![/bold green] (чистая строка без \\r\\n)")
+
+    # 3. Handle actions
+    if reveal_file:
+        try:
+            subprocess.run(["explorer.exe", f"/select,{resolved_path}"], check=False)
+        except Exception as e:
+            logger.warning("Failed to reveal file in explorer: %s", e)
+
+    if open_file:
+        try:
+            click.launch(str(resolved_path))
+        except Exception as e:
+            logger.warning("Failed to open file: %s", e)
+
+
 if __name__ == "__main__":
     cli()
+
 

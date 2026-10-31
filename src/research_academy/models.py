@@ -63,6 +63,7 @@ class TopicConfig(BaseModel):
     queries_en: List[str] = Field(default_factory=list)
     queries_ru: List[str] = Field(default_factory=list)
     key_terms: List[str] = Field(default_factory=list)
+    web_queries: List[str] = Field(default_factory=list)
 
     @property
     def title(self) -> str:
@@ -185,6 +186,21 @@ class ClaimModel(BaseModel):
     verification_status: str = "unverified"  # verified, unverified, disputed
     allowed_sales_phrasing: Optional[str] = None
     verified_at: Optional[datetime] = None
+
+    @field_validator("claim_type", mode="before")
+    @classmethod
+    def normalize_claim_type(cls, v: Any) -> ClaimType:
+        if isinstance(v, ClaimType):
+            return v
+        if isinstance(v, str):
+            v_lower = v.strip().lower()
+            if v_lower in ("source_claim", "verified_claim", "interpretation", "unverified"):
+                return ClaimType(v_lower)
+            if "verif" in v_lower or "fact" in v_lower:
+                return ClaimType.VERIFIED_CLAIM
+            if "interp" in v_lower or "hypo" in v_lower or "derive" in v_lower:
+                return ClaimType.INTERPRETATION
+        return ClaimType.SOURCE_CLAIM
 
     @property
     def source_anchor(self) -> str:

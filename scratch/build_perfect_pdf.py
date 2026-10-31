@@ -8,7 +8,8 @@ from playwright.sync_api import sync_playwright
 
 repo_root = Path(r"c:\Users\root\Desktop\_Intelligence\nullspread-research-academy")
 md_file = repo_root / "knowledge_base" / "domains" / "computer_science" / "referat_binary_numeral_systems_ua.md"
-brain_dir = Path(r"C:\Users\root\.gemini\antigravity\brain\7afdad11-34cd-4582-8fa3-936fa707f3e9")
+brain_dir = Path(r"C:\Users\root\.gemini\antigravity\brain\2af54222-aa64-4815-b67b-8de6182563f5")
+brain_dir.mkdir(parents=True, exist_ok=True)
 pandoc_exe = r"C:\Users\root\AppData\Local\Pandoc\pandoc.exe"
 
 # Step 1: Run Pandoc with markdown+pipe_tables and KaTeX math
@@ -16,14 +17,9 @@ cmd = [pandoc_exe, "-f", "markdown+pipe_tables", str(md_file), "-t", "html", "--
 proc = subprocess.run(cmd, capture_output=True, text=True, encoding="utf-8", check=True)
 raw_html = proc.stdout
 
-# Extract content starting from after the title page hr
-parts = re.split(r'<hr\s*/?>', raw_html, maxsplit=1)
-main_body_html = parts[1] if len(parts) == 2 else raw_html
-
-# Separate TOC from main content: find <h1 id="вступ">
-intro_match = re.search(r'(<h1[^>]*id="вступ"[^>]*>)', main_body_html, flags=re.IGNORECASE)
-toc_html_raw = main_body_html[:intro_match.start()] if intro_match else ""
-content_html_raw = main_body_html[intro_match.start():] if intro_match else main_body_html
+# Separate TOC and main content: find <h1 id="вступ">
+intro_match = re.search(r'(<h1[^>]*id="вступ"[^>]*>)', raw_html, flags=re.IGNORECASE)
+content_html_raw = raw_html[intro_match.start():] if intro_match else raw_html
 
 # Insert page breaks before each major chapter ONLY
 major_sections = [
@@ -37,38 +33,39 @@ major_sections = [
 for s in major_sections:
     content_html_raw = re.sub(f'({re.escape(s)})', r'<div class="page-break"></div>\1', content_html_raw, flags=re.IGNORECASE)
 
-# Title page HTML component (fits precisely on 1 page)
+# Title page HTML component according to Odesa Polytechnic standards
 title_page_html = """
 <div class="cover-page">
   <div class="cover-header">
     <div class="ministry">МІНІСТЕРСТВО ОСВІТИ І НАУКИ УКРАЇНИ</div>
-    <div class="university">НАЦІОНАЛЬНИЙ ТЕХНІЧНИЙ УНІВЕРСИТЕТ УКРАЇНИ<br>«КИЇВСЬКИЙ ПОЛІТЕХНІЧНИЙ ІНСТИТУТ ІМЕНІ ІГОРЯ СІКОРСЬКОГО»</div>
-    <div class="faculty">Факультет інформатики та обчислювальної техніки</div>
-    <div class="department">Кафедра обчислювальної техніки</div>
+    <div class="university">НАЦІОНАЛЬНИЙ УНІВЕРСИТЕТ «ОДЕСЬКА ПОЛІТЕХНІКА»</div>
+    <div class="faculty">Інститут комп'ютерних систем</div>
+    <div class="department">Кафедра комп'ютерних інтелектуальних систем та мереж</div>
   </div>
 
   <div class="cover-middle">
     <div class="doc-type">РЕФЕРАТ</div>
-    <div class="doc-discipline">з дисципліни: «Архітектура комп'ютерних систем та основи схемотехніки»</div>
+    <div class="doc-discipline">з дисципліни: «Комп'ютерна схемотехніка та архітектура комп'ютерів»</div>
     <div class="doc-topic-label">на тему:</div>
-    <div class="doc-topic">«Системи числення, двійкова арифметика та принципи машинного представлення даних в обчислювальних системах»</div>
+    <div class="doc-topic">Системи числення, двійкова арифметика та принципи машинного представлення даних в обчислювальних системах</div>
   </div>
 
   <div class="cover-meta-grid">
     <div class="meta-left"></div>
     <div class="meta-right">
       <p><strong>Виконав:</strong><br>
-      студент групи КН-21<br>
-      <em>Іваненко Іван Іванович</em></p>
+      студент 1 курсу, групи АМ-251<br>
+      денної форми навчання<br>
+      <em>Рудік Л. О.</em></p>
       
       <p style="margin-top: 14px;"><strong>Перевірив:</strong><br>
-      доцент кафедри ОТ, к.т.н.<br>
-      <em>Петренко Петро Петрович</em></p>
+      доцент кафедри КІСМ, к.т.н.<br>
+      <em>Кузнєцов М. О.</em></p>
     </div>
   </div>
 
   <div class="cover-footer">
-    <div>Київ — 2026</div>
+    <div>Одеса – 2026</div>
   </div>
 </div>
 """
@@ -93,9 +90,37 @@ def generate_full_html(toc_entries=None):
         </div>
         """
     else:
+        # Placeholder for Pass 1
+        placeholder_rows = []
+        sections_proto = [
+            ("ВСТУП", 3, 1),
+            ("РОЗДІЛ 1. ЗАГАЛЬНІ ВІДОМОСТІ ПРО СИСТЕМИ ЧИСЛЕННЯ", 4, 1),
+            ("1.1. Поняття системи числення. Непозиційні та позиційні системи", 4, 2),
+            ("1.2. Базові характеристики позиційних систем числення", 5, 2),
+            ("РОЗДІЛ 2. ОСНОВНІ СИСТЕМИ ЧИСЛЕННЯ В ОБЧИСЛЮВАЛЬНІЙ ТЕХНІЦІ", 6, 1),
+            ("2.1. Двійкова система числення як основа цифрової електроніки", 6, 2),
+            ("2.2. Вісімкова та шістнадцяткова системи числення", 7, 2),
+            ("РОЗДІЛ 3. АЛГОРИТМИ ПЕРЕВЕДЕННЯ ЧИСЕЛ ТА ДВІЙКОВА АРИФМЕТИКА", 8, 1),
+            ("3.1. Переведення цілих та дробових чисел між системами числення", 8, 2),
+            ("3.2. Швидкий перехід між двійковою, вісімковою та шістнадцятковою системами", 10, 2),
+            ("3.3. Двійкова арифметика та машинне кодування чисел зі знаком", 11, 2),
+            ("ВИСНОВКИ", 13, 1),
+            ("СПИСОК ВИКОРИСТАНИХ ДЖЕРЕЛ", 14, 1),
+        ]
+        for title, p_num, level in sections_proto:
+            indent_class = "toc-l1" if level == 1 else "toc-l2"
+            weight_style = "font-weight: bold;" if level == 1 else ""
+            placeholder_rows.append(f"""
+            <div class="toc-row {indent_class}" style="{weight_style}">
+              <span class="toc-text">{title}</span>
+              <span class="toc-dots"></span>
+              <span class="toc-page-num">{p_num}</span>
+            </div>
+            """)
         toc_content = f"""
         <div class="toc-container">
-          {toc_html_raw}
+          <h1 class="toc-header">ЗМІСТ</h1>
+          {''.join(placeholder_rows)}
         </div>
         """
 
@@ -109,7 +134,10 @@ def generate_full_html(toc_entries=None):
   <style>
     @page {{
       size: A4 portrait;
-      margin: 20mm 20mm 20mm 20mm; /* Centered, symmetric margins */
+      margin-top: 20mm;
+      margin-bottom: 20mm;
+      margin-left: 25mm;
+      margin-right: 20mm;
     }}
     * {{
       box-sizing: border-box;
@@ -117,10 +145,11 @@ def generate_full_html(toc_entries=None):
     body {{
       font-family: "Times New Roman", Times, "Liberation Serif", serif;
       font-size: 14pt;
-      line-height: 1.45;
+      line-height: 1.5;
       color: #000000;
       background: #ffffff;
       text-align: justify;
+      text-justify: inter-word;
       margin: 0;
       padding: 0;
     }}
@@ -144,7 +173,7 @@ def generate_full_html(toc_entries=None):
       margin-bottom: 4px;
     }}
     .university {{
-      font-size: 13.5pt;
+      font-size: 14pt;
       font-weight: bold;
       line-height: 1.3;
       margin-bottom: 8px;
@@ -154,18 +183,17 @@ def generate_full_html(toc_entries=None):
       margin-bottom: 3px;
     }}
     .cover-middle {{
-      margin-top: 25mm;
-      margin-bottom: 20mm;
+      margin-top: 30mm;
+      margin-bottom: 25mm;
     }}
     .doc-type {{
-      font-size: 26pt;
+      font-size: 16pt;
       font-weight: bold;
       letter-spacing: 2px;
       margin-bottom: 12px;
     }}
     .doc-discipline {{
-      font-size: 13.5pt;
-      font-style: italic;
+      font-size: 14pt;
       margin-bottom: 16px;
     }}
     .doc-topic-label {{
@@ -173,10 +201,10 @@ def generate_full_html(toc_entries=None):
       margin-bottom: 8px;
     }}
     .doc-topic {{
-      font-size: 16pt;
+      font-size: 14pt;
       font-weight: bold;
-      line-height: 1.35;
-      max-width: 90%;
+      line-height: 1.4;
+      max-width: 95%;
       margin: 0 auto;
     }}
     .cover-meta-grid {{
@@ -189,7 +217,7 @@ def generate_full_html(toc_entries=None):
       margin-bottom: 15mm;
     }}
     .meta-right {{
-      width: 48%;
+      width: 50%;
     }}
     .meta-right p {{
       text-indent: 0 !important;
@@ -208,7 +236,7 @@ def generate_full_html(toc_entries=None):
     }}
     .toc-header {{
       text-align: center;
-      font-size: 16pt;
+      font-size: 14pt;
       font-weight: bold;
       margin-bottom: 20pt;
     }}
@@ -216,13 +244,13 @@ def generate_full_html(toc_entries=None):
       display: flex;
       align-items: baseline;
       justify-content: space-between;
-      margin-bottom: 7pt;
+      margin-bottom: 6pt;
       font-size: 13pt;
-      line-height: 1.3;
+      line-height: 1.35;
     }}
     .toc-l1 {{
       font-weight: bold;
-      margin-top: 8pt;
+      margin-top: 7pt;
     }}
     .toc-l2 {{
       padding-left: 20px;
@@ -239,142 +267,157 @@ def generate_full_html(toc_entries=None):
       top: -3px;
     }}
     .toc-page-num {{
-      font-weight: bold;
-      min-width: 25px;
+      font-weight: normal;
+      min-width: 20px;
       text-align: right;
     }}
-
-    /* Main Typography */
-    p {{
-      text-indent: 1.25cm;
-      margin-top: 0;
-      margin-bottom: 0.45em;
-    }}
-    h1, h2, h3, h4 {{
-      text-align: left;
-      text-indent: 0;
-      font-weight: bold;
-      break-after: avoid;
-      page-break-after: avoid;
-    }}
-    h1 {{
-      font-size: 16pt;
-      margin-top: 20pt;
-      margin-bottom: 12pt;
-      text-align: center;
-      text-transform: uppercase;
-    }}
-    h2 {{
-      font-size: 14pt;
-      margin-top: 16pt;
-      margin-bottom: 8pt;
-    }}
-    h3 {{
-      font-size: 13.5pt;
-      margin-top: 12pt;
-      margin-bottom: 6pt;
-    }}
-    h4 {{
-      font-size: 13pt;
-      margin-top: 10pt;
-      margin-bottom: 4pt;
-      font-style: italic;
-    }}
+    
+    /* Content Typography */
     .page-break {{
       page-break-before: always;
       break-before: page;
     }}
-
-    /* Tables */
+    
+    h1 {{
+      font-size: 14pt;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 18pt;
+      line-height: 1.4;
+      page-break-after: avoid;
+      break-after: avoid;
+    }}
+    
+    h2 {{
+      font-size: 14pt;
+      font-weight: bold;
+      margin-top: 18pt;
+      margin-bottom: 10pt;
+      line-height: 1.4;
+      text-indent: 1.25cm;
+      text-align: left;
+      page-break-after: avoid;
+      break-after: avoid;
+    }}
+    
+    h3 {{
+      font-size: 14pt;
+      font-weight: bold;
+      margin-top: 14pt;
+      margin-bottom: 8pt;
+      line-height: 1.4;
+      text-indent: 1.25cm;
+      text-align: left;
+      page-break-after: avoid;
+      break-after: avoid;
+    }}
+    
+    p {{
+      margin-top: 0;
+      margin-bottom: 0;
+      text-indent: 1.25cm;
+      line-height: 1.5;
+    }}
+    
+    ol, ul {{
+      margin-top: 6pt;
+      margin-bottom: 6pt;
+      padding-left: 0.75cm;
+      text-align: left;
+    }}
+    
+    li {{
+      margin-bottom: 5pt;
+      line-height: 1.45;
+      text-align: left;
+    }}
+    
     table {{
-      border-collapse: collapse;
       width: 100%;
+      border-collapse: collapse;
       margin: 14pt 0;
-      font-size: 11pt;
-      line-height: 1.35;
+      font-size: 12pt;
+      line-height: 1.25;
       page-break-inside: avoid;
       break-inside: avoid;
     }}
+    
     th, td {{
-      border: 1px solid #222;
+      border: 1px solid #000000;
       padding: 6pt 8pt;
       text-align: left;
-      vertical-align: top;
+      vertical-align: middle;
     }}
+    
     th {{
-      background-color: #f5f5f5;
+      background-color: #f2f2f2;
       font-weight: bold;
       text-align: center;
     }}
-
-    /* Lists */
-    ul, ol {{
-      margin-top: 0;
-      margin-bottom: 0.5em;
-      padding-left: 1.6cm;
+    
+    td:first-child {{
+      font-weight: normal;
     }}
-    li {{
-      margin-bottom: 0.2em;
-    }}
-
-    /* Blockquotes */
-    blockquote {{
+    
+    .math.display {{
       margin: 12pt 0;
-      padding: 6pt 16pt;
-      border-left: 3px solid #222;
-      background-color: #fbfbfb;
-      font-style: italic;
-    }}
-    blockquote p {{
-      text-indent: 0;
-      margin: 0;
-    }}
-
-    /* Math Formulas */
-    .katex-display {{
-      margin: 10pt 0 !important;
       text-align: center;
+      font-size: 14pt;
+      line-height: 1.4;
       page-break-inside: avoid;
       break-inside: avoid;
+    }}
+    
+    .math.inline {{
+      font-size: 14pt;
+    }}
+    
+    /* KaTeX layout adjustments */
+    .katex-display {{
+      margin: 0.5em 0 !important;
+      overflow-x: visible !important;
+      overflow-y: hidden !important;
     }}
     .katex {{
       font-size: 1.05em !important;
     }}
-    pre, code {{
-      font-family: Consolas, "Courier New", monospace;
-      font-size: 11pt;
-      background-color: #f4f4f4;
-      padding: 2px 4px;
-      border-radius: 3px;
-    }}
-    pre {{
-      padding: 8pt;
-      overflow-x: auto;
+    
+    /* Avoid orphan headers and broken lines */
+    h1, h2, h3, h4 {{
+      page-break-inside: avoid;
+      break-inside: avoid;
     }}
   </style>
 </head>
 <body>
+
 {title_page_html}
+
 {toc_content}
+
+<div class="main-content">
 {content_html_raw}
+</div>
 
 <script>
-document.querySelectorAll('span.math.inline').forEach(el => {{
-  try {{
-    katex.render(el.textContent, el, {{ displayMode: false, throwOnError: false }});
-  }} catch (e) {{
-    console.error(e);
+document.addEventListener("DOMContentLoaded", function() {{
+  // Process any unrendered math elements
+  var mathElements = document.getElementsByClassName("math");
+  for (var i = 0; i < mathElements.length; i++) {{
+    var texText = mathElements[i].textContent;
+    if (mathElements[i].tagName === "SPAN") {{
+      katex.render(texText, mathElements[i], {{
+        displayMode: mathElements[i].classList.contains("display"),
+        throwOnError: false
+      }});
+    }}
   }}
+  window.katexRenderDone = true;
 }});
-document.querySelectorAll('span.math.display').forEach(el => {{
-  try {{
-    katex.render(el.textContent, el, {{ displayMode: true, throwOnError: false }});
-  }} catch (e) {{
-    console.error(e);
-  }}
-}});
-window.katexRenderDone = true;
 </script>
+
 </body>
 </html>"""
 
@@ -393,11 +436,11 @@ with sync_playwright() as p:
     page.pdf(
         path=str(pdf_temp),
         format="A4",
-        margin={"top": "20mm", "bottom": "20mm", "left": "20mm", "right": "20mm"},
+        prefer_css_page_size=True,
         print_background=True,
         display_header_footer=True,
-        header_template="<div></div>",
-        footer_template='<div style="font-size: 10pt; font-family: \'Times New Roman\', serif; width: 100%; text-align: right; padding-right: 20mm;"><span class="pageNumber"></span></div>'
+        header_template='<div style="font-size: 12pt; font-family: \'Times New Roman\', serif; width: 100%; text-align: right; padding-right: 20mm; padding-top: 5mm;"><span class="pageNumber"></span></div>',
+        footer_template='<div></div>'
     )
     browser.close()
 
@@ -406,15 +449,15 @@ doc = fitz.open(str(pdf_temp))
 sections_to_find = [
     ("ВСТУП", "ВСТУП", 1),
     ("РОЗДІЛ 1. ЗАГАЛЬНІ ВІДОМОСТІ ПРО СИСТЕМИ ЧИСЛЕННЯ", "РОЗДІЛ 1", 1),
-    ("1.1. Поняття системи числення. Непозиційні та позиційні системи", "1.1. Поняття системи", 2),
+    ("1.1. Поняття системи числення. Непозиційні та позиційні системи", "1.1. Поняття системи числення", 2),
     ("1.2. Базові характеристики позиційних систем числення", "1.2. Базові характеристики", 2),
-    ("РОЗДІЛ 2. ОСНОВНІ КОМП’ЮТЕРНІ СИСТЕМИ ЧИСЛЕННЯ", "РОЗДІЛ 2", 1),
-    ("2.1. Двійкова система числення (Binary) як основа цифрової електроніки", "2.1. Двійкова система", 2),
-    ("2.2. Вісімкова (Octal) та шістнадцяткова (Hexadecimal) системи", "2.2. Вісімкова", 2),
-    ("РОЗДІЛ 3. АЛГОРИТМИ ПЕРЕВОДУ ЧИСЕЛ ТА ДВІЙКОВА АРИФМЕТИКА", "РОЗДІЛ 3", 1),
-    ("3.1. Переведення цілих та дробових чисел. Дроби та IEEE 754", "3.1. Переведення", 2),
-    ("3.2. Швидкий перехід між системами (метод тріад і тетрад)", "3.2. Швидкий перехід", 2),
-    ("3.3. Арифметичні операції та машинне кодування чисел", "3.3. Арифметичні операції", 2),
+    ("РОЗДІЛ 2. ОСНОВНІ СИСТЕМИ ЧИСЛЕННЯ В ОБЧИСЛЮВАЛЬНІЙ ТЕХНІЦІ", "РОЗДІЛ 2", 1),
+    ("2.1. Двійкова система числення як основа цифрової електроніки", "2.1. Двійкова система числення", 2),
+    ("2.2. Вісімкова та шістнадцяткова системи числення", "2.2. Вісімкова та шістнадцяткова", 2),
+    ("РОЗДІЛ 3. АЛГОРИТМИ ПЕРЕВЕДЕННЯ ЧИСЕЛ ТА ДВІЙКОВА АРИФМЕТИКА", "РОЗДІЛ 3", 1),
+    ("3.1. Переведення цілих та дробових чисел між системами числення", "3.1. Переведення цілих", 2),
+    ("3.2. Швидкий перехід між двійковою, вісімковою та шістнадцятковою системами", "3.2. Швидкий перехід", 2),
+    ("3.3. Двійкова арифметика та машинне кодування чисел зі знаком", "3.3. Двійкова арифметика", 2),
     ("ВИСНОВКИ", "ВИСНОВКИ", 1),
     ("СПИСОК ВИКОРИСТАНИХ ДЖЕРЕЛ", "СПИСОК ВИКОРИСТАНИХ ДЖЕРЕЛ", 1),
 ]
@@ -453,18 +496,18 @@ with sync_playwright() as p:
     page.pdf(
         path=str(final_pdf),
         format="A4",
-        margin={"top": "20mm", "bottom": "20mm", "left": "20mm", "right": "20mm"},
+        prefer_css_page_size=True,
         print_background=True,
         display_header_footer=True,
-        header_template="<div></div>",
-        footer_template='<div style="font-size: 10pt; font-family: \'Times New Roman\', serif; width: 100%; text-align: right; padding-right: 20mm;"><span class="pageNumber"></span></div>'
+        header_template='<div style="font-size: 12pt; font-family: \'Times New Roman\', serif; width: 100%; text-align: right; padding-right: 20mm; padding-top: 5mm;"><span class="pageNumber"></span></div>',
+        footer_template='<div></div>'
     )
     browser.close()
 
-# Step 7: Redact page number from cover page (Page 1)
+# Step 7: Redact page number from cover page (Page 1) at top-right
 doc_final = fitz.open(str(final_pdf))
 cover_page = doc_final[0]
-rect = fitz.Rect(0, cover_page.rect.height - 100, cover_page.rect.width, cover_page.rect.height)
+rect = fitz.Rect(cover_page.rect.width - 150, 0, cover_page.rect.width, 55)
 cover_page.add_redact_annot(rect, fill=(1, 1, 1))
 cover_page.apply_redactions()
 

@@ -193,3 +193,5 @@ def test_cli_domain_and_web_commands(tmp_path: Path):
     res_export = runner.invoke(cli, ["export", "--format", "pack", "--domain", "computer_science"])
     assert res_export.exit_code == 0
     assert "computer_science" in res_export.output
+    import shutil
+    shutil.rmtree(Path("exports/notebooklm_pack/computer_science"), ignore_errors=True)

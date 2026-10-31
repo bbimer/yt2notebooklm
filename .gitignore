@@ -51,6 +51,12 @@ tmp/
 .coverage
 htmlcov/
 
+# Scratch temporary rendering outputs
+scratch/*.png
+scratch/*.pdf
+scratch/*.html
+scratch/sections/
+
 # IDE / OS
 .idea/
 .vscode/
