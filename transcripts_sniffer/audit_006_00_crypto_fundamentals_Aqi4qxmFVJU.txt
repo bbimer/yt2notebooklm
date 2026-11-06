@@ -23,7 +23,7 @@ ID видео: Aqi4qxmFVJU
 [00:35] may hold much broader risks to the financial system.
 [00:38] So, what are stablecoins exactly, and why are they so controversial?
 [00:49] In essence, stablecoins are cryptocurrencies whose value are pegged to an existing asset
-[00:54] — most often the U.S. dollar, though there are others tied to the euro and gold, too.
+[00:54] - most often the U.S. dollar, though there are others tied to the euro and gold, too.
 [01:00] They’re sort of like casino chips for the crypto world.
 [01:04] Traders buy tokens like Tether or USD Coin (USDC) with real dollars.
 [01:08] Those tokens can then be used to trade bitcoins and other cryptocurrencies.
@@ -100,7 +100,7 @@ ID видео: Aqi4qxmFVJU
 [06:52] step in if a stablecoin of "systemic scale" ends up failing.
 [06:56] While most economists agree stablecoins aren't yet big enough to pose a "systemic" risk,
 [07:00] they're concerned that could eventually be the case if stablecoins are left to grow to
-[07:04] a point where they become too big to fail — similar to what happened with the 2008 financial crisis.
+[07:04] a point where they become too big to fail - similar to what happened with the 2008 financial crisis.
 [07:09] This gives me nightmares because it takes me back to the Lehman Brothers collapse in 2008.
 [07:15] And everybody was saying the same thing at the time.
 [07:18] The financial world is so complex, that nobody quite understood all these financial Instruments

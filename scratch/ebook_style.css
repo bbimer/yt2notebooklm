@@ -1,0 +1,150 @@
+/* Typography for E-ink PocketBook 740 */
+@charset "utf-8";
+
+body {
+    font-family: "PT Serif", "Georgia", "Times New Roman", serif;
+    font-size: 1.05em;
+    line-height: 1.5;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+    margin: 0;
+    padding: 0;
+    color: #111111;
+    background-color: #ffffff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "PT Sans", "Helvetica Neue", "Arial", sans-serif;
+    font-weight: bold;
+    line-height: 1.25;
+    color: #000000;
+}
+
+h1 {
+    font-size: 1.7em;
+    text-align: center;
+    margin-top: 1.8em;
+    margin-bottom: 0.8em;
+    page-break-before: always;
+    border-bottom: 2px solid #222222;
+    padding-bottom: 0.3em;
+}
+
+h2 {
+    font-size: 1.35em;
+    margin-top: 1.5em;
+    margin-bottom: 0.6em;
+    page-break-before: always;
+    border-bottom: 1px solid #666666;
+    padding-bottom: 0.2em;
+}
+
+h3 {
+    font-size: 1.15em;
+    margin-top: 1.2em;
+    margin-bottom: 0.4em;
+}
+
+h4 {
+    font-size: 1.05em;
+    margin-top: 1.0em;
+    margin-bottom: 0.3em;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 0.7em;
+    text-indent: 1.2em;
+}
+
+/* Remove indent for first paragraph after headings or blockquotes */
+h1 + p, h2 + p, h3 + p, h4 + p, blockquote + p, ul + p, ol + p, table + p {
+    text-indent: 0;
+}
+
+blockquote {
+    margin: 1.0em 0;
+    padding: 0.6em 1.0em;
+    border-left: 4px solid #333333;
+    background-color: #f3f3f3;
+    font-style: normal;
+}
+
+blockquote p {
+    text-indent: 0;
+    margin-bottom: 0.4em;
+}
+
+blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+hr {
+    border: none;
+    border-top: 1px dashed #888888;
+    margin: 1.5em 0;
+}
+
+ul, ol {
+    margin-top: 0.4em;
+    margin-bottom: 0.8em;
+    padding-left: 1.8em;
+}
+
+li {
+    margin-bottom: 0.3em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.2em 0;
+    font-size: 0.9em;
+    page-break-inside: avoid;
+}
+
+th, td {
+    border: 1px solid #444444;
+    padding: 6px 8px;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background-color: #e8e8e8;
+    font-weight: bold;
+}
+
+code {
+    font-family: "PT Mono", "Courier New", monospace;
+    font-size: 0.9em;
+    background-color: #efefef;
+    padding: 1px 4px;
+    border-radius: 2px;
+}
+
+pre {
+    font-family: "PT Mono", "Courier New", monospace;
+    font-size: 0.85em;
+    background-color: #f5f5f5;
+    border: 1px solid #cccccc;
+    padding: 8px;
+    margin: 1.0em 0;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+pre code {
+    background-color: transparent;
+    padding: 0;
+}
+
+strong {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}

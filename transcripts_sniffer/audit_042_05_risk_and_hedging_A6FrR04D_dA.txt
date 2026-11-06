@@ -1,0 +1,241 @@
+================================================================================
+NULLSPREAD RESEARCH · СУБТИТРЫ ВИДЕО ДЛЯ АУДИТА #42
+Модуль: День 6. Модуль 5: Анатомия краха бирж, ловушки выводов, Leg Risk и AML (05_risk_and_hedging)
+Поисковый запрос: crypto exchange insolvency proof of reserves fake volume withdrawal freeze
+================================================================================
+ID видео: A6FrR04D_dA
+Название: FTX Drained of ALL Crypto || SBF Flees to Argentina
+Канал: Crypto Tips
+Ссылка: https://www.youtube.com/watch?v=A6FrR04D_dA
+Объем: 1517 слов (~10.8 мин)
+Язык: en
+Файл: audit_042_05_risk_and_hedging_A6FrR04D_dA.txt
+Создан: 2026-11-06 02:34:31
+================================================================================
+
+[00:00] FTX has been hacked to the tune of at
+[00:04] least 400 million dollars worth of the
+[00:07] crypto on there was that everything on
+[00:10] the exchange I think so there's some
+[00:12] people who are saying oh maybe it was
+[00:14] you know just funds moving for the
+[00:17] bankruptcy proceedings or maybe it was
+[00:19] an inside job or maybe it was a hack
+[00:22] from the outside
+[00:24] the conspiracy theorist in me thinks it
+[00:26] was an inside job how convenient it is
+[00:29] that two days ago he opened withdrawals
+[00:31] only for Bohemian residents which SBF
+[00:34] was and his friends and family not to
+[00:37] mention now that there's an article out
+[00:39] from Reuters saying that SPF had
+[00:42] actually designed a back door that allow
+[00:44] him to move billions of dollars of
+[00:47] crypto without triggering any alerts for
+[00:50] other FTX employees there is so much
+[00:53] coming out about FTX and all of the
+[00:57] dirty dealings and insider trading and
+[01:02] manipulation and taking advantage of
+[01:04] user funds that is coming to light very
+[01:07] quickly I you know SPF Sam bankmanfried
+[01:10] I think he has three dollars to his name
+[01:12] maybe he can buy a few Dogecoin and try
+[01:15] to work his way up back in the crypto
+[01:16] space
+[01:18] I think he's got some character building
+[01:19] to do and maybe that's going to be
+[01:21] happening in prison there's a lot of
+[01:23] people who are upset over what he has
+[01:24] done and they are hoping he's not going
+[01:28] to get away with it now there are people
+[01:30] saying that they've been tracking the
+[01:33] private jet of Sam bankman freed and
+[01:36] right now he is in Argentina so
+[01:39] it's listen I know I'm making light of
+[01:42] this a little bit of just how ridiculous
+[01:43] this is but this is really unfortunate
+[01:46] for anyone who had funds on FTX mostly
+[01:50] I'm really sorry for those people who
+[01:52] were waiting for their time I don't
+[01:55] think there's very many people who are
+[01:57] waiting on the sidelines of crypto to
+[01:58] buy low actually as an outsider a
+[02:00] newcomer to crypto and they're buying
+[02:02] now which is a good time uh but there is
+[02:04] I think still a lot of people whose
+[02:06] first experience of cryptocurrency is
+[02:09] this debacle they had funds on FTX they
+[02:13] were keeping it there maybe because they
+[02:14] had trust or maybe because that was just
+[02:16] how their process was and they didn't
+[02:18] have a chance yet to put it on a
+[02:19] hardware wallet and I really feel for
+[02:22] these people because I don't think
+[02:24] they're getting anything back between
+[02:25] the bankruptcy filings and this hack
+[02:28] that's now happening I really am
+[02:31] I think it's a bleak outlook for any
+[02:34] kind of uh repayment for you also for
+[02:37] those who had funds on Voyager digital
+[02:40] that centralized lending platform that
+[02:42] filed bankruptcy in July they were
+[02:45] planning to get bought out by FTX and
+[02:48] the users there were you know somewhat
+[02:50] happy or at least having some closure
+[02:53] knowing that they were going to get at
+[02:54] least 70 percent of their funds back in
+[02:57] different forms thanks to the buyout
+[02:59] from FTX Now Voyager is probably going
+[03:02] to need another person another entity to
+[03:04] come in and buy them out if they if
+[03:06] that's a possibility
+[03:07] otherwise I think the proceedings for
+[03:09] Voyager
+[03:11] probably just like FTX FTX is definitely
+[03:13] going to have some more criminal
+[03:15] investigation I think going on for the
+[03:17] happenings between Sam Bateman freed and
+[03:20] the people running that platform uh and
+[03:22] Voyager now being tied into that I think
+[03:25] it's going to be a long delay and it's
+[03:27] going to be Pennies on the dollar for
+[03:29] what you're going to get from that
+[03:30] there's some people on crypto Twitter
+[03:32] saying you know good luck trying to get
+[03:34] retail investors trusting crypto again
+[03:39] can I just say this can we stop
+[03:41] referring to centralized exchanges and
+[03:44] megalomaniacs like SBF as crypto they
+[03:48] are not their whole reason was they saw
+[03:51] new investment class new naive investors
+[03:56] and just really a lot of speculation a
+[03:58] lot of money pouring into crypto as a
+[04:01] get rich quick opportunity and trying to
+[04:04] make crypto crypto into more of the same
+[04:07] traditional Financial uh processes and
+[04:12] platforms that already exist except they
+[04:14] were going to get their hand in the
+[04:15] pocket which FTX did but this is not
+[04:19] crypto by any means centralized
+[04:22] exchanges completely
+[04:24] disregard everything why
+[04:26] cryptocurrencies were created in the
+[04:29] first place the main reason kryptos were
+[04:31] created was to oust the banks to give
+[04:34] people the opportunity to actually take
+[04:36] real custody real ownership ship over
+[04:40] their wealth and be able to send it to
+[04:43] anyone for whatever reason that they
+[04:45] want because it was run by it is run
+[04:47] Bitcoin at least is run by a
+[04:49] permissionless peer-to-peer system
+[04:51] ethereum used to be that way things
+[04:54] might be changing but that really annoys
+[04:56] me when I hear people say oh this is
+[04:58] going to help people
+[05:00] lose faith in crypto FTX and Sam bankman
+[05:04] freed are not crypto period full stop
+[05:08] people building
+[05:10] decentralized permissionless
+[05:12] non-custodial options are at least going
+[05:15] in the right direction the people who
+[05:17] are valuing this and putting that above
+[05:19] their ego above their identity above
+[05:22] what they think they can get out of the
+[05:24] system the people who are valuing what
+[05:26] they can provide as a tool for freedom
+[05:29] for people like you and me that's who we
+[05:31] should be paying attention to investing
+[05:33] in and participating in you might not
+[05:36] like it I know we've done all especially
+[05:39] with Toby and what's happening with
+[05:41] inflation and Global economics and the
+[05:43] macro economics happening and cbdc's of
+[05:47] course that is a reality uh you you're
+[05:51] gonna whether you like it or not you're
+[05:53] going to be pursuing things like
+[05:54] decentralized exchanges Hardware wallets
+[05:58] multi-cig wallets uh as secure and
+[06:01] decentralized and permissionless and
+[06:05] censorship resistant platforms and
+[06:07] options as possible the speculation
+[06:10] phase of cryptocurrency I think is
+[06:12] fading out and the utility of it is is
+[06:14] heating up I think that the attention
+[06:17] being paid to decentralize exchanges on
+[06:21] your part is something that is very much
+[06:23] in your best favor if you want to
+[06:26] continue to invest in and trade in and
+[06:28] participate in cryptocurrencies you're
+[06:30] going to need to learn how to do that in
+[06:31] a decentralized manner if you want to
+[06:34] know how maybe some ways that you can
+[06:36] get yourself used to this idea of a
+[06:38] decent centralized exchange it's not
+[06:40] perfectly decentralized but there are
+[06:42] options like paxful.com
+[06:46] huddlehuddle.com if you want to go truly
+[06:48] decentralized and really do it the right
+[06:51] way go to bisc.network the more
+[06:53] decentralized you get the less user
+[06:55] friendly so that's going to take some
+[06:57] dedication on your part to figure that
+[06:58] out also
+[07:00] other trading and D5 platforms for
+[07:04] getting a passive income look at on
+[07:06] chain staking from different
+[07:08] cryptocurrencies I know there's a lot of
+[07:10] going on with cardano but take it or
+[07:13] leave it cardano is great for staking
+[07:15] super easy and really consistent there
+[07:18] other options could be ethereum but I
+[07:22] voice my opinion on ethereum many times
+[07:23] on you know my concerns of their
+[07:25] centralization and censorship acceptance
+[07:28] unfortunately
+[07:30] also things like Ave uniswap Thor chain
+[07:35] these are platforms that will help you
+[07:38] interact with cryptocurrencies earn a
+[07:40] passive income while still keeping
+[07:42] custody over your coins I'm always
+[07:44] talking about Ledger Hardware wallets
+[07:46] it's a really secure Hardware wallet
+[07:48] they're not the only ones also trezor
+[07:51] dot IO trezor Hardware wallets are
+[07:54] amazing if you want to uh links to
+[07:56] either of those or official sites go to
+[07:58] the video description of this video
+[08:00] video you guys can check them all out
+[08:02] I'll put all the links down below also I
+[08:05] do plan to put together a video
+[08:06] comparing some of the tried and true and
+[08:10] also new up-and-coming hardware wallet
+[08:13] options for those of you who are
+[08:14] interested if you are let me know in the
+[08:17] comments down below if I get a lot of
+[08:18] people a lot of feedback saying they
+[08:19] want to hear that right now I'll be
+[08:21] happy to put that out sooner rather than
+[08:24] later but just to know for you guys it
+[08:26] is in the works so yeah just ending
+[08:28] thoughts please can everyone learn this
+[08:31] lesson all at the same time keep a
+[08:34] minimal as least amount of
+[08:37] cryptocurrencies as you can on
+[08:39] centralized platforms no one is going to
+[08:43] be the savior of cryptocurrencies except
+[08:46] for decent the pursuance of
+[08:48] decentralized networks and custody
+[08:51] solutions that give you true ownership
+[08:54] over your cryptocurrencies can we just
+[08:56] all agree that if that was what we stuck
+[08:59] to from the beginning that this would
+[09:01] have never happened at least it would
+[09:04] have been a risk that was highly
+[09:05] mitigated by most people also same thing
+[09:08] with uh with Celsius and Voyager as well
+[09:11] it's gonna wrap it up I wish you guys
+[09:14] the best keep your coins on a hardware
+[09:15] wallet I can't say that enough and I'll
+[09:18] see you again tomorrow bye guys like And
+[09:20] subscribe if you don't mind

@@ -1,0 +1,308 @@
+================================================================================
+NULLSPREAD RESEARCH · СУБТИТРЫ ВИДЕО ДЛЯ АУДИТА #50
+Модуль: День 7. Модуль 6: Квант-стек, алгоритмическое преимущество и смерть теханализа (06_quant_stack_and_mindset)
+Поисковый запрос: why crypto signal groups fail negative expected value retail traps
+================================================================================
+ID видео: 1mpNxBaBeOw
+Название: Quant Ranks Retail Trading Mistakes that Blow Up Your Account
+Канал: Roman Paolucci
+Ссылка: https://www.youtube.com/watch?v=1mpNxBaBeOw
+Объем: 1892 слов (~13.5 мин)
+Язык: en
+Файл: audit_050_06_quant_stack_and_mindset_1mpNxBaBeOw.txt
+Создан: 2026-11-06 02:35:01
+================================================================================
+
+[00:00] [music]
+[00:02] >> What's the difference between you
+[00:04] gambling at a casino and you trading in
+[00:08] the market?
+[00:09] Well, nothing.
+[00:11] If you don't understand and correct the
+[00:14] mistakes that we're going to rank in
+[00:16] today's video. Up first, this idea of
+[00:19] trading signals being one to one. In
+[00:22] other words, you see a trading signal,
+[00:25] you enter into a long or a short
+[00:27] position into whatever contract and you
+[00:30] exit with a profit. You see this all the
+[00:33] time on YouTube, TikTok, Instagram,
+[00:36] people in their strategies with 100% win
+[00:40] rates, signals that can never fail.
+[00:43] Clearly, nobody has any idea how this
+[00:46] space actually functions. The closest
+[00:49] cousin is poker. Is there one set of
+[00:52] rules that you can follow to always win
+[00:55] at poker?
+[00:57] Absolutely not. Nothing is one to one.
+[01:01] Everything is statistical at best,
+[01:04] making signals being one to one an
+[01:07] S-tier rookie mistake. Following the
+[01:11] notion of this space being statistical
+[01:13] at best, we have this idea of
+[01:16] asymptotics. What do I mean by
+[01:19] asymptotics? Well, if you lack the
+[01:21] necessary math, probability, statistics,
+[01:23] and finance to function in this space
+[01:27] and you'd like to master the necessary
+[01:29] quantitative skills for trading and
+[01:31] market making roles,
+[01:33] check out quantguild.com. We have over
+[01:35] 100 hours of lecture content, an
+[01:38] adaptive practice engine, and much more
+[01:41] to take you from student to practitioner
+[01:44] as quickly as possible. But, in any
+[01:47] case, when I talk about asymptotics
+[01:50] here, I'm talking about statistical
+[01:52] convergence, the law of large numbers,
+[01:54] the central limit theorem, statistics.
+[01:58] We love to impose structure on our
+[02:00] trading strategies. What is your average
+[02:03] win rate? What is the P&L in your
+[02:05] average win or your average loser? But,
+[02:08] what's the problem? We're imposing
+[02:10] statistics as if there is a
+[02:12] data-generating distribution.
+[02:15] Hate to break it to you, but there is no
+[02:17] data-generating distribution. Everything
+[02:20] is quite literally path-dependent. There
+[02:23] is no distribution. This is just a
+[02:25] composite of an unfathomable number of
+[02:29] deterministic decisions that produce the
+[02:32] P&L that you see at the end of the day.
+[02:34] It's a whole bunch of dimensions
+[02:37] collapsing into a single number. If you
+[02:40] don't understand this, you're already at
+[02:42] a loss. Asymptotics has earned itself a
+[02:45] place
+[02:46] on the A tier. Almost as insulting as
+[02:48] dismissing asymptotics is dismissing
+[02:51] economics. What is going on in the
+[02:54] broader market as a whole? Monetary and
+[02:56] fiscal policy, do you know what's going
+[02:58] on with inflation? What is the Fed
+[03:01] thinking about doing with respect to
+[03:04] interest rates? Being blind about the
+[03:08] overall market regime is just like
+[03:11] throwing your money on black or red and
+[03:13] hoping for the best outcome. It doesn't
+[03:16] matter what kind of strategy you have if
+[03:18] you take no consideration into the
+[03:20] direction the wind is blowing, you are
+[03:23] just going to be at the mercy of the
+[03:25] roulette wheel. Economics has earned
+[03:28] itself a place on the B tier. As a big
+[03:31] poker player myself, resulting is
+[03:33] something I have a lot of experience
+[03:35] managing. This is the idea of letting
+[03:38] the outcome speak for the
+[03:40] decision-making process. This means you
+[03:44] may have weighed a variety of different
+[03:46] states of the world and the likelihood
+[03:49] of those outcomes. Maybe you made an
+[03:51] incredibly informed decision in the face
+[03:54] of uncertainty. In fact, that's all you
+[03:57] can do. That's all anyone can do. Nobody
+[04:00] has the true probability mass or density
+[04:03] function. Nobody knows what the actual
+[04:06] probabilities of each state of the world
+[04:08] are, but once you make that informed
+[04:11] decision, if you let the outcome simply
+[04:13] speak for the quality of that decision,
+[04:17] you are resulting. And you can crash a
+[04:21] strategy just by observing a few
+[04:25] outliers. Resulting has earned its place
+[04:29] on the A tier. Once you've heard about
+[04:31] it in the news, it's probably too late.
+[04:34] Everybody sees gold go up to 5,000 and
+[04:39] people are buying call options and
+[04:42] dumping all of their excess cash into
+[04:44] gold instead of treasuries. And what
+[04:47] happens? It immediately plunges a week
+[04:50] later along with silver. And then, oh,
+[04:53] we panic sell at the bottom and then it
+[04:55] recovers. This is a tale as old as time.
+[04:58] Chasing trends, once you've heard about
+[05:00] it in the news, it's too late. I don't
+[05:02] see anybody eager to buy Ethereum or
+[05:05] Bitcoin at the current level, but once
+[05:07] it gets back to 100, 120,000 and maybe
+[05:11] 4,000 respectively, I'm sure we're going
+[05:14] to see everybody chasing the trend
+[05:16] again.
+[05:18] This has earned itself a spot on the C
+[05:21] tier. It is way too easy for retailers
+[05:24] to buy options contracts. The fact that
+[05:26] you can download an app and buy an
+[05:29] option before your deposit even clears
+[05:32] is outrageous. What's even more
+[05:34] outrageous is buying something when you
+[05:37] have no idea how it functions. An option
+[05:41] is not an equity. You can't buy it and
+[05:44] hold it. There's a maturity. It's a
+[05:46] zero-sum game. It's going to expire
+[05:48] worthless or it's going to expire in the
+[05:52] money. If you pour your entire portfolio
+[05:55] value into an option and you think it's
+[05:57] an investment, you are in for a world of
+[06:00] hurt.
+[06:01] The big mistake we're talking about here
+[06:02] is letting your options expire. Likely,
+[06:05] you should just be collecting some
+[06:07] theta, some Vega, maybe some delta, and
+[06:11] then getting rid of that position. You
+[06:12] should be running a strategy, not just
+[06:15] holding naked options. Options expiring
+[06:19] has earned itself a place on the D tier.
+[06:23] Up next, one that I hold near and dear
+[06:25] to my heart, lottery tickets. No, not
+[06:28] scratch-offs. No, not the Powerball. I'm
+[06:31] talking about buying garbage, small caps
+[06:34] and meme coins in hopes that it pays out
+[06:37] big for your portfolio. It goes against
+[06:42] all modern economic theory. In fact, if
+[06:45] you consult the academic literature and
+[06:48] you observe the cross-sectional effect
+[06:51] of bearing this idiosyncratic exposure,
+[06:55] it is negative. It is quite literally
+[06:59] negative. You should not be compensated
+[07:02] in the cross-section at all
+[07:04] theoretically for bearing that risk, but
+[07:06] due to this lottery ticket effect,
+[07:08] everybody accepts this negative
+[07:11] cross-sectional return in hopes of a
+[07:13] massive payout. Don't do this.
+[07:17] Lottery tickets has earned its spot on
+[07:19] the D tier. Do you know when the perfect
+[07:22] time is to use leverage on a retail
+[07:27] portfolio?
+[07:28] Never. Leverage has earned itself a spot
+[07:31] on the C tier. I want to say if I had a
+[07:34] dollar for every backtest somebody has
+[07:36] proposed to me, I would be able to
+[07:38] retire right now, but more
+[07:39] realistically, it would probably be
+[07:42] around like 10, maybe 15 bucks then I
+[07:45] could retire right now.
+[07:47] Backtesting, a very powerful statistical
+[07:50] technique if you do it correctly, but
+[07:53] you're probably not doing it correctly.
+[07:55] You probably have no idea the biases
+[07:57] that you are inducing in your backtests.
+[08:00] Look-ahead bias, data snooping bias,
+[08:03] survivorship bias, just to name a few.
+[08:06] You're likely over-fitting a model and
+[08:08] parameterization to historical data, and
+[08:11] if you're not, ask yourself what
+[08:13] economic basis is there for that
+[08:16] structure, for that inefficiency, for
+[08:18] that strategy that you're creating. Is
+[08:21] it beta? Is it alpha?
+[08:24] That is something that you should be
+[08:26] able to answer because it is widely
+[08:29] misapplied and has probably led to more
+[08:32] blown accounts than anything else.
+[08:34] Backtesting has earned itself its place
+[08:38] on the S tier. Whenever you build a
+[08:41] trading strategy, you're going to be
+[08:42] selecting a model and a
+[08:44] parameterization.
+[08:46] Your objective then is to optimize an
+[08:49] expected value function, an optimal
+[08:52] policy function if you want to get even
+[08:54] more general.
+[08:56] Classical calculus says in order to
+[08:58] optimize such a function, we need it to
+[09:01] be sufficiently smooth even for
+[09:05] numerical optimization. So,
+[09:08] why on earth are you going to induce a
+[09:11] cusp, a stop loss in your model? A
+[09:16] quarter point down, a half a point down,
+[09:18] so it's two to one risk reward. Is that
+[09:21] cuz some guy on YouTube who sites the
+[09:24] central limit theorem, who's never
+[09:26] studied probability and statistics told
+[09:29] you to do that? Well, we talked about
+[09:30] asymptotics. That doesn't work in real
+[09:32] life.
+[09:33] Same thing is true with the
+[09:35] losses. They are an arbitrary value to
+[09:39] scale you out of a trade
+[09:41] that has no basis necessarily in
+[09:44] optimizing a model and parameterization.
+[09:47] If you actually have a robust model and
+[09:50] parameterization, you should be able to
+[09:53] perturb the parameter space. You'll
+[09:56] observe a slight decay in out-of-sample
+[09:58] performance, but that means you have a
+[10:01] robust model. If you're just trading
+[10:04] with a stop loss at an arbitrary value
+[10:06] and you can't explain why,
+[10:08] you probably shouldn't be doing that.
+[10:10] Stop losses have earned themselves a
+[10:12] place on the B tier. Last but certainly
+[10:15] not least, we have the greatest retail
+[10:18] sin of them all.
+[10:21] Are you profitable?
+[10:24] This one is devastating. It's akin to
+[10:27] asking somebody's max squat, bench, and
+[10:30] deadlift, and then taking their word for
+[10:34] it. What do you expect them to do? Throw
+[10:37] on fake plates and take videos to show
+[10:39] you that they're not lying to plug in
+[10:42] values on an Excel sheet and show you a
+[10:46] time series of their portfolio returns?
+[10:49] There are a thousand better questions
+[10:52] that you could ask to gain more
+[10:54] information about what they're trading,
+[10:57] how they're trading, what type of
+[10:59] strategy class they use. The list goes
+[11:03] on, but this is a common trap. People
+[11:07] love to post their overfit backtests on
+[11:10] X. People love to brag about their P&L,
+[11:14] their win rates, even though we already
+[11:17] talked about the fact that there's no
+[11:19] statistical conversions or basis for
+[11:21] them indefinitely.
+[11:24] Asking whether or not you are a
+[11:26] profitable trader and then seeking
+[11:30] mentorship or advice has earned itself a
+[11:33] spot on the S tier. There are a lot of
+[11:37] mistakes that make trading gambling. We
+[11:40] talked about a number of them here in.
+[11:43] At the end of the day, success is going
+[11:45] to come down to a combination of
+[11:48] knowledge and experience. Nobody wants
+[11:50] to hear it, but that takes a tremendous
+[11:53] amount of work. You can download an app
+[11:55] today and you can start trading. Why
+[11:58] should you make money? If you pick up a
+[12:01] football for the first time today,
+[12:03] you're not going to have the knowledge
+[12:04] and experience of an NFL quarterback.
+[12:07] You're not going to be able to make
+[12:08] those informed decisions in the face of
+[12:10] uncertainty. Who to throw the ball to?
+[12:13] When to run? What about poker? If you
+[12:16] start playing poker today and you don't
+[12:17] even know the hands, how on earth can
+[12:20] you make an informed decision with all
+[12:23] of that uncertainty? Which is why you
+[12:26] must continue to learn and why you
+[12:29] should master your quantitative skills.
+[12:32] That's going to do it for this tier list
+[12:34] today. I hope you enjoyed it. I hope you
+[12:35] learned something. This video certainly
+[12:37] took a tremendous effort to put
+[12:39] together. So, if you enjoyed it and you
+[12:40] want to see more like it in the future,
+[12:41] please like, comment, subscribe, share.
+[12:43] It helps me out tremendously. It's
+[12:45] always greatly appreciated. Let me know
+[12:47] in the comments below if there's any big
+[12:49] mistakes that I missed or if you
+[12:51] disagree with any of the
+[12:53] characterizations of these mistakes or
+[12:56] their rankings. Other than that, I want
+[12:58] to thank you so much for watching and
+[13:01] I'll see you in the next video.

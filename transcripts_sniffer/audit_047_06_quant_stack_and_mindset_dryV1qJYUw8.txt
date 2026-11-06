@@ -1,0 +1,340 @@
+================================================================================
+NULLSPREAD RESEARCH · СУБТИТРЫ ВИДЕО ДЛЯ АУДИТА #47
+Модуль: День 7. Модуль 6: Квант-стек, алгоритмическое преимущество и смерть теханализа (06_quant_stack_and_mindset)
+Поисковый запрос: why technical analysis fails quantitative finance statistical edge
+================================================================================
+ID видео: dryV1qJYUw8
+Название: Why Most Traders Lose: Ergodicity for Quant Trading
+Канал: Roman Paolucci
+Ссылка: https://www.youtube.com/watch?v=dryV1qJYUw8
+Объем: 2150 слов (~15.4 мин)
+Язык: en
+Файл: audit_047_06_quant_stack_and_mindset_dryV1qJYUw8.txt
+Создан: 2026-11-06 02:34:53
+================================================================================
+
+[00:00] [music]
+[00:02] They say 90 some odd percent of traders
+[00:05] lose money. Only a few actually make it.
+[00:07] Well, even fewer understand the idea of
+[00:11] arrogodicity and how it impacts their
+[00:14] wealth path in a game of incomplete
+[00:16] information like trading. In this video,
+[00:20] we're going to talk about arrogity for
+[00:22] quank trading and trading in general.
+[00:26] We're going to talk about this idea of
+[00:27] edge or expected value. this idea of
+[00:30] non-stationerity and how your egg is
+[00:32] going to change over time. Then we will
+[00:34] talk about the idea of erotic and
+[00:36] non-erotic systems, additive and
+[00:39] multiplicative systems as an example of
+[00:41] this. The difference between the time
+[00:43] and the ensemble average. Then we will
+[00:46] look to optimizing for the time average
+[00:48] in a multiplicative system which is what
+[00:51] we face in reality. This will then yield
+[00:54] an optimal bet size that we will have to
+[00:57] adjust in practice. Though your edge is
+[01:00] uncertain, your access to my Jupyter
+[01:02] notebooks never is. I will leave a link
+[01:04] to this Jupyter notebook in the
+[01:05] description below. I will also post it
+[01:07] to the Quan build library on GitHub
+[01:09] where you can find all of my Jupyter
+[01:11] notebooks and associated YouTube videos
+[01:13] along with all of the source code for my
+[01:15] Quant builds. At the top of this Jupyter
+[01:17] notebook, you'll notice some related
+[01:18] Quanfield videos applying probability
+[01:20] and statistics to finance and trading.
+[01:23] This idea of time series analysis,
+[01:25] retail versus institutional trading,
+[01:27] trading versus investing, this idea of
+[01:29] accumulating expected value over time,
+[01:31] particularly relevant to this idea of
+[01:34] arrogity, quant versus discretionary
+[01:36] trading, and of course, busting three
+[01:39] trading myths that these trading gurus
+[01:42] love to propagate. If you're unfamiliar
+[01:44] with any of these ideas, I highly
+[01:47] recommend you check these videos out
+[01:49] first before tackling one like this.
+[01:52] Moreover, these videos certainly take a
+[01:54] lot of effort to create. So, if you'd
+[01:55] like to help support the channel so I
+[01:56] can continue to create videos just like
+[01:58] this one, please like, comment,
+[02:00] subscribe, share. It helps me out
+[02:01] tremendously. It is always greatly
+[02:03] appreciated. And if you'd like to master
+[02:05] your quantitative skills for trading and
+[02:08] marketmaking roles, check out quant.com.
+[02:11] We have over 90 quant lessons, an
+[02:13] adaptive practice engine that scales
+[02:15] with your skill level, interview
+[02:17] questions with fully worked solutions,
+[02:20] courses from A to Z in probability and
+[02:23] statistics, coding, math with more on
+[02:26] the way, and all that's included with
+[02:28] Quank membership, and you can get
+[02:30] started for free. So, if you'd like to
+[02:31] help support the channel and master your
+[02:34] quantitative skills, check out
+[02:36] quonkild.com.
+[02:37] Let's get started by talking about this
+[02:39] idea of expected value or edge in the
+[02:42] context of quant trading. Given a
+[02:45] trading strategy to this could be some
+[02:47] form of a composite alpha. Maybe you
+[02:49] have a market neutral strategy. You're
+[02:50] trading some sort of indicator. In any
+[02:53] case, you are going to have an average
+[02:56] trade value. Whether it is positive or
+[02:59] negative will dictate whether or not you
+[03:01] are going to be accumulating wealth over
+[03:03] time or losing it. We can decompose that
+[03:08] expected value or edge into the average
+[03:11] winner times the probability we win plus
+[03:14] the average loser times the probability
+[03:17] that we lose. We could do a lot here to
+[03:21] optimize our expected value. We can
+[03:23] increase the probability we win or our
+[03:26] average winner or we could decrease the
+[03:29] probability that we lose or our average
+[03:31] loser. In any case, if we have positive
+[03:34] edge, positive expected value, we're
+[03:37] going to be accumulating wealth over a
+[03:39] series of trades. If we have negative
+[03:42] edge or negative expected value, we are
+[03:45] going to be losing wealth over a series
+[03:47] of trades. Now, it's very important to
+[03:50] understand that here what we're looking
+[03:52] at is a simulation given a fixed edge.
+[03:56] If we're looking at a game of chance,
+[03:58] you can think of casino games, roulette,
+[04:01] craps, so on and so forth. The
+[04:03] distributions
+[04:05] don't change over time. Casino games are
+[04:08] just one example of stationary
+[04:10] distributions. Probability, statistics,
+[04:12] and distributions are going to converge
+[04:13] in the frequentest sense. The edge is
+[04:15] never going to change. These are games
+[04:17] of chance. This is gambling. There's
+[04:19] nothing the players can do to influence
+[04:22] their edge. However, in games of
+[04:25] incomplete information, games of
+[04:26] uncertainty with non-stationary
+[04:29] distributions, things like poker
+[04:31] trading, edge and components of edge are
+[04:33] going to change over time. And players
+[04:36] and their optimal actions are going to
+[04:39] dictate their edge and trajectory of
+[04:41] their wealth path over time. What I have
+[04:43] here is an animation showing this idea.
+[04:47] On the left here you can see positive
+[04:49] expected value this positive edge and on
+[04:52] the right a negative edge. But what
+[04:54] you'll notice underneath is the expected
+[04:56] value. The edge is going to change over
+[04:58] time. Sometimes it's more positive,
+[05:01] sometimes it's more negative. We don't
+[05:03] actually get to see the true expected
+[05:05] value at any point in time. And it's our
+[05:08] objective to proxy for this. Bet more
+[05:10] when EV is higher, our edge is higher.
+[05:13] bet less or not at all when it is lower
+[05:17] or negative. But how much should we bet?
+[05:20] Keep in mind whether we're dealing with
+[05:21] a game of chance or a game of
+[05:23] uncertainty, you can think of our casino
+[05:24] games or poker and trading, we don't get
+[05:27] to dictate which sample path we walk.
+[05:29] There's a component of randomness to it.
+[05:31] But we want our sample path to be
+[05:34] tracking a theoretical trajectory that
+[05:36] is positive. That's how we can ensure
+[05:38] we're going to accumulate wealth over
+[05:40] time rather than lose it. So, how much
+[05:43] should we bet? Well, this turns into a
+[05:46] really important problem of additive
+[05:48] versus multiplicative betting in
+[05:50] general. If I have a th000 bucks and I'm
+[05:52] betting in $10 increments, when I have a
+[05:55] million bucks, am I going to bet in $10
+[05:57] increments? Well, no. I'm going to want
+[05:59] to bet more money. And that naturally is
+[06:03] this notion of multiplicative betting.
+[06:05] Our betting is going to scale with our
+[06:08] bank roll. Now, this turns into a
+[06:10] problem. What I have here is two
+[06:12] strategies that have positive expected
+[06:14] value, but on the left I'm dealing with
+[06:16] that additive betting, fixed $10
+[06:18] increments. On the right here, I'm
+[06:21] dealing with betting that is
+[06:22] proportional to my bank roll. They look
+[06:25] nothing alike. And this is the idea of
+[06:28] erodicity. On the left, I'm dealing with
+[06:29] an erotic system. On the right, a
+[06:32] non-erotic system. This is a big problem
+[06:35] because we don't get to choose the
+[06:36] sample path that we walk. only a few of
+[06:38] these sample paths on the right here
+[06:40] actually accumulate wealth in an
+[06:42] environment that has positive expected
+[06:43] value while everyone else goes bankrupt
+[06:46] where in the additive environment you
+[06:48] can see that everyone is tracking that
+[06:50] theoretical edge line pretty well this
+[06:53] is the idea that the time average is not
+[06:55] equal to the ensemble average in other
+[06:57] words the experience of the many isn't
+[07:00] the experience of the few what are we
+[07:03] going to do to combat this we are going
+[07:05] to optimize for the time average of our
+[07:09] wealth. This yields this maximization
+[07:11] problem. And the solution is the Kelly
+[07:14] criterion. And now what I'm going to do
+[07:16] is instead of betting with that fixed
+[07:18] proportion to my bank roll as I did
+[07:20] before, I'm going to be using the Kelly
+[07:22] criterion. And as you can see, this
+[07:24] certainly looks much better. And this is
+[07:27] the idea of the Kelly criterion. We are
+[07:29] going to be operating still with that
+[07:30] variable bet sizing just in an
+[07:33] intentional and optimal way that better
+[07:36] resembles this idea of the ensemble
+[07:38] average being equivalent to the time
+[07:40] average. Now, we're not making a
+[07:42] non-erotic system ergotic. However, we
+[07:45] are improving the overall experience of
+[07:47] the ensemble. In other words, we are
+[07:50] going to be operating in a non-erotic
+[07:52] environment and we don't get to choose
+[07:54] the sample path that we walk. So if I
+[07:57] ran this simulation here and I ran this
+[08:00] simulation here, which one would you
+[08:02] like to walk a random sample path of?
+[08:05] Well, here only two end with wealth
+[08:08] above their initial values. But down
+[08:11] here, significantly more do. This is the
+[08:14] benefit of using something like the
+[08:16] Kelly criterion. Now in practice, in
+[08:19] reality, our edge, as I mentioned
+[08:21] earlier, isn't fixed. components of our
+[08:24] edge, the average winner, the average
+[08:25] loser, the probability we win, the
+[08:28] probability we lose is going to change
+[08:30] over time. And full Kelly, that is just
+[08:33] using the solution to that maximization
+[08:35] problem, is going to be overly
+[08:37] aggressive. What I have here is an
+[08:40] example of using full Kelly relative to
+[08:44] using half Kelly. This is the idea of
+[08:47] just scaling down the optimal bet sizing
+[08:49] for optimal compound growth. And what
+[08:52] you're observing here is the crew edge
+[08:54] is going to change over time. It's going
+[08:56] to be more positive and more negative in
+[08:59] certain places. If we go full Kelly,
+[09:00] look at the actual simulated P&L here.
+[09:04] The ensemble average is negative
+[09:07] relative to the initial investment. But
+[09:10] using half Kelly, we're not overexposing
+[09:13] ourselves when edge is arbitrarily
+[09:15] lower. Now, we don't get to actually
+[09:17] dictate when our edge is positive or
+[09:19] negative. We're always going to be
+[09:21] reactive. We're going to be proxying our
+[09:23] edge using some historical data or
+[09:26] model. Knowing this, we need to adjust
+[09:29] our bet sizing accordingly. We can't
+[09:31] just go full Kelly all the time. Too
+[09:34] long, didn't watch. Here's your
+[09:35] executive summary. Edge is our wealth
+[09:38] path trajectory over time. In a game of
+[09:40] chance, something like roulette, this is
+[09:43] fixed and constant. There's nothing you
+[09:45] can do to influence that trajectory. In
+[09:48] a game of incomplete information, poker
+[09:49] or trading, your optimal action will
+[09:52] dictate that trajectory. Now, in
+[09:55] reality, due to the nature of those
+[09:57] games, that trajectory is not going to
+[10:00] be constant. And bet sizing is going to
+[10:04] influence your ability to track that
+[10:07] theoretical trajectory. This is the
+[10:10] difference between an erotic and a
+[10:12] non-erotic system. If you have positive
+[10:15] expected value in an erotic system,
+[10:18] something with additive betting, the
+[10:20] ensemble average will equal the time
+[10:22] average. The experience of one will
+[10:24] converge to the experience of many. In a
+[10:27] non-orgotic system, the experience of
+[10:30] the many is not the experience of the
+[10:32] few. And that is the important
+[10:35] distinction here. You can have positive
+[10:36] expected value with almost every wealth
+[10:39] path going to zero except a few. Now, we
+[10:43] optimize for this and we get the Kelly
+[10:47] criterion. In practice, full Kelly is
+[10:50] too aggressive. We don't actually know
+[10:53] our edge. That is a really important
+[10:56] idea. We're always going to be proxying
+[10:58] for it from a model or data. And in
+[11:02] order to be more conservative and to
+[11:04] improve the compounding of our wealth
+[11:07] over time, we use variations of it. For
+[11:10] example, half Kelly. some future topics,
+[11:13] technical videos, and other discussions
+[11:15] to look forward to. Projects that made
+[11:16] me a quant, my first year as a quant,
+[11:18] why hedge funds are actually secretive.
+[11:20] If there's interest in these more
+[11:22] qualitative topics, please let me know
+[11:23] in the comments below. It helps me
+[11:25] figure out what videos to create next.
+[11:27] And if there's an interest in that type
+[11:29] of comment, I will get back to longer
+[11:31] forum technical lectures with the calman
+[11:33] filter, pan processes, non-marovian
+[11:36] models, so on and so forth. And if
+[11:38] there's interest, I would like to do
+[11:40] more deep dives into current streams of
+[11:43] academic literature, rough path theory,
+[11:46] sigv models, calibration, and pricing.
+[11:48] Let me know in the comments below what
+[11:51] you would like to see. And I haven't
+[11:52] forgotten about our quant builds. I'll
+[11:54] leave a link in the description below.
+[11:56] If you'd like to get started with
+[11:57] Interactive Brokers, I highly recommend
+[11:59] them and their API. I've been using them
+[12:00] for over 10 years. I have this idea of
+[12:03] how to back test a trading strategy with
+[12:06] Interactive Brokers. kind of an A toz
+[12:08] tutorial. So, if there's interest in
+[12:11] something like that, certainly let me
+[12:13] know. Otherwise, that's going to do it
+[12:14] for this video on arrogodicity for quant
+[12:17] trading. I hope you enjoyed. I hope you
+[12:18] learned something. This video certainly
+[12:20] took a tremendous effort to put
+[12:22] together. So, if you enjoyed it and you
+[12:23] want to see more like it in the future,
+[12:24] please like, comment, subscribe, share.
+[12:26] Again, it is always greatly appreciated.
+[12:28] I'll leave a link to my Discord server
+[12:30] in the description below. If you'd like
+[12:32] to connect with me and other quants in
+[12:34] the Quant Guild community, check out
+[12:36] quant.com
+[12:38] to master your quantitative skills for
+[12:40] trading and market making roles. Other
+[12:43] than that, thank you so much for
+[12:45] watching and I will see you in the next
+[12:48] video.

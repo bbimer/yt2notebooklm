@@ -1,0 +1,207 @@
+================================================================================
+NULLSPREAD RESEARCH · СУБТИТРЫ ВИДЕО ДЛЯ АУДИТА #39
+Модуль: День 5. Модуль 4: Темный лес ончейна, MEV-боты, сэндвич-атаки и инфраструктура (04_onchain_logistics)
+Поисковый запрос: MEV sandwich attacks frontrunning mempool bots onchain execution DEX
+================================================================================
+ID видео: pIDVsQEmq9k
+Название: DeFi Trading Bot | Crypto Arbitrage Trading Bot Guide | MEV Bot Step-by-Step!
+Канал: xpuertoricox14
+Ссылка: https://www.youtube.com/watch?v=pIDVsQEmq9k
+Объем: 1139 слов (~8.1 мин)
+Язык: en
+Файл: audit_039_04_onchain_logistics_pIDVsQEmq9k.txt
+Создан: 2026-11-06 02:34:13
+================================================================================
+
+[00:00] Stop. Right now, as I'm saying these
+[00:01] words, my bot has already completed
+[00:03] three profitable trades on the Base
+[00:04] network. Still don't believe it? Watch
+[00:06] the screen.
+[00:07] Today, I'm going to give you a full
+[00:08] breakdown of DeFi bot, a platform that
+[00:10] uses artificial intelligence and MEV
+[00:12] technology to find arbitrage
+[00:14] opportunities faster than you can blink.
+[00:17] We'll launch the bot on the Base network
+[00:18] with aggressive settings. I'll explain
+[00:20] every step, show every tab, talk about
+[00:22] security, and at the end, we'll sum it
+[00:24] up, how much you can realistically earn.
+[00:26] Let's go.
+[00:28] All right, friends. We're moving into
+[00:29] the terminal.
+[00:35] I'm connecting my wallet, and I want to
+[00:37] point out right away, there are no
+[00:38] complicated settings.
+[00:46] Everything is intuitive. Even a beginner
+[00:48] can figure it out in a minute. I'm
+[00:49] choosing the network. Let's launch on
+[00:51] Base. Why Base?
+[00:53] Low fees, trades cost pennies, high
+[00:55] liquidity, plenty of arbitrage
+[00:57] opportunities, growing ecosystem, new
+[00:59] tokens, new spreads every hour.
+[01:01] By the way, take a look. The bot
+[01:02] supports as many as 10 EVM networks,
+[01:05] Ethereum, BNB Chain, Polygon, Arbitrum,
+[01:07] Optimism, Avalanche, Phantom, and Base,
+[01:09] our choice. And all of it is inside one
+[01:12] terminal. You can switch between
+[01:13] networks with a single click. It's like
+[01:15] having seven trading bots in one window.
+[01:17] Now, the settings. We choose aggressive
+[01:19] mode. What does that mean?
+[01:22] The bot takes on more risk, but also
+[01:23] more profit. The mempool scanning
+[01:25] frequency increases. The acceptable
+[01:27] spread range expands from 0.3% to 2.5%.
+[01:30] Got to see
+[01:32] what sent this on this there by Gas
+[01:34] priority is automatically raised for
+[01:36] instant execution.
+[01:37] Important, aggressive mode is for people
+[01:39] who understand the risks. But, if you're
+[01:41] ready, profits can be three to five
+[01:43] times higher than in conservative mode.
+[01:46] I hit start. The bot is loading.
+[01:52] And here we go.
+[01:53] Look, right now the bot is scanning the
+[01:55] mempool in real time. What is the
+[01:56] mempool? It's the queue of unconfirmed
+[01:58] transactions. While ordinary traders
+[02:00] only see the price on the exchange, the
+[02:02] bot already sees which large orders are
+[02:04] preparing to enter the block.
+[02:06] By the way, it's recommended to have at
+[02:07] least 0.3 Ethereum for the bot to
+[02:09] operate steadily.
+[02:11] Trade executed in 187 milliseconds. How
+[02:14] is that possible? Simple.
+[02:16] The MEV engine, maximal extractable
+[02:18] value, analyzes the transaction queue.
+[02:21] It finds price imbalances between
+[02:22] liquidity pools, for example, Uniswap
+[02:24] versus Sushiswap on Base. Instantly buys
+[02:27] cheaper in one pool and sells higher in
+[02:29] another. All of this happens before your
+[02:30] transaction even enters the block.
+[02:33] And now, the most important part,
+[02:35] protection against sandwich attacks. Do
+[02:37] you know how attackers operate? They see
+[02:39] your large order, buy before you, drive
+[02:41] up the price, and then sell to you at a
+[02:42] higher price. That's a sandwich attack.
+[02:45] But we have Flashbots integration
+[02:47] enabled. All transactions go through a
+[02:48] private mempool. Front runners can't see
+[02:50] them. Your order executes at a fair
+[02:52] price. No hidden slippage.
+[02:54] Win rate is already 94.7%.
+[02:57] Almost every trade ends in profit. The
+[02:59] bot doesn't get tired, doesn't sleep,
+[03:00] doesn't panic. It simply executes the
+[03:02] algorithm 24/7. Speed, 200 milliseconds.
+[03:06] Accuracy, AI pattern analysis. Profit,
+[03:09] from $50 to $2,000 plus per trade in
+[03:11] aggressive mode, fully automatic. You
+[03:13] just watch, but you can also execute
+[03:15] very profitable trades manually here,
+[03:17] too.
+[03:18] Friends, I know what you're thinking.
+[03:20] Sounds great, but is it safe? I'll
+[03:21] answer honestly and in detail.
+[03:24] Your private keys never leave your
+[03:25] wallet. The platform has no access to
+[03:27] your funds. Every transaction is signed
+[03:28] locally on your device. That means even
+[03:30] if the website disappeared tomorrow,
+[03:32] your crypto would remain safe.
+[03:35] The platform's smart contracts have
+[03:36] passed independent audits by two leading
+[03:38] companies in the industry. The report is
+[03:40] public, and there are zero critical
+[03:41] vulnerabilities.
+[03:43] The team pays up to $100,000 to any
+[03:45] researcher who finds a vulnerability.
+[03:47] These aren't just words. It's a real
+[03:49] incentive for hackers to find bugs
+[03:50] honestly instead of exploiting them.
+[03:53] The core trading algorithms are
+[03:54] verifiable on chain. You can personally
+[03:56] check how the bot makes decisions over
+[03:58] the entire lifetime of the platform. Not
+[04:00] a single hack, not a single loss of user
+[04:02] funds. So yes, it can be trusted.
+[04:04] By the way, while I was talking, the bot
+[04:06] wasn't idle. Total after 3 minutes,
+[04:09] several hundred dollars in profit. While
+[04:10] the bot is running, let me show you a
+[04:12] few more cool features that make the
+[04:14] platform truly convenient.
+[04:16] Referral system up to 30%. Invite a
+[04:18] friend and you receive 30% of their
+[04:20] profit on a permanent basis. It's not a
+[04:22] one-time bonus, but passive income.
+[04:24] Several people I know already make more
+[04:25] from referrals here than from their own
+[04:27] trading.
+[04:28] Real-time profit calculator. The bot
+[04:30] doesn't just trade, it forecasts. Right
+[04:32] now, it shows that with current settings
+[04:33] on base, you can earn about 80 to 300
+[04:35] dollars per hour. The number is dynamic.
+[04:37] It changes with market volatility.
+[04:40] 24/7 support. A question at 4:00 a.m.?
+[04:43] Send a message. They'll reply within 2
+[04:45] to 3 minutes. The team is genuinely
+[04:47] available. Plus, there's a knowledge
+[04:49] base, video guides, and a personal
+[04:50] manager for premium users.
+[04:53] Four trading modes: arbitrage, classic
+[04:55] arbitrage between pools, MEV, hunting
+[04:57] for opportunities in the mempool, mixed
+[04:59] hybrid mode, our choice, sniper, for
+[05:01] catching new token launches.
+[05:04] And all of this comes with flexible
+[05:05] presets: beginner, balanced, aggressive.
+[05:08] Choose what fits your style.
+[06:46] >> All right, let's draw the line.
+[06:49] After just a few minutes of aggressive
+[06:51] trading on the base network, the profit
+[06:52] is seriously impressive. Every trade is
+[06:54] the result of AI seeing what we cannot.
+[06:57] Friends, I didn't edit anything. I
+[06:59] didn't manipulate the numbers. This is a
+[07:00] real live result. Fast, precise,
+[07:02] automatic.
+[07:04] You don't need to be an expert. You
+[07:05] don't need to sit in front of the
+[07:06] monitor 24/7. You don't need to fear
+[07:08] missing an opportunity.
+[07:10] The bot does it for you. So, what did we
+[07:12] learn today?
+[07:13] DeFi bot is not just a bot. It's a full
+[07:15] ecosystem for automated trading. Support
+[07:17] for seven EVM networks in one terminal.
+[07:20] Maximum flexibility. MEV engine with
+[07:22] execution under 200 milliseconds. Always
+[07:25] one step ahead of the market. Aggressive
+[07:26] settings on base. The perfect balance of
+[07:28] low fees and high volatility. Maximum
+[07:30] security, non-custodial, flash bots,
+[07:32] CertiK audit, $100,000 bug bounty, 30%
+[07:35] referrals, 24/7 support, profit
+[07:38] calculator, everything for your
+[07:39] convenience. And most importantly, real
+[07:41] results. This kind of profit in just
+[07:43] minutes is not fantasy, it's reality.
+[07:45] So, what should you do right now? Click
+[07:47] the link in the description. Don't wait
+[07:49] for the perfect moment. The perfect
+[07:51] moment is now. Every minute of delay is
+[07:53] missed profit that someone else is
+[07:54] already taking. Remember, the crypto
+[07:56] world never sleeps, and your bot
+[07:57] shouldn't either. Launch it, earn, and
+[07:59] win. See you at the top.

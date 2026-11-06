@@ -90,7 +90,7 @@ def test_build_semi_manual_audit_prompt():
     )
 
     assert "Funding Rate Masterclass" in prompt
-    assert "ЭТАП 1 — ОЦЕНКА ПО КРИТЕРИЯМ (Шкала 1.0 – 5.0)" in prompt
+    assert "ЭТАП 1 - ОЦЕНКА ПО КРИТЕРИЯМ (Шкала 1.0 – 5.0)" in prompt
     assert "Техническая глубина" in prompt
     assert "ИТОГОВЫЙ БАЛЛ:" in prompt
     assert "ACCEPTED_CORE" in prompt
@@ -117,7 +117,7 @@ def test_transcript_sniffer_success(tmp_path):
     ok, prompt = sniffer.inspect_and_build_prompt("https://youtu.be/abc123xyz89", copy_to_clipboard=False)
     assert ok is True
     assert "abc123xyz89" in prompt
-    assert "ЭТАП 2 — ИТОГОВЫЙ ВЕРДИКТ" in prompt
+    assert "ЭТАП 2 - ИТОГОВЫЙ ВЕРДИКТ" in prompt
     assert "[AUDIT #1" in prompt
     # Check that file was created in tmp_path
     saved_file = tmp_path / "audit_001_abc123xyz89.txt"

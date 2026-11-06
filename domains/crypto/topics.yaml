@@ -66,6 +66,23 @@ topics:
       - "order book"
       - "fragmentation"
       - "kimchi premium"
+      - "Avellaneda-Stoikov"
+      - "inventory risk"
+      - "concentrated liquidity"
+      - "LVR"
+    web_queries:
+      # Кластер 1: CEX CLOB против DEX AMM (Формула x*y=k, концентрированная ликвидность и LVR)
+      - "Uniswap v3 concentrated liquidity whitepaper virtual reserves tick math specification"
+      - "constant product AMM x*y=k slippage derivation price impact vs CLOB order book"
+      - "Loss Versus Rebalancing LVR arXiv 2305.19150 CEX DEX arbitrage toxic order flow"
+      # Кластер 2: Алгоритмы институциональных ММ (Avellaneda-Stoikov, Inventory Risk, опционы TLA)
+      - "Avellaneda Stoikov high frequency market making inventory risk reservation price formula"
+      - "crypto market maker Token Loan Agreement TLA call option strike reset Wintermute GSR DWF"
+      - "adverse selection toxic order flow VPIN Glosten Milgrom market making spread widening"
+      # Кластер 3: Фрагментация ликвидности, межбиржевой спред и регуляторные барьеры (Kimchi Premium, кейсы SEC)
+      - "crypto liquidity fragmentation cross-exchange price dispersion Kaiko institutional report"
+      - "Kimchi premium South Korea capital controls foreign exchange act crypto arbitrage mechanics"
+      - "SEC DOJ crypto market maker manipulation predatory liquidity extraction case study"
 
   - id: "02_arbitrage_and_derivatives"
     name: "День 3. Модуль 2: Деривативы, фьючерсы и виды криптоарбитража"
@@ -94,6 +111,24 @@ topics:
       - "triangular arbitrage"
       - "HFT"
       - "token unlocks"
+      - "mark price"
+      - "cash and carry"
+      - "auto-deleveraging ADL"
+      - "insurance fund"
+      - "portfolio margin"
+    web_queries:
+      # Кластер 1: Механика Perpetual Swaps, ценообразование Funding Rate и Mark Price (Hard Specs)
+      - "Binance Bybit perpetual futures funding rate calculation interest rate premium index formula"
+      - "perpetual swap mark price calculation median EMA basis fair price liquidation trigger"
+      - "annualized futures basis contango backwardation term structure crypto derivatives"
+      # Кластер 2: Конструирование дельта-нейтральности (Delta = 0), Cash-and-Carry и Portfolio Margin
+      - "delta neutral cash and carry basis arbitrage crypto execution friction funding bleed"
+      - "Unified Trading Account Portfolio Margin collateral haircut ratio MMR calculation Bybit Binance"
+      - "Ethena USDe delta neutral synthetic dollar negative funding rate reserve fund stress test"
+      # Кластер 3: Физика каскадных ликвидаций, Insurance Fund, Auto-Deleveraging (ADL) и манипуляции оракулами
+      - "crypto cascading liquidations order book vacuum open interest wipeout microstructure post-mortem"
+      - "exchange insurance fund depletion Auto-Deleveraging ADL queue PnL percentile ranking formula"
+      - "Mango Markets Avraham Eisenberg perpetual futures oracle manipulation SDNY indictment exploit"
 
   - id: "03_orderbook_mechanics"
     name: "День 4. Модуль 3: Микроструктура биржевого стакана"
@@ -121,6 +156,24 @@ topics:
       - "limit order"
       - "market order"
       - "wash trading"
+      - "FIFO matching"
+      - "L2 L3 orderbook"
+      - "iceberg order"
+      - "Kyle lambda"
+      - "Benford law"
+    web_queries:
+      # Кластер 1: Ядро сведения заявок (Matching Engine FIFO), книги заявок L2 vs L3 и дисбаланс потока
+      - "exchange matching engine price-time priority FIFO L2 aggregated vs L3 order-by-order architecture"
+      - "FIX protocol OUCH binary market data feed WebSocket L3 orderbook state reconstruction"
+      - "Order Book Imbalance OBI micro-price prediction high frequency trading arXiv"
+      # Кластер 2: Транзакционное трение (Maker/Taker Rebates), проскальзывание и импакт (Kyle's Lambda, Almgren-Chriss)
+      - "maker taker fee rebate structure VIP tier execution cost breakeven spread math"
+      - "Almgren Chriss optimal execution market impact model Kyle lambda slippage calculation"
+      - "post-only time in force IOC FOK order types adverse fill execution mechanics"
+      # Кластер 3: Алгоритмическая детекция айсберг-ордеров, спуфинга и фиктивного объема (Wash Trading, Закон Бенфорда, ФБР)
+      - "iceberg order detection hidden liquidity order flow toxicity VPIN algorithm"
+      - "crypto wash trading detection Benford law cyclic graph clustering arXiv forensics"
+      - "FBI Operation Token Mirrors Gotbit CLS Global ZM Quant NexFundAI wash trading indictment"
 
   - id: "04_onchain_logistics"
     name: "День 5. Модуль 4: Блокчейн-инфраструктура и ончейн-логистика"
@@ -145,6 +198,23 @@ topics:
       - "smart contract"
       - "etherscan"
       - "hot cold wallets"
+      - "sequencer"
+      - "cross-chain bridge"
+      - "MPC multisig"
+      - "Proof of Reserves"
+    web_queries:
+      # Кластер 1: Финальность блоков, реорганизации цепи и архитектура L2-секвенсоров
+      - "Ethereum Gasper finality epoch checkpoint block reorg probabilistic vs deterministic finality"
+      - "Arbitrum Nitro Optimism Bedrock centralized sequencer latency L1 batch posting data availability"
+      - "exchange deposit block confirmation requirements 51 percent attack reorg double spend risk"
+      # Кластер 2: Межсетевые мосты (Lock-and-Mint vs Burn-and-Mint) и криминалистика взломов
+      - "cross-chain bridge architecture lock and mint vs Circle CCTP burn and mint attestation"
+      - "Ronin Nomad Multichain Wormhole bridge exploit post-mortem smart contract vulnerability"
+      - "cross-chain arbitrage bridge liquidity latency settlement risk execution mechanics"
+      # Кластер 3: Ончейн-аудит контрактов через эксплореры и топология биржевых кошельков (Hot / Warm / Cold)
+      - "Etherscan smart contract verification proxy EIP-1967 storage slot delegatecall honeypot audit"
+      - "crypto exchange wallet topology hot warm cold multisig MPC threshold signature sweep mechanics"
+      - "Proof of Reserves Merkle tree liabilities zero knowledge audit exchange insolvency detection"
 
   - id: "05_risk_and_hedging"
     name: "День 6. Модуль 5: Управление рисками, хеджирование и безопасность"
@@ -170,6 +240,23 @@ topics:
       - "counterparty risk"
       - "honeypot"
       - "withdrawal freeze"
+      - "legging risk"
+      - "Cancel-on-Disconnect"
+      - "taint analysis"
+      - "OFAC compliance"
+    web_queries:
+      # Кластер 1: Инфраструктурные задержки (Latency), Legging Risk и протоколы защиты исполнения
+      - "multi-leg arbitrage execution risk legging risk partial fill asynchronous latency"
+      - "Equinix TY3 Tokyo co-location cross-connect round trip time RTT Cancel-on-Disconnect COD"
+      - "exchange API rate limit ban WebSocket stale book data race condition mitigation"
+      # Кластер 2: Стандарты ончейн-мониторинга (AML / KYT), скоринг риска и принудительная блокировка
+      - "Chainalysis TRM Labs Elliptic KYT risk score taint analysis hop clustering methodology"
+      - "Tether USDT Circle USDC blacklist freeze smart contract function OFAC SDN compliance"
+      - "FATF Travel Rule VASP crypto exchange compliance withdrawal freeze AML audit trigger"
+      # Кластер 3: Оценка риска контрагента, банкротства бирж и отсев проблемных/Honeypot-шлюзов
+      - "FTX Alameda Research bankruptcy balance sheet contagion counterparty risk post-mortem"
+      - "DOJ FinCEN Bitzlato Garantex Tornadocash enforcement action tainted liquidity contagion"
+      - "fake crypto exchange honeypot withdrawal freeze liquidity trap forensics"
 
   - id: "06_quant_stack_and_mindset"
     name: "День 7. Модуль 6: Аналитический стек и психология квант-трейдинга"
@@ -193,3 +280,20 @@ topics:
       - "quantitative trading"
       - "discretionary"
       - "statistical edge"
+      - "cointegration"
+      - "expected value EV"
+      - "Gambler Ruin"
+      - "Kelly criterion"
+    web_queries:
+      # Кластер 1: Построение синтетических спредов, коинтеграция и математика стат-арбитража
+      - "TradingView synthetic spread chart math operator custom pair ratio basis visualization"
+      - "statistical arbitrage pairs trading cointegration Augmented Dickey-Fuller Ornstein-Uhlenbeck Z-score"
+      - "cross-exchange lead-lag price discovery information share Hasbrouck metric crypto"
+      # Кластер 2: Автоматизация сбора данных по API (WebSocket L2/L3) и архитектура скринеров
+      - "crypto arbitrage screener architecture async WebSocket orderbook snapshot delta synchronization"
+      - "CCXT Pro high frequency order book streaming REST vs WebSocket latency benchmark"
+      - "real-time net spread calculation maker taker fee withdrawal cost orderbook depth walk"
+      # Кластер 3: Математика неизбежной просадки при отрицательном EV (Gambler's Ruin) и крах сигнальных групп
+      - "expected value EV math trading transaction friction decay Gambler Ruin probability formula"
+      - "Kelly criterion optimal f position sizing drawdown risk of ruin quantitative trading"
+      - "crypto pump and dump signal groups Telegram empirical analysis negative expectation arXiv"

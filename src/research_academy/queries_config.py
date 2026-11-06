@@ -163,6 +163,173 @@ SEARCH_MATRIX = {
 # Alias for backward compatibility
 SEARCH_MATRIX["02_arbitrage_types"] = SEARCH_MATRIX["02_arbitrage_and_derivatives"]
 
+# Матрица целевых поисковых запросов для Web Harvester (3 институциональных кластера на модуль)
+WEB_SEARCH_MATRIX = {
+    "00_crypto_fundamentals": {
+        "title": "День 1. Модуль 0: Фундамент крипты, блокчейн и токеномика",
+        "priority": 0,
+        "web_queries": [
+            # Кластер 1: L1 Coin vs Token & Механика мемпула / газа (Hard Specs)
+            "EIP-20 token standard formal specification state contract ethereum",
+            "EIP-1559 fee market base fee priority fee specification ethereum",
+            "mempool transaction ordering gas auction PBS proposer builder separation mechanics",
+            # Кластер 2: Стейблкоины: структура резервов, кредитный риск и механика депега в пулах
+            "USDT USDC reserve composition treasury bills maturity credit risk redemption gate",
+            "stablecoin depeg mechanics Curve StableSwap pool imbalance liquidity crisis",
+            # Кластер 3: Венчурная токеномика: Low Float / High FDV, стейкинг-лазейки и Secondary OTC
+            "Low Float High FDV tokenomics venture capital unlock overhang institutional research",
+            "locked token staking rewards dilution insider dump tokenomics mechanics",
+            "crypto secondary OTC market locked tokens SAFT discount hedging mechanics",
+        ],
+        "key_terms": [
+            "blockchain", "mempool", "gas fee", "stablecoin", "USDT", "USDC",
+            "ERC20", "TRC20", "tokenomics", "FDV", "market cap", "token unlock"
+        ],
+    },
+    "01_market_structure": {
+        "title": "День 2. Модуль 1: Архитектура рынка, биржи и маркет-мейкеры",
+        "priority": 1,
+        "web_queries": [
+            # Кластер 1: Спецификации биржевых ядер, AMM инварианты и тиковая математика
+            "Uniswap v3 concentrated liquidity math virtual reserves tick spacing formal specification",
+            "AMM constant product invariant x y k slippage price impact derivation",
+            "Avellaneda Stoikov high frequency market making optimal bid ask spread inventory risk",
+            # Кластер 2: Unit-экономика и метрики институционального маркет-мейкинга
+            "loss versus rebalancing LVR metric automated market maker toxic flow Milionis",
+            "VPIN volume synchronized probability of toxicity order flow microstructure",
+            "crypto exchange maker rebate taker fee tier volume requirements institutional prime broker",
+            # Кластер 3: Судебные прецеденты, манипуляции и токсичный поток (Forensics & Enforcement)
+            "crypto token loan agreement TLA call option market maker Wintermute DWF Labs structure",
+            "SEC enforcement action crypto market maker wash trading manipulation complaint",
+            "South Korea crypto exchange foreign exchange control Kimchi Premium capital flight arbitrage",
+        ],
+        "key_terms": [
+            "CEX", "DEX", "AMM", "liquidity pool", "order book", "market maker",
+            "spread", "slippage", "arbitrage", "Wintermute", "Jump Trading",
+            "toxic flow", "LVR", "Kimchi Premium"
+        ],
+    },
+    "02_arbitrage_and_derivatives": {
+        "title": "День 3. Модуль 2: Деривативы, бессрочные фьючерсы и арбитраж",
+        "priority": 2,
+        "web_queries": [
+            # Кластер 1: Спецификации фьючерсных ядер: Mark Price, Funding Rate & ADL
+            "perpetual futures funding rate calculation formula premium index clamp Binance Bybit spec",
+            "Mark Price calculation median price basis moving average liquidation trigger mechanism",
+            "auto deleveraging ADL ranking formula effective leverage profit tier exchange specification",
+            # Кластер 2: Unit-экономика базис-трейдинга и дельта-нейтрального хеджирования
+            "cash and carry basis trade delta neutral yield funding rate annualized return fee decomposition",
+            "portfolio margin UTA Unified Trading Account margin efficiency cross collateral liquidation threshold",
+            "funding rate bleed long squeeze negative funding cost of carry crypto basis trade",
+            # Кластер 3: Расследования судебных кейсов и крахов алгоритмических систем (Forensics)
+            "Mango Markets exploit Avraham Eisenberg perpetual futures oracle manipulation DOJ indictment",
+            "Ethena USDe reserve fund stress test negative funding rate duration risk contagion analysis",
+            "perpetual futures cascading liquidations liquidation cascade BitMEX March 2020 post-mortem",
+        ],
+        "key_terms": [
+            "perpetual futures", "funding rate", "basis trade", "delta-neutral",
+            "cash-and-carry", "liquidation", "Mark Price", "ADL", "UTA",
+            "portfolio margin", "cross margin", "isolated margin", "Mango Markets"
+        ],
+    },
+    "03_orderbook_mechanics": {
+        "title": "День 4. Модуль 3: Микроструктура биржевого стакана и поток ордеров",
+        "priority": 3,
+        "web_queries": [
+            # Кластер 1: Архитектура биржевых движков, Level 3 фиды и модели импакта
+            "exchange matching engine deterministic price-time FIFO execution queue specification",
+            "Level 3 market data feed MBO market by order ITCH OUCH protocol crypto exchange",
+            "Kyle Lambda market impact model Kyle 1985 continuous auction informed trading",
+            "Almgren Chriss optimal execution liquidation of portfolio market impact parameters",
+            # Кластер 2: Unit-экономика исполнения крупных блоков и декомпозиция скрытых ордеров
+            "iceberg order detection algorithm native exchange iceberg display size fee structure",
+            "maker taker rebate schedule liquidity extraction fee impact net spread decomposition",
+            "order book depth slippage integration cost calculation multi-tick liquidation curve",
+            # Кластер 3: Криминалистика маркет-манипуляций и судебные кейсы (Forensics & Indictments)
+            "DOJ FBI Operation Token Mirrors crypto market maker indictment NexFundAI Gotbit CLS Global ZM Quant",
+            "order book spoofing layering detection algorithm CFTC enforcement crypto",
+            "wash trading detection Benford law order volume distribution forensic analysis cryptocurrency",
+        ],
+        "key_terms": [
+            "Level 2", "Level 3", "orderbook", "matching engine", "price-time priority",
+            "FIFO", "Kyle Lambda", "Almgren-Chriss", "market impact", "slippage",
+            "iceberg order", "spoofing", "layering", "wash trading", "Operation Token Mirrors"
+        ],
+    },
+    "04_onchain_logistics": {
+        "title": "День 5. Модуль 4: Блокчейн-инфраструктура и ончейн-логистика",
+        "priority": 4,
+        "web_queries": [
+            # Кластер 1: Финальность L1/L2, механика секвенсоров и архитектура смарт-контрактов
+            "Ethereum Gasper consensus Casper FFG LMD GHOST finality epoch slot reorg probability",
+            "Arbitrum Nitro Optimism Bedrock sequencer batch poster fraud proof validity proof latency",
+            "EIP-1967 transparent upgradeable proxy storage slots implementation fallback delegatecall",
+            # Кластер 2: Unit-экономика межсетевой логистики и децентрализованного клиринга
+            "centralized exchange hot wallet deposit address batch consolidation sweep gas fee economics",
+            "Circle CCTP Cross-Chain Transfer Protocol burn mint attestation latency vs lock and mint bridge",
+            "L2 gas breakdown execution fee L1 data availability blob fee EIP-4844 cost model",
+            # Кластер 3: Форензика эксплойтов мостов и компрометации валидаторов (Post-Mortems)
+            "Ronin Bridge validator key compromise 625M exploit Lazarus Group post-mortem forensics",
+            "Nomad bridge replica contract uninitialized zero hash verification exploit post-mortem",
+            "Multichain bridge exploit 126M MPC private key compromise admin centralization post-mortem",
+        ],
+        "key_terms": [
+            "Gasper finality", "L1 vs L2", "centralized sequencer", "bridge security",
+            "CCTP", "burn and mint", "lock and mint", "EIP-1967 proxy", "Ronin exploit",
+            "Multichain post-mortem", "deposit confirmation time", "hot wallet sweep"
+        ],
+    },
+    "05_risk_and_hedging": {
+        "title": "День 6. Модуль 5: Управление рисками, хеджирование и безопасность",
+        "priority": 5,
+        "web_queries": [
+            # Кластер 1: Инфраструктурные задержки (Latency), Legging Risk и протоколы защиты исполнения
+            "multi-leg arbitrage execution risk legging risk partial fill asynchronous latency",
+            "Equinix TY3 Tokyo co-location cross-connect round trip time RTT Cancel-on-Disconnect COD",
+            "exchange API rate limit ban WebSocket stale book data race condition mitigation",
+            # Кластер 2: Стандарты ончейн-мониторинга (AML / KYT), скоринг риска и принудительная блокировка
+            "Chainalysis TRM Labs Elliptic KYT risk score taint analysis hop clustering methodology",
+            "Tether USDT Circle USDC blacklist freeze smart contract function OFAC SDN compliance",
+            "FATF Travel Rule VASP crypto exchange compliance withdrawal freeze AML audit trigger",
+            # Кластер 3: Оценка риска контрагента, банкротства бирж и отсев проблемных/Honeypot-шлюзов
+            "FTX Alameda Research bankruptcy balance sheet contagion counterparty risk post-mortem",
+            "DOJ FinCEN Bitzlato Garantex Tornadocash enforcement action tainted liquidity contagion",
+            "fake crypto exchange honeypot withdrawal freeze liquidity trap forensics",
+        ],
+        "key_terms": [
+            "hedging", "perpetual futures", "execution risk", "latency", "AML KYT",
+            "counterparty risk", "honeypot", "withdrawal freeze", "legging risk",
+            "Cancel-on-Disconnect", "taint analysis", "OFAC compliance"
+        ],
+    },
+    "06_quant_stack_and_mindset": {
+        "title": "День 7. Модуль 6: Аналитический стек и психология квант-трейдинга",
+        "priority": 6,
+        "web_queries": [
+            # Кластер 1: Построение синтетических спредов, коинтеграция и математика стат-арбитража
+            "TradingView synthetic spread chart math operator custom pair ratio basis visualization",
+            "statistical arbitrage pairs trading cointegration Augmented Dickey-Fuller Ornstein-Uhlenbeck Z-score",
+            "cross-exchange lead-lag price discovery information share Hasbrouck metric crypto",
+            # Кластер 2: Автоматизация сбора данных по API (WebSocket L2/L3) и архитектура скринеров
+            "crypto arbitrage screener architecture async WebSocket orderbook snapshot delta synchronization",
+            "CCXT Pro high frequency order book streaming REST vs WebSocket latency benchmark",
+            "real-time net spread calculation maker taker fee withdrawal cost orderbook depth walk",
+            # Кластер 3: Математика неизбежной просадки при отрицательном EV (Gambler's Ruin) и крах сигнальных групп
+            "expected value EV math trading transaction friction decay Gambler Ruin probability formula",
+            "Kelly criterion optimal f position sizing drawdown risk of ruin quantitative trading",
+            "crypto pump and dump signal groups Telegram empirical analysis negative expectation arXiv",
+        ],
+        "key_terms": [
+            "TradingView spread", "arbitrage screener", "orderbook API",
+            "quantitative trading", "discretionary", "statistical edge",
+            "cointegration", "expected value EV", "Gambler Ruin", "Kelly criterion"
+        ],
+    },
+}
+
+# Alias for backward compatibility
+WEB_SEARCH_MATRIX["02_arbitrage_types"] = WEB_SEARCH_MATRIX["02_arbitrage_and_derivatives"]
+
 # Стоп-слова для первичного фильтра заголовков (отсекаем инфоцыган и детский ликбез на входе)
 NEGATIVE_KEYWORDS = [
     # Инфоцыганство и скам-сигналы
@@ -185,6 +352,14 @@ NEGATIVE_KEYWORDS = [
     "best signals",
     "реферальная ссылка",
     "t.me/",
+    "курс по крипте",
+    "купить связку",
+    "арбитраж p2p связка",
+    "крипта для новичков",
+    "пассивный заработок",
+    "слив курсов",
+    "лёгкие деньги",
+    "легкие деньги",
     # Поверхностный контент для новичков и ритейл-гадания
     "простыми словами",
     "для начинающих",

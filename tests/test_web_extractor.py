@@ -39,7 +39,7 @@ def test_web_article_extractor_table_code_and_indices():
     <body>
     <article>
         <h1>Двоичная система счисления</h1>
-        <p>Двоичная система счисления — это позиционная система счисления с основанием 2. Число 1011<sub>2</sub> в десятичной системе равно 11<sub>10</sub>, а диапазон 16 бит составляет 2<sup>16</sup> = 65536 различных значений. <sup class="reference"><a href="#cite">[1]</a></sup> <span class="mw-editsection">[править | править код]</span></p>
+        <p>Двоичная система счисления - это позиционная система счисления с основанием 2. Число 1011<sub>2</sub> в десятичной системе равно 11<sub>10</sub>, а диапазон 16 бит составляет 2<sup>16</sup> = 65536 различных значений. <sup class="reference"><a href="#cite">[1]</a></sup> <span class="mw-editsection">[править | править код]</span></p>
 
         <span class="mwe-math-element">
             <img class="mwe-math-fallback-image-inline" alt="N = \\sum_{i=0}^{n} d_i \\cdot 2^i" src="math.png" />

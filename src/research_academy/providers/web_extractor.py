@@ -163,7 +163,7 @@ class WebArticleExtractor:
         if soup.title and soup.title.string:
             title_text = soup.title.string.strip()
             # Clean common suffixes like " - Википедия"
-            title_text = re.sub(r"\s*[-—|]\s*(Википедия|Wikipedia|Habr|Хабр).*$", "", title_text, flags=re.IGNORECASE)
+            title_text = re.sub(r"\s*[--|]\s*(Википедия|Wikipedia|Habr|Хабр).*$", "", title_text, flags=re.IGNORECASE)
             return title_text
         return url or "Untitled Document"
 

@@ -1,0 +1,316 @@
+================================================================================
+NULLSPREAD RESEARCH · СУБТИТРЫ ВИДЕО ДЛЯ АУДИТА #49
+Модуль: День 7. Модуль 6: Квант-стек, алгоритмическое преимущество и смерть теханализа (06_quant_stack_and_mindset)
+Поисковый запрос: TradingView synthetic spread chart basis ratio quantitative analysis
+================================================================================
+ID видео: iKHE51tXOLA
+Название: How I Trade Cheap Credit Spreads And Only Risk $25 Per Trade
+Канал: Austin Bouley
+Ссылка: https://www.youtube.com/watch?v=iKHE51tXOLA
+Объем: 2367 слов (~16.9 мин)
+Язык: en
+Файл: audit_049_06_quant_stack_and_mindset_iKHE51tXOLA.txt
+Создан: 2026-11-06 02:34:59
+================================================================================
+
+[00:00] I'm going to show you how I trade cheap
+[00:01] credit spreads and make anywhere from
+[00:03] $3,000 to $5,000 every single month and
+[00:05] how I do it by only risking $25 per
+[00:08] trade so first off what do I mean by
+[00:11] Cheap credit spreads I mean credit
+[00:12] spreads that are further out of the
+[00:14] money and are cheaper when they're
+[00:16] cheaper you have a higher win win rate
+[00:18] but that means that you also have a
+[00:20] higher risk or a higher amount that you
+[00:22] can lose you probably experienced this
+[00:24] before if you tried trading cheap credit
+[00:26] spreads where you have a lot of winners
+[00:28] in a row and then the one loser you have
+[00:30] takes away all your profits and more so
+[00:33] I'm going to show you exactly how I
+[00:34] trade cheap credit spreads safely and
+[00:37] only risking $25 I'm going to show you
+[00:39] how I structure the trade the strategy I
+[00:41] use and everything in depth so let's
+[00:43] dive into the video so part one let's do
+[00:46] a brief overview of credit spreads for
+[00:48] those who don't know credit spread is
+[00:50] essentially betting that a stock will
+[00:51] stay above or below a certain level this
+[00:54] means that if it's a put credit spread
+[00:56] so put credit spread means that I'm
+[00:57] betting the stock will stay above a
+[00:59] certain level so let's say this is what
+[01:01] the Stock's doing and let's say I think
+[01:02] the stock will stay above this support
+[01:04] level and what I do is I put a level
+[01:06] here this is my credit spread level as
+[01:08] long as the stock stays Above This level
+[01:10] I make money so that means that if the
+[01:12] stock goes up I make money if the stock
+[01:14] goes sideways I make money if the stock
+[01:16] goes down but stays above my level I
+[01:17] make money the only time I lose money is
+[01:19] when the stock goes Below My Level and
+[01:21] so this is why credit spreads are
+[01:23] amazing because you have a naturally
+[01:24] High win rate because no matter what the
+[01:26] stock does almost any time you can
+[01:28] actually make money and the same thing
+[01:30] with with call Credit spreads but to the
+[01:32] other side let's say the stock is
+[01:33] trending down a call Credit spreads
+[01:35] means you're picking a level you think
+[01:37] the stock will stay below so let's say I
+[01:38] think we'll stay below this resistance
+[01:41] so as long as as long as stock keeps
+[01:43] going down I'll make money if the stock
+[01:45] stays the same I'll make money if the
+[01:46] stock goes up but stays below my level
+[01:49] I'll make money the only way I lose
+[01:50] money if the stock goes way above my
+[01:52] level and then breaks it so this is what
+[01:55] credit spreads are betting that a stock
+[01:57] will stay above or below a certain level
+[01:59] if you're right you make money if you
+[02:00] aren't you lose money now what are cheap
+[02:03] credit spreads it shows you how much
+[02:05] you're risking so what is this it means
+[02:08] that each credit spread totals up to
+[02:11] $100 so if you're trading a $1 wide
+[02:13] credit spread it totals to 100 so what
+[02:15] is this mean it means that if you have
+[02:17] the chance to make $15 on on a trade for
+[02:21] a credit spread that means that you're
+[02:23] risking $85 because it adds to 100 so if
+[02:26] you're stand to make $15 then you also
+[02:29] stand to lose 85 and so the less money
+[02:32] you collect the further away from the
+[02:34] stock price you are so for instance
+[02:35] let's say this is our stock and again
+[02:38] right here we're really close to the
+[02:40] current stock price here we get further
+[02:42] away and here we get further away
+[02:43] remember for a credit spread we make
+[02:45] money as long as the stock stays above
+[02:47] our level so again this one is more
+[02:49] likely to get hit than this one down
+[02:51] here the the this level down here why
+[02:53] because it's further away if it's less
+[02:55] likely to happen we're going to make
+[02:57] less money because um it's less L likely
+[03:00] to happen and so we make money by
+[03:01] something not not not happening aka the
+[03:04] stock not going below the level so here
+[03:06] we could let's say collect $30 and risk
+[03:09] 70 here we could risk maybe 20 uh make
+[03:13] 25 and risk 75 here we could probably
+[03:18] make $15 and risk $85 so you can see the
+[03:21] further away from the stock you go the
+[03:24] less money you make and the higher your
+[03:26] risk is in relation to that so what are
+[03:29] cheap credit spreads cheap credit
+[03:31] spreads when we go really far out like
+[03:33] this $15 level where we're trading a $15
+[03:36] credit spread and we have a super high
+[03:38] risk so again I like to trade this one
+[03:40] right here in the middle this $25 range
+[03:43] but I will take this one down here if I
+[03:44] can at time so let me explain the
+[03:47] strategy behind this so if I go to a
+[03:50] stock chart here what I'm looking at is
+[03:51] let me remove the specifics of this
+[03:54] little right thing right here um so what
+[03:56] I'm looking at is a simple stock chart
+[03:58] and what I do is I use a moving average
+[04:00] to determine what the current trend is
+[04:04] so again I use a simple 10 period moving
+[04:07] average what this does is this shows
+[04:10] what the market is doing if this moving
+[04:12] average is pointing up and going higher
+[04:14] I know the Market's trending higher and
+[04:16] if it's above it I know the Market's
+[04:18] trending higher if this the the stock or
+[04:21] the market whatever I'm watching goes
+[04:22] below this line I know it's trending
+[04:24] down and so I have this moving average
+[04:26] that looks at both the long-term and
+[04:28] short-term Trend to tell me when to
+[04:29] enter in so I can see here when it's
+[04:31] long white when it's short and gray when
+[04:33] it's neutral likea when the trend's
+[04:35] changing and I should stay out so I have
+[04:37] this indicator that I use to actually
+[04:40] profit from it again if you want this
+[04:41] indicator for free you can click the
+[04:43] link down in my description to get free
+[04:45] access to it but this indicator shows me
+[04:47] when to get in if it's blue the Market's
+[04:50] trending up so I'm going to get in put
+[04:51] credit spreads if it's white the
+[04:53] Market's trending down I'm going to get
+[04:54] in call Credit spreads as I explained
+[04:57] right so again if it's if it's blue it's
+[04:59] it's put so I want to find a level like
+[05:01] this support that I think the stock will
+[05:02] stay above as long as the stock stays
+[05:03] Above This level I I make money the same
+[05:05] with call Credit spreads when the stock
+[05:07] turned white I'm going to put it at
+[05:08] resistance if the stock says below this
+[05:10] level I make money so that's how amazing
+[05:13] and simple these credit spreads are now
+[05:15] how do I structure a trade so that I
+[05:17] only lose
+[05:18] $25 right so let's go and set up a trade
+[05:21] right now like we were to set this up
+[05:24] let's say we want to put on a put credit
+[05:26] spread trade just for a pure example
+[05:28] this doesn't follow the the strategy but
+[05:30] I just want to give a good example
+[05:31] because we can see here this looks like
+[05:33] a support level so 408 is our support
+[05:36] level so let's go to Robin Hood and I'll
+[05:38] show you how to actually put on a a a
+[05:39] credit spread trade and then how I
+[05:41] structure it to only lose $25 per trade
+[05:45] so if I go into spy I'm going to go into
+[05:48] spy trade spy options because you need
+[05:50] to have spy options or options trading
+[05:51] enabled specifically margin trading
+[05:53] enabled for credit spreads I go over
+[05:55] here to Builder I'm going to do a put
+[05:57] credit spread right because I think the
+[05:58] stock will move higher because this is
+[06:00] my support level so I think the Stock's
+[06:02] going to move higher again this just an
+[06:03] example so I'm going to go here to put
+[06:05] credit spread that means betting a stock
+[06:07] will stay above a certain level now I'm
+[06:09] going to go out about N9 days that's my
+[06:12] average so about nine days where it says
+[06:13] 9d nine days to structure this credit
+[06:16] spread and like I said my support level
+[06:19] so my support level right I said 408 so
+[06:21] if I find that 408 level 408 407 right
+[06:25] here is my level so you can see here I
+[06:27] can enter this trade and it's around
+[06:30] 21 cents so to enter this trade I'm
+[06:33] going to be collecting about 21 cents to
+[06:35] put on this trade so that means they're
+[06:37] going to give me roughly $21 to put this
+[06:40] trade on now that means as I've
+[06:43] explained before should add up to $100
+[06:46] so if I stand to make
+[06:49] $21 then that means that my risk on this
+[06:51] trade is what
+[06:53] $79 right that's supposed to be a dollar
+[06:55] sign $79 cross that up so if I stand s
+[06:59] to make 21 and S to lose 79 how do I
+[07:03] decrease this 79 down to a lower amount
+[07:06] so that whenever I Lose I'm only
+[07:07] offsetting one winner instead of
+[07:09] multiple winners right because if I were
+[07:11] to keep this trade as is and not change
+[07:14] it then that means I could make 20 uh
+[07:16] $21 over and over and over again but
+[07:19] then when I have a loss of $79 it would
+[07:22] take away three to four winners of
+[07:24] profits that I made and that would suck
+[07:26] so how do I structure this the way I do
+[07:28] to only risk 20
+[07:30] $5 well I keep the same exact trade set
+[07:33] up as I have here where I am going to
+[07:35] make $21 but I limit the amount that I
+[07:39] can stand to lose so what is the amount
+[07:41] I can stand to lose well it's $79 well
+[07:44] let's walk through an example here using
+[07:46] levels that I previously discussed let's
+[07:47] say we have a stock remember a put
+[07:49] credit as me betting that a stock will F
+[07:51] above a certain level well what happens
+[07:54] if this level breaks what happens if the
+[07:56] level I picked the stock goes below it
+[07:58] well that means that the trend is no
+[08:00] longer going in in our favor right like
+[08:02] I picked this this 408 support level why
+[08:05] because I think the market could bounce
+[08:07] here well if the stock breaks below it
+[08:09] and breaks down underneath this level
+[08:12] what does that mean it means that the
+[08:13] stock is now going against my Trend if I
+[08:16] bought here because I think it's going
+[08:17] to start trending up and it breaks it
+[08:18] this means it's now trending down so
+[08:20] there's no reason for me to hold on to a
+[08:22] credit spread trade if the trend is
+[08:24] going against me so whenever my strike
+[08:26] price is broken okay the level that I
+[08:28] picked for stock to stay above or stock
+[08:30] to stay below once that level gets
+[08:32] broken I exit the trade when I exit a
+[08:35] trade at that level your loss you're you
+[08:39] actually have to buy back at0 50 Cent so
+[08:40] if you enter at 21 and you can exit for
+[08:43] a stop loss at $50 or how much do you
+[08:47] lose well the difference you lose
+[08:50] $29 so again that's for this example for
+[08:53] so now our loss changed from $79 to $29
+[08:57] because of the stop loss I had
+[09:00] so now I stand to make
+[09:02] $21 I stand to lose $29 because I said a
+[09:05] stop loss at my level again when your
+[09:08] stop loss hits that level when the stock
+[09:10] breaks that level the credit spread is
+[09:12] trading around 50 cents so that means I
+[09:14] know I I can exit at 50 cents so that
+[09:17] means that my loss now goes from 79 to
+[09:19] 29 which means one winner and one loss
+[09:21] are roughly equivalent so now I
+[09:23] dramatically decrease my losing trade so
+[09:28] what does this do to my win rate well by
+[09:30] default I have a really high win rate
+[09:31] right well my win rate goes down a bit
+[09:34] because I'm getting out of Trades early
+[09:36] and not giving them time to work but I
+[09:39] shorten my losers by so much I go from
+[09:41] an $80 loss to a $30 loss which is a
+[09:46] like I literally shrink my loss but over
+[09:48] 50% and because of that this trade works
+[09:51] out well when you use the trend when you
+[09:54] base it on support and resistance levels
+[09:55] and when you trade it like that so this
+[09:57] is how I trade cheap credit spreads I
+[10:00] bet on a level around or near support or
+[10:02] resistance depending on if I'm trading
+[10:03] you put or call Credit spread I
+[10:05] structure that trade to where I enter
+[10:07] the trade around $20 to around $25 this
+[10:11] is my golden range that I look for to
+[10:14] enter a trade I go to about nine DTE
+[10:17] nine days out this is the golden ratio
+[10:20] where I can kind of get in that trade
+[10:23] collect some Theta but also reach that
+[10:25] Theta Decay point where I'm collecting a
+[10:27] lot of theta but still have some left
+[10:29] and this is how I structure those trades
+[10:30] so that I have a stop loss so that my
+[10:32] loss is limited so this is how I trade
+[10:34] cheap credit spreads to make anywhere
+[10:36] from 2,000 to 3,000 to almost sometimes
+[10:38] $5,000 which I've done in a single month
+[10:42] using this exact system so if you want
+[10:44] to learn more I go step by step in
+[10:47] detail the exact rules strategies
+[10:48] criteria and I even give you the in the
+[10:50] indicator everything for free if you
+[10:52] just give me your email and name Linked
+[10:54] In the description down below it's
+[10:56] called Trading alerts plus three free
+[10:59] fre trading tools if you click on that
+[11:01] link you just need to put in your name
+[11:02] and email and you'll get access to all
+[11:04] this stuff for free for life all right
+[11:06] guys see you in the next video

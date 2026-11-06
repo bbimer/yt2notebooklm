@@ -163,6 +163,7 @@ The system integrates directly with Windows hotkey daemon (`whkd`) and the HUD o
 | **`Alt + Ctrl + D`** | Copy clean path to latest digest (without `\r\n`) | Press before `Ctrl + O` in browser upload dialog |
 | **`Alt + Ctrl + S`** | Copy standalone **Summary** prompt | Paste into chat after attaching 1 `.md` file |
 | **`Alt + Ctrl + A`** | Copy standalone **Audit** prompt | Paste into chat after attaching 1 `.md` file |
+| **`Alt + Ctrl + T`** | Copy standalone **Tutorial** prompt | Paste into chat after attaching 1 `.md` file |
 | **`Alt + Ctrl + C`** | Copy **Multi-Source Compare & Synthesis** prompt | Paste into chat after attaching **2+ `.md` files** |
 | **`Alt + Ctrl + E`** | Reveal latest digest in Windows Explorer | Direct folder access to generated files |
 | **`Alt + Ctrl + O`** | Open latest digest in VS Code / default editor | Manual review and editing |

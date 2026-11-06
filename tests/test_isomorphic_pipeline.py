@@ -36,7 +36,7 @@ def test_web_harvester_ingest_and_persistence(temp_db: Database, tmp_path: Path)
 
     html = """
     <html>
-      <head><title>Binary Numeral System — Academic Overview</title></head>
+      <head><title>Binary Numeral System - Academic Overview</title></head>
       <body>
         <article>
           <h1>Binary Numeral System</h1>

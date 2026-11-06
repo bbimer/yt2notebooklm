@@ -1,0 +1,270 @@
+================================================================================
+NULLSPREAD RESEARCH · СУБТИТРЫ ВИДЕО ДЛЯ АУДИТА #48
+Модуль: День 7. Модуль 6: Квант-стек, алгоритмическое преимущество и смерть теханализа (06_quant_stack_and_mindset)
+Поисковый запрос: real time crypto arbitrage engine WebSocket orderbook API architecture
+================================================================================
+ID видео: C24m5WEYWxE
+Название: Understand the orderbook like a quant
+Канал: Coding Jesus (getcracked.io)
+Ссылка: https://www.youtube.com/watch?v=C24m5WEYWxE
+Объем: 1857 слов (~13.3 мин)
+Язык: en
+Файл: audit_048_06_quant_stack_and_mindset_C24m5WEYWxE.txt
+Создан: 2026-11-06 02:34:56
+================================================================================
+
+[00:00] what is up guys coding Jesus here guys
+[00:03] in today's video I want to talk about
+[00:05] what is an order book and kind of
+[00:07] understanding an order book through the
+[00:08] lens of a quantitative developer now
+[00:10] I've recently finished an order book
+[00:12] series writing an order book in C++
+[00:14] supporting multiple different order
+[00:16] types and writing unit tests for that
+[00:17] order book and when I was reading the
+[00:19] comment section I noticed that one guy
+[00:21] who was interested in the software
+[00:22] component of an order book series asked
+[00:25] what the heck's an order book so let's
+[00:27] go ahead and actually talk about that
+[00:28] today because there's actually three
+[00:29] levels of theorder book and I think a
+[00:31] lot of people are going to be interested
+[00:32] to hear about that third level because
+[00:33] most people only focus on the first two
+[00:36] levels okay let's take a step back and
+[00:38] first ask ourselves what is an order
+[00:40] book okay an order book is a store of
+[00:43] buy and sell orders for a specific asset
+[00:45] Financial instrument security whatever
+[00:47] You' like to call it usually organized
+[00:49] by time price priority what does that
+[00:52] mean let's take a simple example let's
+[00:55] say that you're looking to buy a PS5 at
+[00:57] GameStop now GameStop is the only seller
+[00:59] in the mar Market but we have a bunch of
+[01:01] buyers and let's say that GameStop is
+[01:04] willing to sell to the highest bidder to
+[01:06] the person that's willing to pay the
+[01:07] most given that GameStop wants to get
+[01:09] the most for their money the most for
+[01:12] every PS5 that they sell they'll be
+[01:13] selling to the highest bidder if more
+[01:16] than one person is willing to buy at
+[01:18] that highest bid then they'll sell to
+[01:20] the highest biders plural in order of
+[01:23] who got their first okay now let's take
+[01:26] a look at how an order book actually
+[01:27] looks like conceptually now that we've
+[01:30] understood that simple example and we're
+[01:31] going to be focusing on the first level
+[01:33] of the order book okay so what I'm going
+[01:35] to do here is I'm going to have my
+[01:37] little whiteboard we're going to draw a
+[01:39] little okay so we're going to draw so
+[01:43] you can view an order book as I
+[01:44] mentioned at various depths one of those
+[01:46] depths being the L1 which is the highest
+[01:50] level of the order book what does L1
+[01:52] mean the L1 stands for level one and
+[01:54] what it really refers to is the best bid
+[01:56] or best ask the best bid put simply is
+[01:59] the most somebody is willing to pay for
+[02:01] this financial product security whatever
+[02:03] the actual product is that's underlying
+[02:05] the order book and the best ask is the
+[02:08] lowest somebody's willing to sell this
+[02:09] asset for so let's go back to our simple
+[02:12] example and let's draw it on the
+[02:13] Whiteboard so let's say we have a
+[02:18] p
+[02:20] S5 okay now let's say we have two sides
+[02:24] people that are willing to buy and
+[02:25] people that are willing to sell okay
+[02:27] let's say that the most somebody's
+[02:28] willing to buy for is 100 bucks and the
+[02:33] least somebody's willing to sell for is
+[02:35] 110 bucks this would be our best ask and
+[02:40] this would be our best bid it's that
+[02:44] simple it's very intuitive as a buyer
+[02:46] you want to purchase an item at the
+[02:47] lowest price possible and as a seller
+[02:49] you want to receive the highest price so
+[02:51] the best bid is the highest price
+[02:54] somebody's willing to buy something for
+[02:55] the best ask is the lowest price
+[02:57] somebody's willing to sell something for
+[02:59] it's usually called L1 by the way guys
+[03:01] because this is a one-dimensional level
+[03:03] one view of the order book there's just
+[03:05] one number for the best bit and one
+[03:07] number for the best TK okay now let's
+[03:10] look at L2 L2 is kind of the second
+[03:12] level of the order book and sometimes
+[03:14] you can think about it as the second
+[03:15] dimension the L2 view of the order book
+[03:18] stretches Beyond this best bid and best
+[03:20] ask and here you get a more holistic
+[03:22] view of every level on the bids and the
+[03:26] asks as well as the quantity on each
+[03:28] side so yes there's somebody willing to
+[03:30] buy this PS5 for 100 bucks but there's
+[03:33] also some guy that's saying well I'm
+[03:34] willing to spend 90 bucks on a PS5 and
+[03:36] there's also somebody that's saying I
+[03:38] don't want to sell for 110 that's too
+[03:39] low I want to sell for
+[03:41] 120 now often times in an order book
+[03:44] especially on the L2 you'll see quantity
+[03:46] associated with each price level so yes
+[03:49] somebody's willing to buy for 90 and
+[03:50] somebody's willing to buy for 100 but
+[03:53] somebody's willing to buy five for 100
+[03:56] and there's one person willing to buy
+[03:58] that five at the 90 level there are
+[04:03] let's go ahead and grab the
+[04:05] Eraser there are there's one there's two
+[04:09] people willing to buy at 90 and in total
+[04:12] their purchase quantity is going to be
+[04:14] 10 so at 90 the total purchase quantity
+[04:17] is 10 and there's two people willing to
+[04:19] buy so this is Count this is quantity
+[04:22] and this is price the same thing applies
+[04:24] for the ask side so on the asks we can
+[04:28] see here that the the best ask is 110
+[04:31] that's the lowest somebody's willing to
+[04:33] sell their PS5 for for example um there
+[04:37] is five ps5s being sold at this price
+[04:41] and two people are offering now that
+[04:43] might mean that this five is made up of
+[04:45] somebody willing to sell three and
+[04:47] another person willing to sell two okay
+[04:50] because there's two people on this
+[04:52] level now let's focus on the third level
+[04:54] of the order book okay guys the third
+[04:56] level of the order book is usually where
+[04:58] the big brain ERS exist the third level
+[05:02] is the part of the onion that focuses
+[05:03] exclusively on Q priority where Q
+[05:06] priority is determined by a q priority
+[05:08] algorithm at the beginning of the video
+[05:10] what I talked about is time price
+[05:12] priority what does that mean time price
+[05:14] priority in I guess other financial
+[05:16] terms is often times called fifo First
+[05:18] in first out what does fifo mean well as
+[05:22] I showed you guys right here when we
+[05:23] were talking about L2 I mentioned that
+[05:25] there's two people so the count is two
+[05:27] on this level of 110 the total quantity
+[05:30] on this level
+[05:32] quantity is
+[05:34] five okay and the price is0 that's the
+[05:39] best ask so we're focused on this level
+[05:40] currently this five can be made up of
+[05:43] for example somebody willing to sell
+[05:45] three units and somebody willing to sell
+[05:47] two units because 3 plus 2 equals 5 and
+[05:49] we know that there's two people on this
+[05:51] level okay now let's say somebody wants
+[05:55] to buy and they don't want to wait they
+[05:56] want to immediately purchase a PS5 if
+[05:59] they wanted to wait they might join this
+[06:01] 100 level over here and just sit on the
+[06:03] order book that's the term that's used
+[06:05] resting on the order book somebody might
+[06:07] say I don't want to wait I want to take
+[06:09] liquidity I want to cross the order book
+[06:11] I want to buy the cheapest PS5 available
+[06:14] so what they'll do is they'll say well I
+[06:15] want to buy one unit at 110 now because
+[06:18] person
+[06:20] a was here first before person B and
+[06:24] person a is offering three units at 110
+[06:27] person a is going to be filled for one
+[06:29] quantity so this will go down from 3 to
+[06:32] two and the total quantity on this level
+[06:34] is now going to be
+[06:35] four
+[06:37] okay so let's talk about how Q priority
+[06:41] works well how Q priority Works in a
+[06:43] fifo system is first in first out we
+[06:45] just covered that but often times what
+[06:47] exchanges will do is on every order on
+[06:49] the order book in L3 they'll disseminate
+[06:51] some sort of identifier that will be
+[06:54] uniquely attributable to this person's Q
+[06:56] priority if you think about it if there
+[06:58] are five ERS you know order uh let's
+[07:01] just say order I I I I I I four and then
+[07:09] five then what's going to happen is that
+[07:12] this person might be given an order a q
+[07:14] priority
+[07:16] identifier of for example one this guy
+[07:19] will be given a curity identifier of two
+[07:23] three
+[07:25] four and five and this Q priority has a
+[07:28] lot of trading implication which we'll
+[07:29] see why soon now this is the simple
+[07:32] first in first out Q priority algorithm
+[07:35] but beyond fifo there's a lot of other Q
+[07:37] priority algorithms I'm going to talk
+[07:38] about one more in today's video and then
+[07:40] I'm going to be talking about more in a
+[07:42] separate video okay another q priority
+[07:44] algorithm is called prata prata is very
+[07:47] interesting
+[07:48] [Music]
+[07:50] prata okay what does prata mean let's
+[07:53] take a step back from this whiteboard
+[07:54] and discuss what that might look like
+[07:57] let's go back to that PS5 example let's
+[07:59] say that I'm willing to buy a PS5 on
+[08:01] launch day and I'm willing to pay the
+[08:03] highest price of $300 and I arrive there
+[08:06] 10 hours before launch okay so it's
+[08:08] midnight they open at 8: a.m. and okay
+[08:10] I'm there eight hours before launch
+[08:12] let's say let's say right before launch
+[08:14] a minute before somebody arrives and
+[08:16] they're willing to buy 10 units at
+[08:19] 300 it's just me and him in line and
+[08:21] we're both willing to pay the same
+[08:23] price now because that person is willing
+[08:27] to buy more units than I am and we're
+[08:29] both at the same price despite the fact
+[08:32] that I got there earlier GameStop is
+[08:34] going to sell to him first before they
+[08:36] sell to me GameStop can be selling one
+[08:39] unit five units 10 units 100 units it
+[08:41] doesn't matter that person will get
+[08:43] filled first until they're fully filled
+[08:46] before I will be matched before I will
+[08:48] be serviced before I will have a chance
+[08:50] to purchase a
+[08:51] PS5 so that's the pr algorithm and
+[08:54] that's why often times in treasuries
+[08:55] markets as opposed to equities markets
+[08:57] you'll see a lot of volume on the order
+[08:59] book a lot of quantity because people
+[09:01] are looking to get to the front of the
+[09:02] line not by virtue of being there soon
+[09:05] or being there first but by virtue of
+[09:07] being willing to purchase or sell the
+[09:10] most amount of that Financial
+[09:12] product thanks for watching this video
+[09:14] guys I really appreciate it if you'd
+[09:15] like to follow me go ahead and do that
+[09:17] on Instagram Link in the description box
+[09:18] below I often I also have a calendly
+[09:20] link that you guys can uh click on if
+[09:22] you'd like to book my time to meet with
+[09:23] me oneon-one and if you'd like to become
+[09:25] a patron you get access to my exclusive
+[09:27] Discord you get access to these videos
+[09:28] earlier than everybody else you can go
+[09:30] ahead and do so in the link in the
+[09:32] description box below guys thanks for
+[09:34] watching this video hopefully it was an
+[09:35] intuitive explanation see you later
