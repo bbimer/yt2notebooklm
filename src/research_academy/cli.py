@@ -611,14 +611,18 @@ def digest_cmd(
     import pyperclip
     from research_academy.pipeline.ad_hoc_digest import (
         AdHocDigestGenerator,
+        HudSession,
         play_chime_error,
         play_chime_success,
+        trigger_hud,
     )
     from research_academy.pipeline.transcript_sniffer import extract_youtube_video_id
 
     target_urls: List[str] = list(urls)
+    hud_session: Optional[HudSession] = None
 
     if from_clipboard:
+        hud_session = HudSession("Обработка ссылки YouTube...")
         try:
             cb_content = pyperclip.paste().strip()
             if cb_content:
@@ -649,6 +653,10 @@ def digest_cmd(
 
     if not target_urls:
         play_chime_error()
+        if hud_session:
+            hud_session.set_error("В буфере нет ссылки на YouTube")
+        else:
+            trigger_hud(message="В буфере нет ссылки на YouTube", hud_type="error")
         console.print(
             Panel.fit(
                 "[bold red]Не указано ни одной ссылки на YouTube![/bold red]\n\n"
@@ -678,6 +686,7 @@ def digest_cmd(
             output_dir=out_path,
             mode=mode,
             copy_clipboard=should_copy,
+            hud_session=hud_session,
         )
         results.append(res)
         if res.error:
@@ -749,6 +758,7 @@ def prompt_cmd(mode: str, mode_opt: Optional[str]) -> None:
     from research_academy.pipeline.ad_hoc_digest import (
         get_standalone_prompt,
         play_chime_success,
+        trigger_hud,
     )
 
     chosen_mode = mode_opt or mode or "summary"
@@ -757,6 +767,7 @@ def prompt_cmd(mode: str, mode_opt: Optional[str]) -> None:
     try:
         pyperclip.copy(prompt_text.strip())
         play_chime_success()
+        trigger_hud(message=f"Промпт скопирован ({chosen_mode})", hud_type="copy")
     except Exception as e:
         logger.warning("Failed to copy prompt to clipboard: %s", e)
 
@@ -836,6 +847,7 @@ def latest_digest_cmd(
         play_chime_error,
         play_chime_success,
         wrap_digest_with_prompt,
+        trigger_hud,
     )
 
     if target_file_path:
@@ -846,6 +858,7 @@ def latest_digest_cmd(
 
     if not target_file or not target_file.exists():
         play_chime_error()
+        trigger_hud(message="Файлы дайджестов не найдены", hud_type="error")
         console.print(f"[bold red]Файлы дайджестов не найдены![/bold red]")
         sys.exit(1)
 
@@ -872,6 +885,10 @@ def latest_digest_cmd(
             import pyperclip
             pyperclip.copy(payload_to_copy)
             play_chime_success()
+            if mode:
+                trigger_hud(message=f"Дайджест скопирован ({mode})", hud_type="done")
+            else:
+                trigger_hud(message="Путь к файлу скопирован", hud_type="path")
         except Exception as e:
             logger.warning("Failed to copy to clipboard: %s", e)
 

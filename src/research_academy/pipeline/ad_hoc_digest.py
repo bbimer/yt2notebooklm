@@ -60,6 +60,88 @@ def play_chime_error() -> None:
             pass
 
 
+class HudSession:
+    """Manages an interactive Raycast-style HUD session with live progress and completion."""
+
+    def __init__(self, initial_progress: Optional[str] = "Обработка ссылки YouTube..."):
+        self.proc = None
+        hud_script = Path.home() / "Desktop" / "_customization" / "scripts" / "hud_notify.py"
+        if hud_script.exists():
+            try:
+                import subprocess
+                cmd = ["pythonw", str(hud_script), "--interactive"]
+                if initial_progress:
+                    cmd.extend(["--message", str(initial_progress)])
+                self.proc = subprocess.Popen(
+                    cmd,
+                    stdin=subprocess.PIPE,
+                    stdout=subprocess.DEVNULL,
+                    stderr=subprocess.DEVNULL,
+                    creationflags=0x08000000,  # CREATE_NO_WINDOW
+                )
+            except Exception as e:
+                logger.debug("Failed to spawn interactive HUD: %s", e)
+
+    def set_progress(self, msg: str) -> None:
+        if self.proc and self.proc.stdin:
+            try:
+                self.proc.stdin.write(f"PROGRESS:{msg}\n".encode("utf-8"))
+                self.proc.stdin.flush()
+            except Exception:
+                pass
+
+    def set_done(self, msg: str) -> None:
+        if self.proc and self.proc.stdin:
+            try:
+                self.proc.stdin.write(f"DONE:{msg}\n".encode("utf-8"))
+                self.proc.stdin.flush()
+                time.sleep(0.08)
+            except Exception:
+                pass
+
+    def set_error(self, msg: str) -> None:
+        if self.proc and self.proc.stdin:
+            try:
+                self.proc.stdin.write(f"ERROR:{msg}\n".encode("utf-8"))
+                self.proc.stdin.flush()
+                time.sleep(0.08)
+            except Exception:
+                pass
+
+    def close(self) -> None:
+        if self.proc and self.proc.stdin:
+            try:
+                self.proc.stdin.write(b"CLOSE\n")
+                self.proc.stdin.flush()
+            except Exception:
+                pass
+
+
+def trigger_hud(
+    message: str = "Готово",
+    hud_type: str = "done",
+    duration_ms: int = 850,
+    **kwargs,
+) -> None:
+    """Fast non-blocking single-shot HUD trigger."""
+    try:
+        import subprocess
+        hud_script = Path.home() / "Desktop" / "_customization" / "scripts" / "hud_notify.py"
+        if hud_script.exists():
+            cmd = [
+                "pythonw",
+                str(hud_script),
+                "--type", str(hud_type),
+                "--message", str(message),
+                "--duration", str(duration_ms),
+            ]
+            subprocess.Popen(cmd, creationflags=0x08000000)  # CREATE_NO_WINDOW
+    except Exception as e:
+        logger.debug("Failed to spawn HUD notification: %s", e)
+
+
+
+
 def slugify(text: str, max_len: int = 50) -> str:
     """Converts title to a safe filename slug."""
     text = re.sub(r"[^\w\s-]", "", text, flags=re.UNICODE).strip().lower()
@@ -427,6 +509,7 @@ class AdHocDigestGenerator:
         output_dir: Optional[Path] = None,
         mode: str = "summary",
         copy_clipboard: bool = True,
+        hud_session: Optional[HudSession] = None,
     ) -> DigestResult:
         """Processes a single YouTube URL or ID into a clean markdown digest."""
         target_dir = output_dir or self.default_output_dir
@@ -435,6 +518,13 @@ class AdHocDigestGenerator:
         video_id = extract_youtube_video_id(url_or_id)
         if not video_id:
             play_chime_error()
+            if hud_session:
+                hud_session.set_error("Некорректная ссылка на видео")
+            else:
+                trigger_hud(
+                    message="Некорректная ссылка на видео",
+                    hud_type="error",
+                )
             return DigestResult(
                 video_id=url_or_id,
                 title="Invalid URL",
@@ -449,6 +539,9 @@ class AdHocDigestGenerator:
                 error=f"Не удалось распознать YouTube Video ID из ссылки: {url_or_id}",
             )
 
+        if hud_session:
+            hud_session.set_progress("Извлечение субтитров YouTube...")
+
         # 1. Fetch metadata and chapters
         details = self.fetch_video_details(video_id)
 
@@ -456,6 +549,13 @@ class AdHocDigestGenerator:
         transcript = self.transcript_provider.get_transcript(video_id)
         if not transcript.has_subtitles:
             play_chime_error()
+            if hud_session:
+                hud_session.set_error("Субтитры недоступны для видео")
+            else:
+                trigger_hud(
+                    message="Субтитры недоступны для видео",
+                    hud_type="error",
+                )
             return DigestResult(
                 video_id=video_id,
                 title=details.title,
@@ -469,6 +569,9 @@ class AdHocDigestGenerator:
                 chapters_count=len(details.chapters),
                 error=f"Субтитры недоступны для видео ({details.title}): {transcript.error_message}",
             )
+
+        if hud_session:
+            hud_session.set_progress("Формирование дайджеста...")
 
         # 3. Aggregate segments into coherent ~60-90s paragraphs
         paragraphs = aggregate_transcript_segments(transcript.segments)
@@ -503,8 +606,26 @@ class AdHocDigestGenerator:
                 pyperclip.copy(payload)
                 clipboard_copied = True
                 play_chime_success()
+                done_msg = "Аудит скопирован в буфер" if mode == "audit" else "Саммари скопировано в буфер"
+                if hud_session:
+                    hud_session.set_done(done_msg)
+                else:
+                    trigger_hud(
+                        message=done_msg,
+                        hud_type="done",
+                    )
             except Exception as e:
                 logger.warning("Failed to copy payload to clipboard: %s", e)
+                if hud_session:
+                    hud_session.set_error("Ошибка копирования в буфер")
+        else:
+            if hud_session:
+                hud_session.set_done("Дайджест сохранен")
+            else:
+                trigger_hud(
+                    message="Дайджест сохранен",
+                    hud_type="done",
+                )
 
         return DigestResult(
             video_id=video_id,
